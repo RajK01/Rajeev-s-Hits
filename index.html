@@ -3,678 +3,283 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rajeev's Favorite Hits 🎵</title>
+<title>Rajeev's Favourite Hits 🎵</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body{font-family:'Poppins',sans-serif;background:#0a0a0f;color:#fff;min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 0%,rgba(120,40,200,.25) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 100%,rgba(220,100,20,.2) 0%,transparent 60%);pointer-events:none;z-index:0}
 
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: #0a0a0f;
-    color: #fff;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+/* HEADER */
+header{position:relative;z-index:1;text-align:center;padding:48px 20px 20px}
+header .icon{font-size:3rem;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+header h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;background:linear-gradient(135deg,#f5a623,#e040fb,#29b6f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 4px;letter-spacing:-1px}
+header p{color:rgba(255,255,255,.45);font-size:.95rem}
+#total-count{display:inline-block;margin-top:10px;padding:4px 14px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);font-size:.8rem;color:rgba(255,255,255,.55)}
 
-  /* Animated background */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 80% 50% at 20% 0%, rgba(120,40,200,0.25) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(220,100,20,0.2) 0%, transparent 60%);
-    pointer-events: none;
-    z-index: 0;
-  }
+/* CONTROLS */
+.controls{position:relative;z-index:1;max-width:1280px;margin:18px auto 0;padding:0 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+#search-wrap{flex:1;min-width:220px;position:relative}
+#search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);opacity:.4;pointer-events:none}
+#search{width:100%;padding:11px 16px 11px 42px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.07);color:#fff;font-family:inherit;font-size:.9rem;outline:none;transition:border-color .2s,background .2s}
+#search::placeholder{color:rgba(255,255,255,.3)}
+#search:focus{border-color:rgba(240,100,200,.5);background:rgba(255,255,255,.1)}
+#surprise-btn{padding:11px 20px;border-radius:12px;border:none;background:linear-gradient(135deg,#f5a623,#e040fb);color:#fff;font-family:inherit;font-weight:700;font-size:.88rem;cursor:pointer;transition:transform .2s,box-shadow .2s;white-space:nowrap}
+#surprise-btn:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(224,64,251,.4)}
 
-  header {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 56px 20px 32px;
-  }
+/* CATEGORY TABS */
+.tabs-wrap{position:relative;z-index:1;max-width:1280px;margin:14px auto 0;padding:0 20px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabs-wrap::-webkit-scrollbar{display:none}
+.tabs{display:flex;gap:8px;width:max-content}
+.tab{padding:8px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:rgba(255,255,255,.55);font-family:inherit;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap}
+.tab:hover{background:rgba(255,255,255,.1);color:#fff}
+.tab.active{background:linear-gradient(135deg,#7c3aed,#db2777);border-color:transparent;color:#fff;box-shadow:0 4px 14px rgba(124,58,237,.4)}
 
-  header .icon { font-size: 3rem; animation: pulse 2s ease-in-out infinite; }
+/* GRID */
+main{position:relative;z-index:1;max-width:1280px;margin:18px auto 80px;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
 
-  @keyframes pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.15);} }
+/* NO RESULTS */
+#no-results{display:none;grid-column:1/-1;text-align:center;padding:60px 20px;color:rgba(255,255,255,.3);font-size:1.1rem}
 
-  header h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 900;
-    background: linear-gradient(135deg, #f5a623, #e040fb, #29b6f6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin: 12px 0 6px;
-    letter-spacing: -1px;
-  }
+/* CARD */
+.card{border-radius:16px;overflow:hidden;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);transition:transform .25s,box-shadow .25s,border-color .25s;position:relative;animation:fadeIn .35s ease both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.5);border-color:rgba(255,255,255,.22)}
+.card.hidden{display:none}
 
-  header p { color: rgba(255,255,255,0.5); font-size: 1rem; }
+.thumb-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#111;overflow:hidden;cursor:pointer}
+.thumb-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s,filter .4s;filter:brightness(.75)}
+.card:hover .thumb-wrap img{transform:scale(1.05);filter:brightness(.9)}
+.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:rgba(255,0,0,.85);display:flex;align-items:center;justify-content:center;transition:transform .25s,background .25s;box-shadow:0 4px 20px rgba(255,0,0,.5);pointer-events:none}
+.card:hover .play-btn{transform:translate(-50%,-50%) scale(1.15);background:#ff0000}
+.play-btn svg{width:24px;height:24px;fill:#fff;margin-left:4px}
+.thumb-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none;z-index:2}
+.num-badge{position:absolute;top:10px;left:10px;width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700}
 
-  .badge {
-    display: inline-block;
-    margin-top: 14px;
-    padding: 5px 16px;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.12);
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.6);
-  }
+/* HEART */
+.heart-btn{position:absolute;top:10px;right:10px;background:rgba(0,0,0,.55);border:none;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;transition:transform .2s,background .2s;z-index:3;line-height:1}
+.heart-btn:hover{transform:scale(1.2);background:rgba(0,0,0,.8)}
+.heart-btn.loved{filter:drop-shadow(0 0 6px #ff4d6d)}
 
-  main {
-    position: relative;
-    z-index: 1;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 20px 24px 60px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 24px;
-  }
+/* CARD BODY */
+.card-body{padding:12px 14px 14px;position:relative}
+.card-body h2{font-size:.9rem;font-weight:600;line-height:1.4;color:#fff;margin-bottom:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-body .artist{font-size:.75rem;color:rgba(255,255,255,.4)}
+.cat-tag{display:inline-block;margin-top:6px;padding:2px 9px;border-radius:999px;font-size:.65rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
 
-  .card {
-    border-radius: 16px;
-    overflow: hidden;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
-    cursor: pointer;
-  }
+/* NOW PLAYING */
+.card.playing{border-color:#e040fb;box-shadow:0 0 0 2px rgba(224,64,251,.4)}
+.now-playing-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(224,64,251,.9),transparent);padding:6px 12px 4px;font-size:.7rem;font-weight:700;color:#fff;text-align:center;z-index:3;pointer-events:none}
 
-  .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    border-color: rgba(255,255,255,0.25);
-  }
+/* SCROLL TO TOP */
+#scroll-top{position:fixed;bottom:28px;right:28px;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#db2777);border:none;color:#fff;font-size:1.4rem;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(124,58,237,.5);opacity:0;transform:scale(0);transition:opacity .3s,transform .3s;z-index:100}
+#scroll-top.visible{opacity:1;transform:scale(1)}
+#scroll-top:hover{transform:scale(1.1)}
 
-  .thumb-wrap {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16/9;
-    background: #111;
-    overflow: hidden;
-  }
-
-  .thumb-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s, filter 0.4s;
-    filter: brightness(0.75);
-  }
-
-  .card:hover .thumb-wrap img {
-    transform: scale(1.05);
-    filter: brightness(0.9);
-  }
-
-  .play-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: rgba(255, 0, 0, 0.85);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.25s, background 0.25s;
-    box-shadow: 0 4px 20px rgba(255,0,0,0.5);
-  }
-
-  .card:hover .play-btn {
-    transform: translate(-50%, -50%) scale(1.15);
-    background: #ff0000;
-  }
-
-  .play-btn svg { width: 26px; height: 26px; fill: #fff; margin-left: 4px; }
-
-  .num-badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: rgba(0,0,0,0.7);
-    border: 1px solid rgba(255,255,255,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #fff;
-  }
-
-  .card-body {
-    padding: 14px 16px 16px;
-  }
-
-  .card-body h2 {
-    font-size: 0.95rem;
-    font-weight: 600;
-    line-height: 1.4;
-    color: #fff;
-    margin-bottom: 4px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .card-body .artist {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.45);
-  }
-
-  /* iframe overlay */
-  .thumb-wrap iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    z-index: 2;
-  }
-
-  footer {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.2);
-  }
+footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72rem;color:rgba(255,255,255,.18)}
 </style>
 </head>
 <body>
 
 <header>
   <div class="icon">🎵</div>
-  <h1>Rajeev's Favorite Hits</h1>
-  <p>A personal collection of songs &amp; videos</p>
-  <span class="badge">▶ Click any card to play</span>
+  <h1>Rajeev's Favourite Hits</h1>
+  <p>Songs · Affirmations · Luxury · Bollywood · Instagram</p>
+  <div id="total-count">69 videos</div>
 </header>
 
-<main id="grid"></main>
+<div class="controls">
+  <div id="search-wrap">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="search" id="search" placeholder="Search songs, artists…" autocomplete="off">
+  </div>
+  <button id="surprise-btn">🔀 Surprise Me!</button>
+</div>
 
-<footer>Made with ♥ — Rajeev Kumar</footer>
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab active" data-cat="all">🎬 All <span class="tab-count"></span></button>
+    <button class="tab" data-cat="fav">❤️ Favourites</button>
+    <button class="tab" data-cat="songs">🎵 Songs</button>
+    <button class="tab" data-cat="bollywood">🎬 Bollywood</button>
+    <button class="tab" data-cat="dhurandhar">⚔️ Dhurandhar</button>
+    <button class="tab" data-cat="malaysia">🇲🇾 Malaysia</button>
+    <button class="tab" data-cat="affirmations">💰 Affirmations</button>
+    <button class="tab" data-cat="luxury">🏙️ Luxury & Dubai</button>
+    <button class="tab" data-cat="instagram">📱 Instagram</button>
+  </div>
+</div>
+
+<main id="grid">
+  <div id="no-results">😕 No results found. Try a different search or filter.</div>
+</main>
+
+<button id="scroll-top" title="Back to top">↑</button>
+
+<footer>Made with ♥ by Rajeev Kumar &nbsp;·&nbsp; <span id="footer-count"></span></footer>
 
 <script>
+const CAT_COLORS = {
+  songs:        ['#f59e0b','#1c1000'],
+  bollywood:    ['#ec4899','#1a0010'],
+  dhurandhar:   ['#ef4444','#1a0000'],
+  malaysia:     ['#10b981','#001a0e'],
+  affirmations: ['#8b5cf6','#0e0018'],
+  luxury:       ['#f5a623','#1a1000'],
+  instagram:    ['#e1306c','#1a0010'],
+};
+const CAT_LABELS = {
+  songs:'Songs', bollywood:'Bollywood', dhurandhar:'Dhurandhar',
+  malaysia:'Malaysia', affirmations:'Affirmations', luxury:'Luxury', instagram:'Instagram'
+};
+
 const songs = [
-  {
-    num: 1,
-    title: "Hall of Fame",
-    artist: "The Script ft. Will.i.am",
-    id: "OhrXtqnId_o"
-  },
-  {
-    num: 2,
-    title: "On the Floor",
-    artist: "Jennifer Lopez ft. Pitbull",
-    id: "t4H_Zoh7G5A"
-  },
-  {
-    num: 3,
-    title: "Give Me Freedom, Give Me Fire",
-    artist: "K'naan — FIFA World Cup 2010",
-    id: "Y1bukaetjJI"
-  },
-  {
-    num: 4,
-    title: "Unexpected Love Story ❤️",
-    artist: "Short Film Edit",
-    id: "iCjV-nXaQ4o"
-  },
-  {
-    num: 5,
-    title: "Sajna Ke Sajde Mein Itna — Deewaana Deewaana",
-    artist: "A.R. Rahman • Tere Ishq Mein",
-    id: "jko0dgGUwic"
-  },
-  {
-    num: 6,
-    title: "Tamma Tamma Loge (4K)",
-    artist: "Bappi Lahiri • Thanedaar",
-    id: "Xs5k7d6kzh8"
-  },
-  {
-    num: 7,
-    title: "Dai Dai",
-    artist: "Shakira ft. Burna Boy — FIFA World Cup 2026",
-    id: "fcnDmrtj6Sk"
-  },
-  {
-    num: 8,
-    title: "Magic in the Air",
-    artist: "Magic System ft. Chawki",
-    id: "BAkqJT_sMKQ"
-  },
-  {
-    num: 9,
-    title: "I AM — Affirmations for Abundance, Success & Personal Power",
-    artist: "VYBO — Morning Affirmations",
-    id: "S2lbRo28GoI"
-  },
-  {
-    num: 10,
-    title: "Luxury Lifestyle of Billionaires",
-    artist: "The Most Expensive Things Money Can Buy",
-    id: "js-XOXyqLFI"
-  },
-  {
-    num: 11,
-    title: "Billionaire Luxury Lifestyle 2026",
-    artist: "Billionaire Motivation & Visualization",
-    id: "1MbrPhTz4rE"
-  },
-  {
-    num: 12,
-    title: "The 48 Laws of Power — Full Audiobook",
-    artist: "Robert Greene",
-    id: "2P1-SunHlZg"
-  },
-  {
-    num: 13,
-    title: "Build Main Character Energy & Magnetic Aura ✨",
-    artist: "Mindset & Aura",
-    id: "l3zV7BbpNQo"
-  },
-  {
-    num: 14,
-    title: "C'est la vie",
-    artist: "B*Witched",
-    id: "UvjLgjtJKsc"
-  },
-  {
-    num: 15,
-    title: "C'est la vie (Clip officiel)",
-    artist: "Khaled",
-    id: "H7rhMqTQ4WI"
-  },
-  {
-    num: 16,
-    title: "C'est la Vie",
-    artist: "MIKA",
-    id: "Oe7AU05BuZ8"
-  },
-  {
-    num: 17,
-    title: "श्री हनुमान चालीसा — Shree Hanuman Chalisa",
-    artist: "Gulshan Kumar & Hariharan • Full HD",
-    id: "AETFvQonfV8"
-  },
-  {
-    num: 18,
-    title: "Dubai 4K Drone Footage — Burj Khalifa, Palm Jumeirah & Arabian Coast",
-    artist: "Dubai • Billionaire Skyline",
-    id: "6QjF1Oc7lpw"
-  },
-  {
-    num: 19,
-    title: "Inside a Dubai Billionaire's Private Island Palace",
-    artist: "4K Cinematic Mega Mansion Tour",
-    id: "-dEyxxUlvJc"
-  },
-  {
-    num: 20,
-    title: "Dubai's Ultra-Rich Lifestyle 💎 Billionaire Motivation",
-    artist: "Luxury Visualization 2025",
-    id: "4lrZOm8fXbM"
-  },
-  {
-    num: 21,
-    title: "How Dubai's Super Rich Really Live",
-    artist: "Inside Dubai • Full Series",
-    id: "qhyfDoNxShM"
-  },
-  {
-    num: 22,
-    title: "Kesuma",
-    artist: "Dato' Sri Siti Nurhaliza • Malaysia",
-    id: "7_AefsYp-hA"
-  },
-  {
-    num: 23,
-    title: "Hello",
-    artist: "Yuna • Malaysia",
-    id: "U9fAUxJg0Nw"
-  },
-  {
-    num: 24,
-    title: "Believer",
-    artist: "Yuna • Malaysia",
-    id: "h_8kzG5fN_c"
-  },
-  {
-    num: 25,
-    title: "THE REVENGE — Official Title Track",
-    artist: "Dhurandhar • Ranveer Singh | Shashwat Sachdev",
-    id: "gpqLu7QoPs4"
-  },
-  {
-    num: 26,
-    title: "AARI AARI",
-    artist: "Dhurandhar The Revenge • Ranveer Singh | Bombay Rockers",
-    id: "jzaT_sPNJrU"
-  },
-  {
-    num: 27,
-    title: "VAARI JAAVAN",
-    artist: "Dhurandhar The Revenge • Ranveer Singh | Jasmine Sandlas",
-    id: "GG1_DsScm6U"
-  },
-  {
-    num: 28,
-    title: "JAIYE SAJANA",
-    artist: "Dhurandhar The Revenge • Ranveer Singh | Satinder Sartaaj",
-    id: "F2m4HPLvj-4"
-  },
-  {
-    num: 29,
-    title: "MAIN AUR TU",
-    artist: "Dhurandhar The Revenge • Ranveer Singh | Jasmine Sandlas",
-    id: "-dt1VE_9EJI"
-  },
-  {
-    num: 30,
-    title: "JAAN SE GUZARTE HAIN",
-    artist: "Dhurandhar The Revenge • Ranveer Singh & Sara Arjun",
-    id: "ZJ5NU6pTN7M"
-  },
-  {
-    num: 31,
-    title: "TERE ISHQ NE",
-    artist: "Dhurandhar The Revenge • Ranveer Singh | Jyoti Nooran",
-    id: "Zfk-FWkBkbY"
-  },
-  {
-    num: 32,
-    title: "TAMMA TAMMA (Dhurandhar Version)",
-    artist: "Dhurandhar The Revenge • Ranveer Singh | Bappi Lahiri",
-    id: "SSofpP1_6F0"
-  },
-  {
-    num: 33,
-    title: "Instagram Reel ❤️",
-    artist: "Instagram • @rajeev_fav",
-    id: "DcODngVgws7",
-    type: "instagram"
-  },
-  {
-    num: 34,
-    title: "I AM RICH — The 1% Abundance Code",
-    artist: "Alpha Wealth Manifest",
-    id: "BYcu4f2FLtg"
-  },
-  {
-    num: 35,
-    title: "Cheri Cheri Lady ✨",
-    artist: "Lyrics • Aesthetic Vibes",
-    id: "O_oGMYrEMUQ"
-  },
-  {
-    num: 36,
-    title: "BILLIONAIRE I AM Affirmations",
-    artist: "Money, Wealth & Success • Watch Every Day",
-    id: "AsMZQxjICwI"
-  },
-  {
-    num: 37,
-    title: "Millionaire Mindset Affirmations",
-    artist: "That Will Change Your Life! • #Mindset #Success",
-    id: "JD4jn2owOMc"
-  },
-  {
-    num: 38,
-    title: "₹1 Crore A Month is Waiting for You!!",
-    artist: "Become a MONEY MAGNET • Manifestation",
-    id: "aecw2Hs8vEA"
-  },
-  {
-    num: 39,
-    title: "I AM RICH — Money Affirmations To Attract Wealth",
-    artist: "Watch This Everyday!",
-    id: "9skVX3vTbjU"
-  },
-  {
-    num: 40,
-    title: "I AM WEALTHY & SUCCESSFUL Affirmations",
-    artist: "Listen Every Day",
-    id: "Pe6jhG7eAHM"
-  },
-  {
-    num: 41,
-    title: "Millionaire Affirmations & Song",
-    artist: "#SublimnalProsperity • #Subliminal",
-    id: "noUQO_DebLE"
-  },
-  {
-    num: 42,
-    title: "Wealth Answers to Me",
-    artist: "Powerful Money Affirmations",
-    id: "AcrcSLLOj7E"
-  },
-  {
-    num: 43,
-    title: "One Night in Dubai 🇦🇪",
-    artist: "Arash ft. Helena",
-    id: "9HyXyqxUzOQ"
-  },
-  {
-    num: 44,
-    title: "Habibi Come To Dubai",
-    artist: "Drinche ft. Dalvin",
-    id: "f2LXCW-bdGY"
-  },
-  {
-    num: 45,
-    title: "RICH Girl 💎",
-    artist: "#Monaco #Millionaire #Luxury #Life",
-    id: "JFSQQphlQJY"
-  },
-  {
-    num: 46,
-    title: "Living in Monaco — The World's Most Expensive Country",
-    artist: "4K Documentary",
-    id: "yDOBO_yqzZc"
-  },
-  {
-    num: 47,
-    title: "Monaco — Where the Glamorous Girls Hang Out 🥂",
-    artist: "#Monaco #Billionaire #Supercars",
-    id: "qIzp51Kxg3Q"
-  },
-  {
-    num: 48,
-    title: "I AM A TRILLIONAIRE 🌟 Abundance Affirmations",
-    artist: "Listen Before You Sleep!",
-    id: "_2P02Z4iMEQ"
-  },
-  {
-    num: 49,
-    title: "Think and Grow Rich",
-    artist: "Napoleon Hill • Millionaire Mindset",
-    id: "g_Yx7TkTkbI"
-  },
-  {
-    num: 50,
-    title: "WEALTH Programming for a BILLIONAIRE Mind",
-    artist: "Manifest Money Affirmations • Meditation",
-    id: "yvR9eo6qtXs"
-  },
-  {
-    num: 51,
-    title: "🔴 BILLIONAIRE LIFESTYLE — Money Visualization & Wealth Manifestation",
-    artist: "Millions, Billions, Trillions",
-    id: "Cd8QNuWyvoU"
-  },
-  {
-    num: 52,
-    title: "A Wealthy Lifestyle Manifestation 🔥",
-    artist: "Billionaire Motivational • #RichLife",
-    id: "jhvA45I_r3I"
-  },
-  {
-    num: 53,
-    title: "Hair Cutting ✂️ ke time ye zarur kijiyega 😱",
-    artist: "Astrology Tips • Bhawna Upadhyay",
-    id: "przdNEjWVQk"
-  },
-  {
-    num: 54,
-    title: "Instagram Reel ❤️",
-    artist: "Instagram",
-    id: "DTtVHVEDADT",
-    type: "instagram"
-  },
-  {
-    num: 55,
-    title: "Instagram Reel ❤️",
-    artist: "Instagram",
-    id: "Db04H-Fs9XZ",
-    type: "instagram"
-  },
-  {
-    num: 56,
-    title: "Instagram Reel ❤️",
-    artist: "Instagram",
-    id: "Dc3uDONBaOi",
-    type: "instagram"
-  },
-  {
-    num: 57,
-    title: "Instagram Reel ❤️",
-    artist: "Instagram",
-    id: "Dbn3LuUofrl",
-    type: "instagram"
-  },
-  {
-    num: 58,
-    title: "Instagram Reel ❤️",
-    artist: "Instagram",
-    id: "Dbk8LISB7bI",
-    type: "instagram"
-  },
-  {
-    num: 59,
-    title: "Instagram Reel ❤️",
-    artist: "Instagram",
-    id: "DcdizISsJMk",
-    type: "instagram"
-  },
-  {
-    num: 60,
-    title: "YouTube Short 🎬",
-    artist: "Motivation • Inspiration",
-    id: "vQx6EHQaxkg"
-  },
-  {
-    num: 61,
-    title: "Stop Waiting for the Right Time",
-    artist: "#Motivation #LifeAdvice",
-    id: "arOllCKIs7k"
-  },
-  {
-    num: 62,
-    title: "Instagram Reel ❤️",
-    artist: "Instagram",
-    id: "DMusqXsoFpB",
-    type: "instagram"
-  },
-  {
-    num: 63,
-    title: "Instagram Reel ❤️",
-    artist: "Instagram",
-    id: "DT-ASoNDDgh",
-    type: "instagram"
-  },
-  {
-    num: 64,
-    title: "Instagram Reel ❤️",
-    artist: "Instagram",
-    id: "DaD1vK7p6Iq",
-    type: "instagram"
-  },
-  {
-    num: 65,
-    title: "Instagram Reel ❤️",
-    artist: "Instagram",
-    id: "C_IljdFKbbn",
-    type: "instagram"
-  },
-  {
-    num: 66,
-    title: "Instagram Reel ❤️",
-    artist: "Instagram",
-    id: "DTaPPAFEyBC",
-    type: "instagram"
-  },
-  {
-    num: 67,
-    title: "Instagram Reel ❤️",
-    artist: "Instagram",
-    id: "Cu1i9P0JM-S",
-    type: "instagram"
-  },
-  {
-    num: 68,
-    title: "Instagram Reel ❤️",
-    artist: "Instagram",
-    id: "DWB1HYAjlzY",
-    type: "instagram"
-  },
-  {
-    num: 69,
-    title: "Instagram Reel ❤️",
-    artist: "Instagram",
-    id: "DWMZvJ2Eutf",
-    type: "instagram"
-  }
+  {num:1,title:"Hall of Fame",artist:"The Script ft. Will.i.am",id:"OhrXtqnId_o",cat:"songs"},
+  {num:2,title:"On the Floor",artist:"Jennifer Lopez ft. Pitbull",id:"t4H_Zoh7G5A",cat:"songs"},
+  {num:3,title:"Give Me Freedom, Give Me Fire",artist:"K'naan — FIFA World Cup 2010",id:"Y1bukaetjJI",cat:"songs"},
+  {num:4,title:"Unexpected Love Story ❤️",artist:"Short Film Edit",id:"iCjV-nXaQ4o",cat:"songs"},
+  {num:5,title:"Sajna Ke Sajde Mein Itna — Deewaana Deewaana",artist:"A.R. Rahman • Tere Ishq Mein",id:"jko0dgGUwic",cat:"bollywood"},
+  {num:6,title:"Tamma Tamma Loge (4K)",artist:"Bappi Lahiri • Thanedaar",id:"Xs5k7d6kzh8",cat:"bollywood"},
+  {num:7,title:"Dai Dai",artist:"Shakira ft. Burna Boy — FIFA World Cup 2026",id:"fcnDmrtj6Sk",cat:"songs"},
+  {num:8,title:"Magic in the Air",artist:"Magic System ft. Chawki",id:"BAkqJT_sMKQ",cat:"songs"},
+  {num:9,title:"I AM — Affirmations for Abundance, Success & Personal Power",artist:"VYBO — Morning Affirmations",id:"S2lbRo28GoI",cat:"affirmations"},
+  {num:10,title:"Luxury Lifestyle of Billionaires",artist:"The Most Expensive Things Money Can Buy",id:"js-XOXyqLFI",cat:"luxury"},
+  {num:11,title:"Billionaire Luxury Lifestyle 2026",artist:"Billionaire Motivation & Visualization",id:"1MbrPhTz4rE",cat:"luxury"},
+  {num:12,title:"The 48 Laws of Power — Full Audiobook",artist:"Robert Greene",id:"2P1-SunHlZg",cat:"affirmations"},
+  {num:13,title:"Build Main Character Energy & Magnetic Aura ✨",artist:"Mindset & Aura",id:"l3zV7BbpNQo",cat:"affirmations"},
+  {num:14,title:"C'est la vie",artist:"B*Witched",id:"UvjLgjtJKsc",cat:"songs"},
+  {num:15,title:"C'est la vie (Clip officiel)",artist:"Khaled",id:"H7rhMqTQ4WI",cat:"songs"},
+  {num:16,title:"C'est la Vie",artist:"MIKA",id:"Oe7AU05BuZ8",cat:"songs"},
+  {num:17,title:"श्री हनुमान चालीसा — Shree Hanuman Chalisa",artist:"Gulshan Kumar & Hariharan • Full HD",id:"AETFvQonfV8",cat:"bollywood"},
+  {num:18,title:"Dubai 4K Drone Footage — Burj Khalifa, Palm Jumeirah & Arabian Coast",artist:"Dubai • Billionaire Skyline",id:"6QjF1Oc7lpw",cat:"luxury"},
+  {num:19,title:"Inside a Dubai Billionaire's Private Island Palace",artist:"4K Cinematic Mega Mansion Tour",id:"-dEyxxUlvJc",cat:"luxury"},
+  {num:20,title:"Dubai's Ultra-Rich Lifestyle 💎 Billionaire Motivation",artist:"Luxury Visualization 2025",id:"4lrZOm8fXbM",cat:"luxury"},
+  {num:21,title:"How Dubai's Super Rich Really Live",artist:"Inside Dubai • Full Series",id:"qhyfDoNxShM",cat:"luxury"},
+  {num:22,title:"Kesuma",artist:"Dato' Sri Siti Nurhaliza • Malaysia",id:"7_AefsYp-hA",cat:"malaysia"},
+  {num:23,title:"Hello",artist:"Yuna • Malaysia",id:"U9fAUxJg0Nw",cat:"malaysia"},
+  {num:24,title:"Believer",artist:"Yuna • Malaysia",id:"h_8kzG5fN_c",cat:"malaysia"},
+  {num:25,title:"THE REVENGE — Official Title Track",artist:"Dhurandhar • Ranveer Singh | Shashwat Sachdev",id:"gpqLu7QoPs4",cat:"dhurandhar"},
+  {num:26,title:"AARI AARI",artist:"Dhurandhar The Revenge • Ranveer Singh | Bombay Rockers",id:"jzaT_sPNJrU",cat:"dhurandhar"},
+  {num:27,title:"VAARI JAAVAN",artist:"Dhurandhar The Revenge • Ranveer Singh | Jasmine Sandlas",id:"GG1_DsScm6U",cat:"dhurandhar"},
+  {num:28,title:"JAIYE SAJANA",artist:"Dhurandhar The Revenge • Ranveer Singh | Satinder Sartaaj",id:"F2m4HPLvj-4",cat:"dhurandhar"},
+  {num:29,title:"MAIN AUR TU",artist:"Dhurandhar The Revenge • Ranveer Singh | Jasmine Sandlas",id:"-dt1VE_9EJI",cat:"dhurandhar"},
+  {num:30,title:"JAAN SE GUZARTE HAIN",artist:"Dhurandhar The Revenge • Ranveer Singh & Sara Arjun",id:"ZJ5NU6pTN7M",cat:"dhurandhar"},
+  {num:31,title:"TERE ISHQ NE",artist:"Dhurandhar The Revenge • Ranveer Singh | Jyoti Nooran",id:"Zfk-FWkBkbY",cat:"dhurandhar"},
+  {num:32,title:"TAMMA TAMMA (Dhurandhar Version)",artist:"Dhurandhar The Revenge • Ranveer Singh | Bappi Lahiri",id:"SSofpP1_6F0",cat:"dhurandhar"},
+  {num:33,title:"Instagram Reel ❤️",artist:"Instagram",id:"DcODngVgws7",cat:"instagram",type:"instagram"},
+  {num:34,title:"I AM RICH — The 1% Abundance Code",artist:"Alpha Wealth Manifest",id:"BYcu4f2FLtg",cat:"affirmations"},
+  {num:35,title:"Cheri Cheri Lady ✨",artist:"Lyrics • Aesthetic Vibes",id:"O_oGMYrEMUQ",cat:"songs"},
+  {num:36,title:"BILLIONAIRE I AM Affirmations",artist:"Money, Wealth & Success • Watch Every Day",id:"AsMZQxjICwI",cat:"affirmations"},
+  {num:37,title:"Millionaire Mindset Affirmations",artist:"That Will Change Your Life! • #Mindset #Success",id:"JD4jn2owOMc",cat:"affirmations"},
+  {num:38,title:"₹1 Crore A Month is Waiting for You!!",artist:"Become a MONEY MAGNET • Manifestation",id:"aecw2Hs8vEA",cat:"affirmations"},
+  {num:39,title:"I AM RICH — Money Affirmations To Attract Wealth",artist:"Watch This Everyday!",id:"9skVX3vTbjU",cat:"affirmations"},
+  {num:40,title:"I AM WEALTHY & SUCCESSFUL Affirmations",artist:"Listen Every Day",id:"Pe6jhG7eAHM",cat:"affirmations"},
+  {num:41,title:"Millionaire Affirmations & Song",artist:"#SublimnalProsperity • #Subliminal",id:"noUQO_DebLE",cat:"affirmations"},
+  {num:42,title:"Wealth Answers to Me",artist:"Powerful Money Affirmations",id:"AcrcSLLOj7E",cat:"affirmations"},
+  {num:43,title:"One Night in Dubai 🇦🇪",artist:"Arash ft. Helena",id:"9HyXyqxUzOQ",cat:"songs"},
+  {num:44,title:"Habibi Come To Dubai",artist:"Drinche ft. Dalvin",id:"f2LXCW-bdGY",cat:"songs"},
+  {num:45,title:"RICH Girl 💎",artist:"#Monaco #Millionaire #Luxury #Life",id:"JFSQQphlQJY",cat:"luxury"},
+  {num:46,title:"Living in Monaco — The World's Most Expensive Country",artist:"4K Documentary",id:"yDOBO_yqzZc",cat:"luxury"},
+  {num:47,title:"Monaco — Where the Glamorous Girls Hang Out 🥂",artist:"#Monaco #Billionaire #Supercars",id:"qIzp51Kxg3Q",cat:"luxury"},
+  {num:48,title:"I AM A TRILLIONAIRE 🌟 Abundance Affirmations",artist:"Listen Before You Sleep!",id:"_2P02Z4iMEQ",cat:"affirmations"},
+  {num:49,title:"Think and Grow Rich",artist:"Napoleon Hill • Millionaire Mindset",id:"g_Yx7TkTkbI",cat:"affirmations"},
+  {num:50,title:"WEALTH Programming for a BILLIONAIRE Mind",artist:"Manifest Money Affirmations • Meditation",id:"yvR9eo6qtXs",cat:"affirmations"},
+  {num:51,title:"🔴 BILLIONAIRE LIFESTYLE — Money Visualization & Wealth Manifestation",artist:"Millions, Billions, Trillions",id:"Cd8QNuWyvoU",cat:"affirmations"},
+  {num:52,title:"A Wealthy Lifestyle Manifestation 🔥",artist:"Billionaire Motivational • #RichLife",id:"jhvA45I_r3I",cat:"affirmations"},
+  {num:53,title:"Hair Cutting ✂️ ke time ye zarur kijiyega 😱",artist:"Astrology Tips • Bhawna Upadhyay",id:"przdNEjWVQk",cat:"bollywood"},
+  {num:54,title:"Instagram Reel ❤️",artist:"Instagram",id:"DTtVHVEDADT",cat:"instagram",type:"instagram"},
+  {num:55,title:"Instagram Reel ❤️",artist:"Instagram",id:"Db04H-Fs9XZ",cat:"instagram",type:"instagram"},
+  {num:56,title:"Instagram Reel ❤️",artist:"Instagram",id:"Dc3uDONBaOi",cat:"instagram",type:"instagram"},
+  {num:57,title:"Instagram Reel ❤️",artist:"Instagram",id:"Dbn3LuUofrl",cat:"instagram",type:"instagram"},
+  {num:58,title:"Instagram Reel ❤️",artist:"Instagram",id:"Dbk8LISB7bI",cat:"instagram",type:"instagram"},
+  {num:59,title:"Instagram Reel ❤️",artist:"Instagram",id:"DcdizISsJMk",cat:"instagram",type:"instagram"},
+  {num:60,title:"YouTube Short 🎬",artist:"Motivation • Inspiration",id:"vQx6EHQaxkg",cat:"affirmations"},
+  {num:61,title:"Stop Waiting for the Right Time",artist:"#Motivation #LifeAdvice",id:"arOllCKIs7k",cat:"affirmations"},
+  {num:62,title:"Instagram Reel ❤️",artist:"Instagram",id:"DMusqXsoFpB",cat:"instagram",type:"instagram"},
+  {num:63,title:"Instagram Reel ❤️",artist:"Instagram",id:"DT-ASoNDDgh",cat:"instagram",type:"instagram"},
+  {num:64,title:"Instagram Reel ❤️",artist:"Instagram",id:"DaD1vK7p6Iq",cat:"instagram",type:"instagram"},
+  {num:65,title:"Instagram Reel ❤️",artist:"Instagram",id:"C_IljdFKbbn",cat:"instagram",type:"instagram"},
+  {num:66,title:"Instagram Reel ❤️",artist:"Instagram",id:"DTaPPAFEyBC",cat:"instagram",type:"instagram"},
+  {num:67,title:"Instagram Reel ❤️",artist:"Instagram",id:"Cu1i9P0JM-S",cat:"instagram",type:"instagram"},
+  {num:68,title:"Instagram Reel ❤️",artist:"Instagram",id:"DWB1HYAjlzY",cat:"instagram",type:"instagram"},
+  {num:69,title:"Instagram Reel ❤️",artist:"Instagram",id:"DWMZvJ2Eutf",cat:"instagram",type:"instagram"},
 ];
 
-const grid = document.getElementById('grid');
+/* ── State ── */
+let activeCat = 'all';
+let searchQ   = '';
+let favs      = JSON.parse(localStorage.getItem('rajeev_favs') || '[]');
+let nowPlaying = null;
+
+/* ── Helpers ── */
+const grid       = document.getElementById('grid');
+const noResults  = document.getElementById('no-results');
+const countEl    = document.getElementById('total-count');
+const footerEl   = document.getElementById('footer-count');
+const scrollBtn  = document.getElementById('scroll-top');
+const searchEl   = document.getElementById('search');
+
+function saveFavs(){ localStorage.setItem('rajeev_favs', JSON.stringify(favs)); }
+
+function isVisible(s){
+  if(activeCat === 'fav') return favs.includes(s.num);
+  if(activeCat !== 'all' && s.cat !== activeCat) return false;
+  if(!searchQ) return true;
+  return (s.title+' '+s.artist).toLowerCase().includes(searchQ.toLowerCase());
+}
+
+function igThumb(){
+  return `<div style="width:100%;height:100%;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;"><svg width="48" height="48" viewBox="0 0 24 24" fill="white" opacity=".95"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg><span style="color:white;font-size:.72rem;opacity:.85;font-family:Poppins,sans-serif;">Tap to open Reel</span></div>`;
+}
+
+/* ── Build Cards ── */
+const cardEls = {};
 
 songs.forEach(s => {
-  const isIG = s.type === 'instagram';
+  const isIG  = s.type === 'instagram';
   const wrapId = 'wrap-' + s.num;
-
-  const thumbHTML = isIG
-    ? `<div style="width:100%;height:100%;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
-        <svg width="52" height="52" viewBox="0 0 24 24" fill="white" opacity="0.95"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        <span style="color:white;font-size:0.75rem;opacity:0.85;font-family:Poppins,sans-serif;">Tap to open Reel</span>
-       </div>`
-    : `<img src="https://img.youtube.com/vi/${s.id}/hqdefault.jpg" alt="${s.title}" loading="lazy">`;
+  const [tagBg, tagFg] = CAT_COLORS[s.cat] || ['#444','#fff'];
+  const isFav = favs.includes(s.num);
 
   const card = document.createElement('article');
   card.className = 'card';
+  card.dataset.num = s.num;
+  card.dataset.cat = s.cat;
+
   card.innerHTML = `
     <div class="thumb-wrap" id="${wrapId}">
-      ${thumbHTML}
-      <div class="play-btn">
-        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-      </div>
+      ${isIG ? igThumb() : `<img src="https://img.youtube.com/vi/${s.id}/hqdefault.jpg" alt="${s.title}" loading="lazy">`}
+      <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       <div class="num-badge">${s.num}</div>
     </div>
+    <button class="heart-btn${isFav?' loved':''}" data-num="${s.num}" title="Favourite">${isFav?'❤️':'🤍'}</button>
     <div class="card-body">
       <h2>${s.title}</h2>
       <p class="artist">${s.artist}</p>
-    </div>
-  `;
+      <span class="cat-tag" style="background:${tagBg}20;color:${tagBg};border:1px solid ${tagBg}40">${CAT_LABELS[s.cat]||s.cat}</span>
+    </div>`;
 
-  card.querySelector('.thumb-wrap').addEventListener('click', function () {
-    if (isIG) {
-      window.open(`https://www.instagram.com/reel/${s.id}/`, '_blank');
-      return;
-    }
+  /* Play */
+  card.querySelector('.thumb-wrap').addEventListener('click', () => {
+    if(isIG){ window.open(`https://www.instagram.com/reel/${s.id}/`,'_blank'); return; }
     const wrap = document.getElementById(wrapId);
-    if (wrap.querySelector('iframe')) return;
+    if(wrap.querySelector('iframe')) return;
+    /* stop previous */
+    if(nowPlaying && nowPlaying !== card){
+      const prev = nowPlaying.querySelector('iframe');
+      if(prev) prev.remove();
+      const prevLabel = nowPlaying.querySelector('.now-playing-label');
+      if(prevLabel) prevLabel.remove();
+      nowPlaying.classList.remove('playing');
+    }
+    nowPlaying = card;
+    card.classList.add('playing');
+    const lbl = document.createElement('div');
+    lbl.className = 'now-playing-label';
+    lbl.textContent = '▶ Now Playing';
+    wrap.appendChild(lbl);
     const iframe = document.createElement('iframe');
     iframe.src = `https://www.youtube.com/embed/${s.id}?autoplay=1&rel=0`;
     iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
@@ -682,8 +287,74 @@ songs.forEach(s => {
     wrap.appendChild(iframe);
   });
 
+  /* Heart */
+  card.querySelector('.heart-btn').addEventListener('click', e => {
+    e.stopPropagation();
+    const btn = e.currentTarget;
+    const n = parseInt(btn.dataset.num);
+    if(favs.includes(n)){
+      favs = favs.filter(x => x !== n);
+      btn.textContent = '🤍'; btn.classList.remove('loved');
+    } else {
+      favs.push(n);
+      btn.textContent = '❤️'; btn.classList.add('loved');
+    }
+    saveFavs();
+    if(activeCat === 'fav') applyFilter();
+  });
+
+  cardEls[s.num] = card;
   grid.appendChild(card);
 });
+
+/* ── Filter / Search ── */
+function applyFilter(){
+  let visible = 0;
+  songs.forEach(s => {
+    const show = isVisible(s);
+    cardEls[s.num].classList.toggle('hidden', !show);
+    if(show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+  countEl.textContent = visible === songs.length ? `${songs.length} videos` : `${visible} of ${songs.length}`;
+  footerEl.textContent = `${visible} video${visible!==1?'s':''} showing`;
+}
+
+/* ── Tabs ── */
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    activeCat = tab.dataset.cat;
+    applyFilter();
+  });
+});
+
+/* ── Search ── */
+searchEl.addEventListener('input', e => {
+  searchQ = e.target.value.trim();
+  applyFilter();
+});
+
+/* ── Surprise Me ── */
+document.getElementById('surprise-btn').addEventListener('click', () => {
+  const visible = songs.filter(isVisible);
+  if(!visible.length) return;
+  const s = visible[Math.floor(Math.random() * visible.length)];
+  const card = cardEls[s.num];
+  card.scrollIntoView({behavior:'smooth', block:'center'});
+  setTimeout(() => card.querySelector('.thumb-wrap').click(), 600);
+});
+
+/* ── Scroll to Top ── */
+window.addEventListener('scroll', () => {
+  scrollBtn.classList.toggle('visible', window.scrollY > 300);
+});
+scrollBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+/* ── Init ── */
+footerEl.textContent = `${songs.length} videos showing`;
+applyFilter();
 </script>
 </body>
 </html>
