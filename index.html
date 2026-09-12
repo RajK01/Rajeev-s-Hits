@@ -111,6 +111,30 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
 #remind-clear{padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:transparent;color:rgba(255,255,255,.5);font-family:inherit;font-size:.85rem;cursor:pointer}
 #remind-status{font-size:.78rem;color:#f5a623;min-height:18px}
 #remind-close{margin-top:14px;background:none;border:none;color:rgba(255,255,255,.3);font-size:.8rem;cursor:pointer}
+
+/* GYM PANEL */
+#gym-panel{display:none;position:relative;z-index:1;max-width:1280px;margin:18px auto 80px;padding:0 20px}
+.gym-header{text-align:center;margin-bottom:24px}
+.gym-header h2{font-size:1.6rem;font-weight:900;background:linear-gradient(135deg,#22d3ee,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gym-header p{color:rgba(255,255,255,.4);font-size:.82rem;margin-top:4px}
+.gym-day{margin-bottom:22px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);overflow:hidden;transition:box-shadow .3s}
+.gym-today{border-color:rgba(255,215,0,.35)!important;box-shadow:0 0 30px rgba(255,215,0,.08)}
+.gym-day-header{padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:14px}
+.gym-day-bar{width:4px;height:48px;border-radius:4px;flex-shrink:0}
+.gym-day-name{font-size:1rem;font-weight:800;display:block;letter-spacing:.3px}
+.gym-workout-name{font-size:.8rem;color:rgba(255,255,255,.45);margin-top:3px}
+.today-badge{display:inline-block;margin-left:8px;padding:2px 9px;border-radius:999px;background:rgba(255,215,0,.15);border:1px solid rgba(255,215,0,.4);color:#ffd700;font-size:.65rem;font-weight:700;vertical-align:middle}
+.gym-exercises-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;padding:14px}
+.gym-ex-card{border-radius:12px;overflow:hidden;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);transition:transform .2s,box-shadow .2s}
+.gym-ex-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(0,0,0,.45)}
+.gym-ex-img{aspect-ratio:4/3;overflow:hidden;background:#111}
+.gym-ex-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.gym-ex-card:hover .gym-ex-img img{transform:scale(1.06)}
+.gym-ex-body{padding:11px 13px}
+.gym-ex-name{font-size:.9rem;font-weight:800;color:#fff;margin-bottom:3px}
+.gym-ex-sets{font-size:.7rem;font-weight:700;margin-bottom:8px;letter-spacing:.3px}
+.gym-ex-vars{display:flex;flex-wrap:wrap;gap:5px}
+.gym-var-chip{padding:3px 9px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);font-size:.62rem;color:rgba(255,255,255,.65);font-weight:500}
 </style>
 </head>
 <body>
@@ -158,6 +182,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
     <button class="tab" data-cat="luxury">🏙️ Luxury & Dubai</button>
     <button class="tab" data-cat="instagram">📱 Instagram</button>
     <button class="tab" data-cat="gdrive">📁 My Videos</button>
+    <button class="tab" data-cat="gym">💪 Gym Plan</button>
     <button class="tab" data-cat="chalisa">🙏 Hanuman Chalisa</button>
   </div>
 </div>
@@ -165,6 +190,8 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
 <main id="grid">
   <div id="no-results">😕 No results found. Try a different search or filter.</div>
 </main>
+
+<div id="gym-panel"></div>
 
 <div id="chalisa-panel">
   <div class="chalisa-box">
@@ -245,10 +272,11 @@ const CAT_COLORS = {
   luxury:       ['#f5a623','#1a1000'],
   instagram:    ['#e1306c','#1a0010'],
   gdrive:       ['#4285f4','#000e1a'],
+  gym:          ['#22d3ee','#001a1a'],
 };
 const CAT_LABELS = {
   songs:'Songs', bollywood:'Bollywood', dhurandhar:'Dhurandhar',
-  malaysia:'Malaysia', affirmations:'Affirmations', luxury:'Luxury', instagram:'Instagram', gdrive:'My Videos'
+  malaysia:'Malaysia', affirmations:'Affirmations', luxury:'Luxury', instagram:'Instagram', gdrive:'My Videos', gym:'Gym'
 };
 
 const songs = [
@@ -479,7 +507,100 @@ function applyFilter(){
 
 /* ── Tabs ── */
 const chalisaPanel = document.getElementById('chalisa-panel');
-const gridEl = document.getElementById('grid');
+const gymPanel     = document.getElementById('gym-panel');
+const gridEl       = document.getElementById('grid');
+
+const GYM_DAYS = [
+  {key:'Monday',    color:'#ef4444', emoji:'🔴', workout:'Chest + Arms + Wrists'},
+  {key:'Tuesday',   color:'#f59e0b', emoji:'🟠', workout:'Biceps + Triceps'},
+  {key:'Wednesday', color:'#10b981', emoji:'🟢', workout:'Back + Cardio'},
+  {key:'Thursday',  color:'#8b5cf6', emoji:'🟣', workout:'Shoulder + Abs'},
+  {key:'Friday',    color:'#3b82f6', emoji:'🔵', workout:'Legs + Glutes + Biceps'},
+];
+
+const GYM_DATA = [
+  { day:'Monday',    color:'#ef4444', emoji:'🔴', workout:'Chest + Arms + Wrists',
+    exercises:[
+      { name:'Bench Press',    sets:'4 × 10 reps', vars:['Flat','Incline','Decline','Smith Machine'],          img:'photo-1571019614242-c5c5dee9f50b' },
+      { name:'Dumbbell Flyes', sets:'3 × 12 reps', vars:['Flat','Incline','Cable Crossover','Pec Deck'],       img:'photo-1583454110551-21f2fa2afe61' },
+      { name:'Push-ups',       sets:'3 × 15 reps', vars:['Wide Grip','Close Grip','Decline','Diamond'],        img:'photo-1598971639058-fab3c3109a17' },
+      { name:'Wrist Curls',    sets:'3 × 20 reps', vars:['Barbell','Dumbbell','Reverse Curl','Wrist Roller'],  img:'photo-1597452485669-10bb1a9bdc51' },
+    ]
+  },
+  { day:'Tuesday',   color:'#f59e0b', emoji:'🟠', workout:'Biceps + Triceps',
+    exercises:[
+      { name:'Barbell Curl',      sets:'4 × 10 reps', vars:['Standing','EZ-Bar','21s Method','Drag Curl'],        img:'photo-1581009146145-b5ef050c2e1e' },
+      { name:'Dumbbell Curl',     sets:'3 × 12 reps', vars:['Hammer','Concentration','Incline','Cross-Body'],     img:'photo-1583454155184-870a1f63aebc' },
+      { name:'Tricep Pushdown',   sets:'4 × 12 reps', vars:['Rope','Straight Bar','V-Bar','Single-Arm'],          img:'photo-1534438327276-14e5300c3a48' },
+      { name:'Skull Crushers',    sets:'3 × 10 reps', vars:['EZ-Bar','Dumbbell','Overhead Cable Ext.'],           img:'photo-1576678927484-cc907957088c' },
+    ]
+  },
+  { day:'Wednesday', color:'#10b981', emoji:'🟢', workout:'Back + Cardio',
+    exercises:[
+      { name:'Pull-ups',      sets:'4 × 8 reps',  vars:['Wide Grip','Close Grip','Neutral','Assisted'],           img:'photo-1603287681836-b174ce5074c2' },
+      { name:'Rows',          sets:'4 × 10 reps', vars:['Bent Over','Seated Cable','T-Bar','Single-Arm DB'],       img:'photo-1532029837206-abbe2b7620e3' },
+      { name:'Lat Pulldown',  sets:'3 × 12 reps', vars:['Wide Grip','Close Grip','Reverse Grip','Straight-Arm'],  img:'photo-1614928228253-dc3a8f8a7c45' },
+      { name:'Cardio',        sets:'20 minutes',  vars:['Treadmill','Stationary Bike','Rowing Machine','Jump Rope'],img:'photo-1571008887538-b36bb32f4571' },
+    ]
+  },
+  { day:'Thursday',  color:'#8b5cf6', emoji:'🟣', workout:'Shoulder + Abs',
+    exercises:[
+      { name:'Overhead Press',  sets:'4 × 10 reps', vars:['Barbell','Dumbbell','Arnold Press','Machine'],         img:'photo-1541534741688-6078c6bfb5c5' },
+      { name:'Lateral Raises',  sets:'3 × 15 reps', vars:['Dumbbell','Cable','Machine','Leaning Side Raise'],     img:'photo-1540496905036-5937c10647cc' },
+      { name:'Face Pulls',      sets:'3 × 15 reps', vars:['Rope Cable','Reverse Pec Deck','Band Pull-Apart'],     img:'photo-1532029837206-abbe2b7620e3' },
+      { name:'Abs Circuit',     sets:'4 rounds',    vars:['Plank','Crunches','Leg Raises','Russian Twist','Bicycle'],img:'photo-1517963879433-6ad2b056d712' },
+    ]
+  },
+  { day:'Friday',    color:'#3b82f6', emoji:'🔵', workout:'Legs + Glutes + Biceps',
+    exercises:[
+      { name:'Squats',      sets:'4 × 10 reps', vars:['Barbell Back','Front Squat','Goblet','Bulgarian Split'],   img:'photo-1434608519344-49d77a699e1d' },
+      { name:'Hip Thrusts', sets:'4 × 12 reps', vars:['Barbell','Banded','Single-Leg','Smith Machine'],          img:'photo-1605296867304-46d5465a13f1' },
+      { name:'Lunges',      sets:'3 × 12 reps', vars:['Walking','Reverse','Lateral','Curtsy Lunge'],             img:'photo-1549060279-7e168fcee0c2' },
+      { name:'Bicep Curls', sets:'3 × 12 reps', vars:['Preacher Curl','Cable Curl','Incline DB','Spider Curl'],  img:'photo-1581009146145-b5ef050c2e1e' },
+    ]
+  },
+];
+
+let gymBuilt = false;
+function buildGymPanel(){
+  const todayName = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][new Date().getDay()];
+  gymPanel.innerHTML = `
+    <div class="gym-header">
+      <h2>💪 Weekly Gym Plan</h2>
+      <p>Monday → Friday • Exercise variations & sets</p>
+    </div>
+    ${GYM_DATA.map(d => {
+      const isToday = d.day === todayName;
+      return `
+        <div class="gym-day${isToday?' gym-today':''}">
+          <div class="gym-day-header">
+            <div class="gym-day-bar" style="background:${d.color}"></div>
+            <div>
+              <span class="gym-day-name" style="color:${d.color}">${d.emoji} ${d.day}${isToday?'<span class="today-badge">Today 🔥</span>':''}</span>
+              <div class="gym-workout-name">💪 ${d.workout}</div>
+            </div>
+          </div>
+          <div class="gym-exercises-grid">
+            ${d.exercises.map(ex => `
+              <div class="gym-ex-card">
+                <div class="gym-ex-img">
+                  <img src="https://images.unsplash.com/${ex.img}?w=320&h=240&fit=crop&auto=format"
+                       alt="${ex.name}" loading="lazy"
+                       onerror="this.parentElement.style.background='#1a1025';this.style.display='none'">
+                </div>
+                <div class="gym-ex-body">
+                  <div class="gym-ex-name">${ex.name}</div>
+                  <div class="gym-ex-sets" style="color:${d.color}">${ex.sets}</div>
+                  <div class="gym-ex-vars">
+                    ${ex.vars.map(v=>`<span class="gym-var-chip">${v}</span>`).join('')}
+                  </div>
+                </div>
+              </div>`).join('')}
+          </div>
+        </div>`;
+    }).join('')}`;
+}
+
 document.querySelectorAll('.tab').forEach(tab => {
   tab.addEventListener('click', () => {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -488,9 +609,16 @@ document.querySelectorAll('.tab').forEach(tab => {
     if(activeCat === 'chalisa'){
       gridEl.style.display = 'none';
       chalisaPanel.style.display = 'block';
+      gymPanel.style.display = 'none';
+    } else if(activeCat === 'gym'){
+      gridEl.style.display = 'none';
+      chalisaPanel.style.display = 'none';
+      gymPanel.style.display = 'block';
+      if(!gymBuilt){ buildGymPanel(); gymBuilt = true; }
     } else {
       gridEl.style.display = '';
       chalisaPanel.style.display = 'none';
+      gymPanel.style.display = 'none';
       applyFilter();
     }
   });
