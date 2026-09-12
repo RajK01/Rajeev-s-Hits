@@ -135,6 +135,35 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
 .gym-ex-sets{font-size:.7rem;font-weight:700;margin-bottom:8px;letter-spacing:.3px}
 .gym-ex-vars{display:flex;flex-wrap:wrap;gap:5px}
 .gym-var-chip{padding:3px 9px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);font-size:.62rem;color:rgba(255,255,255,.65);font-weight:500}
+
+/* BUCKET LIST */
+#bucket-panel{display:none;position:relative;z-index:1;max-width:1280px;margin:18px auto 80px;padding:0 20px}
+.bucket-header{text-align:center;margin-bottom:22px}
+.bucket-header h2{font-size:1.6rem;font-weight:900;background:linear-gradient(135deg,#f5a623,#e040fb,#29b6f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.bucket-header p{color:rgba(255,255,255,.4);font-size:.82rem;margin-top:4px;margin-bottom:14px}
+.bucket-progress-wrap{display:inline-flex;flex-direction:column;align-items:center;gap:6px}
+.bucket-progress-bar{width:260px;height:8px;background:rgba(255,255,255,.1);border-radius:999px;overflow:hidden}
+.bucket-progress-fill{height:100%;background:linear-gradient(90deg,#f5a623,#e040fb);border-radius:999px;transition:width .5s}
+.bucket-progress-text{font-size:.75rem;color:rgba(255,255,255,.45)}
+.bucket-cats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;justify-content:center}
+.bucket-cat-btn{padding:8px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:rgba(255,255,255,.55);font-family:inherit;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s}
+.bucket-cat-btn:hover{background:rgba(255,255,255,.1);color:#fff}
+.bucket-cat-btn.bucket-cat-active{background:rgba(255,255,255,.08);border-color:var(--bc,#f5a623);color:var(--bc,#f5a623);box-shadow:0 0 12px color-mix(in srgb,var(--bc,#f5a623) 30%,transparent)}
+.bucket-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.bucket-card{border-radius:16px;overflow:hidden;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);transition:transform .25s,box-shadow .25s}
+.bucket-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.bucket-card.bucket-visited{border-color:rgba(34,197,94,.4);background:rgba(34,197,94,.04)}
+.bucket-img-wrap{position:relative;aspect-ratio:16/10;overflow:hidden;background:#111}
+.bucket-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.bucket-card:hover .bucket-img-wrap img{transform:scale(1.06)}
+.bucket-done-overlay{position:absolute;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:800;color:#4ade80;letter-spacing:1px}
+.bucket-body{padding:14px 16px}
+.bucket-name{font-size:1rem;font-weight:800;color:#fff;margin-bottom:3px}
+.bucket-area{font-size:.72rem;color:rgba(255,255,255,.38);margin-bottom:6px}
+.bucket-desc{font-size:.78rem;color:rgba(255,255,255,.52);line-height:1.5;margin-bottom:12px}
+.bucket-check-btn{width:100%;padding:9px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:rgba(255,255,255,.55);font-family:inherit;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s}
+.bucket-check-btn:hover{background:rgba(255,255,255,.12);color:#fff}
+.bucket-check-btn.checked{background:rgba(34,197,94,.14);border-color:rgba(34,197,94,.45);color:#4ade80}
 </style>
 </head>
 <body>
@@ -183,6 +212,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
     <button class="tab" data-cat="instagram">📱 Instagram</button>
     <button class="tab" data-cat="gdrive">📁 My Videos</button>
     <button class="tab" data-cat="gym">💪 Gym Plan</button>
+    <button class="tab" data-cat="bucket">✨ Bucket List</button>
     <button class="tab" data-cat="chalisa">🙏 Hanuman Chalisa</button>
   </div>
 </div>
@@ -192,6 +222,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
 </main>
 
 <div id="gym-panel"></div>
+<div id="bucket-panel"></div>
 
 <div id="chalisa-panel">
   <div class="chalisa-box">
@@ -508,7 +539,122 @@ function applyFilter(){
 /* ── Tabs ── */
 const chalisaPanel = document.getElementById('chalisa-panel');
 const gymPanel     = document.getElementById('gym-panel');
+const bucketPanel  = document.getElementById('bucket-panel');
 const gridEl       = document.getElementById('grid');
+
+/* ── Bucket List Data ── */
+const BUCKET_DATA = [
+  {id:'r1',cat:'restaurant',name:'Jamavar',area:'The Leela Palace, Old Airport Road',desc:'Celebrated royal Indian fine dining — opulent interiors & exquisite cuisine',img:'photo-1414235077428-338989a2e8c0'},
+  {id:'r2',cat:'restaurant',name:'Rim Naam',area:'The Oberoi, MG Road',desc:'Sophisticated Thai cuisine in Bangalore\'s most elegant hotel setting',img:'photo-1559339352-11d035aa65de'},
+  {id:'r3',cat:'restaurant',name:'Toscano',area:'The Leela Palace, Old Airport Road',desc:'Authentic Italian fine dining — handmade pasta, fine wine & stunning décor',img:'photo-1504674900247-0877df9cc836'},
+  {id:'r4',cat:'restaurant',name:'Blue Ginger',area:'Taj West End, Race Course Road',desc:'Award-winning Vietnamese cuisine in a lush heritage garden setting',img:'photo-1555396273-367ea4eb4db5'},
+  {id:'r5',cat:'restaurant',name:'Edo',area:'ITC Gardenia, Residency Road',desc:'Premium Japanese fine dining — sushi, sashimi & live teppanyaki',img:'photo-1563245372-f21724e3856d'},
+  {id:'r6',cat:'restaurant',name:'Karavalli',area:'The Gateway Hotel, Residency Road',desc:'Iconic coastal Indian restaurant — Mangalorean & Kerala masterpieces',img:'photo-1565299624946-b28f40a0ae38'},
+  {id:'h1',cat:'hotel',name:'The Leela Palace',area:'Old Airport Road',desc:'Bangalore\'s most iconic palace hotel — gold, grandeur & world-class luxury',img:'photo-1551882547-ff40c63fe5fa'},
+  {id:'h2',cat:'hotel',name:'The Oberoi',area:'MG Road',desc:'Refined elegance at the heart of the city — stunning pool & manicured gardens',img:'photo-1542314831-068cd1dbfeeb'},
+  {id:'h3',cat:'hotel',name:'ITC Windsor',area:'Golf Course Road',desc:'Heritage luxury reimagined — Bangalore\'s grand old dame with modern opulence',img:'photo-1520250497591-112f2f40a3f4'},
+  {id:'h4',cat:'hotel',name:'Ritz-Carlton',area:'Residency Road',desc:'Contemporary luxury with Bangalore\'s most stunning infinity rooftop pool',img:'photo-1578683010236-d716f9a3f461'},
+  {id:'h5',cat:'hotel',name:'Taj West End',area:'Race Course Road',desc:'125-year-old heritage property set in 20 acres of lush tropical gardens',img:'photo-1445019980597-93fa8acb246c'},
+  {id:'h6',cat:'hotel',name:'Conrad Bengaluru',area:'Sheshadri Road',desc:'Sleek modern luxury skyscraper with panoramic views of the Bangalore skyline',img:'photo-1631049307264-da0ec9d70304'},
+  {id:'s1',cat:'shopping',name:'UB City Mall',area:'Vittal Mallya Road',desc:'Bangalore\'s premier luxury destination — Louis Vuitton, Gucci, Prada & more',img:'photo-1441986300917-64674bd600d8'},
+  {id:'s2',cat:'shopping',name:'Leela Galleria',area:'Old Airport Road',desc:'Curated luxury boutiques inside The Leela Palace — India\'s finest brands',img:'photo-1490481651871-ab68de25d43d'},
+  {id:'s3',cat:'shopping',name:'Prestige Forum',area:'Koramangala',desc:'Premium lifestyle mall with top international brands & gourmet dining',img:'photo-1555529669-e69e7aa0ba9a'},
+  {id:'b1',cat:'rooftop',name:'Skyye Bar',area:'UB City, Vittal Mallya Road',desc:'Bangalore\'s most glamorous rooftop — stunning city views, craft cocktails & DJs',img:'photo-1543007630-9359815b6a8a'},
+  {id:'b2',cat:'rooftop',name:'Alto Vino',area:'Sheraton Grand, Palace Grounds',desc:'Rooftop Italian bar & restaurant with panoramic Bangalore skyline views',img:'photo-1514362545857-3bc16c4c7d1b'},
+  {id:'b3',cat:'rooftop',name:'The Rooftop Lounge',area:'St. Regis, Residency Road',desc:'Exclusive sky lounge with handcrafted cocktails & breathtaking city panoramas',img:'photo-1470337458703-46ad1756a187'},
+  {id:'b4',cat:'rooftop',name:'Copperstone',area:'Sheraton Grand, Palace Grounds',desc:'Elegant rooftop bar known for its premium whisky collection & live jazz',img:'photo-1566417713940-fe7c737a9ef2'},
+  {id:'p1',cat:'spa',name:'The Oberoi Spa',area:'The Oberoi, MG Road',desc:'World-class spa — Ayurveda, deep tissue massage & aromatherapy treatments',img:'photo-1540555700478-4be289fbecef'},
+  {id:'p2',cat:'spa',name:'The Leela Spa',area:'The Leela Palace, Old Airport Road',desc:'Royal spa rituals inspired by ancient Indian wellness traditions',img:'photo-1519823551278-64ac92734fb1'},
+  {id:'p3',cat:'spa',name:'Jiva Spa',area:'Taj West End, Race Course Road',desc:'Holistic wellness sanctuary with traditional Indian healing therapies',img:'photo-1512290923902-8a9f81dc236c'},
+  {id:'p4',cat:'spa',name:'Ritz-Carlton Spa',area:'Residency Road',desc:'Luxury wellness haven with customized treatments & thermal suite facilities',img:'photo-1560750588-73207b1ef5b8'},
+];
+
+const BUCKET_CATS = [
+  {key:'all',        label:'✨ All',          color:'#f5a623'},
+  {key:'restaurant', label:'🍽️ Restaurants',  color:'#ef4444'},
+  {key:'hotel',      label:'🏨 Hotels',        color:'#8b5cf6'},
+  {key:'shopping',   label:'🛍️ Shopping',      color:'#ec4899'},
+  {key:'rooftop',    label:'🍸 Rooftop Bars',  color:'#f59e0b'},
+  {key:'spa',        label:'💆 Spas',           color:'#10b981'},
+];
+
+let bucketBuilt = false;
+function buildBucketPanel(){
+  let bucketVisited = JSON.parse(localStorage.getItem('rajeev_bucket') || '[]');
+  const total = BUCKET_DATA.length;
+
+  function getVisited(){ return JSON.parse(localStorage.getItem('rajeev_bucket') || '[]'); }
+
+  bucketPanel.innerHTML = `
+    <div class="bucket-header">
+      <h2>✨ Bangalore Rich Life Bucket List</h2>
+      <p>Tick off each experience as you level up your rich life 🚀</p>
+      <div class="bucket-progress-wrap">
+        <div class="bucket-progress-bar"><div class="bucket-progress-fill" id="bpfill" style="width:${(getVisited().length/total*100).toFixed(0)}%"></div></div>
+        <div class="bucket-progress-text"><span id="bpcount">${getVisited().length}</span> of ${total} visited 🎯</div>
+      </div>
+    </div>
+    <div class="bucket-cats">
+      ${BUCKET_CATS.map(c=>`<button class="bucket-cat-btn${c.key==='all'?' bucket-cat-active':''}" data-bcat="${c.key}" style="--bc:${c.color}">${c.label}</button>`).join('')}
+    </div>
+    <div class="bucket-grid">
+      ${BUCKET_DATA.map(item=>{
+        const vis = getVisited().includes(item.id);
+        return `<div class="bucket-card${vis?' bucket-visited':''}" data-bcat="${item.cat}">
+          <div class="bucket-img-wrap">
+            <img src="https://images.unsplash.com/${item.img}?w=400&h=260&fit=crop&auto=format" alt="${item.name}" loading="lazy" onerror="this.style.display='none'">
+            ${vis?'<div class="bucket-done-overlay">✅ Visited!</div>':''}
+          </div>
+          <div class="bucket-body">
+            <div class="bucket-name">${item.name}</div>
+            <div class="bucket-area">📍 ${item.area}</div>
+            <div class="bucket-desc">${item.desc}</div>
+            <button class="bucket-check-btn${vis?' checked':''}" data-bid="${item.id}">${vis?'✅ Visited!':'⬜ Mark as Visited'}</button>
+          </div>
+        </div>`;
+      }).join('')}
+    </div>`;
+
+  bucketPanel.querySelectorAll('.bucket-cat-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      bucketPanel.querySelectorAll('.bucket-cat-btn').forEach(b=>b.classList.remove('bucket-cat-active'));
+      btn.classList.add('bucket-cat-active');
+      const cat = btn.dataset.bcat;
+      bucketPanel.querySelectorAll('.bucket-card').forEach(c=>{
+        c.style.display=(cat==='all'||c.dataset.bcat===cat)?'':'none';
+      });
+    });
+  });
+
+  bucketPanel.querySelectorAll('.bucket-check-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const id = btn.dataset.bid;
+      let v = getVisited();
+      const card = btn.closest('.bucket-card');
+      const imgWrap = card.querySelector('.bucket-img-wrap');
+      if(v.includes(id)){
+        v = v.filter(x=>x!==id);
+        card.classList.remove('bucket-visited');
+        btn.classList.remove('checked');
+        btn.textContent='⬜ Mark as Visited';
+        const ol=imgWrap.querySelector('.bucket-done-overlay');
+        if(ol) ol.remove();
+      } else {
+        v.push(id);
+        card.classList.add('bucket-visited');
+        btn.classList.add('checked');
+        btn.textContent='✅ Visited!';
+        const ol=document.createElement('div');
+        ol.className='bucket-done-overlay';
+        ol.textContent='✅ Visited!';
+        imgWrap.appendChild(ol);
+      }
+      localStorage.setItem('rajeev_bucket',JSON.stringify(v));
+      document.getElementById('bpcount').textContent=v.length;
+      document.getElementById('bpfill').style.width=`${(v.length/total*100).toFixed(0)}%`;
+    });
+  });
+}
 
 const GYM_DAYS = [
   {key:'Monday',    color:'#ef4444', emoji:'🔴', workout:'Chest + Arms + Wrists'},
@@ -607,18 +753,15 @@ document.querySelectorAll('.tab').forEach(tab => {
     tab.classList.add('active');
     activeCat = tab.dataset.cat;
     if(activeCat === 'chalisa'){
-      gridEl.style.display = 'none';
-      chalisaPanel.style.display = 'block';
-      gymPanel.style.display = 'none';
+      gridEl.style.display='none'; chalisaPanel.style.display='block'; gymPanel.style.display='none'; bucketPanel.style.display='none';
     } else if(activeCat === 'gym'){
-      gridEl.style.display = 'none';
-      chalisaPanel.style.display = 'none';
-      gymPanel.style.display = 'block';
-      if(!gymBuilt){ buildGymPanel(); gymBuilt = true; }
+      gridEl.style.display='none'; chalisaPanel.style.display='none'; gymPanel.style.display='block'; bucketPanel.style.display='none';
+      if(!gymBuilt){ buildGymPanel(); gymBuilt=true; }
+    } else if(activeCat === 'bucket'){
+      gridEl.style.display='none'; chalisaPanel.style.display='none'; gymPanel.style.display='none'; bucketPanel.style.display='block';
+      if(!bucketBuilt){ buildBucketPanel(); bucketBuilt=true; }
     } else {
-      gridEl.style.display = '';
-      chalisaPanel.style.display = 'none';
-      gymPanel.style.display = 'none';
+      gridEl.style.display=''; chalisaPanel.style.display='none'; gymPanel.style.display='none'; bucketPanel.style.display='none';
       applyFilter();
     }
   });
