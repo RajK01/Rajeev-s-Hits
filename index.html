@@ -285,18 +285,153 @@ const songs = [
     title: "Build Main Character Energy & Magnetic Aura ✨",
     artist: "Mindset & Aura",
     id: "l3zV7BbpNQo"
+  },
+  {
+    num: 14,
+    title: "C'est la vie",
+    artist: "B*Witched",
+    id: "UvjLgjtJKsc"
+  },
+  {
+    num: 15,
+    title: "C'est la vie (Clip officiel)",
+    artist: "Khaled",
+    id: "H7rhMqTQ4WI"
+  },
+  {
+    num: 16,
+    title: "C'est la Vie",
+    artist: "MIKA",
+    id: "Oe7AU05BuZ8"
+  },
+  {
+    num: 17,
+    title: "श्री हनुमान चालीसा — Shree Hanuman Chalisa",
+    artist: "Gulshan Kumar & Hariharan • Full HD",
+    id: "AETFvQonfV8"
+  },
+  {
+    num: 18,
+    title: "Dubai 4K Drone Footage — Burj Khalifa, Palm Jumeirah & Arabian Coast",
+    artist: "Dubai • Billionaire Skyline",
+    id: "6QjF1Oc7lpw"
+  },
+  {
+    num: 19,
+    title: "Inside a Dubai Billionaire's Private Island Palace",
+    artist: "4K Cinematic Mega Mansion Tour",
+    id: "-dEyxxUlvJc"
+  },
+  {
+    num: 20,
+    title: "Dubai's Ultra-Rich Lifestyle 💎 Billionaire Motivation",
+    artist: "Luxury Visualization 2025",
+    id: "4lrZOm8fXbM"
+  },
+  {
+    num: 21,
+    title: "How Dubai's Super Rich Really Live",
+    artist: "Inside Dubai • Full Series",
+    id: "qhyfDoNxShM"
+  },
+  {
+    num: 22,
+    title: "Kesuma",
+    artist: "Dato' Sri Siti Nurhaliza • Malaysia",
+    id: "7_AefsYp-hA"
+  },
+  {
+    num: 23,
+    title: "Hello",
+    artist: "Yuna • Malaysia",
+    id: "U9fAUxJg0Nw"
+  },
+  {
+    num: 24,
+    title: "Believer",
+    artist: "Yuna • Malaysia",
+    id: "h_8kzG5fN_c"
+  },
+  {
+    num: 25,
+    title: "THE REVENGE — Official Title Track",
+    artist: "Dhurandhar • Ranveer Singh | Shashwat Sachdev",
+    id: "gpqLu7QoPs4"
+  },
+  {
+    num: 26,
+    title: "AARI AARI",
+    artist: "Dhurandhar The Revenge • Ranveer Singh | Bombay Rockers",
+    id: "jzaT_sPNJrU"
+  },
+  {
+    num: 27,
+    title: "VAARI JAAVAN",
+    artist: "Dhurandhar The Revenge • Ranveer Singh | Jasmine Sandlas",
+    id: "GG1_DsScm6U"
+  },
+  {
+    num: 28,
+    title: "JAIYE SAJANA",
+    artist: "Dhurandhar The Revenge • Ranveer Singh | Satinder Sartaaj",
+    id: "F2m4HPLvj-4"
+  },
+  {
+    num: 29,
+    title: "MAIN AUR TU",
+    artist: "Dhurandhar The Revenge • Ranveer Singh | Jasmine Sandlas",
+    id: "-dt1VE_9EJI"
+  },
+  {
+    num: 30,
+    title: "JAAN SE GUZARTE HAIN",
+    artist: "Dhurandhar The Revenge • Ranveer Singh & Sara Arjun",
+    id: "ZJ5NU6pTN7M"
+  },
+  {
+    num: 31,
+    title: "TERE ISHQ NE",
+    artist: "Dhurandhar The Revenge • Ranveer Singh | Jyoti Nooran",
+    id: "Zfk-FWkBkbY"
+  },
+  {
+    num: 32,
+    title: "TAMMA TAMMA (Dhurandhar Version)",
+    artist: "Dhurandhar The Revenge • Ranveer Singh | Bappi Lahiri",
+    id: "SSofpP1_6F0"
+  },
+  {
+    num: 33,
+    title: "Instagram Reel ❤️",
+    artist: "Instagram • @rajeev_fav",
+    id: "DcODngVgws7",
+    type: "instagram"
+  },
+  {
+    num: 34,
+    title: "I AM RICH — The 1% Abundance Code",
+    artist: "Alpha Wealth Manifest",
+    id: "BYcu4f2FLtg"
   }
 ];
 
 const grid = document.getElementById('grid');
 
 songs.forEach(s => {
-  const thumb = `https://img.youtube.com/vi/${s.id}/hqdefault.jpg`;
+  const isIG = s.type === 'instagram';
+  const wrapId = 'wrap-' + s.num;
+
+  const thumbHTML = isIG
+    ? `<div style="width:100%;height:100%;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);display:flex;align-items:center;justify-content:center;">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="white" opacity="0.9"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+       </div>`
+    : `<img src="https://img.youtube.com/vi/${s.id}/hqdefault.jpg" alt="${s.title}" loading="lazy">`;
+
   const card = document.createElement('article');
   card.className = 'card';
   card.innerHTML = `
-    <div class="thumb-wrap" id="wrap-${s.id}">
-      <img src="${thumb}" alt="${s.title}" loading="lazy">
+    <div class="thumb-wrap" id="${wrapId}">
+      ${thumbHTML}
       <div class="play-btn">
         <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
       </div>
@@ -309,12 +444,17 @@ songs.forEach(s => {
   `;
 
   card.querySelector('.thumb-wrap').addEventListener('click', function () {
-    const wrap = document.getElementById('wrap-' + s.id);
+    const wrap = document.getElementById(wrapId);
     if (wrap.querySelector('iframe')) return;
     const iframe = document.createElement('iframe');
-    iframe.src = `https://www.youtube.com/embed/${s.id}?autoplay=1&rel=0`;
-    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-    iframe.allowFullscreen = true;
+    if (isIG) {
+      iframe.src = `https://www.instagram.com/reel/${s.id}/embed/`;
+      iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;z-index:2;';
+    } else {
+      iframe.src = `https://www.youtube.com/embed/${s.id}?autoplay=1&rel=0`;
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+    }
     wrap.appendChild(iframe);
   });
 
