@@ -79,6 +79,21 @@ main{position:relative;z-index:1;max-width:1280px;margin:18px auto 80px;padding:
 #scroll-top:hover{transform:scale(1.1)}
 
 footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72rem;color:rgba(255,255,255,.18)}
+
+/* CHALISA PANEL */
+#chalisa-panel{display:none;position:relative;z-index:1;max-width:860px;margin:24px auto 80px;padding:0 20px}
+#chalisa-panel .chalisa-box{background:rgba(255,255,255,.05);border:1px solid rgba(255,140,0,.3);border-radius:20px;padding:36px 40px;box-shadow:0 0 60px rgba(255,140,0,.08)}
+#chalisa-panel h2{text-align:center;font-size:1.6rem;font-weight:900;background:linear-gradient(135deg,#f5a623,#ff6b35,#f5a623);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}
+#chalisa-panel .subtitle{text-align:center;color:rgba(255,255,255,.4);font-size:.85rem;margin-bottom:28px}
+#chalisa-panel .section-label{font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#f5a623;opacity:.7;margin:24px 0 8px}
+#chalisa-panel .doha{text-align:center;color:rgba(255,200,100,.9);font-size:1.05rem;line-height:2;margin-bottom:8px;font-style:italic}
+#chalisa-panel .chaupai-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;margin-top:10px}
+@media(max-width:600px){#chalisa-panel .chaupai-grid{grid-template-columns:1fr}}
+#chalisa-panel .verse{border-left:3px solid rgba(245,166,35,.35);padding:10px 14px;border-radius:0 8px 8px 0;background:rgba(255,255,255,.03)}
+#chalisa-panel .verse .num{font-size:.65rem;color:#f5a623;font-weight:700;margin-bottom:4px;opacity:.7}
+#chalisa-panel .verse p{color:rgba(255,230,180,.92);font-size:.92rem;line-height:1.9}
+#chalisa-panel .closing{text-align:center;margin-top:28px;padding:20px;border:1px solid rgba(245,166,35,.2);border-radius:12px;background:rgba(245,166,35,.05)}
+#chalisa-panel .closing p{color:rgba(255,200,100,.9);font-size:1.05rem;line-height:2;font-style:italic}
 </style>
 </head>
 <body>
@@ -109,12 +124,78 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
     <button class="tab" data-cat="affirmations">💰 Affirmations</button>
     <button class="tab" data-cat="luxury">🏙️ Luxury & Dubai</button>
     <button class="tab" data-cat="instagram">📱 Instagram</button>
+    <button class="tab" data-cat="chalisa">🙏 Hanuman Chalisa</button>
   </div>
 </div>
 
 <main id="grid">
   <div id="no-results">😕 No results found. Try a different search or filter.</div>
 </main>
+
+<div id="chalisa-panel">
+  <div class="chalisa-box">
+    <h2>॥ श्री हनुमान चालीसा ॥</h2>
+    <p class="subtitle">Shree Hanuman Chalisa — by Goswami Tulsidas</p>
+
+    <div class="section-label">दोहा — Opening Doha</div>
+    <div class="doha">
+      श्रीगुरु चरन सरोज रज, निज मनु मुकुरु सुधारि।<br>
+      बरनउँ रघुबर बिमल जसु, जो दायकु फल चारि॥<br><br>
+      बुद्धिहीन तनु जानिके, सुमिरौं पवन-कुमार।<br>
+      बल बुद्धि बिद्या देहु मोहिं, हरहु कलेस बिकार॥
+    </div>
+
+    <div class="section-label">चौपाई — 40 Verses</div>
+    <div class="chaupai-grid">
+      <div class="verse"><div class="num">1</div><p>जय हनुमान ज्ञान गुन सागर।<br>जय कपीस तिहुँ लोक उजागर॥</p></div>
+      <div class="verse"><div class="num">2</div><p>राम दूत अतुलित बल धामा।<br>अंजनि-पुत्र पवनसुत नामा॥</p></div>
+      <div class="verse"><div class="num">3</div><p>महाबीर बिक्रम बजरंगी।<br>कुमति निवार सुमति के संगी॥</p></div>
+      <div class="verse"><div class="num">4</div><p>कंचन बरन बिराज सुबेसा।<br>कानन कुंडल कुंचित केसा॥</p></div>
+      <div class="verse"><div class="num">5</div><p>हाथ बज्र औ ध्वजा बिराजै।<br>काँधे मूँज जनेउ साजै॥</p></div>
+      <div class="verse"><div class="num">6</div><p>संकर सुवन केसरीनंदन।<br>तेज प्रताप महा जग बंदन॥</p></div>
+      <div class="verse"><div class="num">7</div><p>विद्यावान गुनी अति चातुर।<br>राम काज करिबे को आतुर॥</p></div>
+      <div class="verse"><div class="num">8</div><p>प्रभु चरित्र सुनिबे को रसिया।<br>राम लखन सीता मन बसिया॥</p></div>
+      <div class="verse"><div class="num">9</div><p>सूक्ष्म रूप धरि सियहिं दिखावा।<br>बिकट रूप धरि लंक जरावा॥</p></div>
+      <div class="verse"><div class="num">10</div><p>भीम रूप धरि असुर सँहारे।<br>रामचंद्र के काज सँवारे॥</p></div>
+      <div class="verse"><div class="num">11</div><p>लाय सजीवन लखन जियाये।<br>श्रीरघुबीर हरषि उर लाये॥</p></div>
+      <div class="verse"><div class="num">12</div><p>रघुपति कीन्ही बहुत बड़ाई।<br>तुम मम प्रिय भरतहि सम भाई॥</p></div>
+      <div class="verse"><div class="num">13</div><p>सहस बदन तुम्हरो जस गावैं।<br>अस कहि श्रीपति कंठ लगावैं॥</p></div>
+      <div class="verse"><div class="num">14</div><p>सनकादिक ब्रह्मादि मुनीसा।<br>नारद सारद सहित अहीसा॥</p></div>
+      <div class="verse"><div class="num">15</div><p>जम कुबेर दिगपाल जहाँ ते।<br>कबि कोबिद कहि सके कहाँ ते॥</p></div>
+      <div class="verse"><div class="num">16</div><p>तुम उपकार सुग्रीवहिं कीन्हा।<br>राम मिलाय राजपद दीन्हा॥</p></div>
+      <div class="verse"><div class="num">17</div><p>तुम्हरो मंत्र बिभीषन माना।<br>लंकेस्वर भए सब जग जाना॥</p></div>
+      <div class="verse"><div class="num">18</div><p>जुग सहस्र जोजन पर भानू।<br>लील्यो ताहि मधुर फल जानू॥</p></div>
+      <div class="verse"><div class="num">19</div><p>प्रभु मुद्रिका मेलि मुख माहीं।<br>जलधि लाँघि गये अचरज नाहीं॥</p></div>
+      <div class="verse"><div class="num">20</div><p>दुर्गम काज जगत के जेते।<br>सुगम अनुग्रह तुम्हरे तेते॥</p></div>
+      <div class="verse"><div class="num">21</div><p>राम दुआरे तुम रखवारे।<br>होत न आज्ञा बिनु पैसारे॥</p></div>
+      <div class="verse"><div class="num">22</div><p>सब सुख लहै तुम्हारी सरना।<br>तुम रच्छक काहू को डर ना॥</p></div>
+      <div class="verse"><div class="num">23</div><p>आपन तेज सम्हारो आपै।<br>तीनों लोक हाँक ते काँपै॥</p></div>
+      <div class="verse"><div class="num">24</div><p>भूत पिसाच निकट नहिं आवै।<br>महाबीर जब नाम सुनावै॥</p></div>
+      <div class="verse"><div class="num">25</div><p>नासै रोग हरै सब पीरा।<br>जपत निरंतर हनुमत बीरा॥</p></div>
+      <div class="verse"><div class="num">26</div><p>संकट तें हनुमान छुड़ावै।<br>मन क्रम बचन ध्यान जो लावै॥</p></div>
+      <div class="verse"><div class="num">27</div><p>सब पर राम तपस्वी राजा।<br>तिन के काज सकल तुम साजा॥</p></div>
+      <div class="verse"><div class="num">28</div><p>और मनोरथ जो कोई लावै।<br>सोइ अमित जीवन फल पावै॥</p></div>
+      <div class="verse"><div class="num">29</div><p>चारों जुग परताप तुम्हारा।<br>है परसिद्ध जगत उजियारा॥</p></div>
+      <div class="verse"><div class="num">30</div><p>साधु-संत के तुम रखवारे।<br>असुर निकंदन राम दुलारे॥</p></div>
+      <div class="verse"><div class="num">31</div><p>अष्ट सिद्धि नौ निधि के दाता।<br>अस बर दीन्ह जानकी माता॥</p></div>
+      <div class="verse"><div class="num">32</div><p>राम रसायन तुम्हरे पासा।<br>सदा रहो रघुपति के दासा॥</p></div>
+      <div class="verse"><div class="num">33</div><p>तुम्हरे भजन राम को पावै।<br>जनम-जनम के दुख बिसरावै॥</p></div>
+      <div class="verse"><div class="num">34</div><p>अंत काल रघुबर पुर जाई।<br>जहाँ जन्म हरिभक्त कहाई॥</p></div>
+      <div class="verse"><div class="num">35</div><p>और देवता चित्त न धरई।<br>हनुमत सेइ सर्ब सुख करई॥</p></div>
+      <div class="verse"><div class="num">36</div><p>संकट कटै मिटै सब पीरा।<br>जो सुमिरै हनुमत बलबीरा॥</p></div>
+      <div class="verse"><div class="num">37</div><p>जय जय जय हनुमान गोसाईं।<br>कृपा करहु गुरुदेव की नाईं॥</p></div>
+      <div class="verse"><div class="num">38</div><p>जो सत बार पाठ कर कोई।<br>छूटहि बंदि महा सुख होई॥</p></div>
+      <div class="verse"><div class="num">39</div><p>जो यह पढ़ै हनुमान चालीसा।<br>होय सिद्धि साखी गौरीसा॥</p></div>
+      <div class="verse"><div class="num">40</div><p>तुलसीदास सदा हरि चेरा।<br>कीजै नाथ हृदय मह डेरा॥</p></div>
+    </div>
+
+    <div class="closing">
+      <div class="section-label" style="text-align:center;margin-top:0">दोहा — Closing Doha</div>
+      <p>पवनतनय संकट हरन, मंगल मूरति रूप।<br>
+      राम लखन सीता सहित, हृदय बसहु सुर भूप॥</p>
+    </div>
+  </div>
+</div>
 
 <button id="scroll-top" title="Back to top">↑</button>
 
@@ -351,12 +432,21 @@ function applyFilter(){
 }
 
 /* ── Tabs ── */
+const chalisaPanel = document.getElementById('chalisa-panel');
+const gridEl = document.getElementById('grid');
 document.querySelectorAll('.tab').forEach(tab => {
   tab.addEventListener('click', () => {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     activeCat = tab.dataset.cat;
-    applyFilter();
+    if(activeCat === 'chalisa'){
+      gridEl.style.display = 'none';
+      chalisaPanel.style.display = 'block';
+    } else {
+      gridEl.style.display = '';
+      chalisaPanel.style.display = 'none';
+      applyFilter();
+    }
   });
 });
 
