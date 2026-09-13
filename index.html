@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rajeev's Favourite Hits 🎵</title>
+<title>Rajeev's Universe 🌟 — Life · Wealth · Empire</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -12,12 +12,24 @@ body{font-family:'Poppins',sans-serif;background:#0a0a0f;color:#fff;min-height:1
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 0%,rgba(120,40,200,.25) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 100%,rgba(220,100,20,.2) 0%,transparent 60%);pointer-events:none;z-index:0}
 
 /* HEADER */
-header{position:relative;z-index:1;text-align:center;padding:48px 20px 20px}
-header .icon{font-size:3rem;animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
-header h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;background:linear-gradient(135deg,#f5a623,#e040fb,#29b6f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 4px;letter-spacing:-1px}
-header p{color:rgba(255,255,255,.45);font-size:.95rem}
-#total-count{display:inline-block;margin-top:10px;padding:4px 14px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);font-size:.8rem;color:rgba(255,255,255,.55)}
+header{position:relative;z-index:1;text-align:center;padding:36px 20px 0}
+.header-card{max-width:760px;margin:0 auto;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:32px 28px 24px;backdrop-filter:blur(20px);position:relative;overflow:hidden}
+.header-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(245,166,35,.08) 0%,transparent 70%);pointer-events:none}
+.header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;gap:12px;flex-wrap:wrap}
+.header-greeting{font-size:.78rem;color:rgba(255,255,255,.35);text-align:left;letter-spacing:.5px}
+.header-date{font-size:.78rem;color:rgba(255,255,255,.3);text-align:right;letter-spacing:.5px}
+header .icon{font-size:2.6rem;animation:pulse 2s ease-in-out infinite;display:block;margin-bottom:8px}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+header h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#f5a623 0%,#e040fb 50%,#29b6f6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 6px;letter-spacing:-1px;line-height:1.1}
+.header-tagline{color:rgba(255,255,255,.38);font-size:.88rem;margin-bottom:20px;letter-spacing:.3px}
+.header-stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.hstat{padding:6px 16px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);font-size:.75rem;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:5px}
+.hstat strong{color:#fff;font-weight:700}
+.header-quicknav{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hqnav{padding:7px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:rgba(255,255,255,.6);font-family:inherit;font-size:.75rem;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap}
+.hqnav:hover{background:rgba(255,255,255,.12);color:#fff;transform:translateY(-1px)}
+.hqnav.special{background:linear-gradient(135deg,rgba(245,166,35,.2),rgba(224,64,251,.2));border-color:rgba(245,166,35,.3);color:#f5a623}
+.hqnav.special:hover{background:linear-gradient(135deg,rgba(245,166,35,.35),rgba(224,64,251,.35))}
 
 /* CONTROLS */
 .controls{position:relative;z-index:1;max-width:1280px;margin:18px auto 0;padding:0 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
@@ -356,15 +368,164 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
 .aff-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.12);cursor:pointer;transition:all .25s}
 .aff-dot.seen{background:rgba(139,92,246,.45)}
 .aff-dot.cur{background:#8b5cf6;transform:scale(1.4)}
+
+/* MY EMPIRE */
+#empire-panel{display:none;position:relative;z-index:1;max-width:960px;margin:24px auto 80px;padding:0 20px}
+#empire-panel h2{font-size:1.6rem;font-weight:900;background:linear-gradient(135deg,#f5a623,#ff6b35,#e040fb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:4px}
+.empire-sub{text-align:center;color:rgba(255,255,255,.4);font-size:.83rem;margin-bottom:22px}
+.empire-tabs{display:flex;gap:8px;justify-content:center;margin-bottom:28px;flex-wrap:wrap}
+.emp-tab{padding:9px 22px;border-radius:999px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:rgba(255,255,255,.6);font-family:inherit;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s}
+.emp-tab:hover{background:rgba(255,255,255,.12);color:#fff}
+.emp-tab.active{background:linear-gradient(135deg,#f5a623,#e040fb);border-color:transparent;color:#fff}
+.empire-section{display:none}
+.empire-section.active{display:block}
+/* Business Idea Cards */
+.biz-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;justify-content:center}
+.biz-filter-btn{padding:6px 15px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:rgba(255,255,255,.5);font-family:inherit;font-size:.75rem;font-weight:600;cursor:pointer;transition:all .2s}
+.biz-filter-btn:hover,.biz-filter-btn.active{background:rgba(245,166,35,.15);border-color:#f5a623;color:#f5a623}
+.biz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.biz-card{border-radius:16px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);padding:20px;transition:all .25s;cursor:pointer;position:relative;overflow:hidden}
+.biz-card:hover{transform:translateY(-4px);border-color:rgba(245,166,35,.35);box-shadow:0 12px 35px rgba(0,0,0,.4)}
+.biz-card.saved{border-color:#f5a623;background:rgba(245,166,35,.07)}
+.biz-icon{font-size:2rem;margin-bottom:10px}
+.biz-title{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px}
+.biz-cat-tag{display:inline-block;padding:2px 10px;border-radius:999px;font-size:.62rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:10px}
+.biz-desc{font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:12px}
+.biz-meta{display:flex;gap:10px;flex-wrap:wrap}
+.biz-meta span{font-size:.7rem;padding:3px 10px;border-radius:999px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.55)}
+.biz-save-btn{position:absolute;top:14px;right:14px;background:none;border:none;font-size:1.1rem;cursor:pointer;transition:transform .2s}
+.biz-save-btn:hover{transform:scale(1.3)}
+/* Quiz */
+.quiz-wrap{max-width:600px;margin:0 auto}
+.quiz-progress{height:4px;border-radius:999px;background:rgba(255,255,255,.1);margin-bottom:28px;overflow:hidden}
+.quiz-bar{height:100%;border-radius:999px;background:linear-gradient(90deg,#f5a623,#e040fb);transition:width .4s ease}
+.quiz-q{font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:20px;text-align:center;line-height:1.5}
+.quiz-options{display:flex;flex-direction:column;gap:10px}
+.quiz-opt{padding:14px 20px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:rgba(255,255,255,.75);font-family:inherit;font-size:.88rem;cursor:pointer;text-align:left;transition:all .2s}
+.quiz-opt:hover{border-color:#f5a623;background:rgba(245,166,35,.1);color:#fff}
+.quiz-opt.selected{border-color:#f5a623;background:rgba(245,166,35,.15);color:#fff}
+.quiz-nav{display:flex;gap:12px;justify-content:center;margin-top:22px}
+.quiz-btn{padding:11px 28px;border-radius:999px;border:none;font-family:inherit;font-size:.87rem;font-weight:700;cursor:pointer;transition:all .2s}
+.quiz-btn.back{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff}
+.quiz-btn.next{background:linear-gradient(135deg,#f5a623,#e040fb);color:#fff}
+.quiz-btn:hover{transform:scale(1.04)}
+.quiz-result{text-align:center;padding:20px 0}
+.quiz-result-icon{font-size:3.5rem;margin-bottom:12px}
+.quiz-result-title{font-size:1.5rem;font-weight:900;background:linear-gradient(135deg,#f5a623,#e040fb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+.quiz-result-desc{color:rgba(255,255,255,.65);font-size:.9rem;line-height:1.7;margin-bottom:22px}
+.quiz-steps{text-align:left;background:rgba(255,255,255,.04);border-radius:14px;padding:20px;border:1px solid rgba(255,255,255,.1);margin-bottom:20px}
+.quiz-steps h4{font-size:.8rem;text-transform:uppercase;letter-spacing:1px;color:#f5a623;margin-bottom:12px}
+.quiz-step-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.quiz-step-item:last-child{border-bottom:none}
+.quiz-step-num{min-width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#f5a623,#e040fb);font-size:.65rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.quiz-step-text{font-size:.82rem;color:rgba(255,255,255,.65);line-height:1.5}
+/* Vision + Roadmap */
+.vision-wrap{max-width:680px;margin:0 auto}
+.vision-section{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px;margin-bottom:20px}
+.vision-section h3{font-size:.9rem;font-weight:700;color:#f5a623;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}
+.vision-textarea{width:100%;min-height:90px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:10px;color:#fff;font-family:inherit;font-size:.88rem;padding:12px 14px;resize:vertical;outline:none;line-height:1.6;transition:border-color .2s}
+.vision-textarea:focus{border-color:rgba(245,166,35,.5)}
+.vision-textarea::placeholder{color:rgba(255,255,255,.25)}
+.vision-save-btn{margin-top:10px;padding:9px 22px;border-radius:999px;border:none;background:linear-gradient(135deg,#f5a623,#e040fb);color:#fff;font-family:inherit;font-size:.83rem;font-weight:700;cursor:pointer;transition:all .2s}
+.vision-save-btn:hover{transform:scale(1.04)}
+.roadmap{position:relative;padding-left:24px}
+.roadmap::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,#f5a623,#e040fb,rgba(255,255,255,.1))}
+.roadmap-item{position:relative;margin-bottom:20px}
+.roadmap-dot{position:absolute;left:-24px;top:4px;width:16px;height:16px;border-radius:50%;border:2px solid #f5a623;background:#0a0a0f;transition:background .3s}
+.roadmap-item.done .roadmap-dot{background:#f5a623}
+.roadmap-phase{font-size:.65rem;text-transform:uppercase;letter-spacing:1px;color:#f5a623;margin-bottom:2px}
+.roadmap-title{font-size:.9rem;font-weight:700;color:#fff;margin-bottom:4px}
+.roadmap-desc{font-size:.77rem;color:rgba(255,255,255,.45);line-height:1.5}
+.roadmap-check{position:absolute;right:0;top:0;background:none;border:none;cursor:pointer;font-size:.85rem;color:rgba(255,255,255,.3);transition:all .2s;padding:2px 6px;border-radius:6px}
+.roadmap-check:hover{color:#f5a623;background:rgba(245,166,35,.1)}
+.roadmap-item.done .roadmap-check{color:#f5a623}
+.empire-saved-list{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.empire-saved-item{font-size:.82rem;color:rgba(255,255,255,.65);padding:8px 12px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(255,255,255,.08)}
+/* CREATOR SCHEDULE */
+.creator-platform{border-radius:18px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);margin-bottom:24px;overflow:hidden}
+.creator-platform-header{padding:18px 22px;display:flex;align-items:center;gap:14px;cursor:pointer;user-select:none}
+.creator-platform-header:hover{background:rgba(255,255,255,.04)}
+.cp-icon{font-size:1.8rem;min-width:44px;text-align:center}
+.cp-title{font-size:1.05rem;font-weight:800;color:#fff}
+.cp-tagline{font-size:.75rem;color:rgba(255,255,255,.4);margin-top:2px}
+.cp-badge{margin-left:auto;padding:4px 12px;border-radius:999px;font-size:.68rem;font-weight:700;letter-spacing:.5px;white-space:nowrap}
+.cp-toggle{margin-left:10px;color:rgba(255,255,255,.3);font-size:.9rem;transition:transform .3s}
+.cp-toggle.open{transform:rotate(180deg)}
+.creator-platform-body{padding:0 22px 22px;display:none}
+.creator-platform-body.open{display:block}
+.cp-pay-box{background:rgba(245,166,35,.08);border:1px solid rgba(245,166,35,.2);border-radius:12px;padding:14px 16px;margin-bottom:18px}
+.cp-pay-box h4{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:#f5a623;margin-bottom:8px}
+.cp-pay-box p{font-size:.82rem;color:rgba(255,255,255,.7);line-height:1.6}
+.schedule-table{width:100%;border-collapse:collapse;margin-bottom:18px}
+.schedule-table th{font-size:.68rem;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.35);padding:8px 12px;text-align:left;border-bottom:1px solid rgba(255,255,255,.07)}
+.schedule-table td{font-size:.82rem;color:rgba(255,255,255,.65);padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.05);vertical-align:top;line-height:1.5}
+.schedule-table tr:last-child td{border-bottom:none}
+.schedule-table td:first-child{font-weight:700;color:#fff;white-space:nowrap;min-width:90px}
+.cp-tips{display:flex;flex-direction:column;gap:8px}
+.cp-tip{font-size:.8rem;color:rgba(255,255,255,.6);padding:8px 12px;background:rgba(255,255,255,.04);border-radius:8px;border-left:3px solid}
+.cp-income-timeline{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-top:14px}
+.cp-income-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:12px;text-align:center}
+.cp-income-box .period{font-size:.65rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.35);margin-bottom:4px}
+.cp-income-box .amount{font-size:.92rem;font-weight:800;color:#f5a623}
+.cp-income-box .note{font-size:.68rem;color:rgba(255,255,255,.35);margin-top:3px}
+/* TRACKER */
+.tracker-month-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:22px}
+.tracker-month-nav button{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#fff;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1rem;transition:background .2s}
+.tracker-month-nav button:hover{background:rgba(255,255,255,.15)}
+.tracker-month-label{font-size:1.1rem;font-weight:800;color:#fff;min-width:180px;text-align:center}
+.tracker-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px;margin-bottom:28px}
+.tracker-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px}
+.tracker-card-top{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.tracker-card-icon{font-size:1.5rem}
+.tracker-card-name{font-size:.95rem;font-weight:800;color:#fff}
+.tracker-card-target{font-size:.72rem;color:rgba(255,255,255,.35);margin-top:1px}
+.tracker-bar-wrap{height:6px;background:rgba(255,255,255,.08);border-radius:999px;margin-bottom:10px;overflow:hidden}
+.tracker-bar-fill{height:100%;border-radius:999px;transition:width .4s ease}
+.tracker-stat{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.tracker-count{font-size:1.6rem;font-weight:900}
+.tracker-of{font-size:.8rem;color:rgba(255,255,255,.35);margin-top:2px}
+.tracker-pct{font-size:.82rem;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(255,255,255,.07)}
+.tracker-log-btn{width:100%;padding:9px;border-radius:10px;border:none;font-family:inherit;font-size:.82rem;font-weight:700;cursor:pointer;transition:all .2s;margin-bottom:8px}
+.tracker-log-btn:hover{transform:scale(1.02)}
+.tracker-undo{width:100%;padding:6px;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:none;color:rgba(255,255,255,.35);font-family:inherit;font-size:.75rem;cursor:pointer;transition:all .2s}
+.tracker-undo:hover{color:#fff;border-color:rgba(255,255,255,.3)}
+.tracker-log-dates{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.tracker-log-dot{font-size:.68rem;padding:3px 8px;border-radius:6px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.4)}
+.tracker-summary{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;margin-bottom:20px}
+.tracker-summary h3{font-size:.78rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.35);margin-bottom:14px}
+.tracker-summary-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.tracker-summary-row:last-child{border-bottom:none}
+.tracker-summary-left{display:flex;align-items:center;gap:8px;font-size:.85rem;color:rgba(255,255,255,.7)}
+.tracker-summary-right{font-size:.82rem;font-weight:700}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="icon">🎵</div>
-  <h1>Rajeev's Favourite Hits</h1>
-  <p>Songs · Affirmations · Luxury · Bollywood · Instagram</p>
-  <div id="total-count">69 videos</div>
+  <div class="header-card">
+    <div class="header-top">
+      <div class="header-greeting" id="hdr-greeting">Good morning ☀️</div>
+      <div class="header-date" id="hdr-date"></div>
+    </div>
+    <div class="icon">👑</div>
+    <h1>Rajeev's Universe</h1>
+    <div class="header-tagline">Life · Wealth · Manifestation · Content · Empire</div>
+    <div class="header-stats">
+      <div class="hstat">🎬 <strong id="hstat-videos">145</strong> Videos</div>
+      <div class="hstat">💡 <strong>90+</strong> Business Ideas</div>
+      <div class="hstat">📅 <strong>5</strong> Platforms Tracked</div>
+      <div class="hstat">🏆 <strong id="hstat-milestones">0</strong> Milestones</div>
+    </div>
+    <div class="header-quicknav">
+      <button class="hqnav special" onclick="jumpTab('manifest')">✨ I AM Living It</button>
+      <button class="hqnav special" onclick="jumpTab('empire')">👑 My Empire</button>
+      <button class="hqnav" onclick="jumpTab('affirmations')">💰 Affirmations</button>
+      <button class="hqnav" onclick="jumpTab('affcards')">🎴 Aff. Cards</button>
+      <button class="hqnav" onclick="jumpTab('milestones')">🏆 Milestones</button>
+      <button class="hqnav" onclick="jumpTab('gym')">💪 Gym Plan</button>
+      <button class="hqnav" onclick="jumpTab('bucket')">✨ Bucket List</button>
+    </div>
+  </div>
 </header>
 
 <div id="wealth-ticker"><div class="ticker-track" id="ticker-track"></div></div>
@@ -438,6 +599,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
     <button class="tab" data-cat="book">📖 My Book</button>
     <button class="tab" data-cat="milestones">🏆 Milestones</button>
     <button class="tab" data-cat="affcards">🎴 Aff. Cards</button>
+    <button class="tab" data-cat="empire">👑 My Empire</button>
   </div>
 </div>
 
@@ -651,9 +813,48 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
   <div class="aff-dots" id="aff-dots"></div>
 </div>
 
+<div id="empire-panel">
+  <h2>👑 My Empire</h2>
+  <div class="empire-tabs" style="margin-bottom:22px">
+    <button class="emp-tab active" data-emp="ideas">💡 Business Ideas</button>
+    <button class="emp-tab" data-emp="schedule">📅 Creator Schedule</button>
+  </div>
+
+  <!-- Business Ideas -->
+  <div class="empire-section active" id="emp-ideas">
+    <div class="empire-sub" style="text-align:center;margin-bottom:16px">90+ high-earning ideas — filter by category · ⭐ star your favourites</div>
+    <div class="biz-filter">
+      <button class="biz-filter-btn active" data-filter="all">All</button>
+      <button class="biz-filter-btn" data-filter="digital">💻 Digital</button>
+      <button class="biz-filter-btn" data-filter="service">🎯 Service</button>
+      <button class="biz-filter-btn" data-filter="finance">💰 Finance</button>
+      <button class="biz-filter-btn" data-filter="property">🏡 Property</button>
+      <button class="biz-filter-btn" data-filter="creative">🎬 Creative</button>
+      <button class="biz-filter-btn" data-filter="health">💚 Health</button>
+      <button class="biz-filter-btn" data-filter="education">📚 Education</button>
+      <button class="biz-filter-btn" data-filter="food">🍽️ Food</button>
+      <button class="biz-filter-btn" data-filter="green">🌱 Green</button>
+    </div>
+    <div class="biz-grid" id="biz-grid"></div>
+  </div>
+
+  <!-- Creator Schedule -->
+  <div class="empire-section" id="emp-schedule">
+    <div class="empire-sub" style="text-align:center;margin-bottom:18px">Your personalised roadmap to earning from content — Medium · YouTube · Quora · LinkedIn</div>
+    <div class="empire-tabs" style="margin-bottom:22px;justify-content:center">
+      <button class="emp-tab active" data-sched="tracker">📊 My Tracker</button>
+      <button class="emp-tab" data-sched="guide">📅 Schedule Guide</button>
+    </div>
+    <div id="sched-tracker" class="sched-section active"></div>
+    <div id="sched-guide" class="sched-section" style="display:none">
+      <div id="creator-schedule-wrap"></div>
+    </div>
+  </div>
+</div>
+
 <button id="scroll-top" title="Back to top">↑</button>
 
-<footer>Made with ♥ by Rajeev Kumar &nbsp;·&nbsp; <span id="footer-count"></span></footer>
+<footer>👑 Rajeev's Universe &nbsp;·&nbsp; Built with ♥ &nbsp;·&nbsp; <span id="footer-count"></span></footer>
 
 <script>
 const CAT_COLORS = {
@@ -942,6 +1143,33 @@ const gymPanel     = document.getElementById('gym-panel');
 const bucketPanel  = document.getElementById('bucket-panel');
 const gridEl       = document.getElementById('grid');
 
+/* ── Header greeting & date ── */
+(function(){
+  const greet = document.getElementById('hdr-greeting');
+  const dateEl = document.getElementById('hdr-date');
+  const h = new Date().getHours();
+  const g = h<5?'Good night 🌙':h<12?'Good morning ☀️':h<17?'Good afternoon 🌤️':h<21?'Good evening 🌆':'Good night 🌙';
+  if(greet) greet.textContent = g + ', Rajeev';
+  if(dateEl){
+    const d = new Date();
+    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    dateEl.textContent = `${days[d.getDay()]}, ${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+  }
+  const milEl = document.getElementById('hstat-milestones');
+  if(milEl){
+    const done = JSON.parse(localStorage.getItem('rajeev_milestones')||'[]');
+    milEl.textContent = done.filter(m=>m.done).length;
+  }
+})();
+
+/* ── Quick Nav jump ── */
+function jumpTab(cat){
+  const tab = document.querySelector(`.tab[data-cat="${cat}"]`);
+  if(tab){ tab.click(); tab.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'}); }
+  window.scrollTo({top:300,behavior:'smooth'});
+}
+
 /* ── Bucket List Data ── */
 const BUCKET_DATA = [
   {id:'r1',cat:'restaurant',name:'Jamavar',area:'The Leela Palace, Old Airport Road',desc:'Celebrated royal Indian fine dining — opulent interiors & exquisite cuisine',img:'photo-1414235077428-338989a2e8c0'},
@@ -979,6 +1207,424 @@ const BUCKET_CATS = [
 ];
 
 let bucketBuilt = false;
+let empireBuilt = false;
+
+/* ── EMPIRE PANEL ── */
+const BIZ_IDEAS = [
+  // DIGITAL
+  {icon:'🤖',title:'AI / SaaS Tools',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'Build AI-powered tools, SaaS products or automation apps. Hugely scalable. High margins.',startup:'$0–$500',income:'$5K–$100K/mo',time:'Part-time'},
+  {icon:'📱',title:'Social Media Agency',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'Manage social media, run ads, create content for businesses. Low cost to start, massive demand.',startup:'$0–$200',income:'$3K–$30K/mo',time:'Flexible'},
+  {icon:'🛒',title:'E-commerce / Dropshipping',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'Sell products online without holding inventory. Use Shopify + suppliers. Passive income potential.',startup:'$200–$1K',income:'$2K–$50K/mo',time:'Part-time'},
+  {icon:'🎓',title:'Online Course Creator',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'Package your knowledge into courses. Sell on Udemy or your own site. Earn while you sleep.',startup:'$0–$300',income:'$1K–$20K/mo',time:'Flexible'},
+  {icon:'🖨️',title:'Print on Demand',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'Design t-shirts, mugs, posters — printed and shipped automatically. Zero inventory risk.',startup:'$0–$100',income:'$500–$10K/mo',time:'Part-time'},
+  {icon:'🔒',title:'Cybersecurity Consulting',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'Help companies secure systems, conduct penetration testing and audits. Premium rates globally.',startup:'$0–$500',income:'$8K–$50K/mo',time:'Full-time'},
+  {icon:'☁️',title:'Cloud Migration Services',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'Help businesses move to AWS, Azure or GCP. Enormous demand from legacy companies worldwide.',startup:'$0–$1K',income:'$10K–$80K/mo',time:'Full-time'},
+  {icon:'📊',title:'Data Analytics Consulting',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'Turn raw data into insights. Python + SQL + dashboards. Every company needs this right now.',startup:'$0',income:'$5K–$40K/mo',time:'Flexible'},
+  {icon:'🧩',title:'No-Code / Low-Code App Builder',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'Build apps for clients using Bubble, Webflow, Glide. Fast delivery, high margins.',startup:'$0–$300',income:'$3K–$25K/mo',time:'Part-time'},
+  {icon:'🔗',title:'API Integration Services',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'Connect different software systems for businesses. Technical skill = premium rates.',startup:'$0',income:'$4K–$30K/mo',time:'Part-time'},
+  {icon:'🎮',title:'Game Development Studio',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'Build mobile or PC games. Monetize through in-app purchases, ads or licensing.',startup:'$500–$5K',income:'Variable',time:'Full-time'},
+  {icon:'🤝',title:'White-Label Software Reselling',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'Resell existing SaaS tools under your brand. Zero dev cost, recurring revenue model.',startup:'$100–$1K',income:'$2K–$20K/mo',time:'Part-time'},
+  {icon:'⚙️',title:'DevOps-as-a-Service',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'CI/CD pipelines, Docker, Kubernetes — companies pay top dollar for DevOps expertise.',startup:'$0',income:'$8K–$60K/mo',time:'Full-time'},
+  {icon:'📝',title:'AI Prompt Engineering Agency',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'Build and sell custom AI prompt systems for businesses. New field, low competition, high pay.',startup:'$0',income:'$3K–$20K/mo',time:'Part-time'},
+  {icon:'🌐',title:'Web3 / Blockchain Development',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'Smart contracts, dApps, NFT platforms. Niche skill that commands huge freelance rates.',startup:'$0–$500',income:'$10K–$100K/mo',time:'Full-time'},
+  {icon:'🏪',title:'Amazon FBA / Private Label',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'Source products, brand them, sell on Amazon. Leverages Amazon traffic. Scalable business.',startup:'$2K–$10K',income:'$3K–$50K/mo',time:'Part-time'},
+  {icon:'💳',title:'Digital Wallet / FinTech App',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'Build payment or financial apps. FinTech is one of the highest-funded startup sectors.',startup:'$5K–$50K',income:'$10K–$500K/mo',time:'Full-time'},
+  {icon:'🤖',title:'AI Chatbot Development',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'Build custom AI chatbots for businesses — support, sales, onboarding. Huge demand right now.',startup:'$0–$500',income:'$3K–$30K/mo',time:'Part-time'},
+  {icon:'📱',title:'Mobile App Development',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'Build iOS/Android apps for clients or launch your own. Huge market, recurring revenue possible.',startup:'$0–$2K',income:'$5K–$80K/mo',time:'Full-time'},
+  {icon:'🔍',title:'SEO Agency',cat:'digital',catLabel:'Digital',catColor:'#8b5cf6',desc:'Help websites rank on Google. Retainer-based income. Pure knowledge business — no capital needed.',startup:'$0',income:'$3K–$40K/mo',time:'Flexible'},
+  // SERVICE
+  {icon:'🎯',title:'Business / Life Coaching',cat:'service',catLabel:'Service',catColor:'#ec4899',desc:'Coach entrepreneurs and professionals. High-ticket — $500–$5K per client. Scale with group programs.',startup:'$0–$200',income:'$5K–$50K/mo',time:'Flexible'},
+  {icon:'📣',title:'Digital Marketing Consulting',cat:'service',catLabel:'Service',catColor:'#ec4899',desc:'Help businesses grow online through ads, email and SEO. Retainer-based — predictable monthly income.',startup:'$0–$500',income:'$5K–$40K/mo',time:'Full-time'},
+  {icon:'💪',title:'Online Personal Training',cat:'service',catLabel:'Service',catColor:'#ec4899',desc:'Train clients via Zoom or app. Build programs, sell plans. Location independent, recurring income.',startup:'$0–$300',income:'$2K–$20K/mo',time:'Flexible'},
+  {icon:'🏢',title:'HR / Talent Consulting',cat:'service',catLabel:'Service',catColor:'#ec4899',desc:'Help companies hire, train and retain staff. High fees for placements and retained searches.',startup:'$0–$500',income:'$5K–$50K/mo',time:'Full-time'},
+  {icon:'🧹',title:'Cleaning / Facility Services',cat:'service',catLabel:'Service',catColor:'#ec4899',desc:'Start residential or commercial cleaning. Low startup, high demand, easy to systematize and scale.',startup:'$500–$3K',income:'$3K–$30K/mo',time:'Full-time'},
+  {icon:'🔧',title:'IT Support / MSP',cat:'service',catLabel:'Service',catColor:'#ec4899',desc:'Managed IT services for small businesses. Monthly retainer. Businesses always need tech support.',startup:'$500–$2K',income:'$5K–$40K/mo',time:'Full-time'},
+  {icon:'📋',title:'Virtual Assistant Agency',cat:'service',catLabel:'Service',catColor:'#ec4899',desc:'Provide remote admin, scheduling and support to busy executives. Start solo, then build a team.',startup:'$0',income:'$2K–$15K/mo',time:'Flexible'},
+  {icon:'🎤',title:'Public Speaking / Training',cat:'service',catLabel:'Service',catColor:'#ec4899',desc:'Deliver workshops and keynotes to corporates. One session can pay more than a month of regular work.',startup:'$0',income:'$3K–$30K/mo',time:'Flexible'},
+  {icon:'🛡️',title:'Compliance / Legal Consulting',cat:'service',catLabel:'Service',catColor:'#ec4899',desc:'Help businesses with GDPR, ISO, legal requirements. Every company must comply — steady demand.',startup:'$0–$1K',income:'$5K–$50K/mo',time:'Full-time'},
+  {icon:'📦',title:'Moving / Logistics Company',cat:'service',catLabel:'Service',catColor:'#ec4899',desc:'Residential and commercial moving. High demand, recurring customer base, scalable with vehicles.',startup:'$2K–$20K',income:'$5K–$40K/mo',time:'Full-time'},
+  // FINANCE
+  {icon:'📈',title:'Stock / Options Trading',cat:'finance',catLabel:'Finance',catColor:'#f59e0b',desc:'Trade stocks, ETFs and options. Master technical analysis. Discipline is the only barrier.',startup:'$1K–$10K',income:'Variable',time:'Daily'},
+  {icon:'₿',title:'Crypto Trading / DeFi',cat:'finance',catLabel:'Finance',catColor:'#f59e0b',desc:'Trade crypto, stake, yield farm or build in DeFi. High risk, high reward. Stay educated.',startup:'$500–$5K',income:'Variable',time:'Daily'},
+  {icon:'💱',title:'Forex Trading',cat:'finance',catLabel:'Finance',catColor:'#f59e0b',desc:'Trade global currency pairs. Work from anywhere with a laptop. 24/5 market, no boss.',startup:'$500–$5K',income:'Variable',time:'Daily'},
+  {icon:'📊',title:'Financial Planning Advisory',cat:'finance',catLabel:'Finance',catColor:'#f59e0b',desc:'Help people plan their finances, investments and retirement. Certifications boost credibility.',startup:'$500–$2K',income:'$5K–$30K/mo',time:'Full-time'},
+  {icon:'🏦',title:'Virtual CFO Services',cat:'finance',catLabel:'Finance',catColor:'#f59e0b',desc:'Serve as outsourced CFO for startups and SMEs. High-value, recurring, remote-friendly.',startup:'$0–$500',income:'$8K–$50K/mo',time:'Flexible'},
+  {icon:'📑',title:'Tax Consulting / Bookkeeping',cat:'finance',catLabel:'Finance',catColor:'#f59e0b',desc:'Taxes are inevitable. Help businesses and individuals stay compliant. Evergreen demand year-round.',startup:'$0–$1K',income:'$3K–$20K/mo',time:'Flexible'},
+  {icon:'🏠',title:'Mortgage Brokerage',cat:'finance',catLabel:'Finance',catColor:'#f59e0b',desc:'Connect borrowers with lenders. Earn commission per deal. High per-transaction income.',startup:'$1K–$5K',income:'$5K–$40K/mo',time:'Full-time'},
+  {icon:'🌱',title:'Impact / ESG Investing',cat:'finance',catLabel:'Finance',catColor:'#f59e0b',desc:'Advise on sustainable, ethical investments. Fast-growing sector with premium clients.',startup:'$2K–$10K',income:'$5K–$30K/mo',time:'Full-time'},
+  {icon:'💸',title:'Peer-to-Peer Lending Platform',cat:'finance',catLabel:'Finance',catColor:'#f59e0b',desc:'Connect borrowers and lenders digitally. Take a percentage of interest. Tech-enabled finance.',startup:'$5K–$50K',income:'$5K–$100K/mo',time:'Full-time'},
+  {icon:'📉',title:'Credit Repair Business',cat:'finance',catLabel:'Finance',catColor:'#f59e0b',desc:'Help people dispute errors and rebuild credit scores. High demand, recurring client relationships.',startup:'$500–$2K',income:'$3K–$20K/mo',time:'Part-time'},
+  // PROPERTY
+  {icon:'🏡',title:'Real Estate Investing',cat:'property',catLabel:'Property',catColor:'#10b981',desc:'Buy properties to rent or flip. Build long-term wealth through assets and compounding rental income.',startup:'₹10L+',income:'₹20K–₹2L/mo',time:'Part-time'},
+  {icon:'🏨',title:'Airbnb / Short-term Rental',cat:'property',catLabel:'Property',catColor:'#10b981',desc:'Rent out rooms or full flats on Airbnb. 2x–4x regular rent in Bangalore and tourist cities.',startup:'₹50K–₹3L',income:'₹30K–₹2L/mo',time:'Part-time'},
+  {icon:'🏗️',title:'Real Estate Flipping',cat:'property',catLabel:'Property',catColor:'#10b981',desc:'Buy undervalued properties, renovate and sell at profit. Requires market knowledge and capital.',startup:'₹20L+',income:'₹5L–₹50L/deal',time:'Project-based'},
+  {icon:'🏢',title:'Commercial Real Estate',cat:'property',catLabel:'Property',catColor:'#10b981',desc:'Office spaces, retail, warehouses. Higher returns than residential. Long-term stable leases.',startup:'₹50L+',income:'₹1L–₹10L/mo',time:'Part-time'},
+  {icon:'📐',title:'Interior Design Studio',cat:'property',catLabel:'Property',catColor:'#10b981',desc:'Design homes and offices. Bangalore premium market. High per-project fees, creative work.',startup:'₹50K–₹2L',income:'₹2L–₹15L/project',time:'Full-time'},
+  {icon:'🌿',title:'Smart Home Integration',cat:'property',catLabel:'Property',catColor:'#10b981',desc:'Install and configure smart home devices for premium clients. Growing market in Tier 1 Indian cities.',startup:'₹1L–₹5L',income:'₹2L–₹10L/mo',time:'Full-time'},
+  {icon:'🎥',title:'Real Estate Photography / Video',cat:'property',catLabel:'Property',catColor:'#10b981',desc:'Shoot property listings, drone tours, virtual staging. Every property needs premium visuals.',startup:'₹50K–₹2L',income:'₹1L–₹8L/mo',time:'Flexible'},
+  {icon:'🏘️',title:'Property Management Company',cat:'property',catLabel:'Property',catColor:'#10b981',desc:'Manage rental properties for landlords. Take 8–12% of rent. Passive recurring income, scales well.',startup:'₹20K–₹1L',income:'₹50K–₹5L/mo',time:'Part-time'},
+  // CREATIVE
+  {icon:'🎬',title:'YouTube / Content Creation',cat:'creative',catLabel:'Creative',catColor:'#ef4444',desc:'Build an audience around your passion. Monetize through ads, sponsorships and your own products.',startup:'₹10K–₹50K',income:'Variable → ₹10L+/mo',time:'Part-time'},
+  {icon:'📸',title:'Photography / Videography',cat:'creative',catLabel:'Creative',catColor:'#ef4444',desc:'Shoot events, brands, portraits. Premium pricing for quality. Build a portfolio and reputation fast.',startup:'₹30K–₹2L',income:'₹50K–₹5L/mo',time:'Flexible'},
+  {icon:'✍️',title:'Copywriting / Content Writing',cat:'creative',catLabel:'Creative',catColor:'#ef4444',desc:'Write for businesses, blogs, ads. Top copywriters earn $200–$500 per page. Pure skill business.',startup:'₹0',income:'₹30K–₹3L/mo',time:'Flexible'},
+  {icon:'🎵',title:'Music Production Studio',cat:'creative',catLabel:'Creative',catColor:'#ef4444',desc:'Produce beats, jingles, soundtracks. Sell on Beatstars, license to brands, serve local artists.',startup:'₹50K–₹5L',income:'₹50K–₹10L/mo',time:'Flexible'},
+  {icon:'🎨',title:'Graphic Design Agency',cat:'creative',catLabel:'Creative',catColor:'#ef4444',desc:'Logo, branding, UI/UX, social graphics. Every business needs design. Build a team to scale.',startup:'₹0–₹20K',income:'₹50K–₹5L/mo',time:'Flexible'},
+  {icon:'🎭',title:'Animation / Motion Graphics',cat:'creative',catLabel:'Creative',catColor:'#ef4444',desc:'Explainer videos, brand animations. High value deliverable for marketing teams worldwide.',startup:'₹20K–₹1L',income:'₹1L–₹10L/mo',time:'Full-time'},
+  {icon:'📖',title:'Ghostwriting / Book Writing',cat:'creative',catLabel:'Creative',catColor:'#ef4444',desc:'Write books, memoirs, thought leadership content for executives. $5K–$50K per book.',startup:'₹0',income:'₹1L–₹15L/project',time:'Flexible'},
+  {icon:'🎙️',title:'Podcast Network',cat:'creative',catLabel:'Creative',catColor:'#ef4444',desc:'Launch and monetize podcasts. Sponsorships, ads, premium content. Build multiple shows.',startup:'₹10K–₹50K',income:'₹30K–₹5L/mo',time:'Part-time'},
+  {icon:'🎪',title:'Event Planning / Management',cat:'creative',catLabel:'Creative',catColor:'#ef4444',desc:'Corporate events, weddings, conferences. High per-event revenue, strong word-of-mouth growth.',startup:'₹50K–₹3L',income:'₹1L–₹20L/event',time:'Project-based'},
+  {icon:'🖼️',title:'Template / Digital Asset Store',cat:'creative',catLabel:'Creative',catColor:'#ef4444',desc:'Sell Canva templates, Notion templates, Figma kits. Create once, sell forever. Pure passive income.',startup:'₹0',income:'₹20K–₹5L/mo',time:'Part-time'},
+  // HEALTH
+  {icon:'🏥',title:'Telehealth Platform',cat:'health',catLabel:'Health',catColor:'#22d3ee',desc:'Connect patients with doctors online. High-growth sector post-COVID. Massive global demand.',startup:'$5K–$50K',income:'$10K–$500K/mo',time:'Full-time'},
+  {icon:'🧠',title:'Mental Health / Therapy App',cat:'health',catLabel:'Health',catColor:'#22d3ee',desc:'Online therapy and mental wellness platform. Subscription model. Growing stigma reduction worldwide.',startup:'$5K–$30K',income:'$5K–$200K/mo',time:'Full-time'},
+  {icon:'🥗',title:'Nutrition Consulting',cat:'health',catLabel:'Health',catColor:'#22d3ee',desc:'Help people eat better and lose weight. Online coaching, meal plans, group programs. Zero capital.',startup:'$0–$500',income:'$2K–$15K/mo',time:'Flexible'},
+  {icon:'💊',title:'Supplement Brand',cat:'health',catLabel:'Health',catColor:'#22d3ee',desc:'Private label vitamins, protein, wellness products. Huge margins. Build a brand, not a product.',startup:'$3K–$20K',income:'$5K–$100K/mo',time:'Full-time'},
+  {icon:'🧘',title:'Yoga / Meditation Platform',cat:'health',catLabel:'Health',catColor:'#22d3ee',desc:'Online classes, memberships, retreats. Wellness is a $5T global industry. Low competition niches.',startup:'$0–$1K',income:'$1K–$20K/mo',time:'Flexible'},
+  {icon:'🏃',title:'Corporate Wellness Program',cat:'health',catLabel:'Health',catColor:'#22d3ee',desc:'Sell wellness programs to companies for their employees. B2B contracts are large and recurring.',startup:'$500–$3K',income:'$5K–$50K/mo',time:'Flexible'},
+  {icon:'🌿',title:'Organic / Ayurvedic Products',cat:'health',catLabel:'Health',catColor:'#22d3ee',desc:'Natural health products have booming demand in India and globally. D2C brand on Amazon / Meesho.',startup:'₹50K–₹5L',income:'₹50K–₹20L/mo',time:'Full-time'},
+  {icon:'👶',title:'Home Healthcare / Elder Care',cat:'health',catLabel:'Health',catColor:'#22d3ee',desc:'In-home nursing and care for elderly and patients. Ageing population drives massive demand.',startup:'₹1L–₹10L',income:'₹2L–₹20L/mo',time:'Full-time'},
+  {icon:'🦷',title:'Dental Clinic',cat:'health',catLabel:'Health',catColor:'#22d3ee',desc:'Own a dental practice or partner with dentists. Premium urban locations yield strong returns.',startup:'₹20L–₹1Cr',income:'₹3L–₹30L/mo',time:'Full-time'},
+  {icon:'💆',title:'Spa & Wellness Center',cat:'health',catLabel:'Health',catColor:'#22d3ee',desc:'Premium spa, massage, beauty treatments. High repeat customers. Works in any major city.',startup:'₹10L–₹50L',income:'₹2L–₹20L/mo',time:'Full-time'},
+  // EDUCATION
+  {icon:'💻',title:'Coding Bootcamp',cat:'education',catLabel:'Education',catColor:'#a78bfa',desc:'Teach programming to beginners. High demand globally. Charge premium for job placement guarantee.',startup:'$500–$5K',income:'$5K–$100K/mo',time:'Full-time'},
+  {icon:'📚',title:'Test Prep Company',cat:'education',catLabel:'Education',catColor:'#a78bfa',desc:'SAT, GRE, GMAT, UPSC, CAT prep courses. Evergreen demand. Online delivery scales massively.',startup:'₹50K–₹5L',income:'₹2L–₹50L/mo',time:'Full-time'},
+  {icon:'🗣️',title:'Language Learning App / Tutoring',cat:'education',catLabel:'Education',catColor:'#a78bfa',desc:'Teach English, Spanish, French. Massive global demand. Premium rates for native and expert tutors.',startup:'$0–$1K',income:'$2K–$20K/mo',time:'Flexible'},
+  {icon:'🎯',title:'Career Coaching / Placement',cat:'education',catLabel:'Education',catColor:'#a78bfa',desc:'Help people land jobs, pivot careers, negotiate salaries. High-value transformational service.',startup:'$0–$500',income:'$3K–$30K/mo',time:'Flexible'},
+  {icon:'👨‍💼',title:'Corporate Training Company',cat:'education',catLabel:'Education',catColor:'#a78bfa',desc:'Train employees in leadership, tech, compliance. Large B2B contracts. Repeat business guaranteed.',startup:'₹50K–₹3L',income:'₹3L–₹30L/mo',time:'Full-time'},
+  {icon:'🤖',title:'AI/Data Science Academy',cat:'education',catLabel:'Education',catColor:'#a78bfa',desc:'Teach AI, ML, data science. Hottest skills in the market. Premium students, premium pricing.',startup:'$500–$5K',income:'$5K–$100K/mo',time:'Full-time'},
+  {icon:'📝',title:'Resume / LinkedIn Optimization',cat:'education',catLabel:'Education',catColor:'#a78bfa',desc:'Rewrite resumes and LinkedIn profiles for job seekers. Quick wins, scalable, high demand.',startup:'$0',income:'$2K–$10K/mo',time:'Part-time'},
+  {icon:'🎓',title:'College Admissions Consulting',cat:'education',catLabel:'Education',catColor:'#a78bfa',desc:'Help students get into top universities. Affluent families pay $2K–$10K+ per student.',startup:'$0–$1K',income:'$5K–$50K/mo',time:'Flexible'},
+  {icon:'👾',title:'Gamified / VR Learning Platform',cat:'education',catLabel:'Education',catColor:'#a78bfa',desc:'Build engaging learning experiences using gamification or VR. Future of education, investor-friendly.',startup:'$10K–$100K',income:'$10K–$500K/mo',time:'Full-time'},
+  {icon:'🧒',title:'STEM / Robotics for Kids',cat:'education',catLabel:'Education',catColor:'#a78bfa',desc:'Teach kids coding, robotics, AI. Parents pay premium for STEM education. Franchise model possible.',startup:'₹1L–₹10L',income:'₹1L–₹20L/mo',time:'Full-time'},
+  // FOOD
+  {icon:'🍜',title:'Cloud Kitchen / Ghost Kitchen',cat:'food',catLabel:'Food & Bev',catColor:'#f97316',desc:'Cook and deliver food without a dine-in restaurant. Lower costs, higher margins. Zomato/Swiggy ready.',startup:'₹2L–₹15L',income:'₹1L–₹20L/mo',time:'Full-time'},
+  {icon:'🚚',title:'Food Truck Business',cat:'food',catLabel:'Food & Bev',catColor:'#f97316',desc:'Mobile food business with low rent. Park at offices, events, markets. High margins on street food.',startup:'₹5L–₹20L',income:'₹1L–₹10L/mo',time:'Full-time'},
+  {icon:'🎂',title:'Custom Cake / Bakery',cat:'food',catLabel:'Food & Bev',catColor:'#f97316',desc:'Bake premium custom cakes for events. Instagram-driven, word-of-mouth growth. High per-order value.',startup:'₹50K–₹3L',income:'₹50K–₹5L/mo',time:'Flexible'},
+  {icon:'☕',title:'Specialty Coffee Brand',cat:'food',catLabel:'Food & Bev',catColor:'#f97316',desc:'Build a premium coffee roasting/subscription brand. D2C online or café concept. Strong loyalty.',startup:'₹2L–₹20L',income:'₹1L–₹15L/mo',time:'Full-time'},
+  {icon:'🥗',title:'Meal Prep / Healthy Delivery',cat:'food',catLabel:'Food & Bev',catColor:'#f97316',desc:'Weekly meal plans delivered to homes and offices. High repeat orders, subscription model.',startup:'₹1L–₹5L',income:'₹50K–₹10L/mo',time:'Full-time'},
+  {icon:'🍫',title:'Specialty Food Brand',cat:'food',catLabel:'Food & Bev',catColor:'#f97316',desc:'Chocolate, hot sauce, pickles, spice blends — niche food brands sell for massive multiples.',startup:'₹1L–₹10L',income:'₹50K–₹20L/mo',time:'Full-time'},
+  {icon:'🍺',title:'Craft Brewery / Winery',cat:'food',catLabel:'Food & Bev',catColor:'#f97316',desc:'Craft beverages have premium pricing and brand loyalty. Growing Indian market for craft drinks.',startup:'₹20L–₹2Cr',income:'₹5L–₹1Cr/mo',time:'Full-time'},
+  {icon:'🧑‍🍳',title:'Cooking Classes / Platform',cat:'food',catLabel:'Food & Bev',catColor:'#f97316',desc:'Teach cooking online or in-person. Indian regional cuisine is globally popular. Build a community.',startup:'₹0–₹1L',income:'₹50K–₹5L/mo',time:'Flexible'},
+  {icon:'🥩',title:'Catering Company',cat:'food',catLabel:'Food & Bev',catColor:'#f97316',desc:'Corporate and event catering. High-volume, high-value orders. Repeat corporate clients = stable income.',startup:'₹2L–₹10L',income:'₹2L–₹30L/mo',time:'Full-time'},
+  {icon:'🏷️',title:'Private Label Food Products',cat:'food',catLabel:'Food & Bev',catColor:'#f97316',desc:'Brand existing food products under your label. Sell on Amazon, BigBasket, Blinkit. Low risk.',startup:'₹1L–₹5L',income:'₹50K–₹10L/mo',time:'Part-time'},
+  // GREEN / SUSTAINABILITY
+  {icon:'☀️',title:'Solar Panel Installation',cat:'green',catLabel:'Green',catColor:'#4ade80',desc:'Sell and install rooftop solar for homes and businesses. Government subsidies fuel massive demand.',startup:'₹5L–₹30L',income:'₹2L–₹30L/mo',time:'Full-time'},
+  {icon:'⚡',title:'EV Charging Stations',cat:'green',catLabel:'Green',catColor:'#4ade80',desc:'Install EV charging infrastructure. Long-term passive income. Government-backed, growing rapidly.',startup:'₹5L–₹50L',income:'₹50K–₹10L/mo',time:'Part-time'},
+  {icon:'♻️',title:'E-Waste Recycling',cat:'green',catLabel:'Green',catColor:'#4ade80',desc:'Collect and process electronic waste. Huge untapped market in India. B2B and B2C possible.',startup:'₹2L–₹20L',income:'₹1L–₹15L/mo',time:'Full-time'},
+  {icon:'🌾',title:'Hydroponics / Vertical Farming',cat:'green',catLabel:'Green',catColor:'#4ade80',desc:'Grow food without soil using 90% less water. Supply to restaurants, supermarkets, hotels.',startup:'₹5L–₹50L',income:'₹1L–₹20L/mo',time:'Full-time'},
+  {icon:'🍃',title:'Sustainable Fashion Brand',cat:'green',catLabel:'Green',catColor:'#4ade80',desc:'Eco-friendly clothing using organic or upcycled materials. Premium pricing, strong Gen-Z demand.',startup:'₹2L–₹20L',income:'₹1L–₹20L/mo',time:'Full-time'},
+  {icon:'💧',title:'Water Purification Systems',cat:'green',catLabel:'Green',catColor:'#4ade80',desc:'Sell or lease water purifiers to homes and industries. Recurring filter replacement = steady income.',startup:'₹1L–₹10L',income:'₹1L–₹10L/mo',time:'Full-time'},
+  {icon:'🌱',title:'Zero-Waste / Green Consulting',cat:'green',catLabel:'Green',catColor:'#4ade80',desc:'Help businesses reduce waste and get sustainability certifications. Growing corporate demand.',startup:'₹0–₹1L',income:'₹1L–₹10L/mo',time:'Flexible'},
+  {icon:'🐝',title:'Organic Farming / Honey Brand',cat:'green',catLabel:'Green',catColor:'#4ade80',desc:'Organic produce or honey brand. D2C model, premium pricing, strong India and export demand.',startup:'₹2L–₹20L',income:'₹50K–₹10L/mo',time:'Full-time'},
+  {icon:'🏕️',title:'Eco-Tourism / Nature Retreat',cat:'green',catLabel:'Green',catColor:'#4ade80',desc:'Sustainable travel experiences, glamping, forest retreats. Premium pricing, Instagram-driven growth.',startup:'₹10L–₹1Cr',income:'₹2L–₹30L/mo',time:'Full-time'},
+  {icon:'🧽',title:'Green / Eco-Cleaning Products',cat:'green',catLabel:'Green',catColor:'#4ade80',desc:'Natural cleaning products brand. Subscription model to homes and corporates. D2C potential.',startup:'₹1L–₹5L',income:'₹50K–₹10L/mo',time:'Full-time'},
+];
+
+const CREATOR_PLATFORMS = [
+  {
+    icon:'✍️', title:'Medium', color:'#f5a623',
+    tagline:'Write once, earn for years — your existing blog supercharged',
+    badge:'Already Writing!', badgeBg:'rgba(245,166,35,.2)', badgeColor:'#f5a623',
+    payHow:'Enable Medium Partner Program (free). You earn based on Member reading time — the longer members read your articles, the more you earn. Also add affiliate links (Hostinger, Udemy, AWS, Coursera) inside articles for bonus income.',
+    schedule:[
+      {period:'Week 1–2',what:'Write 2 articles',topics:'C/C++ tips for beginners · Python automation tricks',note:'1,500–2,500 words each. Boost with good title (use CoSchedule headline analyser)'},
+      {period:'Week 3',what:'Write 2 articles + Cross-post',topics:'AI tools for developers · SQL tricks nobody tells you',note:'Cross-post same articles to Dev.to and Hashnode for 3x traffic'},
+      {period:'Week 4',what:'Write 2 articles + Listicle',topics:'"10 Python scripts that saved me 10 hours a week"',note:'Listicles get shared most. Add affiliate link naturally.'},
+      {period:'Month 2',what:'3 articles/week',topics:'CI/CD tutorials · Tech career stories · Tool reviews',note:'Mix tutorial + opinion + listicle. Aim for 1 viral hit per month'},
+      {period:'Month 3+',what:'4 articles/week',topics:'AI tools deep-dives · Freelancing as a dev · Money in tech',note:'Start a weekly newsletter on Substack, link from Medium'},
+    ],
+    tips:[
+      {text:'Best performing titles: "I did X for 30 days…" / "Stop doing X, do Y instead" / "5 Python scripts that…"', color:'#f5a623'},
+      {text:'Write about your actual work — C/C++ embedded, CI/CD pipelines. Authenticity beats generic content.', color:'#8b5cf6'},
+      {text:'Add one affiliate link per article (Coursera course, AWS, Hostinger). Can earn ₹500–₹5K per article passively.', color:'#10b981'},
+      {text:'Respond to every comment for the first 6 months. Engagement boosts distribution massively.', color:'#ec4899'},
+    ],
+    income:[
+      {period:'Month 1',amount:'₹500–₹3K',note:'Partner Program kicks in'},
+      {period:'Month 3',amount:'₹3K–₹15K',note:'Affiliate links firing'},
+      {period:'Month 6',amount:'₹15K–₹50K',note:'Consistent readership'},
+      {period:'Year 1',amount:'₹50K–₹2L',note:'+ sponsorships'},
+    ]
+  },
+  {
+    icon:'▶️', title:'YouTube', color:'#ef4444',
+    tagline:'Biggest passive income engine — monetize in 3–6 months',
+    badge:'Start This Month', badgeBg:'rgba(239,68,68,.15)', badgeColor:'#ef4444',
+    payHow:'YouTube Partner Program requires 1,000 subscribers + 4,000 watch hours (or 10M Shorts views). Once approved, earn from ads. Add sponsorships ($200–$5K/video), affiliate links in description, and sell your own courses.',
+    schedule:[
+      {period:'Week 1',what:'1 video',topics:'Who I am + what this channel is about (tech + career + income)',note:'Setup channel, branding, banner. Record with phone — quality doesn\'t matter yet.'},
+      {period:'Week 2–4',what:'1 video/week',topics:'C/C++ explained simply · My CI/CD workflow · Dev tools I use daily',note:'10–15 min tutorials. Add chapters. End with "subscribe if you learned something".'},
+      {period:'Month 2',what:'2 videos/week',topics:'Python automation tutorial · AI tools for developers · Dev career tips',note:'+ 2 YouTube Shorts per week (repurpose long video highlights). Shorts = fast subscribers.'},
+      {period:'Month 3',what:'2 videos + 3 Shorts/week',topics:'Income as a dev · Freelancing tips · Build X in Python in 10 mins',note:'Aim for 1,000 subs by Month 3. Engage every comment. Post consistently.'},
+      {period:'Month 4–6',what:'3 videos + 5 Shorts/week',topics:'Tool reviews · My income breakdown · Day in my life as a dev',note:'Apply for Partner Program once eligible. Land first sponsorship.'},
+    ],
+    tips:[
+      {text:'Best performing tech topics: "I built X in Y minutes", "Tools I use daily", "Honest income reveal", "Beginner to pro in X days"', color:'#ef4444'},
+      {text:'Record with your phone in a well-lit room. Your content is what matters — not a studio.', color:'#f5a623'},
+      {text:'YouTube Shorts (under 60 sec) are the fastest way to get subscribers right now. Repurpose long video clips.', color:'#8b5cf6'},
+      {text:'Put affiliate links to every tool you mention in the description. Passive income from day 1.', color:'#10b981'},
+    ],
+    income:[
+      {period:'Month 3',amount:'₹0–₹2K',note:'Affiliates only'},
+      {period:'Month 6',amount:'₹5K–₹20K',note:'Monetized + affiliates'},
+      {period:'Year 1',amount:'₹30K–₹1.5L',note:'+ first sponsorship'},
+      {period:'Year 2',amount:'₹1L–₹10L',note:'+ your own courses'},
+    ]
+  },
+  {
+    icon:'💬', title:'Quora', color:'#b92b27',
+    tagline:'Free traffic machine — answers rank on Google forever',
+    badge:'Zero Followers Needed', badgeBg:'rgba(185,43,39,.15)', badgeColor:'#ef4444',
+    payHow:'Quora Partner Program (invite-only) pays based on question views. But the real money is indirect — Quora answers rank on Google and send traffic to your Medium, YouTube and affiliate links. Treat it as a traffic funnel, not primary income.',
+    schedule:[
+      {period:'Daily (15 min)',what:'Answer 1–2 questions',topics:'Programming · Software careers · AI tools · Freelancing · Python · Dev life',note:'Add your Medium article link naturally at the end of every answer.'},
+      {period:'Week 1–2',what:'10 answers',topics:'Focus on questions with 10K+ followers. Tech and career questions get huge traffic.',note:'Write 300–500 word detailed answers. Add code snippets for credibility.'},
+      {period:'Month 1',what:'30–50 answers',topics:'Vary between Python, C++, career, AI, freelancing, income topics',note:'Check which answers get most views → write more in that niche'},
+      {period:'Month 2+',what:'1 answer/day minimum',topics:'Answer trending questions + evergreen programming questions',note:'Each answer is a permanent Google-indexed page driving traffic to you forever.'},
+    ],
+    tips:[
+      {text:'Highest-traffic topics on Quora: Career advice, tech salaries, AI, Python, how to make money online, India dev jobs.', color:'#b92b27'},
+      {text:'End every answer with: "I wrote a detailed guide on this — link in bio / here: [your Medium article]"', color:'#f5a623'},
+      {text:'Answers take 3–6 months to rank on Google. Plant them now — they\'re compounding assets.', color:'#8b5cf6'},
+      {text:'Add your YouTube channel to Quora profile. Every good answer gets profile visits → subscribers.', color:'#10b981'},
+    ],
+    income:[
+      {period:'Month 1–3',amount:'₹0 direct',note:'Traffic only'},
+      {period:'Month 3–6',amount:'₹2K–₹10K',note:'Via Medium + affiliate'},
+      {period:'Month 6+',amount:'₹5K–₹30K',note:'Compounding traffic'},
+      {period:'Year 1+',amount:'₹20K–₹1L',note:'Evergreen pipeline'},
+    ]
+  },
+  {
+    icon:'💼', title:'LinkedIn', color:'#0077b5',
+    tagline:'Highest-paying platform per follower — B2B gold mine',
+    badge:'Start Immediately', badgeBg:'rgba(0,119,181,.15)', badgeColor:'#29b6f6',
+    payHow:'LinkedIn doesn\'t pay directly but it\'s where you land ₹50K–₹5L freelance clients and speaking gigs. 1 viral post can bring 10 client enquiries. Combine with Creator Mode for newsletter subscribers.',
+    schedule:[
+      {period:'Daily (10 min)',what:'1 post or comment',topics:'Your work · Learnings · Tools · Short tips · Career stories · Opinion on tech',note:'Use Creator Mode. Post at 8–9am IST weekdays. Comment on 5 posts by others daily.'},
+      {period:'Week 1',what:'5 posts',topics:'"I\'m a software engineer and I\'m starting to share my journey" · 3 quick dev tips · 1 tool recommendation',note:'Announce your content journey. Connect with 20 new people per day.'},
+      {period:'Month 1',what:'5 posts/week',topics:'Python tip · AI tool review · Career story · "What I earned this month" · Coding mistake + lesson',note:'Mix formats: text post, image carousel, poll, short video clip'},
+      {period:'Month 2+',what:'5 posts/week + newsletter',topics:'Start a weekly LinkedIn newsletter ("Dev to Dollars" or similar)',note:'Newsletter subscribers get email notifications — fastest follower → client path.'},
+    ],
+    tips:[
+      {text:'Best LinkedIn formats right now: short personal story (3 paragraphs) + lesson + CTA. Gets 10x more reach than pure tips.', color:'#0077b5'},
+      {text:'"I was a software engineer earning ₹X. Here\'s how I built a side income to ₹Y in 6 months." — this type of post goes viral.', color:'#f5a623'},
+      {text:'Post one "tool I use and why" per week. Add affiliate link in comments (not caption — LinkedIn limits reach on links in captions).', color:'#8b5cf6'},
+      {text:'Every 3rd post should have a soft CTA: "DM me if you want help with X" — that\'s how freelance clients come to you.', color:'#10b981'},
+    ],
+    income:[
+      {period:'Month 1',amount:'₹0 direct',note:'Building audience'},
+      {period:'Month 2–3',amount:'₹10K–₹50K',note:'1st freelance client'},
+      {period:'Month 6',amount:'₹50K–₹2L',note:'Retainer clients'},
+      {period:'Year 1',amount:'₹2L–₹10L',note:'Speaking + courses'},
+    ]
+  },
+  {
+    icon:'📸', title:'Instagram / Reels', color:'#e1306c',
+    tagline:'Fastest audience growth — Reels get organic reach even at 0 followers',
+    badge:'Reels = Free Reach', badgeBg:'rgba(225,48,108,.15)', badgeColor:'#e1306c',
+    payHow:'Instagram pays through Creator Bonus (invite-only) and Reels Play Bonus. Real income = brand deals (₹5K–₹5L per post), affiliate links in bio (Linktree), and driving followers to your YouTube and courses.',
+    schedule:[
+      {period:'Week 1',what:'3 Reels',topics:'30-sec dev tip · AI tool demo · "Day in my life as a software engineer in Bangalore"',note:'Film portrait mode, add captions (auto-subtitle apps). Keep under 30 seconds.'},
+      {period:'Daily',what:'1 Story',topics:'What you\'re working on · Tool you tried · Progress update · Poll/question sticker',note:'Stories keep you top-of-mind. Use polls — algorithm rewards engagement.'},
+      {period:'Month 1',what:'5 Reels/week + daily Stories',topics:'Tech tips · Bangalore dev life · AI tool reviews · Before/after code fixes',note:'Post at 7–9pm IST. Use trending audio on Reels for extra reach.'},
+      {period:'Month 2+',what:'7 Reels/week',topics:'Add income + lifestyle content. "My side income update" · "Tools I paid for this month" · Weekend dev vlog',note:'Mix tech + lifestyle. Lifestyle content grows followers faster on Instagram.'},
+    ],
+    tips:[
+      {text:'Hook in first 1 second is everything. Start mid-action or with a bold statement, never with "Hey guys welcome back".', color:'#e1306c'},
+      {text:'Repurpose your YouTube videos as Reels and TikToks. One recording = content for 3 platforms.', color:'#f5a623'},
+      {text:'Best niches for Indian tech creators: "dev life in Bangalore", AI tools, freelancing income, side hustle from coding.', color:'#8b5cf6'},
+      {text:'Add your Medium and YouTube in bio via Linktree. Every piece of content should funnel to your bigger platforms.', color:'#10b981'},
+    ],
+    income:[
+      {period:'Month 1–2',amount:'₹0',note:'Growing audience'},
+      {period:'Month 3–4',amount:'₹5K–₹20K',note:'First brand DMs'},
+      {period:'Month 6',amount:'₹20K–₹1L',note:'Regular brand deals'},
+      {period:'Year 1',amount:'₹1L–₹10L',note:'Multi-platform income'},
+    ]
+  },
+];
+
+const TRACKER_PLATFORMS = [
+  {key:'medium',    icon:'✍️', name:'Medium',    color:'#f5a623', targets:{monthly:8,  label:'8 articles/month · 2/week'}},
+  {key:'youtube',   icon:'▶️', name:'YouTube',   color:'#ef4444', targets:{monthly:8,  label:'8 videos/month · 2/week'}},
+  {key:'shorts',    icon:'🎬', name:'YT Shorts', color:'#ff6b35', targets:{monthly:20, label:'20 Shorts/month · 5/week'}},
+  {key:'quora',     icon:'💬', name:'Quora',     color:'#b92b27', targets:{monthly:30, label:'30 answers/month · 1/day'}},
+  {key:'linkedin',  icon:'💼', name:'LinkedIn',  color:'#0077b5', targets:{monthly:20, label:'20 posts/month · 5/week'}},
+  {key:'instagram', icon:'📸', name:'Instagram', color:'#e1306c', targets:{monthly:20, label:'20 Reels/month · 5/week'}},
+];
+
+let trackerMonth = new Date().getMonth();
+let trackerYear  = new Date().getFullYear();
+
+function getTrackerKey(platformKey){ return `rajeev_tracker_${platformKey}_${trackerYear}_${trackerMonth}`; }
+function getTrackerLogs(platformKey){ return JSON.parse(localStorage.getItem(getTrackerKey(platformKey)) || '[]'); }
+
+function logPost(platformKey){
+  const logs = getTrackerLogs(platformKey);
+  const now = new Date();
+  logs.push(`${now.getDate()} ${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][now.getMonth()]} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`);
+  localStorage.setItem(getTrackerKey(platformKey), JSON.stringify(logs));
+  renderTracker();
+}
+function undoPost(platformKey){
+  const logs = getTrackerLogs(platformKey);
+  if(logs.length) { logs.pop(); localStorage.setItem(getTrackerKey(platformKey), JSON.stringify(logs)); }
+  renderTracker();
+}
+
+function renderTracker(){
+  const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const wrap = document.getElementById('sched-tracker');
+  const totalTarget = TRACKER_PLATFORMS.reduce((s,p)=>s+p.targets.monthly,0);
+  const totalPosted = TRACKER_PLATFORMS.reduce((s,p)=>s+getTrackerLogs(p.key).length,0);
+
+  wrap.innerHTML = `
+    <div class="tracker-month-nav">
+      <button onclick="trackerMonth--;if(trackerMonth<0){trackerMonth=11;trackerYear--;}renderTracker()">‹</button>
+      <div class="tracker-month-label">${MONTHS[trackerMonth]} ${trackerYear}</div>
+      <button onclick="trackerMonth++;if(trackerMonth>11){trackerMonth=0;trackerYear++;}renderTracker()">›</button>
+    </div>
+    <div class="tracker-summary">
+      <h3>📊 This Month Overview</h3>
+      ${TRACKER_PLATFORMS.map(p=>{
+        const count = getTrackerLogs(p.key).length;
+        const pct = Math.min(100, Math.round(count/p.targets.monthly*100));
+        const color = pct>=100?'#10b981':pct>=50?'#f5a623':'#ef4444';
+        return `<div class="tracker-summary-row">
+          <div class="tracker-summary-left"><span>${p.icon}</span>${p.name}</div>
+          <div style="flex:1;margin:0 14px"><div class="tracker-bar-wrap"><div class="tracker-bar-fill" style="width:${pct}%;background:${p.color}"></div></div></div>
+          <div class="tracker-summary-right" style="color:${color}">${count} / ${p.targets.monthly}</div>
+        </div>`;
+      }).join('')}
+      <div style="text-align:center;margin-top:14px;font-size:.88rem;color:rgba(255,255,255,.5)">Total this month: <span style="color:#f5a623;font-weight:800">${totalPosted}</span> / ${totalTarget} posts</div>
+    </div>
+    <div class="tracker-cards">
+      ${TRACKER_PLATFORMS.map(p=>{
+        const logs = getTrackerLogs(p.key);
+        const count = logs.length;
+        const pct = Math.min(100, Math.round(count/p.targets.monthly*100));
+        const color = pct>=100?'#10b981':pct>=50?'#f5a623':'#ef4444';
+        const remaining = Math.max(0, p.targets.monthly - count);
+        return `<div class="tracker-card">
+          <div class="tracker-card-top">
+            <div class="tracker-card-icon">${p.icon}</div>
+            <div><div class="tracker-card-name">${p.name}</div><div class="tracker-card-target">Target: ${p.targets.label}</div></div>
+          </div>
+          <div class="tracker-bar-wrap"><div class="tracker-bar-fill" style="width:${pct}%;background:${p.color}"></div></div>
+          <div class="tracker-stat">
+            <div><div class="tracker-count" style="color:${p.color}">${count}</div><div class="tracker-of">of ${p.targets.monthly} posted${remaining>0?' · '+remaining+' left':' ✅ Done!'}</div></div>
+            <div class="tracker-pct" style="color:${color}">${pct}%</div>
+          </div>
+          <button class="tracker-log-btn" style="background:${p.color}22;color:${p.color};border:1px solid ${p.color}44" onclick="logPost('${p.key}')">+ Log a ${p.name} Post</button>
+          <button class="tracker-undo" onclick="undoPost('${p.key}')">↩ Undo last</button>
+          ${logs.length?`<div class="tracker-log-dates">${logs.slice(-6).map(d=>`<span class="tracker-log-dot">${d}</span>`).join('')}${logs.length>6?`<span class="tracker-log-dot">+${logs.length-6} more</span>`:''}</div>`:''}
+        </div>`;
+      }).join('')}
+    </div>`;
+}
+
+function buildEmpirePanel(){
+  // Main tabs (Ideas / Creator Schedule)
+  document.querySelectorAll('.emp-tab[data-emp]').forEach(t=>{
+    t.addEventListener('click',()=>{
+      document.querySelectorAll('.emp-tab[data-emp]').forEach(x=>x.classList.remove('active'));
+      document.querySelectorAll('.empire-section').forEach(x=>x.classList.remove('active'));
+      t.classList.add('active');
+      document.getElementById('emp-'+t.dataset.emp).classList.add('active');
+    });
+  });
+
+  // Schedule sub-tabs (Tracker / Guide)
+  document.querySelectorAll('.emp-tab[data-sched]').forEach(t=>{
+    t.addEventListener('click',()=>{
+      document.querySelectorAll('.emp-tab[data-sched]').forEach(x=>x.classList.remove('active'));
+      t.classList.add('active');
+      document.getElementById('sched-tracker').style.display = t.dataset.sched==='tracker'?'block':'none';
+      document.getElementById('sched-guide').style.display   = t.dataset.sched==='guide'  ?'block':'none';
+    });
+  });
+
+  buildBizGrid('all');
+  document.querySelectorAll('.biz-filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.biz-filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      buildBizGrid(btn.dataset.filter);
+    });
+  });
+
+  renderTracker();
+  buildCreatorSchedule();
+}
+
+function buildCreatorSchedule(){
+  const wrap = document.getElementById('creator-schedule-wrap');
+  wrap.innerHTML = CREATOR_PLATFORMS.map((p,pi)=>`
+    <div class="creator-platform">
+      <div class="creator-platform-header" onclick="toggleCP(${pi})">
+        <div class="cp-icon">${p.icon}</div>
+        <div>
+          <div class="cp-title">${p.title}</div>
+          <div class="cp-tagline">${p.tagline}</div>
+        </div>
+        <span class="cp-badge" style="background:${p.badgeBg};color:${p.badgeColor}">${p.badge}</span>
+        <span class="cp-toggle" id="cp-toggle-${pi}">▼</span>
+      </div>
+      <div class="creator-platform-body" id="cp-body-${pi}">
+        <div class="cp-pay-box">
+          <h4>💰 How You Get Paid</h4>
+          <p>${p.payHow}</p>
+        </div>
+        <table class="schedule-table">
+          <thead><tr><th>Period</th><th>Target</th><th>Topics / Action</th><th>Pro Tip</th></tr></thead>
+          <tbody>${p.schedule.map(s=>`<tr><td>${s.period}</td><td>${s.what}</td><td>${s.topics}</td><td>${s.note}</td></tr>`).join('')}</tbody>
+        </table>
+        <div style="margin-bottom:12px;font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.3)">⚡ Keys to Success</div>
+        <div class="cp-tips">${p.tips.map(t=>`<div class="cp-tip" style="border-color:${t.color}">${t.text}</div>`).join('')}</div>
+        <div style="margin:18px 0 10px;font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.3)">📈 Realistic Income Timeline</div>
+        <div class="cp-income-timeline">${p.income.map(i=>`<div class="cp-income-box"><div class="period">${i.period}</div><div class="amount">${i.amount}</div><div class="note">${i.note}</div></div>`).join('')}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleCP(i){
+  const body = document.getElementById('cp-body-'+i);
+  const toggle = document.getElementById('cp-toggle-'+i);
+  const open = body.classList.toggle('open');
+  toggle.classList.toggle('open', open);
+}
+
+function buildBizGrid(filter){
+  const saved = JSON.parse(localStorage.getItem('rajeev_biz_saved')||'[]');
+  const grid = document.getElementById('biz-grid');
+  const items = filter==='all' ? BIZ_IDEAS : BIZ_IDEAS.filter(b=>b.cat===filter);
+  grid.innerHTML = items.map(b=>`
+    <div class="biz-card ${saved.includes(b.title)?'saved':''}">
+      <button class="biz-save-btn" onclick="toggleBizSave('${b.title.replace(/'/g,"\\'")}')" title="Save idea">${saved.includes(b.title)?'⭐':'☆'}</button>
+      <div class="biz-icon">${b.icon}</div>
+      <div class="biz-title">${b.title}</div>
+      <span class="biz-cat-tag" style="background:${b.catColor}22;color:${b.catColor}">${b.catLabel}</span>
+      <div class="biz-desc">${b.desc}</div>
+      <div class="biz-meta">
+        <span>💰 ${b.startup}</span>
+        <span>📈 ${b.income}</span>
+        <span>⏰ ${b.time}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleBizSave(title){
+  let saved = JSON.parse(localStorage.getItem('rajeev_biz_saved')||'[]');
+  if(saved.includes(title)) saved = saved.filter(s=>s!==title);
+  else saved.push(title);
+  localStorage.setItem('rajeev_biz_saved',JSON.stringify(saved));
+  const activeFilter = document.querySelector('.biz-filter-btn.active')?.dataset.filter || 'all';
+  buildBizGrid(activeFilter);
+}
+
 function buildBucketPanel(){
   let bucketVisited = JSON.parse(localStorage.getItem('rajeev_bucket') || '[]');
   const total = BUCKET_DATA.length;
@@ -1152,7 +1798,7 @@ document.querySelectorAll('.tab').forEach(tab => {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     activeCat = tab.dataset.cat;
-    const specialPanels = ['chalisa','gym','bucket','manifest','world','photos','book','milestones','affcards'];
+    const specialPanels = ['chalisa','gym','bucket','manifest','world','photos','book','milestones','affcards','empire'];
     const isSpecial = specialPanels.includes(activeCat);
     gridEl.style.display = isSpecial ? 'none' : '';
     chalisaPanel.style.display   = activeCat==='chalisa'    ? 'block' : 'none';
@@ -1164,6 +1810,8 @@ document.querySelectorAll('.tab').forEach(tab => {
     document.getElementById('book-panel').style.display       = activeCat==='book'       ? 'block' : 'none';
     document.getElementById('milestones-panel').style.display = activeCat==='milestones' ? 'block' : 'none';
     document.getElementById('affcards-panel').style.display   = activeCat==='affcards'   ? 'block' : 'none';
+    document.getElementById('empire-panel').style.display     = activeCat==='empire'     ? 'block' : 'none';
+    if(activeCat==='empire' && !empireBuilt){ buildEmpirePanel(); empireBuilt=true; }
     if(activeCat==='gym'    && !gymBuilt)   { buildGymPanel();    gymBuilt=true; }
     if(activeCat==='bucket' && !bucketBuilt){ buildBucketPanel(); bucketBuilt=true; }
     if(!isSpecial) applyFilter();
