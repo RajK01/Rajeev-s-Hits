@@ -164,6 +164,33 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
 .bucket-check-btn{width:100%;padding:9px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:rgba(255,255,255,.55);font-family:inherit;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s}
 .bucket-check-btn:hover{background:rgba(255,255,255,.12);color:#fff}
 .bucket-check-btn.checked{background:rgba(34,197,94,.14);border-color:rgba(34,197,94,.45);color:#4ade80}
+
+/* VISION BOARD */
+#vboard-btn{padding:11px 18px;border-radius:12px;border:none;background:linear-gradient(135deg,#7c3aed,#f5a623);color:#fff;font-family:inherit;font-weight:700;font-size:.88rem;cursor:pointer;transition:transform .2s,box-shadow .2s;white-space:nowrap}
+#vboard-btn:hover{transform:scale(1.05);box-shadow:0 6px 24px rgba(124,58,237,.5)}
+#vboard-overlay{display:none;position:fixed;inset:0;z-index:900;background:#000;overflow:hidden}
+#vboard-overlay.open{display:block}
+#vboard-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.4s ease}
+#vboard-bg.visible{opacity:1;animation:kenburns 14s ease-in-out forwards}
+@keyframes kenburns{from{transform:scale(1) translateX(0)}to{transform:scale(1.1) translateX(-1%)}}
+#vboard-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.1) 55%,rgba(0,0,0,.45) 100%);z-index:1}
+#vboard-top{position:absolute;top:0;left:0;right:0;padding:22px 28px;display:flex;align-items:center;gap:14px;z-index:10}
+#vboard-slide-num{font-size:.75rem;color:rgba(255,255,255,.45);min-width:44px;font-weight:600}
+#vboard-prog-bar{flex:1;height:3px;background:rgba(255,255,255,.15);border-radius:999px;overflow:hidden}
+#vboard-prog-fill{height:100%;width:0%;background:linear-gradient(90deg,#f5a623,#e040fb);border-radius:999px;transition:width .15s linear}
+#vboard-close-btn{background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.2);color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+#vboard-close-btn:hover{background:rgba(255,0,0,.4)}
+#vboard-content{position:absolute;bottom:130px;left:0;right:0;text-align:center;padding:0 48px;z-index:10;transition:opacity .6s}
+#vboard-content.fading{opacity:0}
+#vboard-loc{font-size:.75rem;color:rgba(255,255,255,.5);margin-bottom:14px;letter-spacing:2px;text-transform:uppercase}
+#vboard-quote{font-size:clamp(1.4rem,3.5vw,2.2rem);font-weight:900;color:#fff;line-height:1.45;text-shadow:0 2px 40px rgba(0,0,0,.95);max-width:850px;margin:0 auto;font-style:italic}
+#vboard-controls{position:absolute;bottom:36px;left:0;right:0;display:flex;justify-content:center;gap:10px;align-items:center;z-index:10}
+.vb-btn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:10px 20px;border-radius:999px;cursor:pointer;font-family:inherit;font-size:.85rem;font-weight:600;transition:all .2s;backdrop-filter:blur(10px)}
+.vb-btn:hover{background:rgba(255,255,255,.22);transform:scale(1.05)}
+#vboard-playpause{width:52px;height:52px;padding:0;font-size:1.3rem;border-radius:50%;background:rgba(245,166,35,.25);border-color:rgba(245,166,35,.5)}
+#vboard-playpause:hover{background:rgba(245,166,35,.45)}
+#vboard-music-btn.music-on{background:rgba(224,64,251,.2);border-color:rgba(224,64,251,.5);color:#e040fb}
+#vboard-music-label{position:absolute;bottom:110px;left:24px;font-size:.72rem;color:rgba(255,255,255,.5);letter-spacing:1px;z-index:20;pointer-events:none}
 </style>
 </head>
 <body>
@@ -182,6 +209,30 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
   </div>
   <button id="surprise-btn">🔀 Surprise Me!</button>
   <button id="remind-btn" title="Set morning reminder">🔔</button>
+  <button id="vboard-btn">🌅 Vision Board</button>
+</div>
+
+<!-- Vision Board Overlay -->
+<div id="vboard-overlay">
+  <div id="vboard-bg"></div>
+  <div id="vboard-grad"></div>
+  <div id="vboard-top">
+    <span id="vboard-slide-num"></span>
+    <div id="vboard-prog-bar"><div id="vboard-prog-fill"></div></div>
+    <button id="vboard-close-btn" title="Exit (Esc)">✕</button>
+  </div>
+  <div id="vboard-content">
+    <div id="vboard-loc"></div>
+    <div id="vboard-quote"></div>
+  </div>
+  <div id="vboard-controls">
+    <button class="vb-btn" id="vboard-prev">⟵ Prev</button>
+    <button class="vb-btn" id="vboard-playpause">⏸</button>
+    <button class="vb-btn" id="vboard-next">Next ⟶</button>
+    <button class="vb-btn" id="vboard-music-btn">🎵 Music: ON</button>
+    <button class="vb-btn" id="vboard-fs-btn">⛶ Fullscreen</button>
+  </div>
+  <div id="vboard-music-label">🎵 432Hz AMBIENT</div>
 </div>
 
 <!-- Reminder Modal -->
@@ -862,6 +913,200 @@ scrollBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smoo
   }, 60000);
 
   updateBtn();
+})();
+
+/* ── Vision Board ── */
+(function(){
+  const SLIDES = [
+    {url:'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&h=900&fit=crop&auto=format&q=80', loc:'DUBAI — BURJ KHALIFA',   quote:'The universe is conspiring to make me rich and free.'},
+    {url:'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1600&h=900&fit=crop&auto=format&q=80', loc:'DUBAI, UAE',              quote:'My income exceeds my expenses — abundance is my birthright.'},
+    {url:'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&h=900&fit=crop&auto=format&q=80', loc:'MALDIVES VILLA',          quote:'I attract wealth effortlessly and in miraculous ways.'},
+    {url:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&h=900&fit=crop&auto=format&q=80', loc:'SWISS ALPS',             quote:'Every day in every way I am getting better and better.'},
+    {url:'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1600&h=900&fit=crop&auto=format&q=80', loc:'5-STAR INFINITY POOL',   quote:'I deserve the best and the best comes to me now.'},
+    {url:'https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1600&h=900&fit=crop&auto=format&q=80', loc:'MALDIVES OVERWATER',     quote:'I am a money magnet. Wealth flows to me from all directions.'},
+    {url:'https://images.unsplash.com/photo-1531972111584-cc18b7e0c63b?w=1600&h=900&fit=crop&auto=format&q=80', loc:'SINGAPORE SKYLINE',     quote:'My mind is a powerhouse of positive, wealth-attracting energy.'},
+    {url:'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1600&h=900&fit=crop&auto=format&q=80', loc:'LUXURY CAR',              quote:'I am confident. I am capable. I am unstoppable.'},
+    {url:'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&h=900&fit=crop&auto=format&q=80', loc:'LUXURY ESTATE',         quote:'Success is my natural state — I was born to thrive.'},
+    {url:'https://images.unsplash.com/photo-1549144511-f099e773c147?w=1600&h=900&fit=crop&auto=format&q=80', loc:'MONACO',                  quote:'I have unlimited potential. My dreams are valid.'},
+    {url:'https://images.unsplash.com/photo-1591085686350-798c0f9faa7f?w=1600&h=900&fit=crop&auto=format&q=80', loc:'LUXURY YACHT',          quote:'I am worthy of extraordinary abundance in all areas of life.'},
+    {url:'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1600&h=900&fit=crop&auto=format&q=80', loc:'FERRARI',               quote:'The world is full of opportunities and I see them clearly.'},
+    {url:'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1600&h=900&fit=crop&auto=format&q=80', loc:'OCEAN HORIZON',         quote:'I wake up each morning full of gratitude and possibility.'},
+    {url:'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&h=900&fit=crop&auto=format&q=80', loc:'LAKE PARADISE',        quote:'My thoughts create my reality — I choose wealth and freedom.'},
+    {url:'https://images.unsplash.com/photo-1470770903676-69b98201ea1c?w=1600&h=900&fit=crop&auto=format&q=80', loc:'MOUNTAIN SUNRISE',      quote:'I am disciplined, focused, and living my purpose every day.'},
+  ];
+
+  let curIdx = 0, playing = true, musicOn = true;
+  let progTimer = null, progPct = 0;
+  const SLIDE_DUR = 9000;
+
+  const overlay  = document.getElementById('vboard-overlay');
+  const bg       = document.getElementById('vboard-bg');
+  const content  = document.getElementById('vboard-content');
+  const locEl    = document.getElementById('vboard-loc');
+  const quoteEl  = document.getElementById('vboard-quote');
+  const slideNum = document.getElementById('vboard-slide-num');
+  const progFill = document.getElementById('vboard-prog-fill');
+  const closeBtn = document.getElementById('vboard-close-btn');
+  const prevBtn  = document.getElementById('vboard-prev');
+  const nextBtn  = document.getElementById('vboard-next');
+  const ppBtn    = document.getElementById('vboard-playpause');
+  const musicBtn = document.getElementById('vboard-music-btn');
+  const fsBtn    = document.getElementById('vboard-fs-btn');
+  const triggerBtn = document.getElementById('vboard-btn');
+
+  /* ── Web Audio ambient music (432Hz healing tones) ── */
+  let actx = null, masterGain = null, audioNodes = [];
+
+  function startMusic(){
+    if(actx) return;
+    try{
+      actx = new (window.AudioContext||window.webkitAudioContext)();
+      masterGain = actx.createGain();
+      masterGain.gain.setValueAtTime(0, actx.currentTime);
+      masterGain.gain.linearRampToValueAtTime(0.32, actx.currentTime + 3.5);
+      masterGain.connect(actx.destination);
+
+      // Layered sine tones: 432Hz base + harmonics + Solfeggio frequencies
+      const layers = [
+        {f:216,  g:0.22, lfo:0.07, ld:1.5},
+        {f:432,  g:0.18, lfo:0.09, ld:2},
+        {f:528,  g:0.10, lfo:0.12, ld:3},
+        {f:396,  g:0.08, lfo:0.06, ld:1},
+        {f:864,  g:0.05, lfo:0.15, ld:4},
+      ];
+
+      layers.forEach(l => {
+        const osc = actx.createOscillator();
+        const g   = actx.createGain();
+        const lfo = actx.createOscillator();
+        const lg  = actx.createGain();
+        osc.type = 'sine';
+        osc.frequency.value = l.f;
+        g.gain.value = l.g;
+        lfo.type = 'sine';
+        lfo.frequency.value = l.lfo;
+        lg.gain.value = l.ld;
+        lfo.connect(lg); lg.connect(osc.frequency);
+        osc.connect(g);  g.connect(masterGain);
+        osc.start(); lfo.start();
+        audioNodes.push(osc, lfo, g, lg);
+      });
+
+      // Soft C-major pad (C4, E4, G4) with gentle tremolo
+      [261.63, 329.63, 392.00].forEach((f, i) => {
+        const o1  = actx.createOscillator();
+        const o2  = actx.createOscillator(); // chorusing
+        const g   = actx.createGain();
+        const lfo = actx.createOscillator();
+        const lg  = actx.createGain();
+        o1.type = o2.type = 'sine';
+        o1.frequency.value = f;
+        o2.frequency.value = f * 1.004;
+        g.gain.value = 0.05;
+        lfo.frequency.value = 0.13 + i * 0.04;
+        lg.gain.value = 0.025;
+        lfo.connect(lg); lg.connect(g.gain);
+        o1.connect(g); o2.connect(g); g.connect(masterGain);
+        o1.start(); o2.start(); lfo.start();
+        audioNodes.push(o1, o2, g, lfo, lg);
+      });
+
+    } catch(e){ console.warn('WebAudio error', e); }
+  }
+
+  function stopMusic(){
+    if(!actx) return;
+    if(masterGain) masterGain.gain.linearRampToValueAtTime(0, actx.currentTime + 1.5);
+    setTimeout(()=>{
+      audioNodes.forEach(n=>{ try{ n.stop&&n.stop(); n.disconnect(); }catch(e){} });
+      audioNodes = [];
+      actx.close(); actx = null; masterGain = null;
+    }, 1600);
+  }
+
+  function toggleMusic(){
+    musicOn = !musicOn;
+    musicBtn.textContent = musicOn ? '🎵 Music: ON' : '🔇 Music: OFF';
+    musicOn ? musicBtn.classList.add('music-on') : musicBtn.classList.remove('music-on');
+    if(musicOn) startMusic(); else stopMusic();
+  }
+
+  /* ── Slides ── */
+  function showSlide(idx){
+    const s = SLIDES[idx];
+    content.classList.add('fading');
+    setTimeout(()=>{
+      locEl.textContent   = '📍 ' + s.loc;
+      quoteEl.textContent = '"' + s.quote + '"';
+      content.classList.remove('fading');
+    }, 600);
+    bg.classList.remove('visible');
+    const img = new Image();
+    img.onload  = () => { bg.style.backgroundImage=`url(${img.src})`; bg.classList.add('visible'); };
+    img.onerror = () => { bg.classList.add('visible'); };
+    img.src = s.url;
+    slideNum.textContent = `${idx+1} / ${SLIDES.length}`;
+    resetProg();
+  }
+
+  function resetProg(){
+    clearInterval(progTimer);
+    progPct = 0; progFill.style.width = '0%';
+    if(!playing) return;
+    const step = 100 / (SLIDE_DUR / 80);
+    progTimer = setInterval(()=>{
+      progPct = Math.min(progPct + step, 100);
+      progFill.style.width = progPct + '%';
+      if(progPct >= 100){ curIdx=(curIdx+1)%SLIDES.length; showSlide(curIdx); }
+    }, 80);
+  }
+
+  function open(){
+    overlay.classList.add('open');
+    curIdx = 0; playing = true; musicOn = true;
+    ppBtn.textContent = '⏸';
+    musicBtn.textContent = '🎵 Music: ON';
+    musicBtn.classList.add('music-on');
+    showSlide(0);
+    startMusic();
+  }
+
+  function close(){
+    overlay.classList.remove('open');
+    clearInterval(progTimer);
+    stopMusic();
+    if(document.fullscreenElement) document.exitFullscreen().catch(()=>{});
+  }
+
+  triggerBtn.addEventListener('click', open);
+  closeBtn.addEventListener('click', close);
+
+  document.addEventListener('keydown', e=>{
+    if(!overlay.classList.contains('open')) return;
+    if(e.key==='Escape') close();
+    if(e.key==='ArrowRight'){ curIdx=(curIdx+1)%SLIDES.length; showSlide(curIdx); }
+    if(e.key==='ArrowLeft') { curIdx=(curIdx-1+SLIDES.length)%SLIDES.length; showSlide(curIdx); }
+    if(e.key===' '){ e.preventDefault(); togglePlay(); }
+  });
+
+  nextBtn.addEventListener('click', ()=>{ curIdx=(curIdx+1)%SLIDES.length; showSlide(curIdx); });
+  prevBtn.addEventListener('click', ()=>{ curIdx=(curIdx-1+SLIDES.length)%SLIDES.length; showSlide(curIdx); });
+
+  function togglePlay(){
+    playing = !playing;
+    ppBtn.textContent = playing ? '⏸' : '▶';
+    playing ? resetProg() : clearInterval(progTimer);
+  }
+  ppBtn.addEventListener('click', togglePlay);
+  musicBtn.addEventListener('click', toggleMusic);
+
+  fsBtn.addEventListener('click', ()=>{
+    if(!document.fullscreenElement){ overlay.requestFullscreen().catch(()=>{}); fsBtn.textContent='⛶ Exit Full'; }
+    else{ document.exitFullscreen(); fsBtn.textContent='⛶ Fullscreen'; }
+  });
+  document.addEventListener('fullscreenchange', ()=>{
+    if(!document.fullscreenElement) fsBtn.textContent='⛶ Fullscreen';
+  });
 })();
 
 /* ── Init ── */
