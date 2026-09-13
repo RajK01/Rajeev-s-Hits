@@ -468,6 +468,80 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
 .cp-income-box .period{font-size:.65rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.35);margin-bottom:4px}
 .cp-income-box .amount{font-size:.92rem;font-weight:800;color:#f5a623}
 .cp-income-box .note{font-size:.68rem;color:rgba(255,255,255,.35);margin-top:3px}
+/* GLOW UP PANEL */
+#glowup-panel{display:none;position:relative;z-index:1;max-width:960px;margin:24px auto 80px;padding:0 20px}
+#glowup-panel h2{font-size:1.6rem;font-weight:900;background:linear-gradient(135deg,#ff6b6b,#ffd93d,#ff6b9d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:4px}
+.glowup-sub{text-align:center;color:rgba(255,255,255,.38);font-size:.83rem;margin-bottom:24px}
+.glowup-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.gu-tab{padding:9px 20px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:rgba(255,255,255,.55);font-family:inherit;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap}
+.gu-tab:hover{background:rgba(255,255,255,.1);color:#fff}
+.gu-tab.active{background:linear-gradient(135deg,#ff6b6b,#ff6b9d);border-color:transparent;color:#fff}
+.gu-section{display:none}
+.gu-section.active{display:block}
+.gu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.gu-card{border-radius:16px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);padding:20px;transition:all .25s}
+.gu-card:hover{transform:translateY(-3px);border-color:rgba(255,107,107,.3);box-shadow:0 12px 30px rgba(0,0,0,.3)}
+.gu-card-icon{font-size:1.8rem;margin-bottom:10px}
+.gu-card-title{font-size:.95rem;font-weight:800;color:#fff;margin-bottom:6px}
+.gu-card-desc{font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.7}
+.gu-card-tag{display:inline-block;margin-top:10px;padding:2px 10px;border-radius:999px;font-size:.62rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.avoid-card{border-color:rgba(239,68,68,.2);background:rgba(239,68,68,.04)}
+.avoid-card:hover{border-color:rgba(239,68,68,.4)}
+.avoid-card .gu-card-icon::before{content:'🚫 ';}
+.gu-banner{border-radius:16px;padding:20px 24px;margin-bottom:24px;font-size:.88rem;line-height:1.8;color:rgba(255,255,255,.7)}
+.gu-section-title{font-size:.7rem;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.3);margin:28px 0 14px;text-align:center}
+.gu-convo-list{display:flex;flex-direction:column;gap:10px}
+.gu-convo-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.gu-convo-box{padding:14px 16px;border-radius:12px;font-size:.82rem;line-height:1.6}
+.gu-convo-box.bad{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);color:rgba(255,255,255,.6)}
+.gu-convo-box.good{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.25);color:rgba(255,255,255,.75)}
+.gu-convo-label{font-size:.62rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-weight:700}
+.gu-rule-list{display:flex;flex-direction:column;gap:10px}
+.gu-rule{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07)}
+.gu-rule-num{min-width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#ff6b6b,#ff6b9d);font-size:.72rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.gu-rule-body .gu-rule-title{font-size:.88rem;font-weight:700;color:#fff;margin-bottom:3px}
+.gu-rule-body .gu-rule-desc{font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.6}
+/* SCENARIO CARDS */
+#gu-scenarios{width:100vw;position:relative;left:50%;margin-left:-50vw;margin-right:-50vw}
+#gu-scenarios .gu-banner{border-radius:0;padding:16px 28px;margin-bottom:0;border-left:none;border-right:none;border-top:none;border-bottom:1px solid rgba(16,185,129,.2)}
+.scenario-grid{display:flex;flex-direction:column;gap:0}
+.scenario-card{border-radius:0;border:none;border-top:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.02);overflow:hidden;transition:background .3s}
+.scenario-card.open{background:rgba(255,255,255,.04)}
+/* Cover visual */
+.sc-cover{display:flex;align-items:center;padding:22px 28px;cursor:pointer;position:relative;overflow:hidden;min-height:100px;user-select:none}
+.sc-cover::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 50%,rgba(0,0,0,.4) 100%);pointer-events:none}
+.sc-cover-text{flex:1;z-index:1}
+.sc-cover-tag{font-size:.57rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px}
+.sc-cover-q{font-size:.88rem;font-weight:700;color:#fff;line-height:1.45}
+.sc-cover .scenario-toggle{z-index:1}
+/* Meta bar */
+.sc-meta{display:flex;align-items:center;gap:12px;padding:10px 28px;border-top:1px solid rgba(255,255,255,.07);cursor:pointer;transition:background .2s}
+.sc-meta:hover{background:rgba(255,255,255,.04)}
+/* Signal dots */
+.scenario-signal{width:11px;height:11px;border-radius:50%;flex-shrink:0}
+.signal-green{background:#10b981;box-shadow:0 0 8px rgba(16,185,129,.7);animation:sc-pulse-g 2s infinite}
+.signal-yellow{background:#f59e0b;box-shadow:0 0 8px rgba(245,158,11,.7);animation:sc-pulse-y 2s infinite}
+.signal-red{background:#ef4444;box-shadow:0 0 8px rgba(239,68,68,.7);animation:sc-pulse-r 2s infinite}
+@keyframes sc-pulse-g{0%,100%{box-shadow:0 0 6px rgba(16,185,129,.5)}50%{box-shadow:0 0 14px rgba(16,185,129,.9)}}
+@keyframes sc-pulse-y{0%,100%{box-shadow:0 0 6px rgba(245,158,11,.5)}50%{box-shadow:0 0 14px rgba(245,158,11,.9)}}
+@keyframes sc-pulse-r{0%,100%{box-shadow:0 0 6px rgba(239,68,68,.5)}50%{box-shadow:0 0 14px rgba(239,68,68,.9)}}
+.scenario-verdict{font-size:.7rem;font-weight:800;letter-spacing:.5px;padding:3px 12px;border-radius:999px;white-space:nowrap}
+.scenario-toggle{color:rgba(255,255,255,.3);font-size:.9rem;transition:transform .3s;flex-shrink:0}
+.scenario-card.open .scenario-toggle{transform:rotate(180deg)}
+/* Body */
+.scenario-body{display:none;padding:20px 28px 28px;border-top:1px solid rgba(255,255,255,.07)}
+.scenario-card.open .scenario-body{display:block}
+.scenario-verdict-bar{padding:12px 16px;border-radius:12px;margin-bottom:18px;font-size:.83rem;font-weight:700;line-height:1.5}
+.scenario-steps{display:flex;flex-direction:column;gap:9px;margin-bottom:16px}
+.scenario-step{display:flex;gap:12px;align-items:flex-start}
+.scenario-step-dot{min-width:24px;height:24px;border-radius:50%;font-size:.68rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:2px;flex-shrink:0}
+.scenario-step-text{font-size:.82rem;color:rgba(255,255,255,.65);line-height:1.6;padding-top:3px}
+.scenario-dont{background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.15);border-radius:12px;padding:14px 16px;margin-top:14px}
+.scenario-dont-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1px;color:#ef4444;margin-bottom:6px;font-weight:800}
+.scenario-dont-text{font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.6}
+.scenario-why{background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.2);border-radius:12px;padding:14px 16px;margin-top:10px;font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.6}
+.scenario-why strong{color:#a78bfa}
+.scenario-divider{font-size:.62rem;font-weight:900;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.2);padding:18px 28px 8px;background:rgba(255,255,255,.015);border-top:2px solid rgba(255,255,255,.06)}
 /* TRACKER */
 .tracker-month-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:22px}
 .tracker-month-nav button{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#fff;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1rem;transition:background .2s}
@@ -497,6 +571,85 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
 .tracker-summary-row:last-child{border-bottom:none}
 .tracker-summary-left{display:flex;align-items:center;gap:8px;font-size:.85rem;color:rgba(255,255,255,.7)}
 .tracker-summary-right{font-size:.82rem;font-weight:700}
+
+/* ── GLOBAL VISUAL POLISH ─────────────────────────────────────── */
+.song-card,.biz-card,.gu-card,.fav-card{transition:transform .22s ease,box-shadow .22s ease}
+.song-card:hover,.biz-card:hover,.gu-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.5)}
+.tab{transition:all .2s ease}
+.tab.active{box-shadow:0 0 24px rgba(255,255,255,.07),inset 0 1px 0 rgba(255,255,255,.1)}
+/* Smooth scenario expand */
+.scenario-body{max-height:0;overflow:hidden;padding-top:0 !important;padding-bottom:0 !important;transition:max-height .45s cubic-bezier(.4,0,.2,1),padding .3s ease;display:block !important}
+.scenario-card.open .scenario-body{max-height:2800px;padding-top:20px !important;padding-bottom:28px !important}
+/* Mark as done */
+.scenario-card.done .sc-cover::before{content:'✓ Read';position:absolute;top:10px;right:12px;font-size:.6rem;font-weight:900;letter-spacing:1px;color:#10b981;z-index:2;background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);padding:3px 8px;border-radius:999px}
+.sc-done-btn{margin-top:16px;padding:11px 20px;border-radius:12px;border:1px solid rgba(16,185,129,.3);background:rgba(16,185,129,.08);color:#10b981;font-family:inherit;font-size:.8rem;font-weight:700;cursor:pointer;transition:all .2s;width:100%;text-align:center}
+.sc-done-btn:hover{background:rgba(16,185,129,.2)}
+.sc-done-btn.marked{background:rgba(16,185,129,.18);border-color:#10b981;color:#34d399}
+.sc-prog-wrap{background:rgba(255,255,255,.05);height:4px;position:relative;overflow:hidden}
+.sc-prog-bar{height:100%;background:linear-gradient(90deg,#10b981,#059669);width:0%;transition:width .7s ease}
+.sc-prog-label{padding:8px 28px;font-size:.62rem;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.25);display:flex;justify-content:space-between;background:rgba(0,0,0,.12)}
+
+/* ── FOCUS MODE OVERLAY ───────────────────────────────────────── */
+#focus-overlay{position:fixed;inset:0;background:#07060f;z-index:99999;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px}
+#focus-overlay.active{display:flex}
+#focus-clock{font-size:6rem;font-weight:900;color:#fff;letter-spacing:-3px;line-height:1;font-variant-numeric:tabular-nums}
+#focus-date-line{font-size:.95rem;color:rgba(255,255,255,.28);margin:10px 0 44px;font-weight:500;letter-spacing:2px;text-transform:uppercase}
+#focus-affirmation{font-size:1.5rem;font-weight:700;color:#fff;line-height:1.6;max-width:580px;min-height:110px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#a78bfa,#f472b6,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+@keyframes focus-fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.focus-aff-anim{animation:focus-fade .7s ease}
+#focus-nav{display:flex;gap:14px;margin-top:28px}
+#focus-nav button{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.45);padding:9px 22px;border-radius:999px;font-family:inherit;font-size:.8rem;cursor:pointer;transition:all .2s}
+#focus-nav button:hover{background:rgba(255,255,255,.13);color:#fff}
+#focus-close-btn{position:absolute;top:24px;right:28px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.35);padding:8px 18px;border-radius:999px;font-family:inherit;font-size:.75rem;cursor:pointer;transition:all .2s}
+#focus-close-btn:hover{background:rgba(255,255,255,.1);color:#fff}
+.hqnav.focus-btn{background:linear-gradient(135deg,rgba(139,92,246,.22),rgba(236,72,153,.18));border-color:rgba(139,92,246,.35);color:#c084fc}
+.hqnav.focus-btn:hover{background:linear-gradient(135deg,rgba(139,92,246,.38),rgba(236,72,153,.3)) !important;color:#e9d5ff !important}
+
+/* ── DAILY CHECK-IN ───────────────────────────────────────────── */
+#daily-panel{display:none;position:relative;z-index:1;max-width:680px;margin:24px auto 100px;padding:0 20px}
+#daily-panel h2{font-size:1.55rem;font-weight:900;background:linear-gradient(135deg,#34d399,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:4px}
+.daily-sub{text-align:center;color:rgba(255,255,255,.32);font-size:.82rem;margin-bottom:24px}
+.daily-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:22px 24px;margin-bottom:14px}
+.daily-card-title{font-size:.6rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:16px}
+.mood-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.mood-btn{font-size:2rem;padding:10px 14px;border-radius:14px;border:2px solid transparent;background:rgba(255,255,255,.04);cursor:pointer;transition:all .22s;line-height:1}
+.mood-btn:hover{background:rgba(255,255,255,.09);transform:scale(1.08)}
+.mood-btn.selected{border-color:#a78bfa;background:rgba(167,139,250,.15);transform:scale(1.18)}
+.grat-input{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:12px 16px;color:#fff;font-family:inherit;font-size:.86rem;margin-bottom:10px;outline:none;transition:border-color .2s;resize:none;box-sizing:border-box}
+.grat-input:focus{border-color:rgba(167,139,250,.45)}
+.grat-input::placeholder{color:rgba(255,255,255,.18)}
+.habit-row{display:flex;flex-direction:column;gap:9px}
+.habit-item{display:flex;align-items:center;gap:14px;padding:12px 16px;border-radius:13px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);cursor:pointer;transition:all .2s;user-select:none}
+.habit-item:hover{background:rgba(255,255,255,.06)}
+.habit-item.checked{background:rgba(16,185,129,.07);border-color:rgba(16,185,129,.22)}
+.habit-check{width:22px;height:22px;border-radius:6px;border:2px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;font-size:.72rem;flex-shrink:0;transition:all .22s;color:#fff}
+.habit-item.checked .habit-check{background:#10b981;border-color:#10b981}
+.habit-label{font-size:.86rem;color:rgba(255,255,255,.55);flex:1;transition:color .2s}
+.habit-item.checked .habit-label{color:#fff}
+.daily-save-btn{width:100%;padding:14px;border-radius:14px;border:none;background:linear-gradient(135deg,#34d399,#60a5fa);color:#000;font-family:inherit;font-size:.9rem;font-weight:800;cursor:pointer;transition:all .22s;margin-top:4px;letter-spacing:.5px}
+.daily-save-btn:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 8px 24px rgba(52,211,153,.3)}
+.streak-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.streak-day{border-radius:10px;padding:9px 4px;text-align:center;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);transition:all .2s}
+.streak-day.filled{background:rgba(52,211,153,.1);border-color:rgba(52,211,153,.28)}
+.streak-day.today{border-color:#60a5fa;background:rgba(96,165,250,.09)}
+.streak-day-lbl{font-size:.52rem;color:rgba(255,255,255,.22);margin-bottom:5px;font-weight:800;letter-spacing:.5px}
+.streak-day-mood{font-size:1.1rem;line-height:1}
+.streak-day-score{font-size:.54rem;color:rgba(255,255,255,.25);margin-top:3px}
+
+/* ── MOBILE BOTTOM NAV ────────────────────────────────────────── */
+.mobile-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:rgba(8,6,18,.96);border-top:1px solid rgba(255,255,255,.08);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:6px 0 env(safe-area-inset-bottom,6px)}
+.mobile-nav-inner{display:flex;justify-content:space-around;align-items:center}
+.mn-btn{display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;color:rgba(255,255,255,.32);cursor:pointer;padding:7px 10px;border-radius:12px;transition:all .2s;font-family:inherit;min-width:48px}
+.mn-icon{font-size:1.25rem;line-height:1;transition:filter .2s}
+.mn-label{font-size:.5rem;font-weight:800;letter-spacing:.8px;text-transform:uppercase}
+.mn-btn.mn-active{color:#fff}
+.mn-btn.mn-active .mn-icon{filter:drop-shadow(0 0 7px rgba(255,255,255,.45))}
+@media(max-width:800px){
+  .mobile-nav{display:block}
+  body{padding-bottom:68px}
+  #focus-clock{font-size:3.8rem}
+  #focus-affirmation{font-size:1.15rem}
+}
 </style>
 </head>
 <body>
@@ -524,6 +677,8 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
       <button class="hqnav" onclick="jumpTab('milestones')">🏆 Milestones</button>
       <button class="hqnav" onclick="jumpTab('gym')">💪 Gym Plan</button>
       <button class="hqnav" onclick="jumpTab('bucket')">✨ Bucket List</button>
+      <button class="hqnav focus-btn" onclick="enterFocus()">🎯 Focus Mode</button>
+      <button class="hqnav" onclick="jumpTab('daily')">📔 Daily</button>
     </div>
   </div>
 </header>
@@ -600,6 +755,8 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
     <button class="tab" data-cat="milestones">🏆 Milestones</button>
     <button class="tab" data-cat="affcards">🎴 Aff. Cards</button>
     <button class="tab" data-cat="empire">👑 My Empire</button>
+    <button class="tab" data-cat="glowup">🔥 Sigma Glow Up</button>
+    <button class="tab" data-cat="daily">📔 Daily</button>
   </div>
 </div>
 
@@ -852,7 +1009,237 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
   </div>
 </div>
 
+<div id="glowup-panel">
+  <h2>🔥 Sigma Glow Up</h2>
+  <div class="glowup-sub">Real tips to become magnetic, attractive & unforgettable in front of women</div>
+  <div class="glowup-tabs">
+    <button class="gu-tab active" data-gu="attract">✅ What TO Do</button>
+    <button class="gu-tab" data-gu="avoid">🚫 What to AVOID</button>
+    <button class="gu-tab" data-gu="convo">💬 Conversation</button>
+    <button class="gu-tab" data-gu="mindset">🧠 Mindset</button>
+    <button class="gu-tab" data-gu="style">👔 Style & Look</button>
+    <button class="gu-tab" data-gu="advanced">💡 Advanced Tips</button>
+    <button class="gu-tab" data-gu="scenarios">📍 Real Situations</button>
+  </div>
+
+  <!-- WHAT TO DO -->
+  <div class="gu-section active" id="gu-attract">
+    <div class="gu-banner" style="background:linear-gradient(135deg,rgba(255,107,107,.1),rgba(255,107,157,.08));border:1px solid rgba(255,107,107,.2)">
+      💡 <strong style="color:#ff6b6b">The truth:</strong> Women are not attracted to who tries hardest — they're attracted to who is most <em>certain of themselves.</em> Build yourself first. The attraction follows naturally.
+    </div>
+    <div class="gu-section-title">🔥 Personality & Presence</div>
+    <div class="gu-grid">
+      <div class="gu-card"><div class="gu-card-icon">🧍</div><div class="gu-card-title">Own Your Posture</div><div class="gu-card-desc">Stand tall, shoulders back, chest open. 55% of attraction is body language before you say a word. Practice walking slowly, sitting relaxed — it signals confidence.</div><span class="gu-card-tag" style="background:rgba(255,107,107,.15);color:#ff6b6b">High Impact</span></div>
+      <div class="gu-card"><div class="gu-card-icon">👁️</div><div class="gu-card-title">Hold Eye Contact</div><div class="gu-card-desc">Look her in the eyes when she speaks — don't look away nervously. 3–5 seconds of steady eye contact signals you are present, confident and interested. Most men fail here.</div><span class="gu-card-tag" style="background:rgba(255,107,107,.15);color:#ff6b6b">High Impact</span></div>
+      <div class="gu-card"><div class="gu-card-icon">😄</div><div class="gu-card-title">Smile Genuinely</div><div class="gu-card-desc">A real smile is warm and reaches your eyes. Don't fake it — just find something genuinely amusing. Smile slowly, not immediately. It shows you are relaxed, not desperate.</div><span class="gu-card-tag" style="background:rgba(255,217,61,.15);color:#ffd93d">Essential</span></div>
+      <div class="gu-card"><div class="gu-card-icon">🎯</div><div class="gu-card-title">Have Purpose & Direction</div><div class="gu-card-desc">Men with goals are magnetic. Talk about what you're building — your YouTube, your business ideas, your fitness goal. Purpose makes you interesting. Aimlessness kills attraction.</div><span class="gu-card-tag" style="background:rgba(255,107,107,.15);color:#ff6b6b">High Impact</span></div>
+      <div class="gu-card"><div class="gu-card-icon">😂</div><div class="gu-card-title">Develop Your Humour</div><div class="gu-card-desc">Don't try to be a comedian — be playful. Light teasing, witty observations, self-deprecating jokes done confidently are incredibly attractive. Never try too hard to be funny.</div><span class="gu-card-tag" style="background:rgba(255,217,61,.15);color:#ffd93d">Essential</span></div>
+      <div class="gu-card"><div class="gu-card-icon">👂</div><div class="gu-card-title">Be a Great Listener</div><div class="gu-card-desc">Ask questions and actually listen. Remember small details she mentioned. Say "you mentioned last time…" — this is rare and incredibly attractive. Women feel seen.</div><span class="gu-card-tag" style="background:rgba(255,107,107,.15);color:#ff6b6b">High Impact</span></div>
+      <div class="gu-card"><div class="gu-card-icon">🌟</div><div class="gu-card-title">Be the Calm One</div><div class="gu-card-desc">Don't panic, rush or over-react. The man who stays calm under pressure is magnetic. Speak slowly, pause before answering — it shows you are in control of yourself.</div><span class="gu-card-tag" style="background:rgba(16,185,129,.15);color:#10b981">Sigma Trait</span></div>
+      <div class="gu-card"><div class="gu-card-icon">💅</div><div class="gu-card-title">Grooming is Non-Negotiable</div><div class="gu-card-desc">Clean hair, trimmed beard, fresh clothes, good fragrance. You don't need to be handsome — you need to look like you take care of yourself. A good perfume alone changes the game.</div><span class="gu-card-tag" style="background:rgba(255,107,107,.15);color:#ff6b6b">High Impact</span></div>
+      <div class="gu-card"><div class="gu-card-icon">💪</div><div class="gu-card-title">Build Your Body</div><div class="gu-card-desc">Going to the gym is not just physical — it builds discipline, posture and confidence. You don't need to be huge. Just fit, healthy and disciplined. The process changes your energy.</div><span class="gu-card-tag" style="background:rgba(255,217,61,.15);color:#ffd93d">Long Game</span></div>
+      <div class="gu-card"><div class="gu-card-icon">🚶</div><div class="gu-card-title">Have Your Own Life</div><div class="gu-card-desc">Hobbies, goals, friends, passions — a full life is attractive. A man who says "I have plans" is 10x more interesting than one who is always available. Scarcity creates value.</div><span class="gu-card-tag" style="background:rgba(16,185,129,.15);color:#10b981">Sigma Trait</span></div>
+      <div class="gu-card"><div class="gu-card-icon">🧠</div><div class="gu-card-title">Be Knowledgeable</div><div class="gu-card-desc">Read books, follow trends, have opinions. A man who can talk intelligently about multiple topics is fascinating. Your tech + content + business knowledge is already an advantage.</div><span class="gu-card-tag" style="background:rgba(255,217,61,.15);color:#ffd93d">Essential</span></div>
+      <div class="gu-card"><div class="gu-card-icon">💎</div><div class="gu-card-title">Dress Well</div><div class="gu-card-desc">Wear clothes that fit your body. No baggy shirts. Clean shoes always. A simple well-fitted outfit beats expensive messy clothes. Invest in 3–4 great outfits rather than 20 average ones.</div><span class="gu-card-tag" style="background:rgba(255,107,107,.15);color:#ff6b6b">High Impact</span></div>
+    </div>
+  </div>
+
+  <!-- WHAT TO AVOID -->
+  <div class="gu-section" id="gu-avoid">
+    <div class="gu-banner" style="background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.2)">
+      🚫 <strong style="color:#ef4444">These kill attraction instantly</strong> — most men do them without realising. Fixing these is faster than adding new skills.
+    </div>
+    <div class="gu-grid">
+      <div class="gu-card avoid-card"><div class="gu-card-icon">🥺</div><div class="gu-card-title">Seeking Approval</div><div class="gu-card-desc">Constantly asking "is that okay?", "did you like it?", "are you sure?" — it screams insecurity. Say things with confidence. Don't explain or justify yourself unnecessarily.</div></div>
+      <div class="gu-card avoid-card"><div class="gu-card-icon">😰</div><div class="gu-card-title">Nervous Talking (Rambling)</div><div class="gu-card-desc">Filling silence with nervous chatter, over-explaining, talking too much. Silence is power. Be comfortable with pauses — it makes everything you say hit harder.</div></div>
+      <div class="gu-card avoid-card"><div class="gu-card-icon">📱</div><div class="gu-card-title">Staring at Your Phone</div><div class="gu-card-desc">Checking your phone when talking to her tells her she is less important than your screen. Put the phone away and be fully present — this alone puts you above 90% of men.</div></div>
+      <div class="gu-card avoid-card"><div class="gu-card-icon">😒</div><div class="gu-card-title">Complaining & Negativity</div><div class="gu-card-desc">Talking about how bad your life is, how unfair things are, how stressed you are. Women are not therapists on a first impression. Stay positive, future-focused and solution-minded.</div></div>
+      <div class="gu-card avoid-card"><div class="gu-card-icon">🐶</div><div class="gu-card-title">Being Too Available</div><div class="gu-card-desc">Replying instantly every time, cancelling your plans for her, agreeing with everything she says. You become predictable and low-value. Have boundaries. Have a life.</div></div>
+      <div class="gu-card avoid-card"><div class="gu-card-icon">🙄</div><div class="gu-card-title">Bragging Directly</div><div class="gu-card-desc">"I earn this much", "I have this car", "I know this person." It's obvious and transparent. Let your life speak — mention achievements as context, not to impress.</div></div>
+      <div class="gu-card avoid-card"><div class="gu-card-icon">💸</div><div class="gu-card-title">Trying to Buy Attraction</div><div class="gu-card-desc">Paying for everything immediately, buying gifts too early, spending money to get attention. It signals insecurity, not generosity. Build genuine connection first.</div></div>
+      <div class="gu-card avoid-card"><div class="gu-card-icon">😠</div><div class="gu-card-title">Getting Emotionally Reactive</div><div class="gu-card-desc">Sulking, getting upset easily, taking jokes personally. Emotional stability is extremely attractive. The man who doesn't get rattled is the man who leads.</div></div>
+      <div class="gu-card avoid-card"><div class="gu-card-icon">🤥</div><div class="gu-card-title">Pretending to Be Someone Else</div><div class="gu-card-desc">Changing your personality, opinions or interests to match hers. She will sense it. Authenticity is rare and magnetic. Be genuinely yourself — even the weird parts.</div></div>
+      <div class="gu-card avoid-card"><div class="gu-card-icon">😶</div><div class="gu-card-title">Avoiding Eye Contact</div><div class="gu-card-desc">Looking down, looking away, looking at your feet while talking. It reads as shame or deception. Train yourself to hold soft, confident eye contact. It's learnable.</div></div>
+      <div class="gu-card avoid-card"><div class="gu-card-icon">💬</div><div class="gu-card-title">Texting Too Much Too Soon</div><div class="gu-card-desc">Sending 10 messages when she hasn't replied. Long essays. Good morning texts every day from day 1. Slow down. Mystery is magnetic. Text to meet, not to entertain.</div></div>
+      <div class="gu-card avoid-card"><div class="gu-card-icon">🙏</div><div class="gu-card-title">Apologising for Everything</div><div class="gu-card-desc">"Sorry for bothering you", "sorry if that was weird", "sorry I'm not…" Stop apologising for existing. Say sorry only when you genuinely did something wrong — and mean it.</div></div>
+    </div>
+  </div>
+
+  <!-- CONVERSATION -->
+  <div class="gu-section" id="gu-convo">
+    <div class="gu-banner" style="background:linear-gradient(135deg,rgba(139,92,246,.1),rgba(236,72,153,.08));border:1px solid rgba(139,92,246,.2)">
+      💬 <strong style="color:#a78bfa">Conversation is a skill, not a talent.</strong> Bad lines repel, good energy attracts. Here's exactly what to say vs what kills it.
+    </div>
+    <div class="gu-section-title">❌ vs ✅ — Real Conversation Swaps</div>
+    <div class="gu-convo-list">
+      <div class="gu-convo-row">
+        <div class="gu-convo-box bad"><div class="gu-convo-label" style="color:#ef4444">❌ Don't say</div>"You are so beautiful, I've never seen anyone like you" (first thing)</div>
+        <div class="gu-convo-box good"><div class="gu-convo-label" style="color:#10b981">✅ Do this</div>Start a real conversation first. Compliment her style or energy later, naturally — "You have great energy actually."</div>
+      </div>
+      <div class="gu-convo-row">
+        <div class="gu-convo-box bad"><div class="gu-convo-label" style="color:#ef4444">❌ Don't say</div>"So what do you do?" (boring opener, she answers 10x a day)</div>
+        <div class="gu-convo-box good"><div class="gu-convo-label" style="color:#10b981">✅ Do this</div>"You seem like the kind of person who… [observation]." Make it about her personality, not her job title.</div>
+      </div>
+      <div class="gu-convo-row">
+        <div class="gu-convo-box bad"><div class="gu-convo-label" style="color:#ef4444">❌ Don't say</div>"I like everything you like!" (agreeing with everything)</div>
+        <div class="gu-convo-box good"><div class="gu-convo-label" style="color:#10b981">✅ Do this</div>Have your own opinions. Disagree sometimes with a smile. "Actually I think the opposite — hear me out."</div>
+      </div>
+      <div class="gu-convo-row">
+        <div class="gu-convo-box bad"><div class="gu-convo-label" style="color:#ef4444">❌ Don't say</div>"Can I take you out sometime?" (needy, puts pressure)</div>
+        <div class="gu-convo-box good"><div class="gu-convo-label" style="color:#10b981">✅ Do this</div>"We should grab coffee — I know a good place." Statement, not a question. Confident. She can say no, that's fine.</div>
+      </div>
+      <div class="gu-convo-row">
+        <div class="gu-convo-box bad"><div class="gu-convo-label" style="color:#ef4444">❌ Don't say</div>"Why haven't you replied?" / "Are you mad at me?"</div>
+        <div class="gu-convo-box good"><div class="gu-convo-label" style="color:#10b981">✅ Do this</div>Say nothing. Move on with your life. If she's interested she will come back. If not — you have better things to do.</div>
+      </div>
+      <div class="gu-convo-row">
+        <div class="gu-convo-box bad"><div class="gu-convo-label" style="color:#ef4444">❌ Avoid</div>Talking only about yourself for 10 minutes straight</div>
+        <div class="gu-convo-box good"><div class="gu-convo-label" style="color:#10b981">✅ Do this</div>Ask, listen, reflect back. "So you said you love travelling — what's the most unexpected place you've been?"</div>
+      </div>
+    </div>
+    <div class="gu-section-title" style="margin-top:28px">🔥 Conversation Golden Rules</div>
+    <div class="gu-rule-list">
+      <div class="gu-rule"><div class="gu-rule-num">1</div><div class="gu-rule-body"><div class="gu-rule-title">Ask questions that make her feel, not just think</div><div class="gu-rule-desc">Not "where are you from?" but "What's one thing about your city you actually miss?" Emotional questions create emotional connections.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">2</div><div class="gu-rule-body"><div class="gu-rule-title">Use light teasing — not insults</div><div class="gu-rule-desc">"You seem like the type who has 47 browser tabs open right now." Playful observations that make her laugh at herself. Never cross into genuinely mean territory.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">3</div><div class="gu-rule-body"><div class="gu-rule-title">End conversations first — leave her wanting more</div><div class="gu-rule-desc">"I have to go, but this was actually a great conversation." Walking away first is more attractive than staying too long. Scarcity creates desire.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">4</div><div class="gu-rule-body"><div class="gu-rule-title">Speak slower than you think you should</div><div class="gu-rule-desc">Nervousness makes people talk fast. Slow down by 20%. It makes you sound more confident, more thoughtful, and more authoritative.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">5</div><div class="gu-rule-body"><div class="gu-rule-title">Don't explain your jokes</div><div class="gu-rule-desc">If she doesn't laugh, smile and move on. Explaining why something was funny kills all humour instantly. Confidence means you don't need validation for your jokes.</div></div></div>
+    </div>
+  </div>
+
+  <!-- STYLE & LOOK -->
+  <div class="gu-section" id="gu-style">
+    <div class="gu-banner" style="background:linear-gradient(135deg,rgba(245,166,35,.08),rgba(255,107,107,.06));border:1px solid rgba(245,166,35,.2)">
+      👔 <strong style="color:#f5a623">You don't need to be tall or handsome.</strong> You need to look like you give a damn about yourself. These specifics will put you in the top 5% of men visually.
+    </div>
+    <div class="gu-section-title">👗 Clothing Rules</div>
+    <div class="gu-grid">
+      <div class="gu-card"><div class="gu-card-icon">📏</div><div class="gu-card-title">Fit Over Brand Every Time</div><div class="gu-card-desc">A ₹500 well-fitted shirt beats a ₹5,000 baggy branded one. Clothes should touch your body — not hang off it. Get shirts slightly tapered at the waist. It changes your entire silhouette.</div><span class="gu-card-tag" style="background:rgba(245,166,35,.15);color:#f5a623">Rule #1</span></div>
+      <div class="gu-card"><div class="gu-card-icon">🎨</div><div class="gu-card-title">Master a Simple Colour Palette</div><div class="gu-card-desc">Stick to: White · Navy · Black · Grey · Olive · Camel. These go with everything and look effortlessly polished. Avoid overly bright patterns until you've mastered the basics.</div><span class="gu-card-tag" style="background:rgba(255,107,107,.15);color:#ff6b6b">Essential</span></div>
+      <div class="gu-card"><div class="gu-card-icon">👟</div><div class="gu-card-title">Shoes Are Noticed More Than You Think</div><div class="gu-card-desc">Women look at shoes. Clean white sneakers, white leather shoes or clean formal shoes instantly elevate any outfit. Dirty or worn-out shoes ruin an otherwise great look.</div><span class="gu-card-tag" style="background:rgba(255,107,107,.15);color:#ff6b6b">High Impact</span></div>
+      <div class="gu-card"><div class="gu-card-icon">⌚</div><div class="gu-card-title">One Statement Accessory</div><div class="gu-card-desc">A clean watch (even a ₹2K Titan), a leather bracelet, or a simple chain adds dimension. Don't overdo it — one good accessory is better than five average ones.</div><span class="gu-card-tag" style="background:rgba(139,92,246,.15);color:#a78bfa">Upgrade</span></div>
+      <div class="gu-card"><div class="gu-card-icon">👖</div><div class="gu-card-title">Trousers Over Jeans for Dates</div><div class="gu-card-desc">Well-fitted chinos or trousers signal maturity and intentionality. Navy or grey chinos + white shirt + clean shoes = a universally winning outfit that takes zero effort.</div><span class="gu-card-tag" style="background:rgba(245,166,35,.15);color:#f5a623">Date Ready</span></div>
+      <div class="gu-card"><div class="gu-card-icon">🧥</div><div class="gu-card-title">Own One Great Jacket</div><div class="gu-card-desc">A slim-fit blazer or a clean bomber jacket instantly upgrades any outfit. Even jeans + plain tee + blazer = sharp. It's the easiest style shortcut that exists.</div><span class="gu-card-tag" style="background:rgba(139,92,246,.15);color:#a78bfa">Upgrade</span></div>
+    </div>
+    <div class="gu-section-title">💈 Grooming Non-Negotiables</div>
+    <div class="gu-grid">
+      <div class="gu-card"><div class="gu-card-icon">💇</div><div class="gu-card-title">Get a Haircut Every 3 Weeks</div><div class="gu-card-desc">Fresh hair is fresh confidence. Find a style that suits your face shape and tell your barber to maintain it regularly. A good haircut is the cheapest transformation available to you.</div><span class="gu-card-tag" style="background:rgba(255,107,107,.15);color:#ff6b6b">High Impact</span></div>
+      <div class="gu-card"><div class="gu-card-icon">🪒</div><div class="gu-card-title">Beard: Neat or Clean Shaved</div><div class="gu-card-desc">An ungroomed beard looks homeless, not rugged. Shape the neckline at the Adam's apple. Trim weekly. If you can't grow a full beard yet — clean shave beats patchy every time.</div><span class="gu-card-tag" style="background:rgba(255,107,107,.15);color:#ff6b6b">High Impact</span></div>
+      <div class="gu-card"><div class="gu-card-icon">✋</div><div class="gu-card-title">Hands & Nails</div><div class="gu-card-desc">Women notice hands. Keep nails trimmed short and clean. Moisturise your hands — dry cracked hands suggest you don't care for yourself. This is a 5-minute weekly habit.</div><span class="gu-card-tag" style="background:rgba(245,166,35,.15);color:#f5a623">Noticed</span></div>
+      <div class="gu-card"><div class="gu-card-icon">🦷</div><div class="gu-card-title">Teeth & Breath</div><div class="gu-card-desc">Brush twice, floss daily, use mouthwash. Carry mints. Bad breath is the fastest killer of attraction and it's completely invisible to you. Never assume your breath is fine.</div><span class="gu-card-tag" style="background:rgba(255,107,107,.15);color:#ff6b6b">Critical</span></div>
+      <div class="gu-card"><div class="gu-card-icon">🚿</div><div class="gu-card-title">Skincare — 3 Steps</div><div class="gu-card-desc">Cleanser (morning + night) · Moisturiser (SPF 50 in morning) · Lip balm. That's it. Clear, hydrated skin massively improves your appearance and takes 4 minutes a day.</div><span class="gu-card-tag" style="background:rgba(139,92,246,.15);color:#a78bfa">Upgrade</span></div>
+      <div class="gu-card"><div class="gu-card-icon">🌸</div><div class="gu-card-title">Perfume — Your Silent Signal</div><div class="gu-card-desc">A good scent is remembered long after you leave the room. Spray on pulse points — wrists, neck, chest. Don't spray on clothes. Top picks: Sauvage, Bleu de Chanel, 1 Million, Oud Wood. Even budget dupes work well.</div><span class="gu-card-tag" style="background:rgba(255,107,107,.15);color:#ff6b6b">High Impact</span></div>
+    </div>
+    <div class="gu-section-title">💪 Physical Presence</div>
+    <div class="gu-grid">
+      <div class="gu-card"><div class="gu-card-icon">🏋️</div><div class="gu-card-title">The Gym Changes Everything</div><div class="gu-card-desc">You don't need to be huge. You need to be lean and have a V-taper (broad shoulders, narrower waist). Focus on: chest, shoulders, back, and keep waist trim. 4 months of consistent gym shows visibly.</div><span class="gu-card-tag" style="background:rgba(255,107,107,.15);color:#ff6b6b">High Impact</span></div>
+      <div class="gu-card"><div class="gu-card-icon">🚶</div><div class="gu-card-title">Walk with Intention</div><div class="gu-card-desc">Slow, deliberate steps. Chin slightly up — not arrogantly, just forward. Don't look at your phone while walking. A man who moves with purpose commands attention before he speaks.</div><span class="gu-card-tag" style="background:rgba(16,185,129,.15);color:#10b981">Sigma</span></div>
+      <div class="gu-card"><div class="gu-card-icon">😴</div><div class="gu-card-title">Sleep — The Most Underrated Tip</div><div class="gu-card-desc">7–8 hours of good sleep reduces dark circles, clears skin, improves mood, and raises testosterone. You look and feel better. A well-rested face is noticeably more attractive.</div><span class="gu-card-tag" style="background:rgba(245,166,35,.15);color:#f5a623">Foundation</span></div>
+    </div>
+  </div>
+
+  <!-- ADVANCED TIPS -->
+  <div class="gu-section" id="gu-advanced">
+    <div class="gu-banner" style="background:linear-gradient(135deg,rgba(139,92,246,.1),rgba(236,72,153,.07));border:1px solid rgba(139,92,246,.25)">
+      💡 <strong style="color:#a78bfa">These are the subtle things most men never figure out.</strong> Mastering these separates the magnetic 1% from everyone else.
+    </div>
+    <div class="gu-section-title">🔑 The Psychology of Attraction</div>
+    <div class="gu-rule-list">
+      <div class="gu-rule"><div class="gu-rule-num">1</div><div class="gu-rule-body"><div class="gu-rule-title">Create tension, then release it</div><div class="gu-rule-desc">Tension is not pressure — it's the feeling of uncertainty that makes interactions exciting. Tease, pause, be a little unpredictable, then be warm. The push-pull keeps her engaged. Boring = predictably nice all the time.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">2</div><div class="gu-rule-body"><div class="gu-rule-title">The 2/3 rule for texting</div><div class="gu-rule-desc">If she sends one message, reply with roughly 2/3 of that length. If she writes 3 lines, write 2. Never write twice as much as she does. Matching or slightly less signals you're not desperate. The person who cares least has the most power — don't be that extreme, but understand it.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">3</div><div class="gu-rule-body"><div class="gu-rule-title">Let her chase a little</div><div class="gu-rule-desc">Ask a question, get a response, then don't reply for 20 minutes while you actually live your life. Not as a game — genuinely be busy. When she sends a follow-up, she's now thinking about you. Interest grows in the space between interactions.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">4</div><div class="gu-rule-body"><div class="gu-rule-title">Mirror her energy — but slightly cooler</div><div class="gu-rule-desc">If she's excited, be warm but not as excited. If she's playful, be playful. Mirroring builds rapport. Being slightly cooler builds intrigue. Never be the most excited person in the conversation.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">5</div><div class="gu-rule-body"><div class="gu-rule-title">Touch — the right way</div><div class="gu-rule-desc">Light, brief, appropriate touch during a conversation (shoulder when making a point, hand when laughing at something) builds physical connection. Never linger, never force. Start small and read the response — if she leans in, not away, it's welcome.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">6</div><div class="gu-rule-body"><div class="gu-rule-title">Social proof is silent attraction</div><div class="gu-rule-desc">Being seen in a group, having people come to greet you, being the one others laugh with — these signals tell her brain "this man is valued by others." You don't have to say you're popular. Let other people show it.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">7</div><div class="gu-rule-body"><div class="gu-rule-title">Disagree without being disagreeable</div><div class="gu-rule-desc">"Actually I think it's more like this…" with a calm smile is incredibly attractive. Men who agree with everything to avoid conflict are invisible. A confident, warm disagreement says: I have a mind, I respect you enough to be honest.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">8</div><div class="gu-rule-body"><div class="gu-rule-title">Compliment her character, not just looks</div><div class="gu-rule-desc">"You're really funny" or "I like how direct you are" hits deeper than "you look beautiful." She hears that all day. Being seen for who she is — her personality, wit, ambition — is rare and remembered.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">9</div><div class="gu-rule-body"><div class="gu-rule-title">Be interested in her world, not just impressed by her</div><div class="gu-rule-desc">Ask what she's passionate about — then actually engage with it. Not "wow that's so cool!" (validation) but "tell me more about that — how did you get into it?" You become the rare man who actually listens.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">10</div><div class="gu-rule-body"><div class="gu-rule-title">Have a signature — something she remembers you by</div><div class="gu-rule-desc">A story you tell brilliantly. A specific interest nobody else has. A unique phrase or style detail. Something that when she describes you to a friend, she says "he's the one who…" Memorable beats handsome every time.</div></div></div>
+    </div>
+    <div class="gu-section-title" style="margin-top:28px">🗓️ Date Ideas That Actually Impress</div>
+    <div class="gu-grid">
+      <div class="gu-card"><div class="gu-card-icon">☕</div><div class="gu-card-title">Coffee Walk (First Meet)</div><div class="gu-card-desc">Best first meet ever — coffee + walk. No sitting awkwardly across a table. Moving side-by-side is relaxed, conversation flows naturally, and it's low pressure for both. Easy to extend or end gracefully.</div><span class="gu-card-tag" style="background:rgba(245,166,35,.15);color:#f5a623">First Date</span></div>
+      <div class="gu-card"><div class="gu-card-icon">🖼️</div><div class="gu-card-title">Art Gallery / Museum</div><div class="gu-card-desc">Gives you endless conversation material. "What do you see in this?" is a brilliant question — there's no wrong answer and it reveals personality. Shows you have culture. Unique and memorable.</div><span class="gu-card-tag" style="background:rgba(139,92,246,.15);color:#a78bfa">Impressive</span></div>
+      <div class="gu-card"><div class="gu-card-icon">🍳</div><div class="gu-card-title">Cook Together at Home</div><div class="gu-card-desc">For later stages — cooking together is intimate, fun, low stress. Play music, be playful. A man who can cook is immediately more attractive than one who can't. Even simple pasta is enough.</div><span class="gu-card-tag" style="background:rgba(255,107,107,.15);color:#ff6b6b">Intimacy</span></div>
+      <div class="gu-card"><div class="gu-card-icon">🌅</div><div class="gu-card-title">Rooftop Sunset Spot</div><div class="gu-card-desc">Find a rooftop café or viewpoint in Bangalore. Beautiful setting does half the work for you. Sunset = natural romantic ambiance. Shows you put thought into it — effort without being try-hard.</div><span class="gu-card-tag" style="background:rgba(255,107,107,.15);color:#ff6b6b">Romantic</span></div>
+      <div class="gu-card"><div class="gu-card-icon">🎭</div><div class="gu-card-title">Live Music / Open Mic</div><div class="gu-card-desc">Shared experience + emotion = bonding. Live music creates feelings and those feelings get attached to who you're with. Much more memorable than a regular dinner date.</div><span class="gu-card-tag" style="background:rgba(16,185,129,.15);color:#10b981">Memorable</span></div>
+      <div class="gu-card"><div class="gu-card-icon">🎯</div><div class="gu-card-title">Fun Activity Date</div><div class="gu-card-desc">Bowling, mini golf, arcade, pottery class — anything with light competition. Playfulness reveals personality. Teasing each other during an activity builds attraction faster than any dinner conversation.</div><span class="gu-card-tag" style="background:rgba(16,185,129,.15);color:#10b981">Fun</span></div>
+    </div>
+  </div>
+
+  <!-- MINDSET -->
+  <div class="gu-section" id="gu-mindset">
+    <div class="gu-banner" style="background:linear-gradient(135deg,rgba(245,166,35,.08),rgba(224,64,251,.06));border:1px solid rgba(245,166,35,.2)">
+      🧠 <strong style="color:#f5a623">Attraction is 80% mindset.</strong> Fix how you see yourself — the behaviour changes automatically. These are the beliefs that separate magnetic men from average ones.
+    </div>
+    <div class="gu-rule-list">
+      <div class="gu-rule"><div class="gu-rule-num">1</div><div class="gu-rule-body"><div class="gu-rule-title">You are the prize — act like it</div><div class="gu-rule-desc">Stop approaching women as if you need their approval. You are offering your time, energy and attention — that is valuable. She needs to be worth YOUR time too. This shift alone changes everything.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">2</div><div class="gu-rule-body"><div class="gu-rule-title">Rejection is redirection, not failure</div><div class="gu-rule-desc">Every "no" means she saved you time. The right person for you will not reject you. Rejection only stings when your identity is tied to the outcome — separate them.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">3</div><div class="gu-rule-body"><div class="gu-rule-title">Build yourself, not a persona</div><div class="gu-rule-desc">Don't build a "character" to attract women. Build your fitness, your income, your skills, your confidence — the kind of man who naturally attracts. The foundation must be real.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">4</div><div class="gu-rule-body"><div class="gu-rule-title">Women sense your energy before you speak</div><div class="gu-rule-desc">Walking into a room with calm certainty — no checking if people noticed you, no nervous glancing — that energy is felt. Work on your inner state and the outer signals fix themselves.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">5</div><div class="gu-rule-body"><div class="gu-rule-title">Never put one woman on a pedestal</div><div class="gu-rule-desc">Obsessing over one person before a real relationship exists kills your confidence and their attraction. Keep your focus on your own life. Abundance mindset — many people exist, many possibilities.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">6</div><div class="gu-rule-body"><div class="gu-rule-title">Standards make you attractive</div><div class="gu-rule-desc">A man with no standards accepts everything — which makes him worth nothing. Know what you want, know what you don't. Saying "that doesn't work for me" calmly is deeply attractive.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">7</div><div class="gu-rule-body"><div class="gu-rule-title">Your mission comes first — always</div><div class="gu-rule-desc">Your business, your fitness, your content, your growth — these come before chasing women. Ironically, the man who is focused on his own mission is the most attractive man in the room.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">8</div><div class="gu-rule-body"><div class="gu-rule-title">Confidence is a skill you build daily</div><div class="gu-rule-desc">Every gym session, every article you write, every goal you hit, every time you do something uncomfortable — that is confidence being built. It compounds. Give it 6 months of real effort.</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOCUS MODE OVERLAY -->
+<div id="focus-overlay">
+  <button id="focus-close-btn" onclick="exitFocus()">✕ Exit Focus</button>
+  <div id="focus-clock">00:00:00</div>
+  <div id="focus-date-line"></div>
+  <div id="focus-affirmation"></div>
+  <div id="focus-nav">
+    <button onclick="prevAff()">← Prev</button>
+    <button onclick="nextAff()">Next →</button>
+  </div>
+</div>
+
+<!-- DAILY CHECK-IN PANEL -->
+<div id="daily-panel">
+  <h2>📔 Daily Check-In</h2>
+  <div class="daily-sub">Track your mood, gratitude &amp; habits every day. Small wins compound.</div>
+  <div class="daily-card">
+    <div class="daily-card-title">😊 How are you feeling today?</div>
+    <div class="mood-row">
+      <button class="mood-btn" data-mood="1" data-emoji="😞" onclick="selectMood(this)">😞</button>
+      <button class="mood-btn" data-mood="2" data-emoji="😐" onclick="selectMood(this)">😐</button>
+      <button class="mood-btn" data-mood="3" data-emoji="🙂" onclick="selectMood(this)">🙂</button>
+      <button class="mood-btn" data-mood="4" data-emoji="😊" onclick="selectMood(this)">😊</button>
+      <button class="mood-btn" data-mood="5" data-emoji="🤩" onclick="selectMood(this)">🤩</button>
+    </div>
+  </div>
+  <div class="daily-card">
+    <div class="daily-card-title">🙏 3 things I'm grateful for today</div>
+    <textarea class="grat-input" id="grat-1" rows="2" placeholder="I'm grateful for…"></textarea>
+    <textarea class="grat-input" id="grat-2" rows="2" placeholder="I'm grateful for…"></textarea>
+    <textarea class="grat-input" id="grat-3" rows="2" placeholder="I'm grateful for…"></textarea>
+  </div>
+  <div class="daily-card">
+    <div class="daily-card-title">⚡ Today's habits</div>
+    <div class="habit-row" id="habit-row"></div>
+  </div>
+  <button class="daily-save-btn" onclick="saveDaily()">✓ Save Today's Check-In</button>
+  <div class="daily-card" style="margin-top:18px">
+    <div class="daily-card-title">📅 Last 7 days</div>
+    <div class="streak-grid" id="streak-grid"></div>
+  </div>
+</div>
+
 <button id="scroll-top" title="Back to top">↑</button>
+
+  <!-- REAL SITUATIONS -->
+  <div class="gu-section" id="gu-scenarios">
+    <div class="gu-banner" style="background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(59,130,246,.06));border:1px solid rgba(16,185,129,.2)">
+      📍 <strong style="color:#10b981">Real office & social situations — exactly what to do, step by step.</strong> Each card shows your signal (🟢 Do it · 🟡 Maybe · 🔴 Don't) and the precise playbook.
+    </div>
+    <div class="sc-prog-wrap"><div class="sc-prog-bar" id="sc-prog-bar"></div></div>
+    <div class="sc-prog-label"><span id="sc-prog-lbl">0 / 15 studied</span><span style="color:rgba(255,255,255,.15)">tap any card to read</span></div>
+    <div class="scenario-grid" id="scenario-grid"></div>
+  </div>
+</div>
 
 <footer>👑 Rajeev's Universe &nbsp;·&nbsp; Built with ♥ &nbsp;·&nbsp; <span id="footer-count"></span></footer>
 
@@ -1208,6 +1595,517 @@ const BUCKET_CATS = [
 
 let bucketBuilt = false;
 let empireBuilt = false;
+let glowupBuilt = false;
+
+const SCENARIOS = [
+  {
+    signal:'green', verdict:'✅ YES — Reach Out', verdictBg:'rgba(16,185,129,.15)', verdictColor:'#10b981',
+    label:'Your exact situation',
+    q:'She said she\'d help you with work a few days ago but hasn\'t reached out yet. Should YOU message her?',
+    verdictBar:'background:rgba(16,185,129,.12);color:#10b981;border:1px solid rgba(16,185,129,.25)',
+    verdictText:'🟢 YES — reach out. She made an offer. Following up is not desperate — it\'s professional and confident.',
+    steps:[
+      {color:'#10b981',text:'Wait 3–5 days max from when she said it. You\'ve waited enough.'},
+      {color:'#10b981',text:'Message her on Teams/WhatsApp — keep it casual and work-framed: "Hey, wanted to take you up on that offer you made — are you free for 15 mins sometime this week?"'},
+      {color:'#10b981',text:'No explanation, no apology, no "sorry to bother you." Short, direct, confident.'},
+      {color:'#10b981',text:'If she replies warmly → great, plan it. If she gives a vague reply → leave it and don\'t follow up again.'},
+    ],
+    dont:'Don\'t say "I know you\'re busy but…" or "sorry to bother you" — it starts the conversation from a weak position. Also don\'t send a long message explaining why you need help. Keep it light.',
+    why:'<strong>Why this works:</strong> She made the offer — you\'re honouring her word. A confident man takes people at their word. Not following up signals you don\'t value your own time enough to ask.'
+  },
+  {
+    signal:'green', verdict:'✅ Approach — Here\'s How', verdictBg:'rgba(245,166,35,.15)', verdictColor:'#f5a623',
+    label:'Your exact situation',
+    q:'You\'re at your standing cubicle and you see your crush in the pantry. What do you do?',
+    verdictBar:'background:rgba(245,166,35,.1);color:#f5a623;border:1px solid rgba(245,166,35,.25)',
+    verdictText:'🟢 GO. The pantry is the single best place in an office to have a natural, low-pressure conversation.',
+    steps:[
+      {color:'#f5a623',text:'Don\'t stare from your cubicle. Give yourself a 5-second countdown and walk to the pantry naturally — like you were going anyway for water/coffee.'},
+      {color:'#f5a623',text:'Walk in relaxed, not rushing. Smile and make eye contact when you see her — just a natural "hey" nod or "hi." Don\'t immediately start talking.'},
+      {color:'#f5a623',text:'Let 30 seconds pass — make your coffee/tea. Then make a light comment about something real: the coffee machine, something happening in office, Monday morning, anything around you.'},
+      {color:'#f5a623',text:'Ask one genuine question. "You\'re from [team], right? What are you all working on these days?" People love talking about their work.'},
+      {color:'#f5a623',text:'Talk for 2–3 minutes max. Then say "Anyway, back to it — good talking to you" and leave FIRST. Don\'t overstay.'},
+      {color:'#f5a623',text:'Next time you see her — she\'ll be more open. Repeat this 2–3 times before asking for coffee/number.'},
+    ],
+    dont:'Don\'t walk in and immediately start talking to her — it looks like you came specifically to talk to her (even if you did). Let the environment start the conversation. Also don\'t compliment her appearance in the office early — it creates awkwardness.',
+    why:'<strong>Why pantry works:</strong> Both of you have a natural reason to be there. There\'s no pressure — if conversation dies, you can leave without it being weird. It\'s the perfect low-stakes first interaction.'
+  },
+  {
+    signal:'yellow', verdict:'🟡 Depends — Read This', verdictBg:'rgba(245,158,11,.15)', verdictColor:'#f59e0b',
+    label:'Office situation',
+    q:'I want to ask a female colleague out. We talk at work sometimes. Should I?',
+    verdictBar:'background:rgba(245,158,11,.1);color:#f59e0b;border:1px solid rgba(245,158,11,.25)',
+    verdictText:'🟡 Only if you\'ve built a real foundation first. Office dating needs more groundwork than outside.',
+    steps:[
+      {color:'#f59e0b',text:'First check: Have you had at least 4–5 real, enjoyable conversations (not just "hi")? If no — not yet.'},
+      {color:'#f59e0b',text:'Second check: Has she ever initiated talking to you or extended conversations? If yes — strong green signal.'},
+      {color:'#f59e0b',text:'Don\'t ask her "out" cold at work. Instead extend naturally: "A few of us are going for lunch/coffee Friday — you should join." Group first, 1-1 later.'},
+      {color:'#f59e0b',text:'If she comes and it goes well — THEN you can say "We should grab coffee, just the two of us, sometime."'},
+      {color:'#f59e0b',text:'If she says no — take it gracefully: "No worries at all" with a smile. Never bring it up again. Stay normal at work.'},
+    ],
+    dont:'Don\'t ask her out via text on WhatsApp before you\'ve had real conversations in person. Don\'t make it formal or nervous — "I was wondering if maybe you would perhaps like to…" Just be calm and direct.',
+    why:'<strong>Why office needs more care:</strong> You see this person every day. A rejected approach handled badly creates months of awkwardness. Build connection first — then the ask feels natural, not random.'
+  },
+  {
+    signal:'green', verdict:'✅ Do This', verdictBg:'rgba(16,185,129,.15)', verdictColor:'#10b981',
+    label:'Office situation',
+    q:'She smiles and makes eye contact with me in the corridor/office but we\'ve never actually talked. What now?',
+    verdictBar:'background:rgba(16,185,129,.12);color:#10b981;border:1px solid rgba(16,185,129,.25)',
+    verdictText:'🟢 She\'s already opened the door — you just need to walk through it.',
+    steps:[
+      {color:'#10b981',text:'Next time she smiles — smile back and hold it for one second longer than you normally would. Don\'t look away immediately.'},
+      {color:'#10b981',text:'The very next time you\'re physically near her (pantry, lift, corridor stopping) — say something. Anything: "Hey, I see you around but I don\'t think we\'ve actually met — I\'m Rajeev, which team are you in?"'},
+      {color:'#10b981',text:'Simple intro conversation for 2 mins. Leave with "Good to meet you finally" — it implies you\'d noticed her, which is subtly flattering.'},
+      {color:'#10b981',text:'The next 2–3 times you see her, brief friendly chats. Let it grow naturally.'},
+    ],
+    dont:'Don\'t let weeks pass while you just keep exchanging smiles. She will eventually assume you\'re not interested or not confident enough. The window closes.',
+    why:'<strong>Why act now:</strong> A smile + eye contact from a woman in an office is a clear green light to introduce yourself. Women rarely do this with men they\'re not open to. This is your invitation.'
+  },
+  {
+    signal:'red', verdict:'🔴 Don\'t Do This', verdictBg:'rgba(239,68,68,.15)', verdictColor:'#ef4444',
+    label:'Common mistake',
+    q:'I like her so I\'ve been texting her good morning every day. Good idea or not?',
+    verdictBar:'background:rgba(239,68,68,.1);color:#ef4444;border:1px solid rgba(239,68,68,.25)',
+    verdictText:'🔴 STOP immediately. This is one of the fastest ways to kill attraction.',
+    steps:[
+      {color:'#ef4444',text:'Stop the daily good morning texts today.'},
+      {color:'#ef4444',text:'Wait for her to initiate contact or wait 5–7 days before texting again.'},
+      {color:'#ef4444',text:'When you do text next — make it purposeful: a funny meme, something she mentioned, a genuine question. Not "good morning ☀️"'},
+      {color:'#ef4444',text:'Build real interaction in person first. Texts should be bridges to meet — not the relationship itself.'},
+    ],
+    dont:'Don\'t panic-send a follow-up explaining "sorry I\'ll stop." Just quietly stop. The absence will be noticed more than any message you could send.',
+    why:'<strong>Why it kills attraction:</strong> Daily good mornings with no context signal that she is the highlight of your day before anything has been built. It puts her on a pedestal, makes you predictable, and signals you have nothing else going on. Mystery and scarcity create desire.'
+  },
+  {
+    signal:'yellow', verdict:'🟡 Read the Room', verdictBg:'rgba(245,158,11,.15)', verdictColor:'#f59e0b',
+    label:'Reading signals',
+    q:'She replies to my texts but always short answers — one word or very brief. Is she interested?',
+    verdictBar:'background:rgba(245,158,11,.1);color:#f59e0b;border:1px solid rgba(245,158,11,.25)',
+    verdictText:'🟡 Mixed signal — don\'t chase, but don\'t give up yet. Try this test first.',
+    steps:[
+      {color:'#f59e0b',text:'Send one genuinely interesting message — something funny, a story, something she can respond to properly.'},
+      {color:'#f59e0b',text:'If she still replies with one word → she\'s not interested or not comfortable yet via text. Move to in-person.'},
+      {color:'#f59e0b',text:'If she suddenly replies with 3+ lines → she was just bad at texting (many people are). Continue.'},
+      {color:'#f59e0b',text:'Key test: does she EVER ask YOU a question back? If she never asks you anything — she\'s tolerating the conversation, not enjoying it.'},
+    ],
+    dont:'Don\'t send 5 messages to get her engaged. Don\'t ask "are you okay?" or "did I say something wrong?" when she replies short. Just dial back your own effort and see what happens.',
+    why:'<strong>The rule:</strong> Match her energy. She gives a little → you give a little. Let her investment level tell you where you stand. You cannot out-text someone into liking you.'
+  },
+  {
+    signal:'green', verdict:'✅ This Works', verdictBg:'rgba(16,185,129,.15)', verdictColor:'#10b981',
+    label:'Practical move',
+    q:'We\'ve talked a few times at work. How do I get her number without it being awkward?',
+    verdictBar:'background:rgba(16,185,129,.12);color:#10b981;border:1px solid rgba(16,185,129,.25)',
+    verdictText:'🟢 The cleanest way — use a reason, not a request.',
+    steps:[
+      {color:'#10b981',text:'Create a reason first: mention something you both talked about — a restaurant, a movie, an event: "That café you mentioned — I actually want to check it out.'},
+      {color:'#10b981',text:'Then naturally: "Let me get your number — I\'ll let you know how it was" or "We should check it out sometime."'},
+      {color:'#10b981',text:'Hand her your phone open on a new contact or on WhatsApp. Don\'t ask "can I have your number?" — just make the action happen.'},
+      {color:'#10b981',text:'If she types it in — perfect. First text: keep it light. "Hey it\'s Rajeev from [team] 👋" — nothing more that day.'},
+    ],
+    dont:'Don\'t say "Can I get your number?" formally out of nowhere. Don\'t make it a big deal. The more casual you make it, the more comfortable she feels.',
+    why:'<strong>Why this works:</strong> You\'re giving a reason (future context) for the exchange. It doesn\'t feel like a "move" — it feels like a natural next step in an ongoing conversation.'
+  },
+  {
+    signal:'red', verdict:'🔴 Warning Sign', verdictBg:'rgba(239,68,68,.15)', verdictColor:'#ef4444',
+    label:'Friend zone alert',
+    q:'She calls me her best friend at work, tells me about guys she likes, asks for advice on her relationships. Am I in the friend zone?',
+    verdictBar:'background:rgba(239,68,68,.1);color:#ef4444;border:1px solid rgba(239,68,68,.25)',
+    verdictText:'🔴 Yes — and the longer you stay in this role, the harder it becomes to leave it.',
+    steps:[
+      {color:'#ef4444',text:'Stop being available for every emotional vent and relationship advice session immediately.'},
+      {color:'#ef4444',text:'Start being a little less available: "I\'m a bit busy, let\'s catch up later."'},
+      {color:'#ef4444',text:'Introduce light attraction signals into your interactions — a compliment, a bit of teasing, holding eye contact.'},
+      {color:'#ef4444',text:'Be honest with yourself: if she consistently puts you in the "safe friend" role, it may be time to redirect your energy to someone who sees you as a man first.'},
+    ],
+    dont:'Don\'t keep listening to her talk about other guys hoping it will eventually make her see you differently. It won\'t. And don\'t confess your feelings dramatically — it rarely ends well and always creates awkwardness.',
+    why:'<strong>The hard truth:</strong> Friend zone happens when a man is too agreeable, too available, and provides emotional support without any romantic tension. You can shift it — but it requires changing your behaviour first, not declaring feelings.'
+  },
+
+  /* ─── ADVANCED: NO REPLY ─────────────────────────────────────── */
+  {
+    signal:'red', verdict:'🔴 Don\'t Chase', verdictBg:'rgba(239,68,68,.15)', verdictColor:'#ef4444',
+    label:'Advanced — She Ghosted',
+    q:'I sent her a message. She saw it (or maybe didn\'t) but hasn\'t replied. What now?',
+    verdictBar:'background:rgba(239,68,68,.1);color:#ef4444;border:1px solid rgba(239,68,68,.25)',
+    verdictText:'🔴 Hard rule: ONE message. Never double-text someone who hasn\'t replied.',
+    steps:[
+      {color:'#ef4444',text:'Wait minimum 5–7 days. Silence is an answer — don\'t fill it with more messages.'},
+      {color:'#ef4444',text:'No "?", no "did you see this?", no "hey just checking in." Each follow-up drops your value and confirms you have nothing else going on.'},
+      {color:'#ef4444',text:'After 7+ days — if you want to try once more, send a completely different topic. Short, casual, zero reference to the ignored message. Act like it never happened.'},
+      {color:'#ef4444',text:'If she ignores that too: answer received. Move your energy forward, not backward.'},
+      {color:'#ef4444',text:'When you see her in person: stay completely normal. No tension, no passive sulking. Confidence is being able to handle rejection without changing your behaviour.'},
+    ],
+    dont:'Don\'t send an emotional message about feeling ignored. Don\'t explain why you messaged. Don\'t react on social media (likes, story views) to make her notice you. She already knows.',
+    why:'<strong>Why chasing is the worst move:</strong> Every double-text tells her she has all the power. Silence from you after an ignored message is the only thing that actually makes someone wonder — "wait, did I mess up?"'
+  },
+
+  /* ─── ADVANCED: SHE DISRESPECTED YOUR STYLE / AMBITION ───────── */
+  {
+    signal:'red', verdict:'🔴 She Showed You Who She Is', verdictBg:'rgba(239,68,68,.15)', verdictColor:'#ef4444',
+    label:'Advanced — She Was Rude To You',
+    q:'She made fun of my formal dress style in office, said "bone bhi nahi aata hai" (you don\'t even know how to dress), and also mocked my entrepreneurship ambition. What should I do?',
+    verdictBar:'background:rgba(168,85,247,.1);color:#a855f7;border:1px solid rgba(168,85,247,.25)',
+    verdictText:'👑 This is not a rejection — it\'s information. She revealed her character. Your response is your power.',
+    steps:[
+      {color:'#a855f7',text:'In the moment: smile slightly, pause 2 seconds, say nothing, and return to what you were doing. No explanation. No defence. The unbothered response is louder than any comeback.'},
+      {color:'#a855f7',text:'Do NOT laugh it off nervously or agree with her. That validates the disrespect. Calm neutrality is the power move.'},
+      {color:'#a855f7',text:'Formals in an office are not wrong — it means she is uncomfortable with someone who looks more put-together than the crowd. That says everything about her insecurity, not your style.'},
+      {color:'#a855f7',text:'On the entrepreneur mock: people who laugh at ambition are those who don\'t have any. Remember this — in 2 years when your content is paying, you\'ll remember who believed and who mocked.'},
+      {color:'#a855f7',text:'After this incident: reduce your energy given to her. Not cold, not hostile — just professionally neutral. She gets the minimum, not the warmth you had before.'},
+      {color:'#a855f7',text:'Going forward, your goal is not to impress her — it is to outgrow her. Focus on your content, your income, your gym. The version of you 12 months from now won\'t remember her name.'},
+    ],
+    dont:'Don\'t try to explain your style or defend your choices. Don\'t seek her approval or fish for a later compliment to "make up" for what she said. Don\'t vent about it to other colleagues.',
+    why:'<strong>The real lesson:</strong> High-value women build people up. Low-value ones tear them down. She put you in a position where doing nothing is winning. Wear your formals tomorrow. Keep building your empire. That\'s the revenge.'
+  },
+
+  /* ─── ADVANCED: SHE ALWAYS IGNORES YOU ───────────────────────── */
+  {
+    signal:'red', verdict:'🔴 Exit the Loop', verdictBg:'rgba(239,68,68,.15)', verdictColor:'#ef4444',
+    label:'Advanced — Consistent Ignore',
+    q:'She always ignores me — messages, passing in corridor, everything. Like I don\'t exist. What does this mean and what do I do?',
+    verdictBar:'background:rgba(239,68,68,.1);color:#ef4444;border:1px solid rgba(239,68,68,.25)',
+    verdictText:'🔴 Consistent, deliberate ignoring is a clear signal. The right move is counterintuitive.',
+    steps:[
+      {color:'#ef4444',text:'Understand: active ignoring (not accidental) is a choice she\'s made. You cannot change it by pursuing harder — you can only confirm her decision.'},
+      {color:'#ef4444',text:'Stop all unprompted contact — no messages, no going to her desk, no trying to "bump into" her. Cold stop.'},
+      {color:'#ef4444',text:'When you cross paths: be the one who looks straight ahead OR gives a professional nod and keeps walking. Don\'t look for eye contact. Don\'t rush to look away either. Just move with purpose.'},
+      {color:'#ef4444',text:'Redirect your attraction energy immediately — not because she\'s not worth it, but because where you invest your attention is where your identity lives. Invest in yourself.'},
+      {color:'#ef4444',text:'Watch what happens over 3–4 weeks of you being visibly unbothered and busy: some people who ignored you will suddenly become curious. This is not guaranteed — but it is the only scenario where anything changes.'},
+    ],
+    dont:'Don\'t make a last-ditch attempt to "get clarity" or tell her how you feel hoping to break through. Don\'t ask mutual colleagues if she mentioned you. Don\'t stalk her LinkedIn or Instagram.',
+    why:'<strong>The paradox:</strong> Pursuing someone who ignores you shrinks you in their eyes. Pulling your energy back — genuinely redirecting it — is the only move that either (a) changes her mind, or (b) frees you. Both are wins.'
+  },
+
+  /* ─── ADVANCED: SHE IGNORES LUNCH INVITES ────────────────────── */
+  {
+    signal:'yellow', verdict:'🟡 One Ask. One Answer.', verdictBg:'rgba(245,158,11,.15)', verdictColor:'#f59e0b',
+    label:'Advanced — She Declined Lunch',
+    q:'I invited her to join for lunch (with the group or just us) and she ignored it or declined. Should I try again?',
+    verdictBar:'background:rgba(245,158,11,.1);color:#f59e0b;border:1px solid rgba(245,158,11,.25)',
+    verdictText:'🟡 One invite is a gesture. Two invites are pressure. Three is desperation. Know the difference.',
+    steps:[
+      {color:'#f59e0b',text:'One group invite + one direct invite = maximum. After that, the ball is fully in her court.'},
+      {color:'#f59e0b',text:'When she declined: read how. Declined with an excuse + alternative ("maybe next time") = mild interest, wait. Declined with no engagement = she\'s answered.'},
+      {color:'#f59e0b',text:'The day after: be completely normal at work. No awkwardness, no avoiding her, no passive energy. Act like the invite was the most casual thing you\'ve ever done — because it should be.'},
+      {color:'#f59e0b',text:'Going forward: stop tracking whether she joins or not. When the group goes for lunch — go, invite everyone broadly, and if she comes she comes. Remove the emotional weight from it.'},
+    ],
+    dont:'Don\'t "remind" her about lunch or ask if she wants to come separately after she\'s already declined once. Don\'t stop going to lunch yourself or change your routine around her response.',
+    why:'<strong>Why one ask is enough:</strong> Repeating invitations signals you are seeking HER specific company more than lunch itself. That shift — from casual to targeted — is when it becomes uncomfortable for her.'
+  },
+
+  /* ─── ADVANCED: NO EYE CONTACT IN CORRIDOR ───────────────────── */
+  {
+    signal:'yellow', verdict:'🟡 Do This Once. Read the Result.', verdictBg:'rgba(245,158,11,.15)', verdictColor:'#f59e0b',
+    label:'Advanced — She Looks Away',
+    q:'She doesn\'t even look at me when we cross each other in the corridor. Doesn\'t acknowledge me at all.',
+    verdictBar:'background:rgba(245,158,11,.1);color:#f59e0b;border:1px solid rgba(245,158,11,.25)',
+    verdictText:'🟡 Before assuming the worst — try this ONE-TIME test to know for sure.',
+    steps:[
+      {color:'#f59e0b',text:'First: notice if she does this to everyone or just you. If she\'s generally a "head-down" person at work, it\'s her personality, not a message.'},
+      {color:'#f59e0b',text:'The test: next time you cross paths, make eye contact first (don\'t wait for her to look), give a confident nod and half-smile — don\'t say anything, just acknowledge. Keep walking. Don\'t stop, don\'t slow down.'},
+      {color:'#f59e0b',text:'If she returns the nod or smile → the door is open, she just wasn\'t initiating. Build from here with pantry/coffee interactions.'},
+      {color:'#f59e0b',text:'If she actively avoids your eyes even with a direct offer → she has made a choice. Accept it. Walk past with the same confident energy going forward — no adjustment, no tension.'},
+    ],
+    dont:'Don\'t say "hi" loudly hoping to force a response. Don\'t adjust your walking path to make it harder to avoid you. Don\'t ask others if she doesn\'t like you.',
+    why:'<strong>The one-time test rule:</strong> You give ONE clear, low-stakes signal. Her response tells you everything. Doing it more than once stops being a test and starts being pursuit.'
+  },
+
+  /* ─── ADVANCED: PRETTY GIRL AT GYM ───────────────────────────── */
+  {
+    signal:'green', verdict:'✅ Gym Has Rules — Here\'s How', verdictBg:'rgba(16,185,129,.15)', verdictColor:'#10b981',
+    label:'Gym & Fitness',
+    q:'I started going to the gym or I\'m already there and there\'s a pretty girl I\'m attracted to. What are the rules? How do I approach?',
+    verdictBar:'background:rgba(16,185,129,.12);color:#10b981;border:1px solid rgba(16,185,129,.25)',
+    verdictText:'🟢 Gym is absolutely a valid place to meet someone — but it has unspoken rules. Break them and you\'re "that guy." Follow them and you stand out completely.',
+    steps:[
+      {color:'#10b981',text:'Rule 1 — Train first, talk second: Your gym session should look like you\'re there to train, not to socialise. This is the single biggest attraction signal at a gym — a man who is completely focused on himself.'},
+      {color:'#10b981',text:'Rule 2 — Never approach mid-set: She has headphones in, she\'s lifting, she\'s between exercises. That\'s her bubble — respect it. Gym is one of the few places where interrupting someone mid-activity is genuinely disrespectful.'},
+      {color:'#10b981',text:'Best windows: water fountain, waiting for the same equipment, stretching area post-workout, near the exit/locker corridor. These are natural "both of you are paused" moments.'},
+      {color:'#10b981',text:'Opening line: Keep it gym-relevant and genuine. "That\'s a good exercise — do you alternate that with [X]?" or "How long have you been training here? I just started this routine and it\'s brutal." About training, not about her looks.'},
+      {color:'#10b981',text:'Let it breathe — don\'t try to hold a 10-minute conversation the first time. 2 minutes, finish, get back to training. Next session — nod/hi. Session 3 — slightly longer chat. Build familiarity across sessions, not in one go.'},
+      {color:'#10b981',text:'After 3–4 natural sessions of brief conversation: "We should train together sometime" or "What days do you usually come in?" is a natural next step that isn\'t pressure.'},
+    ],
+    dont:'Don\'t compliment her body at the gym — it sounds great in your head, it lands as creepy. Don\'t hover or keep appearing near wherever she is. Don\'t offer to "help with her form" unless she specifically asked — it\'s the most overdone gym move and she\'s seen it 100 times.',
+    why:'<strong>Why focus on yourself first:</strong> A man who is locked into his own training, visibly consistent, not distracted — is 10x more attractive than any opener you could write. The gym body is secondary to the gym discipline. She notices consistency before she notices conversation.'
+  },
+
+  /* ─── ADVANCED: ATTRACTED TO GIRL ANYWHERE ───────────────────── */
+  {
+    signal:'green', verdict:'✅ 5 Seconds. Then Move.', verdictBg:'rgba(99,102,241,.15)', verdictColor:'#6366f1',
+    label:'Anywhere — Cold Approach',
+    q:'I saw a really pretty girl in a café / mall / metro / on the street and felt attracted. What do I do in that moment?',
+    verdictBar:'background:rgba(99,102,241,.1);color:#6366f1;border:1px solid rgba(99,102,241,.25)',
+    verdictText:'🟢 The 5-Second Rule: if you don\'t act within 5 seconds of deciding to, your brain will talk you out of it forever.',
+    steps:[
+      {color:'#6366f1',text:'The rule: when you see someone you want to talk to — you have 5 seconds before hesitation becomes paralysis. Count down 5-4-3-2-1 and move. This is non-negotiable.'},
+      {color:'#6366f1',text:'Café (best setting — lowest pressure): walk over, "Hey, I know this is random but I wanted to say you seem really interesting and I\'d kick myself if I didn\'t say hi. I\'m Rajeev." Sit back, let her respond.'},
+      {color:'#6366f1',text:'Mall / shop: comment on something contextual — what she\'s looking at, the place, something real around you. "Is that brand worth it? I\'ve been looking at the same thing." Then introduce yourself if it flows.'},
+      {color:'#6366f1',text:'Metro / bus: ONLY if you\'re both not moving and the journey is long enough. Quick, low-key: "Hey, I almost didn\'t say this — but you have a great energy, I\'m Rajeev." If she smiles → continue. If one-word reply → let it go gracefully.'},
+      {color:'#6366f1',text:'Street: fast, direct, non-blocking: step slightly in front, "Hey, quick second — I thought you looked amazing and I\'d regret not saying something. I\'m Rajeev — what\'s your name?" Don\'t chase if she keeps walking.'},
+      {color:'#6366f1',text:'After intro: talk for 2–3 minutes naturally. Then: "I\'d love to continue this — can I get your number?" Direct. No games. If yes: great. If no: "No worries at all — have a great day" and walk away with full confidence.'},
+    ],
+    dont:'Don\'t give long openers or rehearsed lines — they sound unnatural. Don\'t follow someone after they\'ve moved away. Don\'t ask for Instagram instead of a number — it signals you don\'t expect her to say yes. Don\'t look for "the right moment" — there isn\'t one, that\'s just fear.',
+    why:'<strong>Why direct works better than indirect:</strong> Most men either say nothing or use a fake "excuse" to talk. A man who says "I wanted to meet you" honestly is immediately in the top 1% of approaches she\'s ever experienced. Honesty + composure = respect, regardless of outcome.'
+  },
+];
+
+function buildGlowupPanel(){
+  document.querySelectorAll('.gu-tab').forEach(t=>{
+    t.addEventListener('click',()=>{
+      document.querySelectorAll('.gu-tab').forEach(x=>x.classList.remove('active'));
+      document.querySelectorAll('.gu-section').forEach(x=>x.classList.remove('active'));
+      t.classList.add('active');
+      document.getElementById('gu-'+t.dataset.gu).classList.add('active');
+    });
+  });
+  buildScenarios();
+  loadScenarioDone();
+}
+
+function buildScenarios(){
+  const grid = document.getElementById('scenario-grid');
+  if(!grid) return;
+  const ART = [
+    {e:'💼 ✉️', g:'linear-gradient(135deg,rgba(16,185,129,.55) 0%,rgba(0,25,12,.92) 100%)'},
+    {e:'☕ 💘', g:'linear-gradient(135deg,rgba(245,166,35,.55) 0%,rgba(35,12,0,.92) 100%)'},
+    {e:'🏢 💌', g:'linear-gradient(135deg,rgba(245,158,11,.5) 0%,rgba(28,12,0,.92) 100%)'},
+    {e:'😊 ✨', g:'linear-gradient(135deg,rgba(16,185,129,.5) 0%,rgba(0,25,12,.92) 100%)'},
+    {e:'📱 🛑', g:'linear-gradient(135deg,rgba(239,68,68,.55) 0%,rgba(55,0,0,.92) 100%)'},
+    {e:'💬 🤔', g:'linear-gradient(135deg,rgba(245,158,11,.5) 0%,rgba(28,12,0,.92) 100%)'},
+    {e:'📞 ✅', g:'linear-gradient(135deg,rgba(16,185,129,.5) 0%,rgba(0,25,12,.92) 100%)'},
+    {e:'🤝 💔', g:'linear-gradient(135deg,rgba(239,68,68,.55) 0%,rgba(55,0,0,.92) 100%)'},
+    {e:'📵 💬', g:'linear-gradient(135deg,rgba(239,68,68,.62) 0%,rgba(70,0,0,.94) 100%)'},
+    {e:'👔 🔥', g:'linear-gradient(135deg,rgba(168,85,247,.62) 0%,rgba(50,0,70,.92) 100%)'},
+    {e:'🚶 🙈', g:'linear-gradient(135deg,rgba(239,68,68,.58) 0%,rgba(55,0,0,.92) 100%)'},
+    {e:'🍽️ ❌', g:'linear-gradient(135deg,rgba(245,158,11,.55) 0%,rgba(55,20,0,.92) 100%)'},
+    {e:'👁️ 🏢', g:'linear-gradient(135deg,rgba(245,158,11,.52) 0%,rgba(0,12,48,.92) 100%)'},
+    {e:'🏋️ 💪', g:'linear-gradient(135deg,rgba(16,185,129,.62) 0%,rgba(0,48,14,.94) 100%)'},
+    {e:'📍 💬', g:'linear-gradient(135deg,rgba(99,102,241,.62) 0%,rgba(12,0,58,.94) 100%)'},
+  ];
+  const dividers = {8:'⚡ Advanced Situations',14:'🏋️ Gym & Real World'};
+  grid.innerHTML = SCENARIOS.map((s,i)=>{
+    const a = ART[i]||{e:'💡',g:'linear-gradient(135deg,rgba(255,255,255,.08),rgba(0,0,0,.6))'};
+    const div = dividers[i]?`<div class="scenario-divider">${dividers[i]}</div>`:'';
+    return div+`
+    <div class="scenario-card" id="sc-${i}">
+      <div class="sc-cover" style="background:${a.g}" onclick="toggleScenario(${i})">
+        <div class="sc-cover-text">
+          <div class="sc-cover-tag">${s.label}</div>
+          <div class="sc-cover-q">${s.q}</div>
+        </div>
+        <span class="scenario-toggle">▼</span>
+      </div>
+      <div class="sc-meta" onclick="toggleScenario(${i})">
+        <div class="scenario-signal signal-${s.signal}"></div>
+        <span class="scenario-verdict" style="background:${s.verdictBg};color:${s.verdictColor}">${s.verdict}</span>
+      </div>
+      <div class="scenario-body">
+        <div class="scenario-verdict-bar" style="${s.verdictBar}">${s.verdictText}</div>
+        <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.22);margin-bottom:14px;font-weight:900">🎯 Exactly What To Do</div>
+        <div class="scenario-steps">${s.steps.map((st,n)=>`
+          <div class="scenario-step">
+            <div class="scenario-step-dot" style="background:${st.color}20;color:${st.color};border:1px solid ${st.color}40">${n+1}</div>
+            <div class="scenario-step-text">${st.text}</div>
+          </div>`).join('')}
+        </div>
+        <div class="scenario-dont"><div class="scenario-dont-label">🚫 What NOT to do</div><div class="scenario-dont-text">${s.dont}</div></div>
+        <div class="scenario-why">${s.why}</div>
+        <button class="sc-done-btn" onclick="markScenarioDone(${i})">Mark as Read ✓</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleScenario(i){
+  const card = document.getElementById('sc-'+i);
+  card.classList.toggle('open');
+}
+
+/* ── SCENARIO PROGRESS & MARK AS READ ─────────────────────────── */
+function markScenarioDone(i){
+  localStorage.setItem('rajeev_sc_done_'+i,'1');
+  const card = document.getElementById('sc-'+i);
+  if(card){
+    card.classList.add('done');
+    const btn = card.querySelector('.sc-done-btn');
+    if(btn){ btn.textContent='✓ Marked as Read'; btn.classList.add('marked'); }
+  }
+  updateScenarioProgress();
+}
+function loadScenarioDone(){
+  SCENARIOS.forEach((_,i)=>{
+    if(localStorage.getItem('rajeev_sc_done_'+i)==='1'){
+      const c = document.getElementById('sc-'+i);
+      if(c){ c.classList.add('done'); const b=c.querySelector('.sc-done-btn'); if(b){b.textContent='✓ Marked as Read';b.classList.add('marked');} }
+    }
+  });
+  updateScenarioProgress();
+}
+function updateScenarioProgress(){
+  const total = SCENARIOS.length;
+  const done = SCENARIOS.filter((_,i)=>localStorage.getItem('rajeev_sc_done_'+i)==='1').length;
+  const bar = document.getElementById('sc-prog-bar');
+  const lbl = document.getElementById('sc-prog-lbl');
+  if(bar) bar.style.width=((done/total)*100)+'%';
+  if(lbl) lbl.textContent=`${done} / ${total} studied`;
+}
+
+/* ── FOCUS MODE ────────────────────────────────────────────────── */
+const FOCUS_AFFS = [
+  'I AM wealth. I AM health. I AM love.',
+  'Every day I am becoming the best version of myself.',
+  'My income grows every single month.',
+  'I attract success, abundance and good people.',
+  'I am disciplined, focused and unstoppable.',
+  'My body is strong, lean and full of energy.',
+  'I create content that changes lives and builds my empire.',
+  'I deserve everything I desire and I am worthy of it now.',
+  'I am magnetic — people are drawn to my confidence.',
+  'I am becoming the man I always knew I could be.',
+  'My future is so bright it blinds those who doubted me.',
+  'I am at peace. I am powerful. I am present.',
+  'Money flows to me easily and from multiple sources.',
+  'I am a creator, a builder, an entrepreneur.',
+  'Every obstacle I face makes me stronger and wiser.',
+];
+let focusAffIdx = 0, focusClockTimer = null;
+
+function enterFocus(){
+  document.getElementById('focus-overlay').classList.add('active');
+  updateFocusClock();
+  focusClockTimer = setInterval(updateFocusClock, 1000);
+  setFocusAff(focusAffIdx);
+}
+function exitFocus(){
+  document.getElementById('focus-overlay').classList.remove('active');
+  clearInterval(focusClockTimer);
+}
+function updateFocusClock(){
+  const now = new Date();
+  const pad = n=>String(n).padStart(2,'0');
+  document.getElementById('focus-clock').textContent = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+  const DAYS=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  document.getElementById('focus-date-line').textContent = `${DAYS[now.getDay()]} · ${now.getDate()} ${MONTHS[now.getMonth()]} ${now.getFullYear()}`;
+}
+function setFocusAff(i){
+  const el = document.getElementById('focus-affirmation');
+  el.classList.remove('focus-aff-anim');
+  void el.offsetWidth;
+  el.classList.add('focus-aff-anim');
+  el.textContent = FOCUS_AFFS[i % FOCUS_AFFS.length];
+}
+function nextAff(){ focusAffIdx=(focusAffIdx+1)%FOCUS_AFFS.length; setFocusAff(focusAffIdx); }
+function prevAff(){ focusAffIdx=(focusAffIdx-1+FOCUS_AFFS.length)%FOCUS_AFFS.length; setFocusAff(focusAffIdx); }
+setInterval(()=>{ if(document.getElementById('focus-overlay').classList.contains('active')) nextAff(); }, 12000);
+
+/* ── DAILY CHECK-IN ────────────────────────────────────────────── */
+const DAILY_HABITS = [
+  {key:'gym',      icon:'💪', label:'Gym / Workout'},
+  {key:'content',  icon:'✍️', label:'Write or create content'},
+  {key:'read',     icon:'📖', label:'Read / Learn something new'},
+  {key:'meditate', icon:'🧘', label:'Meditation / Mindset work'},
+  {key:'nojunk',   icon:'🥗', label:'No junk food today'},
+  {key:'sleep',    icon:'🌙', label:'Slept before midnight'},
+  {key:'noScroll', icon:'📵', label:'Limited mindless scrolling'},
+];
+let dailyMoodVal = 0, dailyPanelBuilt = false;
+
+function buildDailyPanel(){
+  if(dailyPanelBuilt) return;
+  dailyPanelBuilt = true;
+  const row = document.getElementById('habit-row');
+  if(row) row.innerHTML = DAILY_HABITS.map(h=>`
+    <div class="habit-item" id="hi-${h.key}" onclick="toggleHabit('${h.key}',this)">
+      <div class="habit-check" id="hc-${h.key}"></div>
+      <span style="font-size:1.05rem;flex-shrink:0">${h.icon}</span>
+      <span class="habit-label">${h.label}</span>
+    </div>`).join('');
+  loadTodayData();
+}
+
+function selectMood(btn){
+  document.querySelectorAll('.mood-btn').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+  dailyMoodVal = +btn.dataset.mood;
+}
+
+function toggleHabit(key, el){
+  el.classList.toggle('checked');
+  const ch = document.getElementById('hc-'+key);
+  if(ch) ch.textContent = el.classList.contains('checked') ? '✓' : '';
+}
+
+function todayKey(){
+  const d=new Date(); return d.getFullYear()+'_'+(d.getMonth()+1)+'_'+d.getDate();
+}
+
+function saveDaily(){
+  const habits={};
+  DAILY_HABITS.forEach(h=>{ habits[h.key]=document.getElementById('hi-'+h.key)?.classList.contains('checked')||false; });
+  const moodBtn = document.querySelector('.mood-btn.selected');
+  const data = {
+    mood: dailyMoodVal,
+    moodEmoji: moodBtn?.dataset.emoji||'',
+    grat: [1,2,3].map(n=>document.getElementById('grat-'+n)?.value||''),
+    habits, ts: Date.now()
+  };
+  localStorage.setItem('rajeev_daily_'+todayKey(), JSON.stringify(data));
+  renderStreak();
+  const btn = document.querySelector('.daily-save-btn');
+  const orig = btn.textContent;
+  btn.textContent='✓ Saved!'; btn.style.background='linear-gradient(135deg,#10b981,#059669)';
+  setTimeout(()=>{ btn.textContent=orig; btn.style.background=''; },2500);
+}
+
+function loadTodayData(){
+  const raw = localStorage.getItem('rajeev_daily_'+todayKey());
+  if(!raw) return;
+  try{
+    const d = JSON.parse(raw);
+    if(d.mood){ const mb=document.querySelector(`.mood-btn[data-mood="${d.mood}"]`); if(mb){mb.classList.add('selected');dailyMoodVal=d.mood;} }
+    if(d.grat) d.grat.forEach((g,i)=>{ const el=document.getElementById('grat-'+(i+1)); if(el) el.value=g; });
+    if(d.habits) Object.entries(d.habits).forEach(([k,v])=>{ if(v){ const el=document.getElementById('hi-'+k); const ch=document.getElementById('hc-'+k); if(el){el.classList.add('checked'); if(ch) ch.textContent='✓';} } });
+  }catch(e){}
+}
+
+function renderStreak(){
+  const grid = document.getElementById('streak-grid');
+  if(!grid) return;
+  const DAYNAMES=['S','M','T','W','T','F','S'];
+  const today = new Date();
+  grid.innerHTML = Array.from({length:7},(_,i)=>{
+    const d=new Date(today); d.setDate(today.getDate()-6+i);
+    const key='rajeev_daily_'+d.getFullYear()+'_'+(d.getMonth()+1)+'_'+d.getDate();
+    const raw=localStorage.getItem(key);
+    let emoji='·', score='';
+    if(raw){ try{ const p=JSON.parse(raw); emoji=p.moodEmoji||'·'; const hc=Object.values(p.habits||{}).filter(Boolean).length; score=hc+'/'+DAILY_HABITS.length; }catch(e){} }
+    const isToday = key==='rajeev_daily_'+todayKey();
+    return `<div class="streak-day${raw?' filled':''}${isToday?' today':''}">
+      <div class="streak-day-lbl">${DAYNAMES[d.getDay()]}</div>
+      <div class="streak-day-mood">${emoji}</div>
+      ${score?`<div class="streak-day-score">${score}</div>`:''}
+    </div>`;
+  }).join('');
+}
+
+/* ── MOBILE NAV ACTIVE STATE ───────────────────────────────────── */
+function setMnActive(btn){
+  document.querySelectorAll('.mn-btn').forEach(b=>b.classList.remove('mn-active'));
+  btn.classList.add('mn-active');
+}
+
+/* ── COUNT-UP ANIMATION ────────────────────────────────────────── */
+function countUp(el, target, ms=1200){
+  let s=null;
+  function step(ts){ if(!s) s=ts; const p=Math.min((ts-s)/ms,1); el.textContent=Math.floor(p*target); if(p<1) requestAnimationFrame(step); }
+  requestAnimationFrame(step);
+}
+window.addEventListener('load',()=>{
+  const vEl=document.getElementById('hstat-videos'); if(vEl) countUp(vEl,parseInt(vEl.textContent)||145,1400);
+  const mEl=document.getElementById('hstat-milestones'); if(mEl) countUp(mEl,parseInt(localStorage.getItem('rajeev_milestone_count')||'0'),900);
+});
 
 /* ── EMPIRE PANEL ── */
 const BIZ_IDEAS = [
@@ -1798,7 +2696,7 @@ document.querySelectorAll('.tab').forEach(tab => {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     activeCat = tab.dataset.cat;
-    const specialPanels = ['chalisa','gym','bucket','manifest','world','photos','book','milestones','affcards','empire'];
+    const specialPanels = ['chalisa','gym','bucket','manifest','world','photos','book','milestones','affcards','empire','glowup','daily'];
     const isSpecial = specialPanels.includes(activeCat);
     gridEl.style.display = isSpecial ? 'none' : '';
     chalisaPanel.style.display   = activeCat==='chalisa'    ? 'block' : 'none';
@@ -1811,7 +2709,11 @@ document.querySelectorAll('.tab').forEach(tab => {
     document.getElementById('milestones-panel').style.display = activeCat==='milestones' ? 'block' : 'none';
     document.getElementById('affcards-panel').style.display   = activeCat==='affcards'   ? 'block' : 'none';
     document.getElementById('empire-panel').style.display     = activeCat==='empire'     ? 'block' : 'none';
+    document.getElementById('glowup-panel').style.display     = activeCat==='glowup'     ? 'block' : 'none';
+    document.getElementById('daily-panel').style.display      = activeCat==='daily'      ? 'block' : 'none';
     if(activeCat==='empire' && !empireBuilt){ buildEmpirePanel(); empireBuilt=true; }
+    if(activeCat==='glowup' && !glowupBuilt){ buildGlowupPanel(); glowupBuilt=true; }
+    if(activeCat==='daily'){ buildDailyPanel(); renderStreak(); }
     if(activeCat==='gym'    && !gymBuilt)   { buildGymPanel();    gymBuilt=true; }
     if(activeCat==='bucket' && !bucketBuilt){ buildBucketPanel(); bucketBuilt=true; }
     if(!isSpecial) applyFilter();
@@ -2637,5 +3539,15 @@ scrollBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smoo
 footerEl.textContent = `${songs.length} videos showing`;
 applyFilter();
 </script>
+
+<nav class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-inner">
+    <button class="mn-btn" onclick="jumpTab('all');setMnActive(this)"><span class="mn-icon">🎬</span><span class="mn-label">Videos</span></button>
+    <button class="mn-btn" onclick="jumpTab('affirmations');setMnActive(this)"><span class="mn-icon">💰</span><span class="mn-label">Affirm</span></button>
+    <button class="mn-btn" onclick="jumpTab('empire');setMnActive(this)"><span class="mn-icon">👑</span><span class="mn-label">Empire</span></button>
+    <button class="mn-btn" onclick="jumpTab('glowup');setMnActive(this)"><span class="mn-icon">🔥</span><span class="mn-label">Glow Up</span></button>
+    <button class="mn-btn" onclick="jumpTab('daily');setMnActive(this)"><span class="mn-icon">📔</span><span class="mn-label">Daily</span></button>
+  </div>
+</nav>
 </body>
 </html>
