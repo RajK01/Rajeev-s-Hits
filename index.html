@@ -191,6 +191,124 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
 #vboard-playpause:hover{background:rgba(245,166,35,.45)}
 #vboard-music-btn.music-on{background:rgba(224,64,251,.2);border-color:rgba(224,64,251,.5);color:#e040fb}
 #vboard-music-label{position:absolute;bottom:110px;left:24px;font-size:.72rem;color:rgba(255,255,255,.5);letter-spacing:1px;z-index:20;pointer-events:none}
+
+/* WEALTH TICKER */
+#wealth-ticker{overflow:hidden;background:linear-gradient(90deg,rgba(245,166,35,.1),rgba(224,64,251,.07),rgba(245,166,35,.1));border-bottom:1px solid rgba(245,166,35,.18);padding:9px 0;position:relative;z-index:5;cursor:default}
+.ticker-track{display:inline-flex;gap:64px;animation:tickScroll 35s linear infinite;white-space:nowrap;will-change:transform}
+.ticker-track:hover{animation-play-state:paused}
+@keyframes tickScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.t-item{font-size:.78rem;font-weight:700;color:#f5a623;letter-spacing:.3px;display:inline-flex;align-items:center;gap:8px}
+.t-item .t-val{color:#fff;font-weight:400}
+.t-item .t-sep{color:rgba(255,255,255,.2)}
+
+/* WORLD MAP */
+#world-panel{display:none;position:relative;z-index:1;max-width:1100px;margin:24px auto 80px;padding:0 20px}
+.world-top{text-align:center;margin-bottom:20px}
+.world-top h2{font-size:1.5rem;font-weight:900;background:linear-gradient(135deg,#10b981,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}
+.world-top p{font-size:.82rem;color:rgba(255,255,255,.4)}
+.world-stats-row{display:flex;gap:14px;justify-content:center;margin-bottom:28px;flex-wrap:wrap}
+.wstat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:12px 22px;text-align:center;min-width:100px}
+.wstat .wn{font-size:1.8rem;font-weight:900;display:block}
+.wstat .wl{font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.wstat.dream .wn{color:#f5a623}
+.wstat.visited .wn{color:#10b981}
+.wstat.total .wn{color:#a78bfa}
+.continent-block{margin-bottom:22px}
+.continent-name{font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:10px;padding-left:2px}
+.country-wrap{display:flex;flex-wrap:wrap;gap:7px}
+.cc{padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:rgba(255,255,255,.75);font-size:.8rem;cursor:pointer;transition:all .18s;user-select:none}
+.cc:hover{background:rgba(255,255,255,.1)}
+.cc.dream{background:rgba(245,166,35,.2);border-color:rgba(245,166,35,.55);color:#fbbf24}
+.cc.visited{background:rgba(16,185,129,.2);border-color:rgba(16,185,129,.55);color:#34d399}
+.world-legend{display:flex;gap:20px;justify-content:center;margin-top:20px;font-size:.78rem;color:rgba(255,255,255,.45)}
+.world-legend span{display:flex;align-items:center;gap:6px}
+
+/* MY VISION PHOTOS */
+#photos-panel{display:none;position:relative;z-index:1;max-width:1100px;margin:24px auto 80px;padding:0 20px}
+.photos-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.photos-top h2{font-size:1.4rem;font-weight:900;background:linear-gradient(135deg,#ec4899,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0}
+#photo-upload-btn{padding:10px 20px;border-radius:12px;border:none;background:linear-gradient(135deg,#ec4899,#8b5cf6);color:#fff;font-family:inherit;font-weight:700;font-size:.85rem;cursor:pointer;transition:transform .2s}
+#photo-upload-btn:hover{transform:scale(1.04)}
+#photo-file-input{display:none}
+.photos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.pcard{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.pcard img{width:100%;height:100%;object-fit:cover;transition:transform .3s;display:block}
+.pcard:hover img{transform:scale(1.06)}
+.pcard-del{position:absolute;top:7px;right:7px;background:rgba(0,0,0,.65);border:none;color:#fff;width:26px;height:26px;border-radius:50%;cursor:pointer;font-size:.75rem;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .18s;line-height:1}
+.pcard:hover .pcard-del{opacity:1}
+.photos-empty{text-align:center;padding:60px 20px;color:rgba(255,255,255,.3);font-size:1rem}
+.photos-add-vb{position:absolute;bottom:7px;left:7px;background:rgba(124,58,237,.75);border:none;color:#fff;font-size:.65rem;padding:4px 8px;border-radius:6px;cursor:pointer;opacity:0;transition:opacity .18s;font-family:inherit;font-weight:700}
+.pcard:hover .photos-add-vb{opacity:1}
+
+/* BOOK OF MONTH */
+#book-panel{display:none;position:relative;z-index:1;max-width:720px;margin:24px auto 80px;padding:0 20px}
+.book-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:28px;display:flex;gap:24px;align-items:flex-start;margin-bottom:20px}
+@media(max-width:500px){.book-card{flex-direction:column}}
+.book-cover-img{width:110px;height:154px;border-radius:10px;object-fit:cover;flex-shrink:0;background:linear-gradient(135deg,rgba(245,166,35,.2),rgba(139,92,246,.2));border:1px solid rgba(255,255,255,.1)}
+.book-info{flex:1;min-width:0}
+.book-title-el{font-size:1.3rem;font-weight:900;color:#fff;margin:0 0 3px}
+.book-author-el{font-size:.85rem;color:rgba(255,255,255,.45);margin-bottom:16px}
+.bprog-label{font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:6px}
+.bprog-bar{height:5px;background:rgba(255,255,255,.1);border-radius:999px;overflow:hidden;margin-bottom:4px}
+.bprog-fill{height:100%;background:linear-gradient(90deg,#f5a623,#e040fb);border-radius:999px;transition:width .6s}
+.bprog-pct{font-size:.72rem;color:#f5a623;font-weight:700}
+.book-quotes-list{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+.bquote{font-size:.83rem;color:rgba(255,255,255,.65);border-left:3px solid rgba(245,166,35,.5);padding:7px 12px;background:rgba(255,255,255,.03);border-radius:0 8px 8px 0;font-style:italic}
+.book-edit-form{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:24px}
+.book-edit-form h3{font-size:.88rem;font-weight:700;margin:0 0 16px;color:rgba(255,255,255,.6);letter-spacing:1px;text-transform:uppercase}
+.bfield{margin-bottom:13px}
+.bfield label{display:block;font-size:.68rem;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:5px}
+.bfield input,.bfield textarea{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:9px 13px;color:#fff;font-family:inherit;font-size:.88rem;box-sizing:border-box;outline:none;transition:border-color .2s}
+.bfield input:focus,.bfield textarea:focus{border-color:rgba(245,166,35,.5)}
+.bfield textarea{height:72px;resize:vertical}
+.bfield input[type=range]{padding:0;background:none;border:none;cursor:pointer}
+#book-pct-val{color:#f5a623;font-weight:700;font-size:.9rem;margin-left:10px}
+.book-save-btn{padding:10px 24px;border-radius:12px;border:none;background:linear-gradient(135deg,#f5a623,#e040fb);color:#fff;font-family:inherit;font-weight:700;cursor:pointer;font-size:.9rem;transition:transform .2s}
+.book-save-btn:hover{transform:scale(1.04)}
+
+/* MILESTONES */
+#milestones-panel{display:none;position:relative;z-index:1;max-width:1100px;margin:24px auto 80px;padding:0 20px}
+.ms-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.ms-top h2{font-size:1.4rem;font-weight:900;background:linear-gradient(135deg,#f5a623,#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0}
+#add-ms-btn{padding:10px 20px;border-radius:12px;border:none;background:linear-gradient(135deg,#f5a623,#fbbf24);color:#1a0a00;font-family:inherit;font-weight:700;font-size:.85rem;cursor:pointer;transition:transform .2s}
+#add-ms-btn:hover{transform:scale(1.04)}
+#ms-form{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px;margin-bottom:22px;display:none}
+#ms-form.open{display:block}
+.ms-form-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.ms-form-row input,.ms-form-row select{flex:1;min-width:120px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 13px;color:#fff;font-family:inherit;font-size:.88rem;outline:none}
+.ms-form-row button{padding:10px 20px;border-radius:10px;border:none;background:#f5a623;color:#1a0a00;font-family:inherit;font-weight:700;cursor:pointer;white-space:nowrap}
+.ms-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.ms-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 18px 16px;position:relative;transition:transform .2s,box-shadow .2s}
+.ms-card:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(245,166,35,.12)}
+.ms-badge{font-size:2rem;display:block;margin-bottom:8px}
+.ms-text{font-size:.92rem;font-weight:700;color:#fff;margin-bottom:5px;line-height:1.4}
+.ms-date{font-size:.7rem;color:rgba(255,255,255,.35);letter-spacing:.5px}
+.ms-del{position:absolute;top:11px;right:11px;background:none;border:none;color:rgba(255,255,255,.18);cursor:pointer;font-size:.85rem;transition:color .2s;padding:4px}
+.ms-del:hover{color:#ef4444}
+.ms-empty{text-align:center;padding:60px 20px;color:rgba(255,255,255,.3)}
+
+/* AFFIRMATION CARDS */
+#affcards-panel{display:none;position:relative;z-index:1;max-width:680px;margin:24px auto 80px;padding:0 20px;text-align:center}
+#affcards-panel h2{font-size:1.5rem;font-weight:900;background:linear-gradient(135deg,#8b5cf6,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}
+.aff-sub{color:rgba(255,255,255,.4);font-size:.83rem;margin-bottom:30px}
+.aff-scene{perspective:1200px;width:100%;max-width:460px;height:270px;margin:0 auto 22px;cursor:pointer}
+.aff-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.25,.8,.25,1)}
+.aff-inner.flipped{transform:rotateY(180deg)}
+.aff-face{position:absolute;inset:0;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.aff-front{background:linear-gradient(135deg,#1e1040,#2d1b69);border:1px solid rgba(139,92,246,.3)}
+.aff-back{background:linear-gradient(135deg,#1a0a30,#380060);border:1px solid rgba(236,72,153,.4);transform:rotateY(180deg)}
+.aff-num{font-size:.68rem;color:rgba(255,255,255,.3);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.aff-icon{font-size:2.4rem;margin-bottom:10px}
+.aff-text{font-size:1.1rem;font-weight:700;color:#fff;line-height:1.6;text-align:center}
+.aff-tap{font-size:.72rem;color:rgba(255,255,255,.28);margin-top:12px}
+.aff-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.aff-btn{padding:10px 20px;border-radius:999px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.07);color:#fff;font-family:inherit;font-size:.83rem;font-weight:600;cursor:pointer;transition:all .2s}
+.aff-btn:hover{background:rgba(255,255,255,.15)}
+.aff-btn.primary{background:linear-gradient(135deg,#8b5cf6,#ec4899);border:none}
+.aff-dots{display:flex;gap:5px;justify-content:center;flex-wrap:wrap;max-width:460px;margin:0 auto}
+.aff-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.12);cursor:pointer;transition:all .25s}
+.aff-dot.seen{background:rgba(139,92,246,.45)}
+.aff-dot.cur{background:#8b5cf6;transform:scale(1.4)}
 </style>
 </head>
 <body>
@@ -201,6 +319,8 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
   <p>Songs · Affirmations · Luxury · Bollywood · Instagram</p>
   <div id="total-count">69 videos</div>
 </header>
+
+<div id="wealth-ticker"><div class="ticker-track" id="ticker-track"></div></div>
 
 <div class="controls">
   <div id="search-wrap">
@@ -265,6 +385,11 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
     <button class="tab" data-cat="gym">💪 Gym Plan</button>
     <button class="tab" data-cat="bucket">✨ Bucket List</button>
     <button class="tab" data-cat="chalisa">🙏 Hanuman Chalisa</button>
+    <button class="tab" data-cat="world">🗺️ World Map</button>
+    <button class="tab" data-cat="photos">📸 My Photos</button>
+    <button class="tab" data-cat="book">📖 My Book</button>
+    <button class="tab" data-cat="milestones">🏆 Milestones</button>
+    <button class="tab" data-cat="affcards">🎴 Aff. Cards</button>
   </div>
 </div>
 
@@ -338,6 +463,108 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
       राम लखन सीता सहित, हृदय बसहु सुर भूप॥</p>
     </div>
   </div>
+</div>
+
+<!-- World Map Panel -->
+<div id="world-panel">
+  <div class="world-top">
+    <h2>🗺️ Places I'll Go</h2>
+    <p>Click once for ⭐ Dream Destination · Click again for ✅ Visited · Click again to clear</p>
+  </div>
+  <div class="world-stats-row">
+    <div class="wstat dream"><span class="wn" id="w-dream-count">0</span><span class="wl">Dream Destinations</span></div>
+    <div class="wstat visited"><span class="wn" id="w-visited-count">0</span><span class="wl">Visited</span></div>
+    <div class="wstat total"><span class="wn" id="w-total-count">0</span><span class="wl">Total Pinned</span></div>
+  </div>
+  <div id="world-continents"></div>
+  <div class="world-legend">
+    <span>⭐ Dream Destination</span>
+    <span>✅ Visited</span>
+    <span>⬜ Not yet</span>
+  </div>
+</div>
+
+<!-- My Vision Photos Panel -->
+<div id="photos-panel">
+  <div class="photos-top">
+    <h2>📸 My Vision Photos</h2>
+    <button id="photo-upload-btn">+ Upload Photos</button>
+    <input type="file" id="photo-file-input" accept="image/*" multiple>
+  </div>
+  <div class="photos-grid" id="photos-grid"></div>
+  <div class="photos-empty" id="photos-empty">No photos yet. Upload your vision images — luxury, goals, travel, anything that inspires you.</div>
+</div>
+
+<!-- Book of Month Panel -->
+<div id="book-panel">
+  <div class="book-card" id="book-display">
+    <img class="book-cover-img" id="book-cover-img" src="" alt="Book Cover">
+    <div class="book-info">
+      <div class="book-title-el" id="book-title-el">No book set yet</div>
+      <div class="book-author-el" id="book-author-el">Add your current read below</div>
+      <div class="bprog-label">Reading Progress</div>
+      <div class="bprog-bar"><div class="bprog-fill" id="bprog-fill" style="width:0%"></div></div>
+      <span class="bprog-pct" id="bprog-pct">0%</span>
+      <div class="book-quotes-list" id="book-quotes-list"></div>
+    </div>
+  </div>
+  <div class="book-edit-form">
+    <h3>📝 Update Book</h3>
+    <div class="bfield"><label>Book Title</label><input id="b-title" placeholder="e.g. Think and Grow Rich"></div>
+    <div class="bfield"><label>Author</label><input id="b-author" placeholder="e.g. Napoleon Hill"></div>
+    <div class="bfield"><label>Cover Image URL</label><input id="b-cover" placeholder="https://...cover image url..."></div>
+    <div class="bfield"><label>Progress <span id="book-pct-val">0%</span></label><input type="range" id="b-progress" min="0" max="100" value="0"></div>
+    <div class="bfield"><label>Key Quotes (one per line)</label><textarea id="b-quotes" placeholder="Enter your favourite quotes from this book..."></textarea></div>
+    <button class="book-save-btn" id="book-save-btn">💾 Save Book</button>
+  </div>
+</div>
+
+<!-- Milestones Panel -->
+<div id="milestones-panel">
+  <div class="ms-top">
+    <h2>🏆 My Milestones</h2>
+    <button id="add-ms-btn">+ Add Win</button>
+  </div>
+  <div id="ms-form">
+    <div class="ms-form-row">
+      <select id="ms-badge-sel">
+        <option value="🏆">🏆 Trophy</option><option value="💰">💰 Money</option><option value="🚀">🚀 Launch</option>
+        <option value="❤️">❤️ Personal</option><option value="💪">💪 Fitness</option><option value="✈️">✈️ Travel</option>
+        <option value="🎓">🎓 Learning</option><option value="🏠">🏠 Home</option><option value="⭐">⭐ Star</option>
+        <option value="🔥">🔥 Fire</option><option value="💎">💎 Diamond</option><option value="🎯">🎯 Goal</option>
+      </select>
+      <input id="ms-text-inp" placeholder="Describe your win..." style="flex:3">
+      <input type="date" id="ms-date-inp">
+      <button id="ms-add-btn">Add</button>
+    </div>
+  </div>
+  <div class="ms-grid" id="ms-grid"></div>
+  <div class="ms-empty" id="ms-empty">No milestones yet. Start adding your wins — big or small, every victory counts!</div>
+</div>
+
+<!-- Affirmation Cards Panel -->
+<div id="affcards-panel">
+  <h2>🎴 Affirmation Cards</h2>
+  <div class="aff-sub">Click the card to flip · Use arrows to navigate · Shuffle to randomize</div>
+  <div class="aff-scene" id="aff-scene">
+    <div class="aff-inner" id="aff-inner">
+      <div class="aff-face aff-front">
+        <div class="aff-num" id="aff-num-front">CARD 1 of 50</div>
+        <div class="aff-icon" id="aff-icon">💎</div>
+        <div class="aff-tap">Tap to reveal your affirmation</div>
+      </div>
+      <div class="aff-face aff-back">
+        <div class="aff-num" id="aff-num-back">CARD 1 of 50</div>
+        <div class="aff-text" id="aff-text">Loading...</div>
+      </div>
+    </div>
+  </div>
+  <div class="aff-btns">
+    <button class="aff-btn" id="aff-prev">⟵ Prev</button>
+    <button class="aff-btn primary" id="aff-shuffle">🔀 Shuffle</button>
+    <button class="aff-btn" id="aff-next">Next ⟶</button>
+  </div>
+  <div class="aff-dots" id="aff-dots"></div>
 </div>
 
 <button id="scroll-top" title="Back to top">↑</button>
@@ -803,18 +1030,20 @@ document.querySelectorAll('.tab').forEach(tab => {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     activeCat = tab.dataset.cat;
-    if(activeCat === 'chalisa'){
-      gridEl.style.display='none'; chalisaPanel.style.display='block'; gymPanel.style.display='none'; bucketPanel.style.display='none';
-    } else if(activeCat === 'gym'){
-      gridEl.style.display='none'; chalisaPanel.style.display='none'; gymPanel.style.display='block'; bucketPanel.style.display='none';
-      if(!gymBuilt){ buildGymPanel(); gymBuilt=true; }
-    } else if(activeCat === 'bucket'){
-      gridEl.style.display='none'; chalisaPanel.style.display='none'; gymPanel.style.display='none'; bucketPanel.style.display='block';
-      if(!bucketBuilt){ buildBucketPanel(); bucketBuilt=true; }
-    } else {
-      gridEl.style.display=''; chalisaPanel.style.display='none'; gymPanel.style.display='none'; bucketPanel.style.display='none';
-      applyFilter();
-    }
+    const specialPanels = ['chalisa','gym','bucket','world','photos','book','milestones','affcards'];
+    const isSpecial = specialPanels.includes(activeCat);
+    gridEl.style.display = isSpecial ? 'none' : '';
+    chalisaPanel.style.display   = activeCat==='chalisa'    ? 'block' : 'none';
+    gymPanel.style.display       = activeCat==='gym'        ? 'block' : 'none';
+    bucketPanel.style.display    = activeCat==='bucket'     ? 'block' : 'none';
+    document.getElementById('world-panel').style.display      = activeCat==='world'      ? 'block' : 'none';
+    document.getElementById('photos-panel').style.display     = activeCat==='photos'     ? 'block' : 'none';
+    document.getElementById('book-panel').style.display       = activeCat==='book'       ? 'block' : 'none';
+    document.getElementById('milestones-panel').style.display = activeCat==='milestones' ? 'block' : 'none';
+    document.getElementById('affcards-panel').style.display   = activeCat==='affcards'   ? 'block' : 'none';
+    if(activeCat==='gym'    && !gymBuilt)   { buildGymPanel();    gymBuilt=true; }
+    if(activeCat==='bucket' && !bucketBuilt){ buildBucketPanel(); bucketBuilt=true; }
+    if(!isSpecial) applyFilter();
   });
 });
 
@@ -913,6 +1142,321 @@ scrollBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smoo
   }, 60000);
 
   updateBtn();
+})();
+
+/* ── Wealth Ticker ── */
+(function(){
+  const items = [
+    {label:'🎯 Net Worth Target', val:'₹10 Crore'},
+    {label:'💼 Next Income Milestone', val:'₹10L / month'},
+    {label:'🏠 Dream Home', val:'Prestige Lavender Fields'},
+    {label:'✈️ Next Trip', val:'Dubai 2025'},
+    {label:'🚗 Dream Car', val:'Mercedes GLE'},
+    {label:'💰 Savings Goal', val:'₹50L this year'},
+    {label:'📈 Investment Target', val:'₹20L SIP'},
+    {label:'🌍 Countries to Visit', val:'15 this decade'},
+    {label:'🏋️ Fitness Goal', val:'85kg lean muscle'},
+    {label:'📚 Books this year', val:'24 books'},
+  ];
+  const track = document.getElementById('ticker-track');
+  const html = items.map(i=>`<span class="t-item">${i.label} <span class="t-val">${i.val}</span> <span class="t-sep">·</span></span>`).join('');
+  track.innerHTML = html + html; // duplicate for seamless loop
+})();
+
+/* ── World Map ── */
+(function(){
+  const CONTINENTS = [
+    {name:'🌏 Asia', countries:['🇮🇳 India','🇯🇵 Japan','🇸🇬 Singapore','🇹🇭 Thailand','🇲🇾 Malaysia','🇮🇩 Bali/Indonesia','🇱🇰 Sri Lanka','🇳🇵 Nepal','🇻🇳 Vietnam','🇰🇷 South Korea','🇨🇳 China','🇵🇭 Philippines','🇭🇰 Hong Kong','🇧🇹 Bhutan','🇲🇻 Maldives']},
+    {name:'🌍 Middle East', countries:['🇦🇪 UAE / Dubai','🇶🇦 Qatar','🇸🇦 Saudi Arabia','🇴🇲 Oman','🇯🇴 Jordan','🇮🇱 Israel','🇧🇭 Bahrain','🇰🇼 Kuwait','🇹🇷 Turkey']},
+    {name:'🌍 Europe', countries:['🇫🇷 France','🇮🇹 Italy','🇬🇧 UK','🇪🇸 Spain','🇩🇪 Germany','🇨🇭 Switzerland','🇲🇨 Monaco','🇳🇱 Netherlands','🇬🇷 Greece','🇵🇹 Portugal','🇭🇷 Croatia','🇦🇹 Austria','🇸🇪 Sweden','🇳🇴 Norway','🇮🇸 Iceland']},
+    {name:'🌎 Americas', countries:['🇺🇸 USA','🇨🇦 Canada','🇧🇷 Brazil','🇲🇽 Mexico','🇦🇷 Argentina','🇵🇪 Peru','🇨🇴 Colombia','🇨🇺 Cuba','🇯🇲 Jamaica','🇧🇸 Bahamas']},
+    {name:'🌍 Africa', countries:['🇿🇦 South Africa','🇪🇬 Egypt','🇲🇦 Morocco','🇰🇪 Kenya','🇹🇿 Tanzania','🇲🇺 Mauritius','🇸🇨 Seychelles','🇷🇼 Rwanda','🇿🇼 Zimbabwe']},
+    {name:'🌏 Oceania', countries:['🇦🇺 Australia','🇳🇿 New Zealand','🇫🇯 Fiji','🇼🇸 Samoa','🇵🇬 Papua New Guinea']},
+  ];
+  const SK = 'rajeev_world';
+  let state = JSON.parse(localStorage.getItem(SK)||'{}');
+
+  function save(){ localStorage.setItem(SK, JSON.stringify(state)); }
+  function updateStats(){
+    const vals = Object.values(state);
+    document.getElementById('w-dream-count').textContent   = vals.filter(v=>v==='dream').length;
+    document.getElementById('w-visited-count').textContent = vals.filter(v=>v==='visited').length;
+    document.getElementById('w-total-count').textContent   = vals.filter(v=>v).length;
+  }
+
+  const container = document.getElementById('world-continents');
+  container.innerHTML = CONTINENTS.map(cont=>`
+    <div class="continent-block">
+      <div class="continent-name">${cont.name}</div>
+      <div class="country-wrap">${cont.countries.map(c=>{
+        const key = c.replace(/\s+/g,'_');
+        const st = state[key]||'';
+        return `<span class="cc ${st}" data-key="${key}" data-name="${c}">${c}</span>`;
+      }).join('')}</div>
+    </div>`).join('');
+
+  container.addEventListener('click', e=>{
+    const chip = e.target.closest('.cc');
+    if(!chip) return;
+    const key = chip.dataset.key;
+    const cur = state[key]||'';
+    const next = cur==='' ? 'dream' : cur==='dream' ? 'visited' : '';
+    if(next) state[key]=next; else delete state[key];
+    chip.className = 'cc ' + next;
+    save(); updateStats();
+  });
+  updateStats();
+})();
+
+/* ── My Vision Photos ── */
+(function(){
+  const SK = 'rajeev_photos';
+  let photos = JSON.parse(localStorage.getItem(SK)||'[]');
+
+  function save(){ localStorage.setItem(SK, JSON.stringify(photos)); }
+
+  function render(){
+    const grid = document.getElementById('photos-grid');
+    const empty = document.getElementById('photos-empty');
+    empty.style.display = photos.length ? 'none' : 'block';
+    grid.innerHTML = photos.map((p,i)=>`
+      <div class="pcard">
+        <img src="${p.data}" alt="Vision photo ${i+1}">
+        <button class="pcard-del" data-idx="${i}" title="Delete">✕</button>
+        <button class="photos-add-vb" data-idx="${i}" title="Add to Vision Board">+ Board</button>
+      </div>`).join('');
+  }
+
+  document.getElementById('photo-upload-btn').addEventListener('click',()=>
+    document.getElementById('photo-file-input').click());
+
+  document.getElementById('photo-file-input').addEventListener('change', e=>{
+    const files = Array.from(e.target.files);
+    let loaded = 0;
+    files.forEach(file=>{
+      const reader = new FileReader();
+      reader.onload = ev=>{
+        photos.unshift({data: ev.target.result, name: file.name});
+        loaded++;
+        if(loaded===files.length){ save(); render(); }
+      };
+      reader.readAsDataURL(file);
+    });
+    e.target.value='';
+  });
+
+  document.getElementById('photos-grid').addEventListener('click', e=>{
+    const del = e.target.closest('.pcard-del');
+    const vb  = e.target.closest('.photos-add-vb');
+    if(del){
+      const idx = +del.dataset.idx;
+      if(confirm('Remove this photo?')){ photos.splice(idx,1); save(); render(); }
+    }
+    if(vb){
+      const idx = +vb.dataset.idx;
+      // Inject into Vision Board SLIDES array at front
+      const url = photos[idx].data;
+      if(typeof VBOARD_SLIDES !== 'undefined'){
+        VBOARD_SLIDES.unshift({url, loc:'MY VISION', quote:'This is my life. I am creating it.'});
+        alert('Added to Vision Board! Open Vision Board to see it.');
+      }
+    }
+  });
+  render();
+})();
+
+/* ── Book of Month ── */
+(function(){
+  const SK = 'rajeev_book';
+  let book = JSON.parse(localStorage.getItem(SK)||'null');
+
+  const progRange = document.getElementById('b-progress');
+  const pctVal    = document.getElementById('book-pct-val');
+  progRange.addEventListener('input',()=>{ pctVal.textContent = progRange.value+'%'; });
+
+  function render(){
+    if(!book) return;
+    document.getElementById('book-title-el').textContent  = book.title||'—';
+    document.getElementById('book-author-el').textContent = book.author||'';
+    const coverEl = document.getElementById('book-cover-img');
+    coverEl.src = book.cover||'';
+    coverEl.style.display = book.cover ? 'block' : 'none';
+    document.getElementById('bprog-fill').style.width = (book.progress||0)+'%';
+    document.getElementById('bprog-pct').textContent   = (book.progress||0)+'%';
+    const quotes = (book.quotes||'').split('\n').filter(q=>q.trim());
+    document.getElementById('book-quotes-list').innerHTML = quotes.map(q=>`<div class="bquote">"${q.trim()}"</div>`).join('');
+    // prefill form
+    document.getElementById('b-title').value    = book.title||'';
+    document.getElementById('b-author').value   = book.author||'';
+    document.getElementById('b-cover').value    = book.cover||'';
+    document.getElementById('b-progress').value = book.progress||0;
+    pctVal.textContent = (book.progress||0)+'%';
+    document.getElementById('b-quotes').value   = book.quotes||'';
+  }
+
+  document.getElementById('book-save-btn').addEventListener('click',()=>{
+    book = {
+      title:    document.getElementById('b-title').value.trim(),
+      author:   document.getElementById('b-author').value.trim(),
+      cover:    document.getElementById('b-cover').value.trim(),
+      progress: +document.getElementById('b-progress').value,
+      quotes:   document.getElementById('b-quotes').value.trim(),
+    };
+    localStorage.setItem(SK, JSON.stringify(book));
+    render();
+  });
+  render();
+})();
+
+/* ── Milestones ── */
+(function(){
+  const SK = 'rajeev_milestones';
+  let milestones = JSON.parse(localStorage.getItem(SK)||'[]');
+  function save(){ localStorage.setItem(SK, JSON.stringify(milestones)); }
+
+  function render(){
+    const grid  = document.getElementById('ms-grid');
+    const empty = document.getElementById('ms-empty');
+    empty.style.display = milestones.length ? 'none' : 'block';
+    grid.innerHTML = milestones.map((m,i)=>`
+      <div class="ms-card">
+        <span class="ms-badge">${m.badge}</span>
+        <div class="ms-text">${m.text}</div>
+        <div class="ms-date">${m.date}</div>
+        <button class="ms-del" data-idx="${i}" title="Delete">✕</button>
+      </div>`).join('');
+  }
+
+  document.getElementById('add-ms-btn').addEventListener('click',()=>{
+    document.getElementById('ms-form').classList.toggle('open');
+  });
+
+  document.getElementById('ms-add-btn').addEventListener('click',()=>{
+    const text  = document.getElementById('ms-text-inp').value.trim();
+    const badge = document.getElementById('ms-badge-sel').value;
+    const date  = document.getElementById('ms-date-inp').value || new Date().toISOString().slice(0,10);
+    if(!text) return;
+    milestones.unshift({badge, text, date});
+    save(); render();
+    document.getElementById('ms-text-inp').value='';
+    document.getElementById('ms-form').classList.remove('open');
+  });
+
+  document.getElementById('ms-grid').addEventListener('click', e=>{
+    const del = e.target.closest('.ms-del');
+    if(del){ milestones.splice(+del.dataset.idx,1); save(); render(); }
+  });
+  render();
+})();
+
+/* ── Affirmation Cards ── */
+(function(){
+  const CARDS = [
+    {icon:'💎',text:'I am a magnet for money, abundance, and prosperity.'},
+    {icon:'🚀',text:'Everything I touch turns to gold. Success is my destiny.'},
+    {icon:'🌟',text:'I am worthy of all the wealth the universe has to offer.'},
+    {icon:'💰',text:'Money flows to me easily, frequently, and in large amounts.'},
+    {icon:'🔥',text:'I have the power to create the life I desire. I act boldly.'},
+    {icon:'🌅',text:'Each morning I wake up with gratitude and relentless purpose.'},
+    {icon:'🏆',text:'I am a winner. I overcome every obstacle with grace and power.'},
+    {icon:'✨',text:'The universe is always working in my favour. I trust the process.'},
+    {icon:'💪',text:'I am disciplined, focused, and unstoppable in pursuing my goals.'},
+    {icon:'🎯',text:'I set powerful intentions and I follow through with massive action.'},
+    {icon:'🌍',text:'I attract amazing opportunities from around the world.'},
+    {icon:'❤️',text:'I am loved, supported, and surrounded by abundance.'},
+    {icon:'🧠',text:'My mind is sharp, creative, and constantly generating wealth ideas.'},
+    {icon:'⚡',text:'I have infinite energy and enthusiasm for building my empire.'},
+    {icon:'🏠',text:'I am creating a life of luxury, freedom, and financial independence.'},
+    {icon:'✈️',text:'I travel the world in luxury. The world is my playground.'},
+    {icon:'📈',text:'My investments grow exponentially. Wealth multiplies in my hands.'},
+    {icon:'🌙',text:'Even while I sleep, money is flowing into my accounts.'},
+    {icon:'👑',text:'I carry myself like a king/queen. I deserve the very best.'},
+    {icon:'🌺',text:'I release all limiting beliefs about money. I am open to receive.'},
+    {icon:'💡',text:'I have brilliant ideas that create massive value in the world.'},
+    {icon:'🤝',text:'I attract the right people, mentors, and partnerships at the right time.'},
+    {icon:'🎶',text:'My life is beautiful, joyful, and filled with abundance in every form.'},
+    {icon:'🔑',text:'I hold the keys to my own success. Every door opens for me.'},
+    {icon:'🌈',text:'My future is bright, wealthy, and filled with infinite possibilities.'},
+    {icon:'📚',text:'I am always learning and growing into the best version of myself.'},
+    {icon:'🛡️',text:'I protect my energy and invest it only in things that serve my highest good.'},
+    {icon:'🌊',text:'Abundance surrounds me like an ocean. I swim in limitless wealth.'},
+    {icon:'🕊️',text:'I am free — financially, mentally, emotionally. I live life on my terms.'},
+    {icon:'🌱',text:'Every seed of action I plant today grows into tomorrow\'s harvest of success.'},
+    {icon:'🦁',text:'I am fearless, bold, and ready to claim everything I deserve.'},
+    {icon:'🌞',text:'Today is a great day to be alive. I embrace it with full power.'},
+    {icon:'💫',text:'I am aligned with the energy of wealth, health, and happiness.'},
+    {icon:'🎪',text:'My life is a celebration. Every day I find reasons to feel grateful.'},
+    {icon:'🔮',text:'I have a clear vision of my future and I move toward it every single day.'},
+    {icon:'🏅',text:'I celebrate every win, big and small. Progress is my superpower.'},
+    {icon:'🌻',text:'I radiate confidence. People trust me, believe in me, and invest in me.'},
+    {icon:'🦋',text:'I have transformed. The old me is gone — a powerful new version is here.'},
+    {icon:'⚓',text:'I am grounded, calm, and secure in who I am and where I am going.'},
+    {icon:'🎆',text:'My success is inevitable. I am exactly where I need to be right now.'},
+    {icon:'🏔️',text:'I rise above challenges. Every setback is a setup for a comeback.'},
+    {icon:'🌠',text:'I dream big and then I act even bigger. My results are extraordinary.'},
+    {icon:'🎁',text:'Life is constantly giving me gifts. I receive them with open arms.'},
+    {icon:'💝',text:'I love myself completely. From this love, all abundance flows.'},
+    {icon:'🌟',text:'I am the architect of my life. I build its foundation with bold choices.'},
+    {icon:'🧲',text:'I attract success as naturally as the sun rises every morning.'},
+    {icon:'🪄',text:'I have the magic inside me to manifest anything I truly desire.'},
+    {icon:'🦅',text:'I soar above limitations. My vision is high and my standards are higher.'},
+    {icon:'🎊',text:'I am celebrating the person I am becoming every single day.'},
+    {icon:'💥',text:'I am a force of nature. Nothing can stop me from living my best life.'},
+  ];
+
+  let order = CARDS.map((_,i)=>i);
+  let curI = 0, flipped = false;
+
+  const inner    = document.getElementById('aff-inner');
+  const numFront = document.getElementById('aff-num-front');
+  const numBack  = document.getElementById('aff-num-back');
+  const iconEl   = document.getElementById('aff-icon');
+  const textEl   = document.getElementById('aff-text');
+  const dotsEl   = document.getElementById('aff-dots');
+
+  // Build dots
+  dotsEl.innerHTML = CARDS.map((_,i)=>`<span class="aff-dot" data-i="${i}"></span>`).join('');
+
+  function showCard(i, instant){
+    const c = CARDS[order[i]];
+    if(!instant){ inner.classList.remove('flipped'); flipped=false; }
+    iconEl.textContent  = c.icon;
+    textEl.textContent  = c.text;
+    const label = `CARD ${i+1} of ${CARDS.length}`;
+    numFront.textContent = numBack.textContent = label;
+    // dots
+    document.querySelectorAll('.aff-dot').forEach((d,di)=>{
+      d.className = 'aff-dot' + (di<i?' seen':'') + (di===i?' cur':'');
+    });
+  }
+
+  document.getElementById('aff-scene').addEventListener('click',()=>{
+    flipped = !flipped;
+    inner.classList.toggle('flipped', flipped);
+  });
+
+  document.getElementById('aff-prev').addEventListener('click',()=>{
+    curI = (curI - 1 + CARDS.length) % CARDS.length;
+    showCard(curI, false);
+  });
+  document.getElementById('aff-next').addEventListener('click',()=>{
+    curI = (curI + 1) % CARDS.length;
+    showCard(curI, false);
+  });
+  document.getElementById('aff-shuffle').addEventListener('click',()=>{
+    order = order.sort(()=>Math.random()-.5);
+    curI = 0;
+    showCard(0, false);
+  });
+
+  dotsEl.addEventListener('click', e=>{
+    const dot = e.target.closest('.aff-dot');
+    if(!dot) return;
+    curI = +dot.dataset.i;
+    showCard(curI, false);
+  });
+
+  showCard(0, true);
 })();
 
 /* ── Vision Board ── */
