@@ -423,7 +423,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
     <button class="tab" data-cat="fav">❤️ Favourites</button>
     <button class="tab" data-cat="songs">🎵 Songs</button>
     <button class="tab" data-cat="bollywood">🎬 Bollywood</button>
-    <button class="tab" data-cat="dhurandhar">⚔️ Dhurandhar</button>
+
     <button class="tab" data-cat="malaysia">🇲🇾 Malaysia</button>
     <button class="tab" data-cat="affirmations">💰 Affirmations</button>
     <button class="tab" data-cat="luxury">🏙️ Luxury & Dubai</button>
@@ -449,6 +449,12 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
 <div id="bucket-panel"></div>
 
 <div id="chalisa-panel">
+  <div style="max-width:680px;margin:0 auto 24px;border-radius:16px;overflow:hidden;aspect-ratio:16/9;background:#000">
+    <iframe id="chalisa-yt" width="100%" height="100%" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border:none;display:block"></iframe>
+  </div>
+  <div style="max-width:680px;margin:-8px auto 16px;text-align:center">
+    <button onclick="const f=document.getElementById('chalisa-yt');f.src='https://www.youtube.com/embed/AETFvQonfV8?autoplay=1&rel=0';this.style.display='none'" style="padding:12px 28px;border-radius:999px;border:none;background:linear-gradient(135deg,#f5a623,#ff6b35);color:#fff;font-family:inherit;font-weight:700;font-size:.9rem;cursor:pointer">▶ Play Hanuman Chalisa Video</button>
+  </div>
   <div class="chalisa-box">
     <h2>॥ श्री हनुमान चालीसा ॥</h2>
     <p class="subtitle">Shree Hanuman Chalisa — by Goswami Tulsidas</p>
@@ -672,7 +678,7 @@ const songs = [
   {num:3,title:"Give Me Freedom, Give Me Fire",artist:"K'naan — FIFA World Cup 2010",id:"Y1bukaetjJI",cat:"songs"},
   {num:4,title:"Unexpected Love Story ❤️",artist:"Short Film Edit",id:"iCjV-nXaQ4o",cat:"songs"},
   {num:5,title:"Sajna Ke Sajde Mein Itna — Deewaana Deewaana",artist:"A.R. Rahman • Tere Ishq Mein",id:"jko0dgGUwic",cat:"bollywood"},
-  {num:6,title:"Tamma Tamma Loge (4K)",artist:"Bappi Lahiri • Thanedaar",id:"Xs5k7d6kzh8",cat:"bollywood"},
+
   {num:7,title:"Dai Dai",artist:"Shakira ft. Burna Boy — FIFA World Cup 2026",id:"fcnDmrtj6Sk",cat:"songs"},
   {num:8,title:"Magic in the Air",artist:"Magic System ft. Chawki",id:"BAkqJT_sMKQ",cat:"songs"},
   {num:9,title:"I AM — Affirmations for Abundance, Success & Personal Power",artist:"VYBO — Morning Affirmations",id:"S2lbRo28GoI",cat:"affirmations"},
@@ -683,7 +689,7 @@ const songs = [
   {num:14,title:"C'est la vie",artist:"B*Witched",id:"UvjLgjtJKsc",cat:"songs"},
   {num:15,title:"C'est la vie (Clip officiel)",artist:"Khaled",id:"H7rhMqTQ4WI",cat:"songs"},
   {num:16,title:"C'est la Vie",artist:"MIKA",id:"Oe7AU05BuZ8",cat:"songs"},
-  {num:17,title:"श्री हनुमान चालीसा — Shree Hanuman Chalisa",artist:"Gulshan Kumar & Hariharan • Full HD",id:"AETFvQonfV8",cat:"bollywood"},
+  {num:17,title:"श्री हनुमान चालीसा — Shree Hanuman Chalisa",artist:"Gulshan Kumar & Hariharan • Full HD",id:"AETFvQonfV8",cat:"chalisa"},
   {num:18,title:"Dubai 4K Drone Footage — Burj Khalifa, Palm Jumeirah & Arabian Coast",artist:"Dubai • Billionaire Skyline",id:"6QjF1Oc7lpw",cat:"luxury"},
   {num:19,title:"Inside a Dubai Billionaire's Private Island Palace",artist:"4K Cinematic Mega Mansion Tour",id:"-dEyxxUlvJc",cat:"luxury"},
   {num:20,title:"Dubai's Ultra-Rich Lifestyle 💎 Billionaire Motivation",artist:"Luxury Visualization 2025",id:"4lrZOm8fXbM",cat:"luxury"},
@@ -691,14 +697,12 @@ const songs = [
   {num:22,title:"Kesuma",artist:"Dato' Sri Siti Nurhaliza • Malaysia",id:"7_AefsYp-hA",cat:"malaysia"},
   {num:23,title:"Hello",artist:"Yuna • Malaysia",id:"U9fAUxJg0Nw",cat:"malaysia"},
   {num:24,title:"Believer",artist:"Yuna • Malaysia",id:"h_8kzG5fN_c",cat:"malaysia"},
-  {num:25,title:"THE REVENGE — Official Title Track",artist:"Dhurandhar • Ranveer Singh | Shashwat Sachdev",id:"gpqLu7QoPs4",cat:"dhurandhar"},
-  {num:26,title:"AARI AARI",artist:"Dhurandhar The Revenge • Ranveer Singh | Bombay Rockers",id:"jzaT_sPNJrU",cat:"dhurandhar"},
-  {num:27,title:"VAARI JAAVAN",artist:"Dhurandhar The Revenge • Ranveer Singh | Jasmine Sandlas",id:"GG1_DsScm6U",cat:"dhurandhar"},
-  {num:28,title:"JAIYE SAJANA",artist:"Dhurandhar The Revenge • Ranveer Singh | Satinder Sartaaj",id:"F2m4HPLvj-4",cat:"dhurandhar"},
-  {num:29,title:"MAIN AUR TU",artist:"Dhurandhar The Revenge • Ranveer Singh | Jasmine Sandlas",id:"-dt1VE_9EJI",cat:"dhurandhar"},
-  {num:30,title:"JAAN SE GUZARTE HAIN",artist:"Dhurandhar The Revenge • Ranveer Singh & Sara Arjun",id:"ZJ5NU6pTN7M",cat:"dhurandhar"},
-  {num:31,title:"TERE ISHQ NE",artist:"Dhurandhar The Revenge • Ranveer Singh | Jyoti Nooran",id:"Zfk-FWkBkbY",cat:"dhurandhar"},
-  {num:32,title:"TAMMA TAMMA (Dhurandhar Version)",artist:"Dhurandhar The Revenge • Ranveer Singh | Bappi Lahiri",id:"SSofpP1_6F0",cat:"dhurandhar"},
+  {num:25,title:"THE REVENGE — Official Title Track",artist:"Dhurandhar • Ranveer Singh | Shashwat Sachdev",id:"gpqLu7QoPs4",cat:"bollywood"},
+  {num:27,title:"VAARI JAAVAN",artist:"Dhurandhar The Revenge • Ranveer Singh | Jasmine Sandlas",id:"GG1_DsScm6U",cat:"bollywood"},
+  {num:28,title:"JAIYE SAJANA",artist:"Dhurandhar The Revenge • Ranveer Singh | Satinder Sartaaj",id:"F2m4HPLvj-4",cat:"bollywood"},
+  {num:29,title:"MAIN AUR TU",artist:"Dhurandhar The Revenge • Ranveer Singh | Jasmine Sandlas",id:"-dt1VE_9EJI",cat:"bollywood"},
+  {num:30,title:"JAAN SE GUZARTE HAIN",artist:"Dhurandhar The Revenge • Ranveer Singh & Sara Arjun",id:"ZJ5NU6pTN7M",cat:"bollywood"},
+  {num:31,title:"TERE ISHQ NE",artist:"Dhurandhar The Revenge • Ranveer Singh | Jyoti Nooran",id:"Zfk-FWkBkbY",cat:"bollywood"},
   {num:33,title:"Instagram Reel ❤️",artist:"Instagram",id:"DcODngVgws7",cat:"instagram",type:"instagram"},
   {num:34,title:"I AM RICH — The 1% Abundance Code",artist:"Alpha Wealth Manifest",id:"BYcu4f2FLtg",cat:"affirmations"},
   {num:35,title:"Cheri Cheri Lady ✨",artist:"Lyrics • Aesthetic Vibes",id:"O_oGMYrEMUQ",cat:"songs"},
@@ -719,7 +723,7 @@ const songs = [
   {num:50,title:"WEALTH Programming for a BILLIONAIRE Mind",artist:"Manifest Money Affirmations • Meditation",id:"yvR9eo6qtXs",cat:"affirmations"},
   {num:51,title:"🔴 BILLIONAIRE LIFESTYLE — Money Visualization & Wealth Manifestation",artist:"Millions, Billions, Trillions",id:"Cd8QNuWyvoU",cat:"affirmations"},
   {num:52,title:"A Wealthy Lifestyle Manifestation 🔥",artist:"Billionaire Motivational • #RichLife",id:"jhvA45I_r3I",cat:"affirmations"},
-  {num:53,title:"Hair Cutting ✂️ ke time ye zarur kijiyega 😱",artist:"Astrology Tips • Bhawna Upadhyay",id:"przdNEjWVQk",cat:"bollywood"},
+  {num:53,title:"Hair Cutting ✂️ ke time ye zarur kijiyega 😱",artist:"Astrology Tips • Bhawna Upadhyay",id:"przdNEjWVQk",cat:"affirmations"},
   {num:54,title:"Instagram Reel ❤️",artist:"Instagram",id:"DTtVHVEDADT",cat:"instagram",type:"instagram"},
   {num:55,title:"Instagram Reel ❤️",artist:"Instagram",id:"Db04H-Fs9XZ",cat:"instagram",type:"instagram"},
   {num:56,title:"Instagram Reel ❤️",artist:"Instagram",id:"Dc3uDONBaOi",cat:"instagram",type:"instagram"},
