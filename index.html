@@ -287,6 +287,53 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
 .ms-del:hover{color:#ef4444}
 .ms-empty{text-align:center;padding:60px 20px;color:rgba(255,255,255,.3)}
 
+/* I AM LIVING IT */
+#manifest-panel{display:none;position:relative;z-index:1;max-width:900px;margin:0 auto 80px;padding:24px 20px}
+.mf-hero{text-align:center;padding:40px 20px 32px;background:linear-gradient(135deg,rgba(245,166,35,.08),rgba(139,92,246,.08),rgba(16,185,129,.06));border:1px solid rgba(245,166,35,.2);border-radius:24px;margin-bottom:28px;position:relative;overflow:hidden}
+.mf-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(245,166,35,.12),transparent 70%);pointer-events:none}
+.mf-date{font-size:.72rem;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.mf-hero h1{font-size:clamp(1.5rem,4vw,2.4rem);font-weight:900;background:linear-gradient(135deg,#f5a623,#fff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px;line-height:1.2}
+.mf-hero p{font-size:.92rem;color:rgba(255,255,255,.5);max-width:500px;margin:0 auto 20px}
+#mf-read-btn{padding:13px 32px;border-radius:999px;border:none;background:linear-gradient(135deg,#f5a623,#a78bfa);color:#fff;font-family:inherit;font-weight:700;font-size:.95rem;cursor:pointer;transition:transform .2s,box-shadow .2s}
+#mf-read-btn:hover{transform:scale(1.05);box-shadow:0 8px 32px rgba(245,166,35,.4)}
+.mf-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:18px;margin-bottom:28px}
+@media(max-width:600px){.mf-cards{grid-template-columns:1fr}}
+.mf-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:20px;padding:24px;transition:border-color .2s,box-shadow .2s;cursor:pointer;position:relative}
+.mf-card:hover{border-color:rgba(245,166,35,.3);box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.mf-card-icon{font-size:1.8rem;margin-bottom:10px}
+.mf-card-title{font-size:.68rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:10px;font-weight:700}
+.mf-card-text{font-size:.9rem;color:rgba(255,255,255,.82);line-height:1.75}
+.mf-card-edit{position:absolute;top:14px;right:14px;background:none;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.3);width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.75rem;display:flex;align-items:center;justify-content:center;transition:all .2s;opacity:0}
+.mf-card:hover .mf-card-edit{opacity:1}
+.mf-card-edit:hover{border-color:#f5a623;color:#f5a623}
+.mf-card textarea{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(245,166,35,.3);border-radius:10px;padding:10px;color:#fff;font-family:inherit;font-size:.88rem;line-height:1.75;resize:vertical;min-height:100px;box-sizing:border-box;outline:none;margin-top:8px;display:none}
+.mf-card.editing textarea{display:block}
+.mf-card.editing .mf-card-text{display:none}
+.mf-card-save{display:none;margin-top:8px;padding:7px 16px;border-radius:8px;border:none;background:#f5a623;color:#1a0a00;font-family:inherit;font-weight:700;font-size:.8rem;cursor:pointer}
+.mf-card.editing .mf-card-save{display:inline-block}
+
+/* READING MODE OVERLAY */
+#mf-overlay{display:none;position:fixed;inset:0;z-index:950;background:#000;overflow:hidden}
+#mf-overlay.open{display:block}
+#mf-overlay-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 2s ease;filter:blur(2px) brightness(.35)}
+#mf-overlay-bg.visible{opacity:1}
+#mf-scroll-wrap{position:absolute;inset:0;z-index:10;overflow:hidden;display:flex;align-items:center;justify-content:center}
+#mf-scroll-inner{max-width:720px;padding:80px 40px;text-align:center}
+.mf-read-line{font-size:clamp(1.1rem,2.8vw,1.55rem);font-weight:700;color:#fff;line-height:1.9;margin-bottom:28px;opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease;text-shadow:0 2px 30px rgba(0,0,0,.9)}
+.mf-read-line.visible{opacity:1;transform:translateY(0)}
+.mf-read-line.section-head{font-size:clamp(.7rem,1.5vw,.85rem);letter-spacing:3px;text-transform:uppercase;color:#f5a623;opacity:0;margin-bottom:6px}
+.mf-read-line.section-head.visible{opacity:.8}
+#mf-overlay-close{position:fixed;top:24px;right:24px;z-index:20;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);color:#fff;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:background .2s}
+#mf-overlay-close:hover{background:rgba(255,0,0,.4)}
+#mf-overlay-progress{position:fixed;bottom:0;left:0;height:3px;background:linear-gradient(90deg,#f5a623,#a78bfa);width:0%;transition:width .3s;z-index:20}
+#mf-voice-bar{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);z-index:25;display:flex;gap:10px;align-items:center;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:8px 18px;backdrop-filter:blur(12px)}
+.mfv-btn{background:none;border:none;color:#fff;cursor:pointer;font-size:.82rem;font-family:inherit;font-weight:600;padding:4px 10px;border-radius:999px;transition:background .2s;white-space:nowrap}
+.mfv-btn:hover{background:rgba(255,255,255,.15)}
+.mfv-btn.active{color:#f5a623}
+#mf-voice-label{font-size:.72rem;color:rgba(255,255,255,.45);letter-spacing:1px;white-space:nowrap}
+#mf-speed-sel{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;font-size:.78rem;padding:4px 8px;font-family:inherit;cursor:pointer}
+#mf-speed-sel option{background:#1a1a2e;color:#fff}
+
 /* AFFIRMATION CARDS */
 #affcards-panel{display:none;position:relative;z-index:1;max-width:680px;margin:24px auto 80px;padding:0 20px;text-align:center}
 #affcards-panel h2{font-size:1.5rem;font-weight:900;background:linear-gradient(135deg,#8b5cf6,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}
@@ -385,6 +432,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
     <button class="tab" data-cat="gym">💪 Gym Plan</button>
     <button class="tab" data-cat="bucket">✨ Bucket List</button>
     <button class="tab" data-cat="chalisa">🙏 Hanuman Chalisa</button>
+    <button class="tab" data-cat="manifest">✨ I AM Living It</button>
     <button class="tab" data-cat="world">🗺️ World Map</button>
     <button class="tab" data-cat="photos">📸 My Photos</button>
     <button class="tab" data-cat="book">📖 My Book</button>
@@ -462,6 +510,36 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
       <p>पवनतनय संकट हरन, मंगल मूरति रूप।<br>
       राम लखन सीता सहित, हृदय बसहु सुर भूप॥</p>
     </div>
+  </div>
+</div>
+
+<!-- I AM Living It Panel -->
+<div id="manifest-panel">
+  <div class="mf-hero">
+    <div class="mf-date" id="mf-date"></div>
+    <h1>This Is My Life — Right Now</h1>
+    <p>This is not a dream. This is not the future. This is who I am today.</p>
+    <button id="mf-read-btn">🎬 Enter Reading Mode</button>
+  </div>
+  <div class="mf-cards" id="mf-cards"></div>
+</div>
+
+<!-- Reading Mode Overlay -->
+<div id="mf-overlay">
+  <div id="mf-overlay-bg"></div>
+  <button id="mf-overlay-close">✕</button>
+  <div id="mf-scroll-wrap"><div id="mf-scroll-inner"></div></div>
+  <div id="mf-overlay-progress"></div>
+  <div id="mf-voice-bar">
+    <span id="mf-voice-label">🎙️ VOICE</span>
+    <button class="mfv-btn active" id="mfv-play">⏸ Pause</button>
+    <button class="mfv-btn" id="mfv-restart">↺ Restart</button>
+    <select id="mf-speed-sel">
+      <option value="0.7">Slow</option>
+      <option value="0.85" selected>Medium</option>
+      <option value="1.0">Normal</option>
+      <option value="1.2">Fast</option>
+    </select>
   </div>
 </div>
 
@@ -694,6 +772,8 @@ const songs = [
   {num:103,title:"My Video",artist:"Rajeev Kumar",id:"1xMWUovSEAOtKEvbxWcgq4IB32_Eb5EXa",cat:"gdrive",type:"gdrive"},
   {num:104,title:"My Video",artist:"Rajeev Kumar",id:"1egZlRMD2sTeQRYII8K2_5QIEExOcQZLz",cat:"gdrive",type:"gdrive"},
   {num:105,title:"One Distraction Can Cost You Years 🎯",artist:"#motivation #focus #discipline",id:"WcF11w1IuNM",cat:"affirmations"},
+  {num:106,title:"Billionaire I AM Affirmations and Visualization",artist:"Manifestation • Wealth • Success",id:"l0SVWwFMGtg",cat:"affirmations"},
+  {num:107,title:"Billionaire Luxury Lifestyle 💲 Billionaire Lifestyle Entrepreneur Motivation #1",artist:"Entrepreneur Motivation",id:"os2s5B3ifWU",cat:"affirmations"},
 ];
 
 /* ── State ── */
@@ -1030,12 +1110,13 @@ document.querySelectorAll('.tab').forEach(tab => {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     activeCat = tab.dataset.cat;
-    const specialPanels = ['chalisa','gym','bucket','world','photos','book','milestones','affcards'];
+    const specialPanels = ['chalisa','gym','bucket','manifest','world','photos','book','milestones','affcards'];
     const isSpecial = specialPanels.includes(activeCat);
     gridEl.style.display = isSpecial ? 'none' : '';
     chalisaPanel.style.display   = activeCat==='chalisa'    ? 'block' : 'none';
     gymPanel.style.display       = activeCat==='gym'        ? 'block' : 'none';
     bucketPanel.style.display    = activeCat==='bucket'     ? 'block' : 'none';
+    document.getElementById('manifest-panel').style.display   = activeCat==='manifest'   ? 'block' : 'none';
     document.getElementById('world-panel').style.display      = activeCat==='world'      ? 'block' : 'none';
     document.getElementById('photos-panel').style.display     = activeCat==='photos'     ? 'block' : 'none';
     document.getElementById('book-panel').style.display       = activeCat==='book'       ? 'block' : 'none';
@@ -1142,6 +1223,215 @@ scrollBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smoo
   }, 60000);
 
   updateBtn();
+})();
+
+/* ── I AM Living It ── */
+(function(){
+  const SK = 'rajeev_manifest';
+  const DEFAULT_CARDS = [
+    {icon:'🌅', title:'MY MORNING', text:'Every morning I wake up at 5:30am in my stunning penthouse on the 47th floor of the Burj Khalifa, Dubai. Floor-to-ceiling windows frame the Arabian Gulf shimmering gold in the sunrise. I stretch on my private terrace, breathing in the warm desert air. This is not a dream — this is my everyday reality.'},
+    {icon:'💰', title:'MY WEALTH', text:'My businesses generate ₹5 crore every single month across multiple streams of income. I own a thriving technology company, a booming real estate portfolio, and a luxury lifestyle brand. My investments multiply while I sleep. My bank accounts across three countries hold more wealth than I ever imagined. Money is attracted to me like a magnet.'},
+    {icon:'🏢', title:'MY BUSINESS', text:'I am the CEO and Founder of multiple successful companies. My team of 200+ talented people across India and Dubai execute my vision with precision. I close multi-crore deals over breakfast. Global brands seek partnerships with me. I am respected as a visionary leader who changes industries. My name opens doors in every room I enter.'},
+    {icon:'🏠', title:'MY HOMES', text:'I own a 12,000 sq ft penthouse in Dubai with panoramic views of the Burj Khalifa and the sea. My second home is a stunning villa in Monaco overlooking the Mediterranean. In Bangalore, I have a palatial estate in Prestige Lavender Fields. Every home is filled with Italian marble, custom furniture, and world-class art. I live like royalty every day.'},
+    {icon:'💪', title:'MY HEALTH & BODY', text:'My body is powerful, lean, and full of energy. I train with my personal trainer six days a week in my private gym. My personal chef prepares organic, chef-quality meals for every meal. I am at my peak physical condition — strong, disciplined, and glowing with vitality. My mind is sharp, focused, and calm. I sleep eight hours on my custom Hästens bed every night.'},
+    {icon:'❤️', title:'MY RELATIONSHIPS', text:'I am surrounded by extraordinary people who love and support me unconditionally. My family lives in complete abundance and security because of what I have built. I have a circle of powerful mentors, visionary friends, and loyal business partners. I am deeply loved, deeply respected, and deeply appreciated. Every relationship in my life adds joy and meaning.'},
+    {icon:'🚗', title:'MY LIFESTYLE', text:'I drive a midnight black Rolls Royce Phantom for business meetings and a Ferrari SF90 Stradale for weekend drives along the Dubai Marina. I wear a Patek Philippe Nautilus on my left wrist. My wardrobe is custom Armani and Loro Piana. I fly business class or private jet to every destination. Every experience I choose is the finest available in the world.'},
+    {icon:'✈️', title:'MY TRAVEL', text:'I travel the world freely and luxuriously. Monaco for the Grand Prix, Maldives for private island stays, Tokyo for culture, New York for business, Paris for art. I stay in only the world\'s finest hotels — Burj Al Arab, Four Seasons, The Ritz. I collect memories from 40+ countries. The world is my home and I move through it with total freedom.'},
+    {icon:'🧠', title:'MY MINDSET', text:'My mind is my greatest asset. I think like a billionaire — calm, strategic, and always long-term. I read two books every month. I meditate for 20 minutes every morning. I am grateful for every blessing in my life. I know my worth, I know my power, and I walk into every room as the most confident, capable person there. Greatness is simply my nature.'},
+    {icon:'🌟', title:'MY PURPOSE', text:'I am building a legacy that outlasts me. My businesses create thousands of jobs. My wealth funds education for underprivileged children. I mentor young entrepreneurs across India. I give generously because abundance flows through me, not to me. I live with total meaning and purpose every day. My life is extraordinary in every dimension — and it is only getting better.'},
+  ];
+
+  const SK_DATA = JSON.parse(localStorage.getItem(SK)||'null') || DEFAULT_CARDS.map(c=>({...c}));
+
+  // Set date
+  const d = new Date();
+  document.getElementById('mf-date').textContent =
+    d.toLocaleDateString('en-IN',{weekday:'long',year:'numeric',month:'long',day:'numeric'}).toUpperCase();
+
+  // Render cards
+  function renderCards(){
+    document.getElementById('mf-cards').innerHTML = SK_DATA.map((c,i)=>`
+      <div class="mf-card" data-i="${i}">
+        <div class="mf-card-icon">${c.icon}</div>
+        <div class="mf-card-title">${c.title}</div>
+        <div class="mf-card-text">${c.text}</div>
+        <textarea>${c.text}</textarea>
+        <button class="mf-card-save">✓ Save</button>
+        <button class="mf-card-edit" title="Edit">✎</button>
+      </div>`).join('');
+
+    document.getElementById('mf-cards').addEventListener('click', e=>{
+      const card = e.target.closest('.mf-card');
+      if(!card) return;
+      const i = +card.dataset.i;
+      if(e.target.classList.contains('mf-card-edit')){
+        card.classList.toggle('editing');
+        if(card.classList.contains('editing'))
+          card.querySelector('textarea').focus();
+      }
+      if(e.target.classList.contains('mf-card-save')){
+        SK_DATA[i].text = card.querySelector('textarea').value;
+        localStorage.setItem(SK, JSON.stringify(SK_DATA));
+        card.querySelector('.mf-card-text').textContent = SK_DATA[i].text;
+        card.classList.remove('editing');
+      }
+    });
+  }
+  renderCards();
+
+  /* Reading Mode */
+  const IMAGES = [
+    'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&h=900&fit=crop&auto=format&q=80',
+    'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&h=900&fit=crop&auto=format&q=80',
+    'https://images.unsplash.com/photo-1549144511-f099e773c147?w=1600&h=900&fit=crop&auto=format&q=80',
+    'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1600&h=900&fit=crop&auto=format&q=80',
+    'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1600&h=900&fit=crop&auto=format&q=80',
+    'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&h=900&fit=crop&auto=format&q=80',
+    'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&h=900&fit=crop&auto=format&q=80',
+    'https://images.unsplash.com/photo-1470770903676-69b98201ea1c?w=1600&h=900&fit=crop&auto=format&q=80',
+    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&h=900&fit=crop&auto=format&q=80',
+    'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1600&h=900&fit=crop&auto=format&q=80',
+  ];
+
+  let bgIdx = 0, bgTimer = null, readAudio = null, readNodes = [];
+
+  function startReadAudio(){
+    try{
+      const ctx = new (window.AudioContext||window.webkitAudioContext)();
+      const master = ctx.createGain();
+      master.gain.setValueAtTime(0,ctx.currentTime);
+      master.gain.linearRampToValueAtTime(0.25,ctx.currentTime+4);
+      master.connect(ctx.destination);
+      [[216,.2,.07,1.5],[432,.15,.09,2],[528,.09,.12,3],[396,.07,.06,1]].forEach(([f,g,lr,ld])=>{
+        const o=ctx.createOscillator(),gn=ctx.createGain(),lfo=ctx.createOscillator(),lg=ctx.createGain();
+        o.type='sine'; o.frequency.value=f; gn.gain.value=g;
+        lfo.frequency.value=lr; lg.gain.value=ld;
+        lfo.connect(lg); lg.connect(o.frequency); o.connect(gn); gn.connect(master);
+        o.start(); lfo.start(); readNodes.push(o,lfo,gn,lg);
+      });
+      readNodes.push(master); readAudio = ctx;
+    }catch(e){}
+  }
+  function stopReadAudio(){
+    if(!readAudio) return;
+    readNodes.forEach(n=>{try{n.stop&&n.stop();n.disconnect();}catch(e){}});
+    readNodes=[]; readAudio.close(); readAudio=null;
+  }
+
+  function cycleImage(){
+    const bgEl = document.getElementById('mf-overlay-bg');
+    bgEl.style.opacity='0';
+    setTimeout(()=>{
+      bgEl.style.backgroundImage=`url(${IMAGES[bgIdx%IMAGES.length]})`;
+      bgEl.style.opacity='1'; bgIdx++;
+    },800);
+  }
+
+  /* ── Speech ── */
+  let speechIdx = 0, speechPaused = false;
+  const SPEECH_CHUNKS = SK_DATA.flatMap(c=>[
+    { text: c.title, pause: 600 },
+    { text: c.text,  pause: 1800 },
+  ]);
+
+  function getRate(){ return parseFloat(document.getElementById('mf-speed-sel').value||0.85); }
+
+  function speakChunk(i){
+    if(i >= SPEECH_CHUNKS.length || speechPaused) return;
+    speechIdx = i;
+    const chunk = SPEECH_CHUNKS[i];
+    const utt = new SpeechSynthesisUtterance(chunk.text);
+    utt.rate   = getRate();
+    utt.pitch  = 1;
+    utt.volume = 1;
+    // prefer a good English voice
+    const voices = speechSynthesis.getVoices();
+    const preferred = voices.find(v=> v.lang==='en-IN' || v.name.includes('Daniel') || v.name.includes('Google UK') || v.lang.startsWith('en'));
+    if(preferred) utt.voice = preferred;
+    utt.onend = ()=> setTimeout(()=> speakChunk(i+1), chunk.pause);
+    speechSynthesis.speak(utt);
+  }
+
+  function startSpeech(){
+    speechSynthesis.cancel();
+    speechPaused = false;
+    document.getElementById('mfv-play').textContent = '⏸ Pause';
+    document.getElementById('mfv-play').classList.add('active');
+    speakChunk(0);
+  }
+
+  function toggleSpeech(){
+    const btn = document.getElementById('mfv-play');
+    if(speechSynthesis.speaking && !speechSynthesis.paused){
+      speechSynthesis.pause();
+      speechPaused = true;
+      btn.textContent = '▶ Resume'; btn.classList.remove('active');
+    } else if(speechSynthesis.paused){
+      speechSynthesis.resume();
+      speechPaused = false;
+      btn.textContent = '⏸ Pause'; btn.classList.add('active');
+    } else {
+      startSpeech();
+    }
+  }
+
+  function openReading(){
+    const overlay = document.getElementById('mf-overlay');
+    overlay.classList.add('open');
+    bgIdx=0; cycleImage(); bgTimer=setInterval(cycleImage,12000);
+    startReadAudio();
+
+    // Build reading lines
+    const inner = document.getElementById('mf-scroll-inner');
+    inner.innerHTML = SK_DATA.map(c=>`
+      <div class="mf-read-line section-head">${c.icon} ${c.title}</div>
+      <div class="mf-read-line">${c.text}</div>`).join('');
+
+    // Animate lines in sequence
+    const lines = inner.querySelectorAll('.mf-read-line');
+    const prog  = document.getElementById('mf-overlay-progress');
+    let current = 0;
+    const total = lines.length;
+    function showNext(){
+      if(current >= total){ clearInterval(lineTimer); return; }
+      lines[current].classList.add('visible');
+      prog.style.width = ((current+1)/total*100)+'%';
+      current++;
+    }
+    showNext();
+    const lineTimer = setInterval(showNext, 3200);
+    const scrollTimer = setInterval(()=>{ inner.parentElement.scrollTop += 1; }, 40);
+    overlay.dataset.lineTimer   = lineTimer;
+    overlay.dataset.scrollTimer = scrollTimer;
+
+    // Start voice after a short intro pause
+    speechPaused = false;
+    setTimeout(startSpeech, 1500);
+  }
+
+  function closeReading(){
+    const overlay = document.getElementById('mf-overlay');
+    overlay.classList.remove('open');
+    clearInterval(bgTimer);
+    clearInterval(+overlay.dataset.lineTimer);
+    clearInterval(+overlay.dataset.scrollTimer);
+    speechSynthesis.cancel(); speechPaused = false;
+    stopReadAudio();
+    document.getElementById('mf-scroll-inner').innerHTML='';
+    document.getElementById('mf-overlay-progress').style.width='0%';
+    document.getElementById('mf-overlay-bg').style.opacity='0';
+  }
+
+  document.getElementById('mf-read-btn').addEventListener('click', openReading);
+  document.getElementById('mf-overlay-close').addEventListener('click', closeReading);
+  document.getElementById('mfv-play').addEventListener('click', toggleSpeech);
+  document.getElementById('mfv-restart').addEventListener('click', startSpeech);
+  document.getElementById('mf-speed-sel').addEventListener('change', ()=>{
+    speechSynthesis.cancel(); speechPaused=false; speakChunk(speechIdx);
+  });
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape' && document.getElementById('mf-overlay').classList.contains('open')) closeReading();
+  });
 })();
 
 /* ── Wealth Ticker ── */
