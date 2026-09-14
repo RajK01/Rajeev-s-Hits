@@ -636,6 +636,63 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
 .streak-day-mood{font-size:1.1rem;line-height:1}
 .streak-day-score{font-size:.54rem;color:rgba(255,255,255,.25);margin-top:3px}
 
+/* ── MANTRAS PANEL ────────────────────────────────────────────── */
+#mantras-panel{display:none;position:relative;z-index:1;max-width:960px;margin:24px auto 100px;padding:0 20px}
+#mantras-panel h2{font-size:1.6rem;font-weight:900;background:linear-gradient(135deg,#f5a623,#ff6b35,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:4px}
+.mantras-sub{text-align:center;color:rgba(255,255,255,.32);font-size:.82rem;margin-bottom:26px}
+.mantras-filter{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.mf-btn{padding:8px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:rgba(255,255,255,.5);font-family:inherit;font-size:.78rem;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap}
+.mf-btn:hover{background:rgba(255,255,255,.1);color:#fff}
+.mf-btn.active{border-color:transparent;color:#fff}
+.deity-group{margin-bottom:44px;transition:opacity .3s}
+.deity-group.hidden{display:none}
+.deity-header{border-radius:20px;padding:24px 28px;margin-bottom:16px;display:flex;align-items:center;gap:22px;position:relative;overflow:hidden}
+.deity-portrait{width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:3.2rem;flex-shrink:0;position:relative;z-index:1;border:2px solid rgba(255,255,255,.15)}
+.deity-portrait::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(255,255,255,.12);animation:deity-ring 3s ease-in-out infinite alternate}
+@keyframes deity-ring{from{transform:scale(1);opacity:.4}to{transform:scale(1.08);opacity:.9}}
+.deity-header-text{z-index:1;flex:1}
+.deity-lord{font-size:.6rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:5px}
+.deity-name{font-size:1.4rem;font-weight:900;color:#fff;margin-bottom:3px}
+.deity-title{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:7px}
+.deity-desc{font-size:.72rem;color:rgba(255,255,255,.45);line-height:1.55}
+.mantra-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.mantra-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:20px 22px;transition:all .22s}
+.mantra-card:hover{background:rgba(255,255,255,.07);transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.mantra-card-name{font-size:.6rem;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;opacity:.5}
+.mantra-deva{font-size:1.15rem;line-height:1.8;color:#fff;margin-bottom:6px}
+.mantra-roman{font-size:.78rem;font-style:italic;color:rgba(255,255,255,.42);margin-bottom:14px;line-height:1.6}
+.mantra-meaning{font-size:.77rem;color:rgba(255,255,255,.52);line-height:1.65;padding:10px 14px;background:rgba(255,255,255,.03);border-radius:10px;margin-bottom:14px;border-left:2px solid rgba(255,255,255,.1)}
+.mantra-benefits{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.mantra-benefit-tag{font-size:.62rem;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.45);font-weight:700;border:1px solid rgba(255,255,255,.07)}
+.mantra-how{font-size:.72rem;color:rgba(255,255,255,.32);line-height:1.55;border-top:1px solid rgba(255,255,255,.07);padding-top:12px;margin-top:4px}
+.mantra-how strong{color:rgba(255,255,255,.5)}
+/* RIGHT PATH */
+.rightpath-banner{background:linear-gradient(135deg,rgba(139,92,246,.14),rgba(16,185,129,.1));border:1px solid rgba(139,92,246,.25);border-radius:20px;padding:28px;margin-bottom:24px;text-align:center}
+.rightpath-om{font-size:3rem;margin-bottom:10px;line-height:1}
+.rightpath-title{font-size:1.3rem;font-weight:900;color:#fff;margin-bottom:6px}
+.rightpath-sub{font-size:.83rem;color:rgba(255,255,255,.42);line-height:1.7;max-width:600px;margin:0 auto}
+.rightpath-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px;margin-bottom:20px}
+.rp-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px 22px;transition:all .22s}
+.rp-card:hover{background:rgba(255,255,255,.07);transform:translateY(-2px)}
+.rp-card-icon{font-size:1.6rem;margin-bottom:10px;line-height:1}
+.rp-card-title{font-size:.88rem;font-weight:800;color:#fff;margin-bottom:10px}
+.rp-card-body{font-size:.78rem;color:rgba(255,255,255,.48);line-height:1.75}
+.rp-card-body strong{color:rgba(255,255,255,.72)}
+.rp-distract{background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.15);border-radius:20px;padding:22px 24px;margin-bottom:24px}
+.rp-distract-title{font-size:.62rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:#ef4444;margin-bottom:16px}
+.rp-distract-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.rp-distract-card{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.12);border-radius:12px;padding:14px 16px}
+.rp-distract-card-title{font-size:.82rem;font-weight:800;color:rgba(255,255,255,.8);margin-bottom:6px}
+.rp-distract-card-body{font-size:.75rem;color:rgba(255,255,255,.4);line-height:1.65}
+.rp-resolve{background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.18);border-radius:12px;padding:14px 18px;margin-top:16px;font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.7}
+.rp-resolve strong{color:#34d399}
+.rp-daily{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px 24px}
+.rp-daily-title{font-size:.62rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:16px}
+.rp-daily-list{display:flex;flex-direction:column;gap:10px}
+.rp-daily-item{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;background:rgba(255,255,255,.03);border-radius:10px;border:1px solid rgba(255,255,255,.06)}
+.rp-daily-num{min-width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#a78bfa,#6366f1);color:#fff;font-size:.72rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.rp-daily-text{font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.6}
+.rp-daily-text strong{color:#fff}
 /* ── MOBILE BOTTOM NAV ────────────────────────────────────────── */
 .mobile-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:rgba(8,6,18,.96);border-top:1px solid rgba(255,255,255,.08);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:6px 0 env(safe-area-inset-bottom,6px)}
 .mobile-nav-inner{display:flex;justify-content:space-around;align-items:center}
@@ -757,6 +814,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
     <button class="tab" data-cat="empire">👑 My Empire</button>
     <button class="tab" data-cat="glowup">🔥 Sigma Glow Up</button>
     <button class="tab" data-cat="daily">📔 Daily</button>
+    <button class="tab" data-cat="mantras">🕉️ Mantras</button>
   </div>
 </div>
 
@@ -1020,6 +1078,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
     <button class="gu-tab" data-gu="style">👔 Style & Look</button>
     <button class="gu-tab" data-gu="advanced">💡 Advanced Tips</button>
     <button class="gu-tab" data-gu="scenarios">📍 Real Situations</button>
+    <button class="gu-tab" data-gu="stoic">🧘 Stoic Mind</button>
   </div>
 
   <!-- WHAT TO DO -->
@@ -1183,6 +1242,35 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
       <div class="gu-rule"><div class="gu-rule-num">8</div><div class="gu-rule-body"><div class="gu-rule-title">Confidence is a skill you build daily</div><div class="gu-rule-desc">Every gym session, every article you write, every goal you hit, every time you do something uncomfortable — that is confidence being built. It compounds. Give it 6 months of real effort.</div></div></div>
     </div>
   </div>
+
+  <!-- STOIC MIND -->
+  <div class="gu-section" id="gu-stoic">
+    <div class="gu-banner" style="background:linear-gradient(135deg,rgba(99,102,241,.1),rgba(16,185,129,.07));border:1px solid rgba(99,102,241,.25)">
+      🧘 <strong style="color:#818cf8">Stoic men don't chase — they attract.</strong> Watch this, then read the lessons below. This is the mindset that makes women come to you without you doing anything.
+    </div>
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;margin-bottom:28px;border:1px solid rgba(99,102,241,.2)">
+      <iframe src="https://www.youtube.com/embed/t54N4ftc1Kw" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="gu-section-title">🔑 Key Lessons — Stoic Men Do Nothing & Women Chase Them</div>
+    <div class="gu-rule-list">
+      <div class="gu-rule"><div class="gu-rule-num">1</div><div class="gu-rule-body"><div class="gu-rule-title">Do nothing — let her come to you</div><div class="gu-rule-desc">Stoic men don't chase. They focus on themselves. Their calm presence and purpose creates a pull that no amount of chasing can create. The less you pursue, the more you attract.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">2</div><div class="gu-rule-body"><div class="gu-rule-title">Silence is your biggest weapon</div><div class="gu-rule-desc">A man who speaks less is perceived as more confident and mysterious. Don't fill every silence. Don't over-explain. Let pauses breathe — they make everything you say land harder.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">3</div><div class="gu-rule-body"><div class="gu-rule-title">Never react emotionally</div><div class="gu-rule-desc">Stay calm when she tests you, when she is rude, when she ignores you. The man who doesn't get rattled is automatically the most powerful person in the room. Emotional control = leadership.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">4</div><div class="gu-rule-body"><div class="gu-rule-title">Your purpose is your biggest attraction</div><div class="gu-rule-desc">Gym, goals, money, discipline — when you are locked in on your mission, your energy shifts. Women can sense a man who is going somewhere. That energy is more attractive than any pickup line.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">5</div><div class="gu-rule-body"><div class="gu-rule-title">Don't be available 24/7</div><div class="gu-rule-desc">Scarcity creates desire. When you're always there, you have no value. Be busy. Have a life. Reply when you want to — not the second she texts. A man with priorities is attractive.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">6</div><div class="gu-rule-body"><div class="gu-rule-title">Indifference is magnetic</div><div class="gu-rule-desc">Not being desperate, not needing her approval, not caring if she likes you or not — this indifference is the single biggest attraction trigger. It communicates high value without words.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">7</div><div class="gu-rule-body"><div class="gu-rule-title">Control your mind, control your reality</div><div class="gu-rule-desc">Stoicism is not about being cold. It is about not being controlled by your emotions. Meditate. Observe your thoughts. The man who controls his inner world controls everything outside it.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">8</div><div class="gu-rule-body"><div class="gu-rule-title">Build in silence — let results make the noise</div><div class="gu-rule-desc">Don't announce your goals. Don't post every workout. Don't tell everyone your plans. Build quietly, then let your results speak. The sigma who appears out of nowhere is the most interesting man.</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- MANTRAS PANEL -->
+<div id="mantras-panel">
+  <h2>🕉️ Divine Mantras</h2>
+  <div class="mantras-sub">Sacred mantras of all the gods — for protection, strength, wealth, wisdom & liberation</div>
+  <div class="mantras-filter" id="mantras-filter"></div>
+  <div id="mantras-body"></div>
 </div>
 
 <!-- FOCUS MODE OVERLAY -->
@@ -2096,6 +2184,305 @@ function setMnActive(btn){
   btn.classList.add('mn-active');
 }
 
+/* ── MANTRAS DATA & PANEL ──────────────────────────────────────── */
+let mantrasBuilt = false;
+const DEITIES = [
+  {
+    key:'ganpati', name:'Lord Ganesha', lord:'Pratham Pujya', title:'Ganpati Bappa Morya',
+    emoji:'🐘', color:'#f5a623',
+    grad:'linear-gradient(135deg,rgba(245,166,35,.55) 0%,rgba(80,30,0,.9) 100%)',
+    desc:'Remover of Obstacles · God of New Beginnings · Lord of Wisdom & Intellect',
+    mantras:[
+      {name:'Mool Mantra',
+       deva:'ॐ गं गणपतये नमः',
+       roman:'Om Gan Ganapataye Namaha',
+       meaning:'I bow to Lord Ganesha, the remover of all obstacles — the prime deity of wisdom.',
+       howTo:'Chant 108 times every morning before starting any new work, project, or important day.',
+       benefits:['Removes obstacles from your path','Brings success in new endeavors','Sharpens intellect & memory','Blesses business and career growth','Destroys fear before big moments']},
+      {name:'Vakratunda Shloka',
+       deva:'वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।\nनिर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥',
+       roman:'Vakratunda Mahakaya Suryakoti Samaprabha.\nNirvighnam Kuru Me Deva Sarvakaryeshu Sarvada.',
+       meaning:'O Lord with a curved trunk and mighty body, brilliant as a crore of suns — please make all my endeavors free of obstacles, always.',
+       howTo:'Recite before any important task, interview, exam, or new project. Even once is powerful.',
+       benefits:['Clears the path ahead instantly','Removes fear before high-stakes situations','Ensures success in work and studies','Invoked before all Hindu rituals for a reason']},
+      {name:'Ganesh Gayatri',
+       deva:'ॐ एकदन्ताय विद्महे, वक्रतुण्डाय धीमहि,\nतन्नो दन्ती प्रचोदयात्।',
+       roman:'Om Ekadantaya Vidmahe, Vakratundaya Dhimahi,\nTanno Danti Prachodayat.',
+       meaning:'We meditate on the one-tusked Lord. May the curved-trunk one inspire and illuminate our minds.',
+       howTo:'Chant 21 times during morning meditation, especially before creative or intellectual work.',
+       benefits:['Awakens divine intelligence','Enhances focus and clarity of thought','Brings creative solutions to problems','Used by students, writers, and leaders']}
+    ]
+  },
+  {
+    key:'hanuman', name:'Lord Hanuman', lord:'Sankat Mochan', title:'Jai Bajrang Bali',
+    emoji:'🌟', color:'#ef4444',
+    grad:'linear-gradient(135deg,rgba(239,68,68,.55) 0%,rgba(80,10,0,.9) 100%)',
+    desc:'Symbol of Strength · Courage · Devotion · The Ultimate Protector',
+    mantras:[
+      {name:'Mool Mantra',
+       deva:'ॐ हं हनुमते नमः',
+       roman:'Om Han Hanumate Namaha',
+       meaning:'I bow to Lord Hanuman, the mighty and powerful one, the embodiment of devotion.',
+       howTo:'Chant 108 times, especially on Tuesdays and Saturdays. Light a diya while chanting.',
+       benefits:['Gives immense physical and mental strength','Removes all types of fear instantly','Protects from negative energies & black magic','Builds unshakeable self-confidence','Fulfills sincere prayers']},
+      {name:'Sankat Mochan Mantra',
+       deva:'ॐ नमो हनुमते रुद्रावताराय\nसर्वशत्रुसंहाराय सर्वरोगहराय\nरामदूताय स्वाहा',
+       roman:'Om Namo Hanumate Rudravataray\nSarvashatru Sanharay Sarvarogahray\nRamdutay Swaha',
+       meaning:'I invoke Hanuman, the avatar of Rudra — destroyer of all enemies, healer of all diseases, the eternal messenger of Ram.',
+       howTo:'Chant 11 times when facing enemies, obstacles, illness, or extreme fear.',
+       benefits:['Destroys obstacles created by enemies','Heals physical and mental illness','Overcomes opposition in life','Gives protection in dangerous situations']},
+      {name:'Bajrang Baan (Opening)',
+       deva:'निश्चय प्रेम प्रतीति ते, विनय करें सनमान।\nतेहि के कारज सकल शुभ, सिद्ध करें हनुमान॥',
+       roman:'Nischay Prem Prateeti Te, Vinay Karen Sanmaan.\nTehi Ke Karaj Sakal Shubh, Siddh Karen Hanumaan.',
+       meaning:'Whoever comes with true love, faith, and humility — Hanuman fulfills all their auspicious desires without fail.',
+       howTo:'Read the full Bajrang Baan on 40 consecutive Tuesdays for deeply transformative results.',
+       benefits:['Fulfills sincere desires','Removes deep-rooted fear','Protects home and family','Destroys evil eye and black magic','Creates a protective shield around you']}
+    ]
+  },
+  {
+    key:'shiva', name:'Lord Shiva', lord:'Mahadev · Neelkantha', title:'Har Har Mahadev',
+    emoji:'🕉️', color:'#6366f1',
+    grad:'linear-gradient(135deg,rgba(99,102,241,.55) 0%,rgba(0,10,60,.9) 100%)',
+    desc:'The Destroyer · The Transformer · Maha Yogi · Lord of Liberation',
+    mantras:[
+      {name:'Panchakshara — The Supreme Mantra',
+       deva:'ॐ नमः शिवाय',
+       roman:'Om Namah Shivaya',
+       meaning:'I bow to Lord Shiva — the supreme consciousness, the divine truth that lives within me.',
+       howTo:'Chant continuously anytime, anywhere. Especially Mondays, Shravan month, and Mahashivratri. 108 or 1008 times.',
+       benefits:['Destroys ego, negativity, and bad karma','Brings profound inner peace','Purifies mind body and soul','Removes sins and negative patterns','Connects you to your highest self','The most powerful mantra for this age']},
+      {name:'Mahamrityunjaya Mantra',
+       deva:'ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम्।\nउर्वारुकमिव बन्धनान् मृत्योर्मुक्षीय मामृतात्॥',
+       roman:'Om Tryambakam Yajamahe Sugandhim Pushtivardhanam.\nUrvarukamiva Bandhanan Mrityor Mukshiya Mamritat.',
+       meaning:'We worship the three-eyed Lord Shiva who nourishes all beings. May He liberate us from death, just as a ripe fruit falls freely from its vine.',
+       howTo:'Chant 108 times during illness, danger, fear, or loss of a loved one. Extremely powerful during morning hours.',
+       benefits:['Conquers fear of death and disease','Heals serious physical illness','Protects from accidents and sudden danger','Liberates from deep suffering','Brings peace during grief and loss']},
+      {name:'Shiva Gayatri',
+       deva:'ॐ तत्पुरुषाय विद्महे महादेवाय धीमहि\nतन्नो रुद्रः प्रचोदयात्।',
+       roman:'Om Tatpurushaya Vidmahe Mahadevaya Dhimahi\nTanno Rudrah Prachodayat.',
+       meaning:'We meditate on the Great Purusha, the Supreme Lord. May Rudra illuminate and inspire our intellect.',
+       howTo:'Chant facing east during sunrise. 21 or 108 times. Sit in stillness after chanting.',
+       benefits:['Awakens divine intelligence and intuition','Destroys all negativity in your environment','Opens the third eye of deep insight','Brings clarity during confusion and chaos']}
+    ]
+  },
+  {
+    key:'lakshmi', name:'Maa Lakshmi', lord:'Goddess of Wealth', title:'Jai Maa Lakshmi',
+    emoji:'🪷', color:'#ec4899',
+    grad:'linear-gradient(135deg,rgba(236,72,153,.5) 0%,rgba(245,166,35,.3) 0%, rgba(80,0,40,.9) 100%)',
+    desc:'Goddess of Wealth · Abundance · Fortune · Prosperity · Beauty',
+    mantras:[
+      {name:'Mool Mantra',
+       deva:'ॐ श्रीं महालक्ष्म्यै नमः',
+       roman:'Om Shreem Mahalakshmyai Namaha',
+       meaning:'I bow to the great Goddess Lakshmi, the divine mother of all abundance and fortune.',
+       howTo:'Chant 108 times every Friday evening. Light a diya facing north or east. Keep your wallet and home clean.',
+       benefits:['Attracts wealth and financial abundance','Opens new income streams','Brings prosperity to home and business','Removes financial debt and struggle','Invites good fortune into all areas']},
+      {name:'Lakshmi Beej Mantra',
+       deva:'ॐ ह्रीं श्रीं लक्ष्मीभयो नमः',
+       roman:'Om Hreem Shreem Lakshmibhayo Namaha',
+       meaning:'I invoke the divine energy of Lakshmi through the seed syllables of creation and fortune.',
+       howTo:'Chant 1008 times on Diwali or on any Friday of a new moon. Extremely powerful for wealth.',
+       benefits:['Removes deep financial blockages','Attracts unexpected money and opportunities','Activates multiple streams of income','Protects existing wealth from being lost']},
+      {name:'Shree Suktam — Opening Verse',
+       deva:'हिरण्यवर्णां हरिणीं सुवर्णरजतस्रजाम्।\nचन्द्रां हिरण्मयीं लक्ष्मीं जातवेदो म आवह॥',
+       roman:'Hiranyavarnam Harinim Suvarna Rajatasrajam.\nChandram Hiranyamayim Lakshmim Jatavedo Ma Avaha.',
+       meaning:'O divine fire, invoke for me that Lakshmi — golden in complexion, brilliant as the moon, adorned with garlands of gold and silver.',
+       howTo:'Recite the full Shree Suktam on Friday mornings for 11 consecutive weeks for profound wealth transformation.',
+       benefits:['The Vedic hymn to invoke Lakshmi','Removes poverty from the family lineage','Brings career growth and business success','Creates an aura of abundance around you']}
+    ]
+  },
+  {
+    key:'saraswati', name:'Maa Saraswati', lord:'Goddess of Knowledge', title:'Jai Maa Saraswati',
+    emoji:'🎵', color:'#60a5fa',
+    grad:'linear-gradient(135deg,rgba(96,165,250,.5) 0%,rgba(139,92,246,.35) 0%,rgba(0,10,60,.9) 100%)',
+    desc:'Goddess of Knowledge · Creativity · Arts · Learning · Speech',
+    mantras:[
+      {name:'Mool Mantra',
+       deva:'ॐ ऐं सरस्वत्यै नमः',
+       roman:'Om Aim Saraswatyai Namaha',
+       meaning:'I bow to Goddess Saraswati, the divine source of all knowledge, creativity, and wisdom.',
+       howTo:'Chant 108 times before studying, writing, creating content, or any intellectual work. Especially powerful before writing on Medium.',
+       benefits:['Sharpens memory and intellect dramatically','Improves writing and communication skills','Brings clarity of thought and expression','Blesses your content creation journey','Removes mental blocks and writer\'s block']},
+      {name:'Saraswati Vandana',
+       deva:'या कुन्देन्दुतुषारहारधवला या शुभ्रवस्त्रावृता।\nया वीणावरदण्डमण्डितकरा या श्वेतपद्मासना॥',
+       roman:'Ya Kundendutushara Haradhavala Ya Shubhravastravrita.\nYa Veenavara Dandamandita Kara Ya Shweta Padmasana.',
+       meaning:'She who is as white as jasmine and moonlight, draped in white, holding the sacred veena, seated on a white lotus — I bow to that Goddess.',
+       howTo:'Recite every morning before starting any creative or intellectual work. Basant Panchami is the most auspicious day.',
+       benefits:['Awakens creative genius inside you','Improves writing style and eloquence','Brings recognition for your intellect and art','Perfect for YouTube scripts, articles, speeches']}
+    ]
+  },
+  {
+    key:'durga', name:'Maa Durga', lord:'Adi Shakti', title:'Jai Maa Durga',
+    emoji:'⚡', color:'#f59e0b',
+    grad:'linear-gradient(135deg,rgba(239,68,68,.55) 0%,rgba(245,158,11,.3) 0%,rgba(70,0,0,.9) 100%)',
+    desc:'The Fierce Mother · Destroyer of Evil · Invincible Shakti · Protector',
+    mantras:[
+      {name:'Mool Mantra',
+       deva:'ॐ दुं दुर्गायै नमः',
+       roman:'Om Dum Durgayai Namaha',
+       meaning:'I bow to Goddess Durga, the invincible divine power that destroys all evil and protects the righteous.',
+       howTo:'Chant 108 times, especially during Navratri, Tuesdays, and whenever facing impossible situations.',
+       benefits:['Destroys enemies and negative forces instantly','Gives immense courage in frightening situations','Protects from evil eye and psychic attacks','Creates victory in the battles of life','Restores power to those who have been wronged']},
+      {name:'Durga Saptashati — Devi Kavach',
+       deva:'सर्वमङ्गलमाङ्गल्ये शिवे सर्वार्थसाधिके।\nशरण्ये त्र्यम्बके गौरी नारायणि नमोऽस्तु ते॥',
+       roman:'Sarva Mangala Mangalye Shive Sarvartha Sadhike.\nSharanya Tryambake Gauri Narayani Namostute.',
+       meaning:'O Goddess who brings auspiciousness to all, who fulfills all desires and is refuge of all — O three-eyed Gauri, I bow to you.',
+       howTo:'Chant during Navratri or when facing powerlessness, defeat, or deep injustice.',
+       benefits:['Brings auspiciousness in every area of life','Fulfills sincere and righteous desires','Removes all fear from the heart','Restores dignity, justice, and self-respect']}
+    ]
+  },
+  {
+    key:'ram', name:'Lord Ram', lord:'Maryada Purushottam', title:'Jai Shri Ram',
+    emoji:'🏹', color:'#10b981',
+    grad:'linear-gradient(135deg,rgba(16,185,129,.5) 0%,rgba(59,130,246,.3) 0%,rgba(0,40,20,.9) 100%)',
+    desc:'The Ideal Man · Embodiment of Dharma · Truth · Justice · Integrity',
+    mantras:[
+      {name:'Ram Naam — The Taraka Mantra',
+       deva:'राम राम राम राम राम राम\nराम राम राम राम राम राम',
+       roman:'Ram Ram Ram Ram Ram Ram\nRam Ram Ram Ram Ram Ram',
+       meaning:'The name of Ram alone is the greatest bridge across the ocean of life. Even Lord Shiva whispers Ram\'s name at the moment of every person\'s death.',
+       howTo:'Repeat continuously — while walking, before sleep, during any free moment. Writing "Ram" 108 times daily is also deeply transformative.',
+       benefits:['The most powerful name for liberation','Removes all types of sin and negative karma','Brings profound peace to a restless mind','Shankara gave this to souls at the moment of death']},
+      {name:'Ram Mool Mantra',
+       deva:'ॐ श्री रामाय नमः',
+       roman:'Om Shri Ramaya Namaha',
+       meaning:'I bow to Lord Ram — the perfect man, the embodiment of dharma, the one who lived with absolute integrity.',
+       howTo:'Chant 108 times daily. Ram represents the ideal character — chanting builds that character within you.',
+       benefits:['Builds truth and righteousness in your character','Strengthens integrity and moral courage','Removes anxiety and restlessness','Protects family and relationships','Gives calmness in moments of crisis']}
+    ]
+  },
+  {
+    key:'krishna', name:'Lord Krishna', lord:'Vasudeva · Govind', title:'Jai Shri Krishna',
+    emoji:'🪈', color:'#a78bfa',
+    grad:'linear-gradient(135deg,rgba(99,102,241,.55) 0%,rgba(139,92,246,.4) 0%,rgba(15,0,60,.9) 100%)',
+    desc:'Divine Love · Cosmic Wisdom · The Eternal Guru · Teacher of the Gita',
+    mantras:[
+      {name:'Dwadasakshari Mantra',
+       deva:'ॐ नमो भगवते वासुदेवाय',
+       roman:'Om Namo Bhagavate Vasudevaya',
+       meaning:'I bow to Lord Vasudeva — the one who lives in all beings, the eternal consciousness that pervades everything.',
+       howTo:'Chant 108 times daily. Especially powerful on Ekadashi and Janmashtami. Keep a tulsi plant near while chanting.',
+       benefits:['Opens the heart to divine love and compassion','Brings wisdom in the most complex decisions','Removes confusion and maya (illusion)','Attracts pure, genuine love and relationships','Reveals your true life purpose']},
+      {name:'Hare Krishna Maha Mantra',
+       deva:'हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे।\nहरे राम हरे राम राम राम हरे हरे॥',
+       roman:'Hare Krishna Hare Krishna Krishna Krishna Hare Hare.\nHare Rama Hare Rama Rama Rama Hare Hare.',
+       meaning:'O divine energy of the Lord, O Krishna, O Rama — please engage my consciousness in Your divine service.',
+       howTo:'Chant continuously. Minimum 16 rounds of 108 beads on a japa mala for full benefit. Even casual chanting brings immense peace.',
+       benefits:['The supreme mantra specifically for Kali Yuga (this age)','Purifies consciousness completely and rapidly','Brings profound, lasting inner peace','The fastest path to liberation according to scriptures','Destroys all material anxiety and false ego']}
+    ]
+  },
+];
+
+const RIGHT_PATH = {
+  why:[
+    {icon:'⚡',title:'The Compound Effect of Discipline',body:'Every single day you stay on your path — gym, content, spiritual practice, business — you don\'t grow linearly. You grow exponentially. <strong>1% better every day = 37x better in one year.</strong> The man who stays consistent for 3 years becomes someone his own past self wouldn\'t recognize.'},
+    {icon:'🧪',title:'God Tests With Obstacles — Not to Stop You',body:'Every time you face rejection, mockery, failure, or distraction — that is the universe\'s question: <strong>How serious are you?</strong> The test is not designed to break you. It is designed to reveal who you are. The ones who quit at the test never find out who they were about to become.'},
+    {icon:'🏆',title:'Your Mission is Bigger Than Any Distraction',body:'You are building your YouTube, your Medium, your business, your physique, your spiritual foundation. <strong>Every distraction costs you compound interest on your future.</strong> A woman who doesn\'t value you, office drama, mindless scrolling — these are not small detours. They are direct taxes on your destiny.'},
+    {icon:'🔱',title:'The Gita Principle — Do Your Duty',body:'Krishna told Arjuna: <em>"Do your duty without attachment to the result."</em> Your duty is to build your empire, stay fit, create content, practice your sadhana. <strong>Do it every day regardless of how you feel, what others think, or what results have come yet.</strong> The results will come. That is dharma.'},
+    {icon:'👑',title:'The Person You\'re Becoming Is Watching',body:'Your future self — the one 3 years from now — is watching every decision you make today. Every gym session you do or skip. Every article you write or don\'t. Every mantra you chant or ignore. <strong>You are either building him or betraying him.</strong> He\'s counting on you right now.'},
+    {icon:'🕉️',title:'Spiritual Practice + Worldly Success = Unstoppable',body:'The ones who combine genuine sadhana (spiritual practice) with real-world discipline become forces of nature. <strong>Hanuman had both — divine devotion AND immense physical power.</strong> Krishna was both — a philosopher AND a warrior. That combination is your path. Neither one alone is complete.'},
+  ],
+  distractions:[
+    {title:'📱 Mindless Scrolling',body:'Every hour of mindless scrolling is stolen from your empire. It doesn\'t rest your mind — it numbs it. The content you consume shapes who you become. <strong>Replace it:</strong> open your notes instead. Write your next Medium draft. Plan your next video. Your future income is hiding in those lost hours.'},
+    {title:'👥 People Who Mock Your Ambition',body:'When someone laughs at your goals, your business ideas, your formals, your entrepreneurship — they are not commenting on you. They are confessing their own ceiling. <strong>Do not try to convince them.</strong> The only response is to build silently and let results speak. In 3 years, you won\'t remember their name.'},
+    {title:'💭 Chasing One Person\'s Attention',body:'Spending your mental energy obsessing over whether one girl likes you, whether she saw your story, whether she replied — this is borrowed anxiety from a problem that doesn\'t even exist yet. <strong>A man building his empire doesn\'t have the bandwidth to obsess.</strong> Build yourself first. Attraction follows automatically.'},
+    {title:'⚡ Office Drama & Politics',body:'Office drama, gossip, and politics are designed to keep ordinary people ordinary. They create the illusion of importance while consuming the time and energy needed for actual growth. <strong>Be professional, be kind, and be completely indifferent to drama.</strong> Your next income stream won\'t come from office gossip.'},
+  ],
+  resolve:'<strong>The resolve of a Sigma man on the right path:</strong> I will not let what others say about me change what I do for myself. I will not let one bad day become a bad week. I will not let one rejection become a belief about my worth. I am building something that takes years — and I will show up every single day whether or not anyone is watching.',
+  daily:[
+    {t:'Morning mantra + 5 minutes of stillness',b:'Start before the world gets loud. Before phone, before news, before anyone else\'s agenda. Even 5 minutes of Om Namah Shivaya or Ram Nam sets the frequency for the day.'},
+    {t:'One gym session — no matter how short',b:'Even 20 minutes. The act of showing up when you don\'t feel like it is where character is built. The body is your first empire. Build it.'},
+    {t:'One piece of content created',b:'One paragraph. One short. One Quora answer. One YouTube idea written. Compounding begins the moment you start. The creator who posts 1000 times wins — you can\'t get to 1000 without starting today.'},
+    {t:'No self-comparison before bed',b:'At night, compare yourself only to who you were yesterday. Not to others on Instagram, not to people earning more. The only competition is the person you were 365 days ago.'},
+    {t:'Read or learn for 20 minutes',b:'Business, spirituality, investing, fitness — anything that fills your mind with something useful. Your future self\'s decisions will only be as good as what you\'ve put into your current mind.'},
+    {t:'Gratitude and surrender before sleep',b:'Thank God for the day, for your body, for your mind, for your ambition. Then release control. Say: "Jai Shri Ram" or "Om Namah Shivaya" as you fall asleep. Let the Divine handle what you cannot.'},
+  ]
+};
+
+function buildMantrasPanel(){
+  const filterEl = document.getElementById('mantras-filter');
+  const bodyEl = document.getElementById('mantras-body');
+
+  // Filter buttons
+  filterEl.innerHTML = `<button class="mf-btn active" style="background:linear-gradient(135deg,#f5a623,#a78bfa);border-color:transparent;color:#fff" data-key="all" onclick="filterMantras('all',this)">🕉️ All Deities</button>`
+    + DEITIES.map(d=>`<button class="mf-btn" data-key="${d.key}" onclick="filterMantras('${d.key}',this)">${d.emoji} ${d.name.split(' ').pop()}</button>`).join('')
+    + `<button class="mf-btn" data-key="rightpath" onclick="filterMantras('rightpath',this)">🔱 Right Path</button>`;
+
+  // Deity sections
+  let html = DEITIES.map(d=>`
+    <div class="deity-group" data-group="${d.key}">
+      <div class="deity-header" style="background:${d.grad}">
+        <div class="deity-portrait" style="background:radial-gradient(circle,rgba(255,255,255,.12),rgba(0,0,0,.3));box-shadow:0 0 30px ${d.color}55,inset 0 0 20px rgba(255,255,255,.05);--c:${d.color}">${d.emoji}</div>
+        <div class="deity-header-text">
+          <div class="deity-lord">${d.lord}</div>
+          <div class="deity-name">${d.name}</div>
+          <div class="deity-title" style="color:${d.color}">${d.title}</div>
+          <div class="deity-desc">${d.desc}</div>
+        </div>
+      </div>
+      <div class="mantra-grid">${d.mantras.map(m=>`
+        <div class="mantra-card">
+          <div class="mantra-card-name" style="color:${d.color}">${m.name}</div>
+          <div class="mantra-deva">${m.deva.replace(/\n/g,'<br>')}</div>
+          <div class="mantra-roman">${m.roman.replace(/\n/g,'<br>')}</div>
+          <div class="mantra-meaning">${m.meaning}</div>
+          <div class="mantra-benefits">${m.benefits.map(b=>`<span class="mantra-benefit-tag" style="border-color:${d.color}33;color:${d.color}">${b}</span>`).join('')}</div>
+          <div class="mantra-how"><strong>📿 How to use:</strong> ${m.howTo}</div>
+        </div>`).join('')}
+      </div>
+    </div>`).join('');
+
+  // Right Path section
+  html += `<div class="deity-group" data-group="rightpath">
+    <div class="rightpath-banner">
+      <div class="rightpath-om">🔱</div>
+      <div class="rightpath-title">Dharma — Stay on Your Right Path</div>
+      <div class="rightpath-sub">Why no distraction, no person, no failure, no mockery should ever pull you off the path you are building. This is your reminder. Read it whenever you feel weak.</div>
+    </div>
+    <div class="rightpath-grid">${RIGHT_PATH.why.map(c=>`
+      <div class="rp-card">
+        <div class="rp-card-icon">${c.icon}</div>
+        <div class="rp-card-title">${c.title}</div>
+        <div class="rp-card-body">${c.body}</div>
+      </div>`).join('')}
+    </div>
+    <div class="rp-distract">
+      <div class="rp-distract-title">🚫 What Is Really Distracting You</div>
+      <div class="rp-distract-grid">${RIGHT_PATH.distractions.map(c=>`
+        <div class="rp-distract-card">
+          <div class="rp-distract-card-title">${c.title}</div>
+          <div class="rp-distract-card-body">${c.body}</div>
+        </div>`).join('')}
+      </div>
+      <div class="rp-resolve">${RIGHT_PATH.resolve}</div>
+    </div>
+    <div class="rp-daily">
+      <div class="rp-daily-title">⚡ Your Daily Non-Negotiables</div>
+      <div class="rp-daily-list">${RIGHT_PATH.daily.map((d,i)=>`
+        <div class="rp-daily-item">
+          <div class="rp-daily-num">${i+1}</div>
+          <div class="rp-daily-text"><strong>${d.t}</strong><br>${d.b}</div>
+        </div>`).join('')}
+      </div>
+    </div>
+  </div>`;
+
+  bodyEl.innerHTML = html;
+}
+
+function filterMantras(key, btn){
+  document.querySelectorAll('.mf-btn').forEach(b=>{
+    b.classList.remove('active');
+    b.style.background=''; b.style.borderColor=''; b.style.color='';
+  });
+  btn.classList.add('active');
+  btn.style.background='linear-gradient(135deg,#f5a623,#a78bfa)';
+  btn.style.borderColor='transparent'; btn.style.color='#fff';
+  document.querySelectorAll('.deity-group').forEach(g=>{
+    g.classList.toggle('hidden', key!=='all' && g.dataset.group!==key);
+  });
+}
+
 /* ── COUNT-UP ANIMATION ────────────────────────────────────────── */
 function countUp(el, target, ms=1200){
   let s=null;
@@ -2696,7 +3083,7 @@ document.querySelectorAll('.tab').forEach(tab => {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     activeCat = tab.dataset.cat;
-    const specialPanels = ['chalisa','gym','bucket','manifest','world','photos','book','milestones','affcards','empire','glowup','daily'];
+    const specialPanels = ['chalisa','gym','bucket','manifest','world','photos','book','milestones','affcards','empire','glowup','daily','mantras'];
     const isSpecial = specialPanels.includes(activeCat);
     gridEl.style.display = isSpecial ? 'none' : '';
     chalisaPanel.style.display   = activeCat==='chalisa'    ? 'block' : 'none';
@@ -2714,6 +3101,8 @@ document.querySelectorAll('.tab').forEach(tab => {
     if(activeCat==='empire' && !empireBuilt){ buildEmpirePanel(); empireBuilt=true; }
     if(activeCat==='glowup' && !glowupBuilt){ buildGlowupPanel(); glowupBuilt=true; }
     if(activeCat==='daily'){ buildDailyPanel(); renderStreak(); }
+    document.getElementById('mantras-panel').style.display = activeCat==='mantras' ? 'block' : 'none';
+    if(activeCat==='mantras' && !mantrasBuilt){ buildMantrasPanel(); mantrasBuilt=true; }
     if(activeCat==='gym'    && !gymBuilt)   { buildGymPanel();    gymBuilt=true; }
     if(activeCat==='bucket' && !bucketBuilt){ buildBucketPanel(); bucketBuilt=true; }
     if(!isSpecial) applyFilter();
