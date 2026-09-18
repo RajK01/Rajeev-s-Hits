@@ -956,27 +956,168 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
   <div class="photos-empty" id="photos-empty">No photos yet. Upload your vision images — luxury, goals, travel, anything that inspires you.</div>
 </div>
 
-<!-- Book of Month Panel -->
+<!-- Book Library Panel -->
 <div id="book-panel">
-  <div class="book-card" id="book-display">
-    <img class="book-cover-img" id="book-cover-img" src="" alt="Book Cover">
-    <div class="book-info">
-      <div class="book-title-el" id="book-title-el">No book set yet</div>
-      <div class="book-author-el" id="book-author-el">Add your current read below</div>
-      <div class="bprog-label">Reading Progress</div>
-      <div class="bprog-bar"><div class="bprog-fill" id="bprog-fill" style="width:0%"></div></div>
-      <span class="bprog-pct" id="bprog-pct">0%</span>
-      <div class="book-quotes-list" id="book-quotes-list"></div>
+  <h2 style="text-align:center;margin-bottom:8px">📚 My Book Library</h2>
+  <p style="text-align:center;color:rgba(255,255,255,.4);font-size:.85rem;margin-bottom:28px">Books that are shaping my mind. Click to read.</p>
+  <div style="display:flex;flex-direction:column;gap:14px">
+
+    <!-- GoPro -->
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+        <div style="font-size:1.6rem;width:40px;text-align:center">📘</div>
+        <div><div style="font-weight:800;color:#fff;font-size:1rem">GoPro</div><div style="font-size:.78rem;color:rgba(255,255,255,.35);margin-top:2px">Eric Worre</div></div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <a href="https://drive.google.com/file/d/1i6Gt9eORniUlBIBNWXiu827k6S1QDj4n/view" target="_blank" style="flex:1;text-align:center;padding:8px;background:rgba(245,166,35,.15);border:1px solid rgba(245,166,35,.4);border-radius:10px;color:#fbbf24;font-size:.78rem;font-weight:700;text-decoration:none">📄 PDF</a>
+        <a href="https://www.youtube.com/watch?v=sy4hhBviKMI" target="_blank" style="flex:1;text-align:center;padding:8px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);border-radius:10px;color:#f87171;font-size:.78rem;font-weight:700;text-decoration:none">▶ YouTube</a>
+      </div>
     </div>
-  </div>
-  <div class="book-edit-form">
-    <h3>📝 Update Book</h3>
-    <div class="bfield"><label>Book Title</label><input id="b-title" placeholder="e.g. Think and Grow Rich"></div>
-    <div class="bfield"><label>Author</label><input id="b-author" placeholder="e.g. Napoleon Hill"></div>
-    <div class="bfield"><label>Cover Image URL</label><input id="b-cover" placeholder="https://...cover image url..."></div>
-    <div class="bfield"><label>Progress <span id="book-pct-val">0%</span></label><input type="range" id="b-progress" min="0" max="100" value="0"></div>
-    <div class="bfield"><label>Key Quotes (one per line)</label><textarea id="b-quotes" placeholder="Enter your favourite quotes from this book..."></textarea></div>
-    <button class="book-save-btn" id="book-save-btn">💾 Save Book</button>
+
+    <!-- Construyendo un Imperio -->
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+        <div style="font-size:1.6rem;width:40px;text-align:center">📗</div>
+        <div><div style="font-weight:800;color:#fff;font-size:1rem">Construyendo un Imperio</div><div style="font-size:.78rem;color:rgba(255,255,255,.35);margin-top:2px">Building an Empire</div></div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <div style="flex:1;text-align:center;padding:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:rgba(255,255,255,.3);font-size:.78rem;font-weight:700">📄 PDF soon</div>
+        <a href="https://www.youtube.com/watch?v=aEmSOLgai3E" target="_blank" style="flex:1;text-align:center;padding:8px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);border-radius:10px;color:#f87171;font-size:.78rem;font-weight:700;text-decoration:none">▶ YouTube</a>
+      </div>
+    </div>
+
+    <!-- Talking with Psychopaths -->
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+        <div style="font-size:1.6rem;width:40px;text-align:center">📕</div>
+        <div><div style="font-weight:800;color:#fff;font-size:1rem">Talking with Psychopaths & Savages</div><div style="font-size:.78rem;color:rgba(255,255,255,.35);margin-top:2px">Christopher Berry-Dee</div></div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <div style="flex:1;text-align:center;padding:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:rgba(255,255,255,.3);font-size:.78rem;font-weight:700">📄 PDF soon</div>
+        <a href="https://www.youtube.com/watch?v=ePBsp5NJ01I" target="_blank" style="flex:1;text-align:center;padding:8px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);border-radius:10px;color:#f87171;font-size:.78rem;font-weight:700;text-decoration:none">▶ YouTube</a>
+      </div>
+    </div>
+
+    <!-- Art of Persuasion -->
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+        <div style="font-size:1.6rem;width:40px;text-align:center">📙</div>
+        <div><div style="font-weight:800;color:#fff;font-size:1rem">The Art of Persuasion</div><div style="font-size:.78rem;color:rgba(255,255,255,.35);margin-top:2px">Bob Burg</div></div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <div style="flex:1;text-align:center;padding:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:rgba(255,255,255,.3);font-size:.78rem;font-weight:700">📄 PDF soon</div>
+        <a href="https://www.youtube.com/watch?v=cta_R2T0R_o" target="_blank" style="flex:1;text-align:center;padding:8px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);border-radius:10px;color:#f87171;font-size:.78rem;font-weight:700;text-decoration:none">▶ YouTube</a>
+      </div>
+    </div>
+
+    <!-- Law of Human Nature -->
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+        <div style="font-size:1.6rem;width:40px;text-align:center">📓</div>
+        <div><div style="font-weight:800;color:#fff;font-size:1rem">The Law of Human Nature</div><div style="font-size:.78rem;color:rgba(255,255,255,.35);margin-top:2px">Robert Greene</div></div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <div style="flex:1;text-align:center;padding:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:rgba(255,255,255,.3);font-size:.78rem;font-weight:700">📄 PDF soon</div>
+        <a href="https://www.youtube.com/watch?v=E7w3Zn8h8AY" target="_blank" style="flex:1;text-align:center;padding:8px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);border-radius:10px;color:#f87171;font-size:.78rem;font-weight:700;text-decoration:none">▶ YouTube</a>
+      </div>
+    </div>
+
+    <!-- Courage to Be Disliked -->
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+        <div style="font-size:1.6rem;width:40px;text-align:center">📘</div>
+        <div><div style="font-weight:800;color:#fff;font-size:1rem">The Courage to Be Disliked</div><div style="font-size:.78rem;color:rgba(255,255,255,.35);margin-top:2px">Ichiro Kishimi</div></div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <a href="https://cdn.bookey.app/files/pdf/book/en/the-courage-to-be-disliked.pdf" target="_blank" style="flex:1;text-align:center;padding:8px;background:rgba(245,166,35,.15);border:1px solid rgba(245,166,35,.4);border-radius:10px;color:#fbbf24;font-size:.78rem;font-weight:700;text-decoration:none">📄 PDF</a>
+        <a href="https://www.youtube.com/watch?v=ZkLKnTxdSjo" target="_blank" style="flex:1;text-align:center;padding:8px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);border-radius:10px;color:#f87171;font-size:.78rem;font-weight:700;text-decoration:none">▶ YouTube</a>
+      </div>
+    </div>
+
+    <!-- How to Win Friends -->
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+        <div style="font-size:1.6rem;width:40px;text-align:center">📗</div>
+        <div><div style="font-weight:800;color:#fff;font-size:1rem">How to Win Friends & Influence People</div><div style="font-size:.78rem;color:rgba(255,255,255,.35);margin-top:2px">Dale Carnegie</div></div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <a href="https://infobooks.org/book/how-to-win-friends-and-influence-people-dale-carnegie/" target="_blank" style="flex:1;text-align:center;padding:8px;background:rgba(245,166,35,.15);border:1px solid rgba(245,166,35,.4);border-radius:10px;color:#fbbf24;font-size:.78rem;font-weight:700;text-decoration:none">📄 PDF</a>
+        <a href="https://www.youtube.com/watch?v=d9zUVFzPtJ4" target="_blank" style="flex:1;text-align:center;padding:8px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);border-radius:10px;color:#f87171;font-size:.78rem;font-weight:700;text-decoration:none">▶ YouTube</a>
+      </div>
+    </div>
+
+    <!-- 48 Laws of Power -->
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+        <div style="font-size:1.6rem;width:40px;text-align:center">📕</div>
+        <div><div style="font-weight:800;color:#fff;font-size:1rem">Power (48 Laws of Power)</div><div style="font-size:.78rem;color:rgba(255,255,255,.35);margin-top:2px">Robert Greene</div></div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <div style="flex:1;text-align:center;padding:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:rgba(255,255,255,.3);font-size:.78rem;font-weight:700">📄 PDF soon</div>
+        <a href="https://www.youtube.com/watch?v=Su36tpkuo1I" target="_blank" style="flex:1;text-align:center;padding:8px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);border-radius:10px;color:#f87171;font-size:.78rem;font-weight:700;text-decoration:none">▶ YouTube</a>
+      </div>
+    </div>
+
+    <!-- Start With Why -->
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+        <div style="font-size:1.6rem;width:40px;text-align:center">📙</div>
+        <div><div style="font-weight:800;color:#fff;font-size:1rem">Start With Why</div><div style="font-size:.78rem;color:rgba(255,255,255,.35);margin-top:2px">Simon Sinek</div></div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <div style="flex:1;text-align:center;padding:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:rgba(255,255,255,.3);font-size:.78rem;font-weight:700">📄 PDF soon</div>
+        <a href="https://www.youtube.com/watch?v=Wb8KpHqU5tg" target="_blank" style="flex:1;text-align:center;padding:8px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);border-radius:10px;color:#f87171;font-size:.78rem;font-weight:700;text-decoration:none">▶ YouTube</a>
+      </div>
+    </div>
+
+    <!-- 30 Years of Marketing -->
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+        <div style="font-size:1.6rem;width:40px;text-align:center">📓</div>
+        <div><div style="font-weight:800;color:#fff;font-size:1rem">30 Years of Marketing</div><div style="font-size:.78rem;color:rgba(255,255,255,.35);margin-top:2px">Book Summary</div></div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <div style="flex:1;text-align:center;padding:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:rgba(255,255,255,.3);font-size:.78rem;font-weight:700">📄 PDF soon</div>
+        <a href="https://www.youtube.com/watch?v=9VlvbpXwLJs" target="_blank" style="flex:1;text-align:center;padding:8px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);border-radius:10px;color:#f87171;font-size:.78rem;font-weight:700;text-decoration:none">▶ YouTube</a>
+      </div>
+    </div>
+
+    <!-- Millionaire Mind -->
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+        <div style="font-size:1.6rem;width:40px;text-align:center">📘</div>
+        <div><div style="font-weight:800;color:#fff;font-size:1rem">The Secrets of the Millionaire Mind</div><div style="font-size:.78rem;color:rgba(255,255,255,.35);margin-top:2px">T. Harv Eker</div></div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <div style="flex:1;text-align:center;padding:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:rgba(255,255,255,.3);font-size:.78rem;font-weight:700">📄 PDF soon</div>
+        <a href="https://www.youtube.com/watch?v=vLLTJiSg_1g" target="_blank" style="flex:1;text-align:center;padding:8px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);border-radius:10px;color:#f87171;font-size:.78rem;font-weight:700;text-decoration:none">▶ YouTube</a>
+      </div>
+    </div>
+
+    <!-- Think and Grow Rich -->
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+        <div style="font-size:1.6rem;width:40px;text-align:center">📗</div>
+        <div><div style="font-weight:800;color:#fff;font-size:1rem">Think and Grow Rich</div><div style="font-size:.78rem;color:rgba(255,255,255,.35);margin-top:2px">Napoleon Hill</div></div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <a href="https://studylib.net/doc/28887127/napoleon-hill---think-grow-rich" target="_blank" style="flex:1;text-align:center;padding:8px;background:rgba(245,166,35,.15);border:1px solid rgba(245,166,35,.4);border-radius:10px;color:#fbbf24;font-size:.78rem;font-weight:700;text-decoration:none">📄 PDF</a>
+        <a href="https://www.youtube.com/watch?v=dIgz7DKWx5s" target="_blank" style="flex:1;text-align:center;padding:8px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);border-radius:10px;color:#f87171;font-size:.78rem;font-weight:700;text-decoration:none">▶ YouTube</a>
+      </div>
+    </div>
+
+    <!-- The Money Trap -->
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+        <div style="font-size:1.6rem;width:40px;text-align:center">📕</div>
+        <div><div style="font-weight:800;color:#fff;font-size:1rem">The Money Trap</div><div style="font-size:.78rem;color:rgba(255,255,255,.35);margin-top:2px">Book Summary</div></div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <a href="https://www.academia.edu/106955015/The_Money_Trap" target="_blank" style="flex:1;text-align:center;padding:8px;background:rgba(245,166,35,.15);border:1px solid rgba(245,166,35,.4);border-radius:10px;color:#fbbf24;font-size:.78rem;font-weight:700;text-decoration:none">📄 PDF</a>
+        <a href="https://www.youtube.com/watch?v=BB6O9yu51Z8" target="_blank" style="flex:1;text-align:center;padding:8px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);border-radius:10px;color:#f87171;font-size:.78rem;font-weight:700;text-decoration:none">▶ YouTube</a>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -1142,6 +1283,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
     <button class="gu-tab" data-gu="nomrniceguy">📖 No More Nice Guy</button>
     <button class="gu-tab" data-gu="oldermenway">👴 Older Men</button>
     <button class="gu-tab" data-gu="stealthwealth">💲 Stealth Wealth</button>
+    <button class="gu-tab" data-gu="attractiontriggers">🧠 Attraction Triggers</button>
   </div>
 
   <!-- WHAT TO DO -->
@@ -1367,6 +1509,27 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
       <div class="gu-rule"><div class="gu-rule-num">10</div><div class="gu-rule-body"><div class="gu-rule-title">Set boundaries</div><div class="gu-rule-desc">Say no without guilt. Boundaries are not walls — they are self-respect made visible. Nice Guys have no boundaries because they fear rejection. But men without boundaries get walked over repeatedly. Know what you will and won't accept. Communicate it calmly. Enforce it consistently. That is a man with standards.</div></div></div>
       <div class="gu-rule"><div class="gu-rule-num">11</div><div class="gu-rule-body"><div class="gu-rule-title">Pursue your purpose</div><div class="gu-rule-desc">A man with a mission is magnetic. A man who exists only to please others is invisible. Find what you are building — your career, your craft, your legacy — and pursue it with total focus. When your life has direction and purpose, everything else — confidence, attraction, respect — follows automatically.</div></div></div>
       <div class="gu-rule"><div class="gu-rule-num">12</div><div class="gu-rule-body"><div class="gu-rule-title">Be direct — not passive aggressive</div><div class="gu-rule-desc">Ask for what you want directly. Stop hinting, sulking, withdrawing or manipulating to get your needs met. Direct communication is a sign of strength and self-respect. People who matter will respect your directness. People who don't — you don't need their approval anyway. Say what you mean. Mean what you say.</div></div></div>
+    </div>
+  </div>
+
+  <!-- ATTRACTION TRIGGERS -->
+  <div class="gu-section" id="gu-attractiontriggers">
+    <div class="gu-banner" style="background:linear-gradient(135deg,rgba(99,102,241,.12),rgba(236,72,153,.07));border:1px solid rgba(99,102,241,.3)">
+      🧠 <strong style="color:#818cf8">Most men focus on the wrong things.</strong> Attraction is not about looks or money. It's psychology — triggers that fire in her brain before she even knows why. Learn what actually works.
+    </div>
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;margin-bottom:28px;border:1px solid rgba(99,102,241,.2)">
+      <iframe src="https://www.youtube.com/embed/MNc7VklBTNU" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="gu-section-title">🔑 The Psychology of Irresistible Attraction</div>
+    <div class="gu-rule-list">
+      <div class="gu-rule"><div class="gu-rule-num">1</div><div class="gu-rule-body"><div class="gu-rule-title">Confidence is the #1 trigger — not looks</div><div class="gu-rule-desc">Women are wired to be attracted to confidence above almost everything else. Not arrogance — genuine self-assurance. The man who walks in knowing his worth, makes eye contact without flinching, and speaks without seeking approval triggers attraction instantly. Looks fade. Confidence compounds.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">2</div><div class="gu-rule-body"><div class="gu-rule-title">Mystery activates her imagination</div><div class="gu-rule-desc">The brain is wired to obsess over what it cannot fully read. The man who reveals everything immediately is boring. The man who is calm, present and slightly unreadable becomes fascinating. Don't explain yourself. Don't overshare. Let her wonder. Mystery is a magnet.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">3</div><div class="gu-rule-body"><div class="gu-rule-title">Status signals fire deep attraction</div><div class="gu-rule-desc">Status is not just money — it's how others treat you, how you carry yourself, how you lead in a room. When she sees others respecting you, deferring to you, listening when you speak — her attraction triggers automatically. Build real status through competence, leadership and composure.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">4</div><div class="gu-rule-body"><div class="gu-rule-title">Unpredictability keeps her engaged</div><div class="gu-rule-desc">Predictable men are ignored. The brain stops paying attention to what it can fully predict. Vary your energy — sometimes warm, sometimes reserved. Not as a game, but because you genuinely have a full life that doesn't revolve around her. Unpredictability is not manipulation — it's having a real identity.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">5</div><div class="gu-rule-body"><div class="gu-rule-title">Physical presence — not just looks</div><div class="gu-rule-desc">How you occupy space matters more than your features. Upright posture, slow deliberate movement, calm breathing, strong eye contact — these signal dominance and health at a subconscious level. Before you say a word, your body has already made an impression. Train your presence like you train your body.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">6</div><div class="gu-rule-body"><div class="gu-rule-title">Challenge — don't be too easy</div><div class="gu-rule-desc">Humans value what they have to work for. When everything is too available, too agreeable, too easy — it loses value. The man who has standards, who doesn't jump at every opportunity, who makes her earn his real attention — is the man she thinks about. Challenge is not cruelty. It is self-respect.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">7</div><div class="gu-rule-body"><div class="gu-rule-title">Emotional security is deeply attractive</div><div class="gu-rule-desc">Women are highly attuned to emotional stability. A man who doesn't panic, doesn't need reassurance, doesn't react with anxiety or neediness in tense moments — is felt as deeply safe and attractive. Emotional regulation is not coldness. It is the sign of a man who has done real inner work.</div></div></div>
+      <div class="gu-rule"><div class="gu-rule-num">8</div><div class="gu-rule-body"><div class="gu-rule-title">Purpose is the ultimate trigger</div><div class="gu-rule-desc">The single most attractive thing a man can have is a mission he cares about more than her approval. A man deeply invested in his work, his growth, his vision — is magnetic in a way that no technique can replicate. Purpose is not a trick. It is the foundation that makes every other trigger real.</div></div></div>
     </div>
   </div>
 
