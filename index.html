@@ -805,8 +805,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
     <button class="tab" data-cat="spiritual">🕉️ Spiritual</button>
     <button class="tab" data-cat="manifest">✨ I AM Living It</button>
     <button class="tab" data-cat="world">🗺️ World Map</button>
-    <button class="tab" data-cat="photos">📸 My Photos</button>
-    <button class="tab" data-cat="book">📖 My Book</button>
+    <button class="tab" data-cat="photosbooks">📸 Photos & Books</button>
     <button class="tab" data-cat="affcards">🎴 Aff. Cards</button>
     <button class="tab" data-cat="empire">👑 My Empire</button>
     <button class="tab" data-cat="glowup">🔥 Sigma Glow Up</button>
@@ -4108,7 +4107,7 @@ document.querySelectorAll('.tab').forEach(tab => {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     activeCat = tab.dataset.cat;
-    const specialPanels = ['spiritual','gym','bucket','manifest','world','photos','book','milestones','affcards','empire','glowup','daily'];
+    const specialPanels = ['spiritual','gym','bucket','manifest','world','photosbooks','milestones','affcards','empire','glowup','daily'];
     const isSpecial = specialPanels.includes(activeCat);
     gridEl.style.display = isSpecial ? 'none' : '';
     chalisaPanel.style.display   = activeCat==='spiritual'  ? 'block' : 'none';
@@ -4116,8 +4115,8 @@ document.querySelectorAll('.tab').forEach(tab => {
     bucketPanel.style.display    = activeCat==='bucket'     ? 'block' : 'none';
     document.getElementById('manifest-panel').style.display   = activeCat==='manifest'   ? 'block' : 'none';
     document.getElementById('world-panel').style.display      = activeCat==='world'      ? 'block' : 'none';
-    document.getElementById('photos-panel').style.display     = activeCat==='photos'     ? 'block' : 'none';
-    document.getElementById('book-panel').style.display       = activeCat==='book'       ? 'block' : 'none';
+    document.getElementById('photos-panel').style.display     = activeCat==='photosbooks' ? 'block' : 'none';
+    document.getElementById('book-panel').style.display       = activeCat==='photosbooks' ? 'block' : 'none';
     document.getElementById('milestones-panel').style.display = activeCat==='milestones' ? 'block' : 'none';
     document.getElementById('affcards-panel').style.display   = activeCat==='affcards'   ? 'block' : 'none';
     document.getElementById('empire-panel').style.display     = activeCat==='empire'     ? 'block' : 'none';
