@@ -804,7 +804,6 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
     <button class="tab" data-cat="bucket">✨ Bucket List</button>
     <button class="tab" data-cat="spiritual">🕉️ Spiritual</button>
     <button class="tab" data-cat="manifest">✨ I AM Living It</button>
-    <button class="tab" data-cat="world">🗺️ World Map</button>
     <button class="tab" data-cat="photosbooks">📸 Photos & Books</button>
     <button class="tab" data-cat="affcards">🎴 Aff. Cards</button>
     <button class="tab" data-cat="empire">👑 My Empire</button>
@@ -4107,7 +4106,7 @@ document.querySelectorAll('.tab').forEach(tab => {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     activeCat = tab.dataset.cat;
-    const specialPanels = ['spiritual','gym','bucket','manifest','world','photosbooks','milestones','affcards','empire','glowup','daily'];
+    const specialPanels = ['spiritual','gym','bucket','manifest','photosbooks','milestones','affcards','empire','glowup','daily'];
     const isSpecial = specialPanels.includes(activeCat);
     gridEl.style.display = isSpecial ? 'none' : '';
     chalisaPanel.style.display   = activeCat==='spiritual'  ? 'block' : 'none';
