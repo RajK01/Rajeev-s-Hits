@@ -3010,20 +3010,13 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-size:.72r
   <!-- TALK TO HER -->
   <div class="gu-section" id="gu-talktoher">
     <div class="gu-banner" style="background:linear-gradient(135deg,rgba(16,185,129,.1),rgba(59,130,246,.06));border:1px solid rgba(16,185,129,.25)">
-      💬 <strong style="color:#34d399">50 Places. 50 Questions each. 2,500 real conversation starters for strangers.</strong> Pick a place, pick a question, go talk to her. No more "I didn't know what to say."
+      💬 <strong style="color:#34d399">50 Places. 50 Questions each.</strong> Tap any place below — get all conversation starters instantly. No more "I didn't know what to say."
     </div>
-    <div style="margin-bottom:20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-      <input id="tth-search" type="text" placeholder="🔍 Search a place..." oninput="tthFilter()" style="flex:1;min-width:200px;padding:10px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:10px;color:#fff;font-size:.9rem;outline:none">
-      <button onclick="tthRandom()" style="padding:10px 18px;background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.4);border-radius:10px;color:#34d399;font-weight:700;font-size:.85rem;cursor:pointer">🎲 Random Place</button>
-    </div>
-    <div id="tth-place-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:24px"></div>
-    <div id="tth-questions-panel" style="display:none">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px">
-        <div id="tth-place-title" style="font-size:1.1rem;font-weight:800;color:#34d399"></div>
-        <button onclick="document.getElementById('tth-questions-panel').style.display='none';document.getElementById('tth-place-grid').style.display='grid'" style="padding:7px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:8px;color:rgba(255,255,255,.6);font-size:.82rem;cursor:pointer">← Back to Places</button>
-      </div>
-      <div id="tth-place-tip" style="background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.2);border-radius:12px;padding:14px 18px;margin-bottom:18px;color:rgba(255,255,255,.75);font-size:.88rem;line-height:1.7"></div>
-      <div id="tth-q-list" style="display:grid;gap:8px"></div>
+    <div id="tth-tab-row" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px"></div>
+    <div id="tth-content" style="display:none">
+      <div id="tth-tip" style="background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.2);border-radius:12px;padding:14px 18px;margin-bottom:14px;color:rgba(255,255,255,.75);font-size:.88rem;line-height:1.7"></div>
+      <div id="tth-title" style="font-size:1rem;font-weight:800;color:#34d399;margin-bottom:14px"></div>
+      <div id="tth-qlist" style="display:grid;gap:8px"></div>
     </div>
   </div>
 
@@ -4849,49 +4842,39 @@ function buildBucketPanel(){
       q:['Is the wait always this long here?','Are you using [app] or a regular cab?','Do you find [app] reliable in this city?','Do you usually take cabs or prefer other transport?','Is this your neighbourhood or are you visiting?','What\'s the best way to get around this city in your opinion?','Have you had any interesting taxi drivers here?','Do you think surge pricing is ever justified?','What do you usually do during a taxi ride?','Is there a part of this city you think is underrated?','How long have you been in this city?','Do you prefer knowing the city by map or asking locals?','What\'s the best local tip you\'ve been given here?','Is there a restaurant or spot nearby you\'d recommend?','Do you commute a lot or work closer to home?','What\'s the last spontaneous decision you made about where you were going?','Do you think cities should invest in more cycling infrastructure?','Have you ever had a driver give you surprisingly good advice?','What\'s the most memorable cab ride you\'ve had?','Where are you headed — somewhere good?'] }
   ];
 
-  function tthRender(places){
-    const grid = document.getElementById('tth-place-grid');
-    grid.innerHTML = '';
-    places.forEach(p => {
-      const btn = document.createElement('button');
-      btn.innerHTML = p.name;
-      btn.onclick = () => tthShowPlace(p);
-      btn.style.cssText = 'padding:12px 10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:12px;color:rgba(255,255,255,.85);font-size:.83rem;font-weight:600;cursor:pointer;text-align:center;line-height:1.4;transition:all .2s';
-      btn.onmouseenter = () => { btn.style.background='rgba(16,185,129,.12)'; btn.style.borderColor='rgba(16,185,129,.4)'; btn.style.color='#34d399'; };
-      btn.onmouseleave = () => { btn.style.background='rgba(255,255,255,.04)'; btn.style.borderColor='rgba(255,255,255,.12)'; btn.style.color='rgba(255,255,255,.85)'; };
-      grid.appendChild(btn);
+  (function(){
+    var row = document.getElementById('tth-tab-row');
+    if(!row) return;
+    TTH_PLACES.forEach(function(p, i){
+      var btn = document.createElement('button');
+      btn.className = 'tth-ptab';
+      btn.textContent = p.name;
+      btn.setAttribute('data-tth', i);
+      btn.style.cssText = 'padding:8px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);color:rgba(255,255,255,.6);font-size:.78rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .18s';
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.tth-ptab').forEach(function(b){ b.style.background='rgba(255,255,255,.05)'; b.style.borderColor='rgba(255,255,255,.14)'; b.style.color='rgba(255,255,255,.6)'; });
+        btn.style.background='linear-gradient(135deg,#10b981,#059669)';
+        btn.style.borderColor='transparent';
+        btn.style.color='#fff';
+        var content = document.getElementById('tth-content');
+        content.style.display = 'block';
+        document.getElementById('tth-tip').innerHTML = '💡 <strong>Approach tip:</strong> ' + p.tip;
+        document.getElementById('tth-title').textContent = p.name + ' — ' + p.q.length + ' conversation starters';
+        var list = document.getElementById('tth-qlist');
+        list.innerHTML = '';
+        p.q.forEach(function(q, qi){
+          var card = document.createElement('div');
+          card.style.cssText = 'background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:11px 16px;display:flex;align-items:flex-start;gap:12px;transition:all .15s';
+          card.innerHTML = '<span style="color:rgba(16,185,129,.7);font-weight:700;font-size:.78rem;min-width:24px;margin-top:2px">'+(qi+1)+'</span><span style="color:rgba(255,255,255,.8);font-size:.88rem;line-height:1.6">'+q+'</span>';
+          card.onmouseenter = function(){ card.style.background='rgba(16,185,129,.07)'; card.style.borderColor='rgba(16,185,129,.25)'; };
+          card.onmouseleave = function(){ card.style.background='rgba(255,255,255,.04)'; card.style.borderColor='rgba(255,255,255,.09)'; };
+          list.appendChild(card);
+        });
+        content.scrollIntoView({behavior:'smooth', block:'nearest'});
+      });
+      row.appendChild(btn);
     });
-  }
-
-  function tthShowPlace(p){
-    document.getElementById('tth-place-grid').style.display = 'none';
-    document.getElementById('tth-questions-panel').style.display = 'block';
-    document.getElementById('tth-place-title').textContent = p.name + ' — ' + p.q.length + ' conversation starters';
-    document.getElementById('tth-place-tip').innerHTML = '💡 <strong>Approach tip:</strong> ' + p.tip;
-    const list = document.getElementById('tth-q-list');
-    list.innerHTML = '';
-    p.q.forEach((q, i) => {
-      const card = document.createElement('div');
-      card.style.cssText = 'background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:11px 16px;display:flex;align-items:flex-start;gap:12px;cursor:pointer;transition:all .15s';
-      card.innerHTML = '<span style="color:rgba(16,185,129,.7);font-weight:700;font-size:.78rem;min-width:24px;margin-top:1px">' + (i+1) + '</span><span style="color:rgba(255,255,255,.8);font-size:.88rem;line-height:1.6">' + q + '</span>';
-      card.onmouseenter = () => { card.style.background='rgba(16,185,129,.07)'; card.style.borderColor='rgba(16,185,129,.25)'; };
-      card.onmouseleave = () => { card.style.background='rgba(255,255,255,.04)'; card.style.borderColor='rgba(255,255,255,.09)'; };
-      list.appendChild(card);
-    });
-  }
-
-  function tthFilter(){
-    const val = document.getElementById('tth-search').value.toLowerCase();
-    const filtered = TTH_PLACES.filter(p => p.name.toLowerCase().includes(val));
-    tthRender(filtered);
-  }
-
-  function tthRandom(){
-    const p = TTH_PLACES[Math.floor(Math.random() * TTH_PLACES.length)];
-    tthShowPlace(p);
-  }
-
-  tthRender(TTH_PLACES);
+  })();
 
   window.switchBktTab = function(tab){
     document.getElementById('bkt-section-list').style.display = tab==='list'?'':'none';
