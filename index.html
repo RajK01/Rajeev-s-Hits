@@ -3668,6 +3668,43 @@ function buildGlowupPanel(){
   });
   buildScenarios();
   loadScenarioDone();
+  buildTalkToHer();
+}
+
+function buildTalkToHer(){
+  var row = document.getElementById('tth-tab-row');
+  if(!row || row.childElementCount > 0) return;
+  TTH_PLACES.forEach(function(p){
+    var btn = document.createElement('button');
+    btn.className = 'tth-ptab';
+    btn.textContent = p.name;
+    btn.style.cssText = 'padding:8px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);color:rgba(255,255,255,.6);font-size:.78rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .18s;margin:0';
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.tth-ptab').forEach(function(b){
+        b.style.background='rgba(255,255,255,.05)';
+        b.style.borderColor='rgba(255,255,255,.14)';
+        b.style.color='rgba(255,255,255,.6)';
+      });
+      btn.style.background='linear-gradient(135deg,#10b981,#059669)';
+      btn.style.borderColor='transparent';
+      btn.style.color='#fff';
+      document.getElementById('tth-content').style.display='block';
+      document.getElementById('tth-tip').innerHTML='💡 <strong>Approach tip:</strong> '+p.tip;
+      document.getElementById('tth-title').textContent=p.name+' — '+p.q.length+' conversation starters';
+      var list=document.getElementById('tth-qlist');
+      list.innerHTML='';
+      p.q.forEach(function(q,qi){
+        var card=document.createElement('div');
+        card.style.cssText='background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:11px 16px;display:flex;align-items:flex-start;gap:12px;transition:all .15s';
+        card.innerHTML='<span style="color:rgba(16,185,129,.7);font-weight:700;font-size:.78rem;min-width:24px;margin-top:2px">'+(qi+1)+'</span><span style="color:rgba(255,255,255,.8);font-size:.88rem;line-height:1.6">'+q+'</span>';
+        card.onmouseenter=function(){card.style.background='rgba(16,185,129,.07)';card.style.borderColor='rgba(16,185,129,.25)';};
+        card.onmouseleave=function(){card.style.background='rgba(255,255,255,.04)';card.style.borderColor='rgba(255,255,255,.09)';};
+        list.appendChild(card);
+      });
+      document.getElementById('tth-content').scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+    row.appendChild(btn);
+  });
 }
 
 function buildScenarios(){
@@ -4842,39 +4879,6 @@ function buildBucketPanel(){
       q:['Is the wait always this long here?','Are you using [app] or a regular cab?','Do you find [app] reliable in this city?','Do you usually take cabs or prefer other transport?','Is this your neighbourhood or are you visiting?','What\'s the best way to get around this city in your opinion?','Have you had any interesting taxi drivers here?','Do you think surge pricing is ever justified?','What do you usually do during a taxi ride?','Is there a part of this city you think is underrated?','How long have you been in this city?','Do you prefer knowing the city by map or asking locals?','What\'s the best local tip you\'ve been given here?','Is there a restaurant or spot nearby you\'d recommend?','Do you commute a lot or work closer to home?','What\'s the last spontaneous decision you made about where you were going?','Do you think cities should invest in more cycling infrastructure?','Have you ever had a driver give you surprisingly good advice?','What\'s the most memorable cab ride you\'ve had?','Where are you headed — somewhere good?'] }
   ];
 
-  (function(){
-    var row = document.getElementById('tth-tab-row');
-    if(!row) return;
-    TTH_PLACES.forEach(function(p, i){
-      var btn = document.createElement('button');
-      btn.className = 'tth-ptab';
-      btn.textContent = p.name;
-      btn.setAttribute('data-tth', i);
-      btn.style.cssText = 'padding:8px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);color:rgba(255,255,255,.6);font-size:.78rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .18s';
-      btn.addEventListener('click', function(){
-        document.querySelectorAll('.tth-ptab').forEach(function(b){ b.style.background='rgba(255,255,255,.05)'; b.style.borderColor='rgba(255,255,255,.14)'; b.style.color='rgba(255,255,255,.6)'; });
-        btn.style.background='linear-gradient(135deg,#10b981,#059669)';
-        btn.style.borderColor='transparent';
-        btn.style.color='#fff';
-        var content = document.getElementById('tth-content');
-        content.style.display = 'block';
-        document.getElementById('tth-tip').innerHTML = '💡 <strong>Approach tip:</strong> ' + p.tip;
-        document.getElementById('tth-title').textContent = p.name + ' — ' + p.q.length + ' conversation starters';
-        var list = document.getElementById('tth-qlist');
-        list.innerHTML = '';
-        p.q.forEach(function(q, qi){
-          var card = document.createElement('div');
-          card.style.cssText = 'background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:11px 16px;display:flex;align-items:flex-start;gap:12px;transition:all .15s';
-          card.innerHTML = '<span style="color:rgba(16,185,129,.7);font-weight:700;font-size:.78rem;min-width:24px;margin-top:2px">'+(qi+1)+'</span><span style="color:rgba(255,255,255,.8);font-size:.88rem;line-height:1.6">'+q+'</span>';
-          card.onmouseenter = function(){ card.style.background='rgba(16,185,129,.07)'; card.style.borderColor='rgba(16,185,129,.25)'; };
-          card.onmouseleave = function(){ card.style.background='rgba(255,255,255,.04)'; card.style.borderColor='rgba(255,255,255,.09)'; };
-          list.appendChild(card);
-        });
-        content.scrollIntoView({behavior:'smooth', block:'nearest'});
-      });
-      row.appendChild(btn);
-    });
-  })();
 
   window.switchBktTab = function(tab){
     document.getElementById('bkt-section-list').style.display = tab==='list'?'':'none';
